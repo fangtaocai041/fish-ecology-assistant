@@ -39,7 +39,7 @@
 ---
 
 
-## What is this?
+## 🇬🇧 What is this? (English)
 
 **reasonix-data** is a complete, portable configuration for [Reasonix Code](https://github.com/esengine/deepseek-reasonix) that transforms it from a generic coding assistant into a **domain-specialized research powerhouse** — with 16 integrated tools, 12 specialized AI subagents, and a 5-stage auto-orchestrated research pipeline.
 
