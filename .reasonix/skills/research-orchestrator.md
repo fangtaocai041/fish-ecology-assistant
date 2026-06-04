@@ -111,7 +111,7 @@ Before starting orchestration, check tool availability:
 
 ## Output Format Constraints
 Before saving the final report, check:
-1. Total length ≤ 8000 tokens (split into sections if exceeded)
+1. 输出长度与各阶段产出质量成正比——高质量内容完整保留，搜索阶段结果少则相应精简
 2. Review summary: single-line score
 3. Pipeline stats: table format
 

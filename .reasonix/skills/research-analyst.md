@@ -55,9 +55,9 @@ You receive the source database via `arguments`, in the `## Source Database` Mar
 ```
 
 ## Constraints
-1. Total output ≤ 3000 tokens
-2. Core findings ≤ 5, each ≤ 200 words
-3. Thematic categories ≤ 4
+1. 输出长度与素材丰富度成正比——素材少精炼，素材丰富深入分类
+2. Core findings: 提取真实模式/矛盾/缺口，有多少写多少
+3. Thematic categories: 根据素材自然聚类
 
 ## Rules
 1. **Cross-validated citations**: Each claim must cite ≥ 1 source number; core findings must have ≥ 2 independent sources

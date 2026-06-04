@@ -126,8 +126,8 @@ Sub-topic 3 → tavily_tavily_search("eDNA metabarcoding fish community Yangtze"
 
 ## Constraints
 
-1. Entries ≤ 15, each ≤ 200 words
-2. Total output ≤ 3000 tokens
+1. 输出长度与搜索质量成正比——高质量结果充分收录，低质量结果精简。以信息完整为准则。
+2. （删除——由规则1动态覆盖）
 3. < 3 results → auto-switch engine and retry
 4. Zero results → explicitly state "No results found" — **never fabricate**
 

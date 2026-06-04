@@ -70,7 +70,7 @@ Q: "Is there a difference between groups A and B in parameter X?"
 
 ## Constraints
 
-1. Output ≤ 4000 tokens
+1. 输出长度与问题复杂度成正比——简单查询简短回答，复杂建模展开参数说明和诊断。以交代清楚为准。
 2. R code must be directly runnable (complete library loads + data read)
 3. `coderunner` unavailable → output code only, don't execute
 

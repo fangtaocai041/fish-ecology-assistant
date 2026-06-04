@@ -77,4 +77,4 @@ allowed-tools: read_file, search_content, coderunner_run-code, web_search, web_f
 
 1. 不要运行需要真实数据的代码（手册里的代码可能依赖本地文件）
 2. 如果 coderunner 不可用，仅做文档比对
-3. 输出 ≤ 3000 tokens
+3. 输出长度与验证内容的复杂度成正比——简单章节（如t-test）精简报告，复杂章节（如混合效应模型）详细展开。不以固定token数裁剪。

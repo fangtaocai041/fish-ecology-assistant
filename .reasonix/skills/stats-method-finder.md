@@ -70,6 +70,6 @@ summary(model)
 
 ## Constraints
 
-1. Output ≤ 3000 tokens
+1. 输出长度与方法复杂度成正比——简单方法精简，复杂方法展开参数和诊断。以让用户能用起来为准。
 2. Example code must be independently runnable
 3. No R implementation found → "No R implementation found, suggest Python / other alternatives"

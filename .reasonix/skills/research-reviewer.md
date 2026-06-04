@@ -50,6 +50,6 @@ User domain: **fish ecology / conservation genetics**, PhD focus: **sympatric co
 - ❌ Fail: ≥3 critical issues
 
 ## Constraints
-1. Total output ≤ 1000 tokens (reviews should be concise)
+1. 输出长度与发现的问题数量和严重程度成正比——没问题就短，问题多则详细指出
 2. Score table: one row per dimension
 3. Only list non-passing items; skip items that pass
