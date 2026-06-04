@@ -9,3 +9,6 @@
 
 # 临时对话截图文件
 *对话截图*
+
+# Reasonix 运行缓存
+.reasonix/truncated-results/
