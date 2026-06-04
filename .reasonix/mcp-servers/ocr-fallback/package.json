@@ -1,0 +1,15 @@
+{
+  "name": "ocr-fallback-mcp",
+  "version": "1.0.0",
+  "description": "OCR fallback MCP server using Tesseract.js for offline text extraction from images",
+  "type": "module",
+  "main": "index.js",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "tesseract.js": "^5.0.0",
+    "sharp": "^0.33.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

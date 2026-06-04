@@ -1,0 +1,8 @@
+# MCP 包装脚本 — 含 API Key，禁止提交
+.reasonix/mcp-servers/tavily.bat
+.reasonix/mcp-servers/exa.bat
+.reasonix/mcp-servers/github.bat
+.reasonix/mcp-servers/paddleocr-server.mjs
+
+# OCR-Fallback 依赖（运行时自动安装）
+.reasonix/mcp-servers/ocr-fallback/node_modules/
