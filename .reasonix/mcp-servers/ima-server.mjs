@@ -351,6 +351,151 @@ const TOOLS = [
       }, creds);
     },
   },
+  // ====== 新工具 ======
+  {
+    name: 'ima_discover_knowledge_bases',
+    description: '动态发现你所有的 ima 知识库（自有+订阅）。先调这个获取最新 kb_id 列表，避免硬编码过期。',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        search_terms: {
+          type: 'array',
+          items: { type: 'string' },
+          description: '搜索词列表，用于发现订阅库。默认 ["鱼","统计","R","机器学习","大模型","DeepSeek","学习","代码"]',
+        },
+      },
+    },
+    handler: async (args) => {
+      const terms = args.search_terms || ['鱼', '统计', 'R', '机器学习', '大模型', 'DeepSeek', '学习', '代码'];
+
+      // 1. 获取可添加的知识库（自己的）
+      const addable = await imaPost('/openapi/wiki/v1/get_addable_knowledge_base_list', { cursor: '', limit: 50 }, creds);
+      const ownMap = {};
+      for (const kb of (addable.addable_knowledge_base_list || [])) {
+        ownMap[kb.name] = { id: kb.id, role: '创建者', source: 'addable' };
+      }
+
+      // 2. 用多个关键词搜订阅库
+      const seen = new Set(Object.keys(ownMap));
+      for (const term of terms) {
+        try {
+          const res = await imaPost('/openapi/wiki/v1/search_knowledge_base', { query: term, cursor: '', limit: 20 }, creds);
+          for (const kb of (res.info_list || [])) {
+            const name = kb.kb_name || kb.name;
+            if (!seen.has(name)) {
+              seen.add(name);
+              ownMap[name] = {
+                id: kb.kb_id || kb.id,
+                role: kb.role_type || '订阅(只读)',
+                creator: kb.creator || '',
+                member_count: kb.member_count || '',
+                content_count: kb.content_count || '',
+                description: kb.description || '',
+                source: 'subscribed',
+              };
+            }
+          }
+        } catch (e) { /* skip failed searches */ }
+      }
+
+      // 3. 按领域分类
+      const DOMAIN_KEYWORDS = {
+        '🐟鱼类学': ['鱼', '鱼类', '增养殖', '物种共存', '同位素', '性二态', '几何形态'],
+        '🔬遗传学': ['遗传', '基因', 'SNP', '形态测量', 'DAPC'],
+        '📊统计': ['统计', 'R语言', 'R', '生态数据', 'SPSS'],
+        '🤖机器学习': ['机器学习', '随机森林', 'mlr3', 'MaxEnt'],
+        '💻编程/AI': ['大模型', 'DeepSeek', 'Transformer', 'LLM', '编程', '学习'],
+      };
+
+      const classified = {};
+      for (const [name, info] of Object.entries(ownMap)) {
+        let domain = '📚通用';
+        for (const [d, keywords] of Object.entries(DOMAIN_KEYWORDS)) {
+          if (keywords.some(kw => name.includes(kw))) {
+            domain = d;
+            break;
+          }
+        }
+        if (!classified[domain]) classified[domain] = [];
+        classified[domain].push({ name, ...info });
+      }
+
+      return {
+        total: Object.keys(ownMap).length,
+        classified,
+        raw_list: Object.entries(ownMap).map(([name, info]) => ({ name, ...info })),
+        note: '调用 ima_search_by_domain 时传入 kb_ids（从本结果提取）即可一次搜多个库',
+      };
+    },
+  },
+  {
+    name: 'ima_search_by_domain',
+    description: '一次搜索多个知识库，合并返回结果。比逐个搜节省N-1次MCP调用。',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        kb_ids: {
+          type: 'array',
+          items: { type: 'string' },
+          description: '要搜索的知识库 ID 列表（先调 ima_discover_knowledge_bases 获取最新ID）',
+        },
+        kb_names: {
+          type: 'string',
+          description: '知识库名称关键词（和 kb_ids 二选一）。如 "鱼类" 会匹配名称含"鱼"的库',
+        },
+        query: { type: 'string', description: '搜索关键词' },
+        max_per_kb: { type: 'number', description: '每个库最多返回几条', default: 8 },
+      },
+      required: ['query'],
+    },
+    handler: async (args) => {
+      let ids = args.kb_ids || [];
+
+      // 如果给的是名称关键词，先搜索匹配的库
+      if (args.kb_names && ids.length === 0) {
+        try {
+          const discover = await imaPost('/openapi/wiki/v1/get_addable_knowledge_base_list', { cursor: '', limit: 50 }, creds);
+          for (const kb of (discover.addable_knowledge_base_list || [])) {
+            if (kb.name.includes(args.kb_names)) ids.push(kb.id);
+          }
+          // 也搜订阅库
+          const searchRes = await imaPost('/openapi/wiki/v1/search_knowledge_base', { query: args.kb_names, cursor: '', limit: 20 }, creds);
+          for (const kb of (searchRes.info_list || [])) {
+            const kbId = kb.kb_id || kb.id;
+            if (!ids.includes(kbId)) ids.push(kbId);
+          }
+        } catch (e) { /* continue with whatever IDs we have */ }
+      }
+
+      if (ids.length === 0) {
+        return { error: '未指定知识库。请先用 ima_discover_knowledge_bases 获取kb_id列表，或在 kb_names 中传入名称关键词' };
+      }
+
+      // 并行搜索所有KB
+      const promises = ids.map(async (id) => {
+        try {
+          const res = await imaPost('/openapi/wiki/v1/search_knowledge', {
+            knowledge_base_id: id,
+            query: args.query,
+            cursor: '',
+          }, creds);
+          return { kb_id: id, results: (res.info_list || []).slice(0, args.max_per_kb || 8), total: (res.info_list || []).length };
+        } catch (e) {
+          return { kb_id: id, error: e.message, results: [] };
+        }
+      });
+
+      const allResults = await Promise.all(promises);
+      const totalFound = allResults.reduce((sum, r) => sum + r.results.length, 0);
+
+      return {
+        query: args.query,
+        kbs_searched: ids.length,
+        total_found: totalFound,
+        results: allResults,
+      };
+    },
+  },
 ];
 
 // ====== 消息处理 ======
