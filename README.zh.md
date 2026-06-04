@@ -40,7 +40,7 @@ Reasonix Code 本身能写代码，但科研不只是写代码——它还需要
 
 这个仓库把所有这些打包成一个可移植的配置。
 
-| 能力 | 原生 Reasonix | **加上 reasonix-data** |
+| 能力 | 原生 Reasonix | **加上 fish-ecology-assistant** |
 |:-----|:-------------:|:----------------------:|
 | 搜索引擎 | 1 个 (`web_search`) | **5 个** (tavily, exa, scholar, article, scholarly) |
 | MCP 服务 | 0 | **16 个** |
@@ -141,8 +141,8 @@ Reasonix Code 本身能写代码，但科研不只是写代码——它还需要
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/fangtaocai041/reasonix-data.git
-cd reasonix-data
+git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
+cd fish-ecology-assistant
 
 # 2. 运行一键迁移脚本
 powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
@@ -218,7 +218,7 @@ powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
 ## 📁 项目结构
 
 <pre>
-reasonix-data/
+fish-ecology-assistant/
 ├── README.md                 ← English
 ├── README.zh.md              ← 中文
 ├── USERGUIDE.md / GUIDE.md / CHEATSHEET.md
@@ -242,7 +242,7 @@ reasonix-data/
 
 **改进方向：** Linux/macOS 移植 · 其他领域模板 · Docker 部署
 
-见 [issues 页](https://github.com/fangtaocai041/reasonix-data/issues)。
+见 [issues 页](https://github.com/fangtaocai041/fish-ecology-assistant/issues)。
 
 <p align=right>(<a href=#readme-top>回到顶部</a>)</p>
 

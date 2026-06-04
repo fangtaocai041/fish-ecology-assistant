@@ -40,7 +40,7 @@ Out of the box, coding agents can write code. But research isn't just coding —
 
 This repo gives you all of that in one portable config.
 
-| Capability | Vanilla Reasonix | **With reasonix-data** |
+| Capability | Vanilla Reasonix | **With fish-ecology-assistant** |
 |:-----------|:----------------:|:----------------------:|
 | Search engines | 1 (`web_search`) | **5** (tavily, exa, scholar, article, scholarly) |
 | MCP services | 0 | **16** |
@@ -141,8 +141,8 @@ Once configured, talk to Reasonix naturally:
 
 ```bash
 # 1. Clone
-git clone https://github.com/fangtaocai041/reasonix-data.git
-cd reasonix-data
+git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
+cd fish-ecology-assistant
 
 # 2. Run one-click migration
 powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
@@ -218,7 +218,7 @@ The script handles: dependency checks → config generation → API key verifica
 ## 📁 Project Structure
 
 <pre>
-reasonix-data/
+fish-ecology-assistant/
 ├── README.md                 ← English
 ├── README.zh.md              ← 中文
 ├── USERGUIDE.md / GUIDE.md / CHEATSHEET.md
@@ -242,7 +242,7 @@ Adapted this for physics, medicine, or law? PRs welcome!
 
 **Quick ideas:** Linux/macOS port · Domain templates · Docker setup
 
-See [issues page](https://github.com/fangtaocai041/reasonix-data/issues).
+See [issues page](https://github.com/fangtaocai041/fish-ecology-assistant/issues).
 
 <p align=right>(<a href=#readme-top>back to top</a>)</p>
 
