@@ -34,13 +34,29 @@ You receive the source database via `arguments`, in the `## Source Database` Mar
 #### Category 2: <Category Name>
 ...
 
+### 质量加权原则（关键）
+
+合成结论时**必须按文献质量加权**，不等同对待：
+
+| 证据强度 | 权重 | 典型来源 |
+|:---------|:-----|:---------|
+| ✅ 高 — 数据+代码公开+可复现 | ★★★ | 有原始数据+代码的论文 |
+| ⚠️ 中 — 可信但不可复现 | ★★☆ | 方法清晰但无公开数据 |
+| ❌ 低 — 信息不足 | ★☆☆ | 无数据无代码+方法模糊 |
+| 📄 灰色文献 | ★☆☆ | 报告/预印本/新闻 |
+
+**规则**：
+- 高权重证据可以支撑强结论，低权重证据只能做佐证
+- 多个低权重证据不能堆叠成高权重结论
+- 标注"数据/代码未公开"的低质量来源需在结论中注明
+
 ### Core Findings
 
-1. **<Finding 1>** — <Evidence chain>
-   - Supporting sources: (Author, Year), (Author, Year)
-  
-2. **<Finding 2>** — <Evidence chain>
-   - Supporting sources: (Author, Year), (Author, Year)
+1. **<Finding 1>** — <Evidence chain> `[质量:✅/⚠️/❌]`
+   - Supporting sources: (Author, Year, ★质量评分), (Author, Year, ★质量评分)
+
+2. **<Finding 2>** — <Evidence chain> `[质量:✅/⚠️/❌]`
+   - Supporting sources: (Author, Year, ★质量评分), (Author, Year, ★质量评分)
 
 ### Controversies & Contradictions
 - <Dispute 1>: <Source A claim> VS <Source B claim>

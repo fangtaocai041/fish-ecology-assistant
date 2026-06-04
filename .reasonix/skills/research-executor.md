@@ -111,6 +111,11 @@ Sub-topic 3 → tavily_tavily_search("eDNA metabarcoding fish community Yangtze"
 - **Type**: <journal article|gov report|preprint|news>
 - **Engine**: <scholar/tavily/exa/web>
 - **Year/Journal**: <year, journal, quartile>
+- **质量评分**: ✅ 高（有原始数据+代码）/ ⚠️ 中（可信但不可复现）/ ❌ 低（信息不足）
+  - **原始数据**: ✅ Dryad / ⚠️ 无但可申请 / ❌ 不可得
+  - **分析代码**: ✅ GitHub / ⚠️ 无代码但方法清晰 / ❌ 无代码且方法模糊
+  - **样本量**: ✅ 合理 / ⚠️ 偏少 / ❌ 严重不足
+  - **期刊**: Q1-Q2 / Q3-Q4 / 预警
 - **Core content**: <2-3 sentences>
 - **Key data**:
   - <point 1>
