@@ -1,4 +1,4 @@
-# 📐 统计方法手册 — Fish Ecology & Conservation Genetics
+﻿# 📐 统计方法手册 — Fish Ecology & Conservation Genetics
 
 > 按研究问题找方法，按方法找 R 代码。**本手册是你积累、验证过的方案库**，优先使用。
 
@@ -616,9 +616,9 @@ install.packages(c("maxnet", "dismo", "raster", "ENMeval"))
 
 ## 📝 验证记录（按时间倒序）
 
-| 日期 | 章节 | 包版本 | 验证方式 | 结果 | 验证人 |
+| 日期 | 章节 | 包版本 | 验证方式 | 结果 | 下次复查 | 验证人 |
 |:----|:-----|:-------|:---------|:-----|:-------|
-| — | 全部 | — | — | 待验证 | — |
+| — | 全部 | — | — | 待验证 | — | — |
 
 > **验证方式说明**：
 > - **CRAN vignette** → 比对 R 包官方 vignette 或 `?function` 文档
