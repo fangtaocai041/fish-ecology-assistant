@@ -138,6 +138,11 @@ coderunner_run_code(language="r", code="<R代码>")
 
 完成后报告执行结果和关键统计量。
 
+## 约束
+1. 输出总长度 ≤ 4000 tokens
+2. R 代码必须可直接运行（完整库加载 + data读取）
+3. 当 coderunner 不可用时，仅输出代码不运行
+
 ## 输出格式
 
 ```markdown

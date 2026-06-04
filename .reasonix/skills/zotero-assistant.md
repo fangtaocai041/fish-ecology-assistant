@@ -101,6 +101,11 @@ WHERE f.fieldName = 'title' AND ia.contentType = 'application/pdf' AND i.deleted
 LIMIT 20
 ```
 
+## 约束
+1. 查询结果 ≤ 20 条
+2. SQL 查询必须带 `WHERE i.deleted = 0`
+3. 输出以表格呈现
+
 ## 操作规则
 
 1. 始终加上 `WHERE i.deleted = 0` 排除已删除条目
@@ -108,3 +113,4 @@ LIMIT 20
 3. 查询结果以结构化表格呈现
 4. 可主动建议：`/skill research-executor` 搜索某篇文献的详细信息
 5. Zotero 附件 PDF 存储在 `D:\ZoteroData\storage\` 下
+6. 当 zotero MCP 不可用时，报告「Zotero 服务不可用」并跳过

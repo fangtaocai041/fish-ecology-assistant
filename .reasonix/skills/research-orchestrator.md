@@ -98,6 +98,18 @@ run_skill("research-reviewer", "<文档草稿全文>")
 | 💻 代码执行 | `coderunner` |
 | 🖼️ OCR 识别 | `ocr` / `ocr-fallback` — 读取截图/扫描件 |
 
+## MCP 工具可用性检测
+开始编排前先检测工具可用性：
+1. 尝试 `web_search` — 若不可用，标注「搜索可能受限」
+2. 尝试 `scholar_search` — 若不可用降级到 `web_search`
+3. 记录不可用工具，传递给 executor 和 orchestrator 自身决策
+
+## 输出格式约束
+最终报告保存前检查：
+1. 总长度 ≤ 8000 tokens（超出则分段保存）
+2. 审核摘要单行输出评分
+3. 流程统计以表格形式呈现
+
 ## 故障处理（兜底逻辑）
 
 | 故障场景 | 处理方式 |

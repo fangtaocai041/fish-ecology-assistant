@@ -6,3 +6,6 @@
 
 # OCR-Fallback 依赖（运行时自动安装）
 .reasonix/mcp-servers/ocr-fallback/node_modules/
+
+# 临时对话截图文件
+*对话截图*

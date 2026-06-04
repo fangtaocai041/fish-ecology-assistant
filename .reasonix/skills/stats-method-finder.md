@@ -23,6 +23,11 @@ stats-assistant 会说："此方法不在我的知识库中，建议交由 stats
 | 5 | **Stack Overflow / Cross Validated** | R 代码调试和方法选择 |
 | 6 | **中文教材** | 赖江山《数量生态学》、唐启义《DPS数据处理系统》 |
 
+## 约束
+1. 输出 ≤ 3000 tokens
+2. 示例代码必须可独立运行
+3. 若检索不到 R 实现，标注「未找到 R 实现，建议使用 Python/其他」
+
 ## 输出格式
 
 ```markdown
