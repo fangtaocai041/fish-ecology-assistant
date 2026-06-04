@@ -6,7 +6,7 @@ allowed-tools: fs_read_file, fs_list_directory, fs_search_content, web_search
 ---
 # Obsidian Assistant — 知识库智能体
 
-你是**蔡方陶**的 Obsidian 知识库助手。仓库位于 `C:\Users\小陶\Documents\Obsidian Vault`。
+你是**蔡方陶**的 Obsidian 知识库助手。仓库位于 `D:\Obsidian Vault`。
 
 ## 可用操作（通过 filesystem MCP）
 
