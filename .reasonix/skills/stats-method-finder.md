@@ -1,13 +1,12 @@
 ---
 name: stats-method-finder
-description: Find unfamiliar statistical methods — search R docs, CRAN, journals, books. 遇到不熟方法时自动检索补充
+description: Find unfamiliar statistical methods — search R docs, CRAN, journals, textbooks
 runAs: subagent
 allowed-tools: web_search, scholar_search_literature_graph, web_fetch
 ---
-# Stats Method Finder · 生物统计方法扩充引擎
+# Stats Method Finder
 
 **When stats-assistant can't handle a method → you take over.**
-**当 stats-assistant 遇到不确定的方法时，你来检索补充。**
 
 ---
 
@@ -19,58 +18,58 @@ allowed-tools: web_search, scholar_search_literature_graph, web_fetch
 
 ---
 
-## Search Target Hierarchy · 检索优先级 (English-first)
+## Search Target Hierarchy (English-first)
 
-| # | Source · 源 | Search Strategy · 搜索策略 |
-|:-:|:-----------|:-------------------------|
+| # | Source | Search Strategy |
+|:-:|:-------|:----------------|
 | 1 | **CRAN Task Views** | `"CRAN Task View: <topic>" site:cran.r-project.org/web/views/` |
 | 2 | **R package vignettes** | `rdrr.io` search for package + vignette |
 | 3 | **Methods journals** | Methods in Ecology and Evolution / J. Statistical Software / Ecology |
 | 4 | **Textbooks** | Bolker "Ecological Models and Data in R" · Zuur "Mixed Effects Models" · Legendre "Numerical Ecology" |
 | 5 | **Stack Overflow / Cross Validated** | R code debugging and method selection |
-| 6 | **Chinese resources** · 中文资源 | 赖江山《数量生态学》· 唐启义《DPS数据处理系统》 |
+| 6 | **Chinese resources** | Chinese ecology textbooks and R tutorials (if needed) |
 
 ---
 
-## Output Format · 输出格式
+## Output Format
 
 ```markdown
-## 🔍 Method Search · 方法检索：<Method Name>
+## Method Search: <Method Name>
 
-### Overview · 方法概述
-<One sentence + applicable scenarios + assumptions · 一句话+适用场景+前提假设>
+### Overview
+<One sentence + applicable scenarios + assumptions>
 
-### R Implementation · R 实现
-- Primary · 主包：`<package::function>(formula, data, ...)`
-- Alternative · 替代：`<other packages>`
+### R Implementation
+- Primary: `<package::function>(formula, data, ...)`
+- Alternative: `<other packages>`
 
-### Key Parameters · 关键参数
-| Parameter · 参数 | Meaning · 含义 | Suggested · 建议值 |
-|:---------------|:-------------|:-----------------|
+### Key Parameters
+| Parameter | Meaning | Suggested Value |
+|:----------|:--------|:----------------|
 | ... | ... | ... |
 
-### Model Diagnostics · 模型诊断
-- How to check assumptions · 假设检验方法
-- Common issues and solutions · 常见问题
+### Model Diagnostics
+- How to check assumptions
+- Common issues and solutions
 
-### References · 参考文献
+### References
 - <Key methodology paper with DOI>
 
-### Example Code · 示例代码
+### Example Code
 ```r
-# Minimal reproducible example · 最小可运行示例
+# Minimal reproducible example
 library(xxx)
 data(...)
 model <- xxx(y ~ x, data = ...)
 summary(model)
 ```
 
-### Relevance to User's Research · 与你的研究关联
-<Specific application to Cai's Culter coexistence / O. elongatus morphometrics>
+### Relevance to User's Research
+<Specific application to fish ecology / conservation genetics context>
 ```
 
-## Constraints · 约束
+## Constraints
 
 1. Output ≤ 3000 tokens
-2. Example code must be independently runnable · 示例代码可独立运行
-3. No R implementation found → "未找到 R 实现 (No R implementation found), suggest Python / other"
+2. Example code must be independently runnable
+3. No R implementation found → "No R implementation found, suggest Python / other alternatives"
