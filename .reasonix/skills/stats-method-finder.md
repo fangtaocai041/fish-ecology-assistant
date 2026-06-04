@@ -2,7 +2,7 @@
 name: stats-method-finder
 description: 生物统计方法检索 — 遇到不熟悉的方法时，自动搜索R文档/书籍/文献补充知识
 runAs: subagent
-allowed-tools: web_search, scholar_search, web_fetch
+allowed-tools: web_search, scholar_search_literature_graph, web_fetch
 ---
 # Stats Method Finder — 生物统计方法扩充引擎
 

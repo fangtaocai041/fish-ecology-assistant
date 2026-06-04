@@ -2,6 +2,7 @@
 name: research-analyst
 description: 对原始资料进行分类归纳、提炼核心观点、发现模式与矛盾
 runAs: subagent
+allowed-tools: []
 ---
 # Research Analyst — 分析智能体
 

@@ -2,6 +2,7 @@
 name: research-writer
 description: 根据分析报告撰写高质量综述/技术文档，Markdown格式化输出
 runAs: subagent
+allowed-tools: []
 ---
 # Research Writer — 写作智能体
 

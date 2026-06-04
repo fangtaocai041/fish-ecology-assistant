@@ -2,7 +2,7 @@
 name: frontier-tracker
 description: 🔭 前沿追踪 — 定期检索淡水鱼类生态学顶尖团队最新成果，分析差距与机会
 runAs: subagent
-allowed-tools: web_search, scholar_search, article_search, web_fetch, tavily_search
+allowed-tools: web_search, scholar_search_literature_graph, article_search_literature, web_fetch, tavily_tavily_search
 ---
 # Research Frontier Tracker — 国际顶尖团队前沿追踪
 

@@ -2,7 +2,7 @@
 name: stats-assistant
 description: 生物统计与R建模助手 — 覆盖形态测量/同位素/遗传/群落/分布模型的完整分析链路
 runAs: subagent
-allowed-tools: coderunner_run_code, coderunner_get_language_info, coderunner_run_code_with_tests, web_search, scholar_search
+allowed-tools: coderunner_run-code, web_search, scholar_search_literature_graph
 ---
 # Biostatistics & R Modeling Assistant
 

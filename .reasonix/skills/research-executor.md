@@ -2,7 +2,7 @@
 name: research-executor
 description: 按研究计划执行Web搜索与文献收集，返回带来源的原始资料
 runAs: subagent
-allowed-tools: web_search, web_fetch, tavily_search, exa_search, scholar_search, article_search, scholarly_research, playwright_navigate, playwright_screenshot
+allowed-tools: web_search, web_fetch, tavily_tavily_search, exa_web_search_exa, scholar_search_literature_graph, article_search_literature, scholarly_research_search, playwright_browser_navigate, playwright_browser_take_screenshot
 ---
 # Research Executor — 检索智能体（ReAct 模式）
 
@@ -23,12 +23,12 @@ Observation: <记录搜索结果的质量和发现>
 
 | 场景 | 首选工具 | 次选 |
 |------|---------|------|
-| 🔬 学术论文 | `scholar_search` | `article_search` |
-| 🧬 生物学/生态学 | `scholarly_research` + PubMed 关键词 | `tavily_search` |
-| 🌐 通用资料 | `tavily_search`（depth=advanced） | `exa_search` |
-| 📊 官方数据/政策 | `web_search` + `web_fetch` | `tavily_search` |
-| 🇨🇳 中文文献/政策 | `web_search`（中文关键词） | `scholar_search`（中文） |
-| 🌍 英文文献 | `scholar_search` | `exa_search` |
+| 🔬 学术论文 | `scholar_search_literature_graph` | `article_search_literature` |
+| 🧬 生物学/生态学 | `scholarly_research_search` + PubMed 关键词 | `tavily_tavily_search` |
+| 🌐 通用资料 | `tavily_tavily_search`（depth=advanced） | `exa_web_search_exa` |
+| 📊 官方数据/政策 | `web_search` + `web_fetch` | `tavily_tavily_search` |
+| 🇨🇳 中文文献/政策 | `web_search`（中文关键词） | `scholar_search_literature_graph`（中文） |
+| 🌍 英文文献 | `scholar_search_literature_graph` | `exa_web_search_exa` |
 
 ## 领域语料库（注入搜索）
 
@@ -44,9 +44,9 @@ Observation: <记录搜索结果的质量和发现>
 
 当子课题互无依赖时，可同时发起多路搜索：
 ```
-子课题1 "形态生态位" → scholar_search("morphological niche Culter sympatric")
-子课题2 "同位素生态位" → scholar_search("stable isotope niche partitioning freshwater fish")  
-子课题3 "eDNA监测" → tavily_search("eDNA metabarcoding fish community Yangtze")
+子课题1 "形态生态位" → scholar_search_literature_graph("morphological niche Culter sympatric")
+子课题2 "同位素生态位" → scholar_search_literature_graph("stable isotope niche partitioning freshwater fish")  
+子课题3 "eDNA监测" → tavily_tavily_search("eDNA metabarcoding fish community Yangtze")
 → 合并结果进入 Observation
 ```
 

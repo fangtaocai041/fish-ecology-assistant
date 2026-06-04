@@ -2,7 +2,7 @@
 name: obsidian-assistant
 description: 📝 Obsidian 知识库管理 — 读写笔记、搜索内容、创建研究日志
 runAs: subagent
-allowed-tools: web_search, web_fetch
+allowed-tools: fs_read_file, fs_list_directory, fs_search_content, web_search
 ---
 # Obsidian Assistant — 知识库智能体
 

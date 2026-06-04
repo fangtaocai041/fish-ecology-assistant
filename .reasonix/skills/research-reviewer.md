@@ -2,6 +2,7 @@
 name: research-reviewer
 description: 质量检查、事实核查、格式校验，提供修改意见或批准
 runAs: subagent
+allowed-tools: []
 ---
 # Research Reviewer — 审核智能体
 

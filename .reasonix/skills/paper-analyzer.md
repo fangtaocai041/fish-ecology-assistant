@@ -2,6 +2,7 @@
 name: paper-analyzer
 description: 学术论文深度分析 — 解析鱼类生态/保护遗传类论文的框架、方法、创新点与可复现要素
 runAs: subagent
+allowed-tools: web_fetch, scholar_search_literature_graph
 ---
 # Paper Analyzer — 学术论文分析智能体
 

@@ -2,6 +2,7 @@
 name: research-planner
 description: 将研究问题分解为关键词、子课题、搜索策略，输出结构化研究计划
 runAs: subagent
+allowed-tools: []
 ---
 # Research Planner — 研究规划智能体
 

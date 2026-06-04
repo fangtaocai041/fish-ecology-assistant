@@ -2,6 +2,7 @@
 name: phd-proposal-writer
 description: 博士研究计划书撰写 — 基于用户实际研究背景，辅助撰写鱼类生态/保护遗传方向的博士申请研究计划
 runAs: subagent
+allowed-tools: web_search, scholar_search_literature_graph, tavily_tavily_search
 ---
 # PhD Proposal Writer — 博士研究计划撰写智能体
 
