@@ -1,14 +1,17 @@
-# MCP 包装脚本 — 含 API Key，禁止提交
+# API key files — never commit
 .reasonix/mcp-servers/tavily.bat
 .reasonix/mcp-servers/exa.bat
 .reasonix/mcp-servers/github.bat
 .reasonix/mcp-servers/paddleocr-server.mjs
 
-# OCR-Fallback 依赖（运行时自动安装）
+# OCR-Fallback dependencies (auto-installed at runtime)
 .reasonix/mcp-servers/ocr-fallback/node_modules/
 
-# 临时对话截图文件
+# Temporary conversation screenshots
 *对话截图*
 
-# Reasonix 运行缓存
+# Reasonix runtime cache
 .reasonix/truncated-results/
+
+# Reasonix auto-generated files
+deepseek-tokenizer.json.gz
