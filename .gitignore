@@ -15,3 +15,7 @@
 
 # Reasonix auto-generated files
 deepseek-tokenizer.json.gz
+
+# Playwright browser snapshots
+.playwright-mcp/
+ima-claw-page.md
