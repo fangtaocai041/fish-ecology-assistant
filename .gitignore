@@ -14,9 +14,15 @@
 
 # .sh 模板不含密钥可提交（含 $HOME 占位符），但需人工检查后加入
 
-# 环境变量
+# 环境变量 + 本地凭证
 .env
 .env.*
+CREDENTIALS.local.yaml
+*.local.yaml
+config/local.yaml
+*.key
+*.pem
+*.token
 
 # OCR-Fallback dependencies (auto-installed at runtime)
 .reasonix/mcp-servers/ocr-fallback/node_modules/
