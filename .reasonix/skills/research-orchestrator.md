@@ -1,4 +1,4 @@
----
+﻿---
 name: research-orchestrator
 description: Complete research pipeline orchestration — auto-execute 5 stages: Plan → Search → Analyze → Write → Review (with up to 3 revision rounds)
 allowed-tools: []
