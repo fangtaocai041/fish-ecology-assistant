@@ -8,6 +8,30 @@ allowed-tools: []
 
 The final station of the research pipeline. Quality gate: decide pass, revise, or fail.
 
+## Trigger
+- Pipeline phase: Stage 5 (Review)
+- Writer produces ≥ 500 words output
+- User requests: "review draft", "quality check"
+
+## Input
+- Required: full document draft (via arguments)
+- Optional: review focus (citations / accuracy / format / language)
+
+## Steps
+1. Parse document → identify all claims, citations, data points
+2. Verify traceability → every claim → source → DOI/URL
+3. Score 4 dimensions → completeness / accuracy / format / language
+4. Classify issues → critical / moderate / minor
+5. Render decision → pass / revise / fail
+6. If revise → output specific revision notes with line references
+
+## Decision Points
+- 0 critical + ≤ 2 moderate → ✅ Pass
+- ≥ 3 critical → ❌ Fail
+- Otherwise → 🔄 Needs revision (max 3 rounds)
+- Fabricated citation → immediate ❌ Fail
+- Revision round > 3 → flag to human
+
 ## Domain-Specific Review
 
 User domain: **fish ecology / conservation genetics**, PhD focus: **sympatric coexistence of cultrine species**.
