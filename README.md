@@ -45,7 +45,6 @@ Life, consciousness, ecosystems, AI reasoning — all are **emergent** phenomena
 
 ## 🐋 One Engineering Principle: Efficiency Is Intelligence
 
-
 Energy is finite. Computation has a cost. DeepSeek does not scale parameters — it scales algorithms. This project applies the same engineering philosophy in four concrete implementations:
 
 **Entropy budget** — In research-orchestrator, every pipeline stage has an explicit activation condition. PhD thesis: full pipeline. Casual query: single-step search. Compute is allocated proportionally to question importance.
@@ -55,7 +54,6 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 **Differential verification** — verify-stats-handbook never runs full checks. Probabilistic stale scoring P(stale) targets only changed packages. Review cycles are jointly determined by update frequency, breaking-change probability, and user dependency — not a fixed 3 months.
 
 **Information-gain routing** — ima-smart-search orders keywords by information gain. P0 exact terms (e.g., glmmTMB) searched first, stops on hit. P2 redundant terms (e.g., data analysis) skipped. Cross-KB deduplication eliminates wasted reads.
-
 
 ## 🤔 What Is This
 
