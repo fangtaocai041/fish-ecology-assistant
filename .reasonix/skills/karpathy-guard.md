@@ -42,7 +42,14 @@ runAs: inline
 
 
 
-## -1. Entropy Budget (熵预算)
+## -1.5. Source Integrity & Confidence Tagging
+
+Every claim must trace back to a retrievable source. Never generate unsupported statements.
+
+Source types: Paper (Author, Year, DOI), Package (name, version), URL, ima KB (KB > File), Stats (method, p)
+Confidence tags: Verified / Inferred / Uncertain / No source
+Traceability: Claim -> Source -> DOI/URL -> Raw data. If chain breaks, do NOT generate.
+
 
 > Energy is finite. Computation has a cost. Allocate attention proportional to question importance.
 

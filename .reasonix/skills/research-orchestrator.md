@@ -46,6 +46,32 @@ Plan → Search → Analyze → Write → Review ──✅ Pass → Output
 
 When sub-topics are independent, launch **parallel searches** in Stage 2.
 
+## 🤝 Trust Threshold Pipeline
+
+Each stage passes a trust score to the next. If confidence drops below threshold, do not escalate.
+
+Planner: always passes. Executor: >= 1 result from >= 2 engines, else retry.
+Analyst: >= 2 independent sources per finding, else flag uncertain.
+Writer: all claims traceable to source, else add confidence tags.
+Reviewer: no unverifiable claims, else reject and flag for human.
+
+---
+
+## ⚡ Lazy Activation Architecture
+
+| Stage | Activation Trigger | Notes |
+|:------|:-------------------|:------|
+| Planner | Always | Lightweight, run first |
+| Executor | Only if Planner returns search queries | Skip if topic is purely theoretical |
+| Analyst | Only if Executor returns >= 1 result | Skip if no search results |
+| Writer | Only if Analyst returns >= 1 finding | Skip if nothing to report |
+| Reviewer | Only if Writer produces output | Skip for quick queries |
+| Stats verify | Only when code or methods are involved | Otherwise, stays silent |
+| ima search | Only when domain maps to an ima KB | Otherwise, stays silent |
+| Emergence | Only when >= 3 sources from Analyst | Auto-activates at threshold |
+
+---
+
 ## Execution Flow
 
 ### Stage 1: Plan
