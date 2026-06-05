@@ -1,8 +1,22 @@
-# API key files — never commit
+# === 安全规则：以下内容绝不能提交到 GitHub ===
+
+# API key / token 文件
 .reasonix/mcp-servers/tavily.bat
 .reasonix/mcp-servers/exa.bat
 .reasonix/mcp-servers/github.bat
 .reasonix/mcp-servers/paddleocr-server.mjs
+
+# 所有 .bat 包装脚本 (含本地路径，绝不能提交)
+.reasonix/mcp-servers/*.bat
+
+# 保留: ima.bat 不含敏感信息
+!.reasonix/mcp-servers/ima.bat
+
+# .sh 模板不含密钥可提交（含 $HOME 占位符），但需人工检查后加入
+
+# 环境变量
+.env
+.env.*
 
 # OCR-Fallback dependencies (auto-installed at runtime)
 .reasonix/mcp-servers/ocr-fallback/node_modules/
