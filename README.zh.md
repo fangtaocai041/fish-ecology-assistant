@@ -3,65 +3,62 @@
 </p>
 
 <div align="center">
-  <h1>🌊 万物皆变 · Panta Rhei</h1>
-  <p><strong>把你的编码智能体变成拥有动态世界观的博士级研究团队。</strong></p>
+  <h1>🌊 Panta Rhei · 万物皆变</h1>
+  <p><strong>把你的编码智能体变成拥有动态世界观和 DeepSeek 级工程效率的博士级研究团队。</strong></p>
   <p>16 MCP 工具 · 12 AI 子智能体 · 5 引擎搜索 · 13 个知识库</p>
 </div>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
-  <a href="#"><img src="https://img.shields.io/badge/动态世界观-core-6366f1?style=flat-square" alt="动态世界观"></a>
-  <a href="#"><img src="https://img.shields.io/badge/MCP-16-22c55e?style=flat-square" alt="MCP:16"></a>
-  <a href="#"><img src="https://img.shields.io/badge/智能体-12-f59e0b?style=flat-square" alt="智能体:12"></a>
+  <a href="#"><img src="https://img.shields.io/badge/万物皆变-核心-6366f1?style=flat-square" alt="万物皆变"></a>
+  <a href="#"><img src="https://img.shields.io/badge/熵预算-高效-22c55e?style=flat-square" alt="熵预算"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MoE路由-稀疏-f59e0b?style=flat-square" alt="MoE路由"></a>
+  <a href="USERGUIDE.md"><img src="https://img.shields.io/badge/文档-指南-0ea5e9?style=flat-square" alt="文档"></a>
 </p>
 
 ---
 
-## 🏛️ 核心哲学
+## 🏛️ 哲学 + 工程
 
-> **世界是动态的，知识是暂时的，涌现是常态。**
+这个项目建立在两根支柱上：**动态世界观**（认知论）和 **稀疏计算**（方法论）。
 
-这不是一句口号，而是贯穿整个项目每一行代码、每一次搜索、每一篇分析的**操作系统**。
+### 🌊 万物皆变 — 世界是动态的
 
-### 三大信条
+> 世界是动态的，知识是暂时的，涌现是常态。
 
-**🌍 世界是动态的**
-R 包在更新，物种分布在变化，科学共识在演变，气候变化在重塑生态系统。今天正确的结论半年后可能过时。我们**不把任何知识当作永恒真理**，而是放在时间轴上动态看待。
+每个输出标注时间锚点。每个声明使用校准语言。每次分析检测涌现信号。没有什么是永恒真理。
 
-**📖 知识是暂时的**
-科学精神的基石是证伪主义（Popper）。没有发现是终极真理，只有"当前最佳解释"。我们使用 **calibrated language**（校准语言）——说"证据表明"而不说"证明了"，说"Smith(2022)发现"而不说"研究表明"。每一个输出都标注时间锚点。
+### ⚡ DeepSeek 工程思维 — 效率即智能
 
-**🔬 涌现是常态**
-生命、意识、生态系统、AI 推理能力——都是**涌现**的结果。单独分析局部拼凑不出整体。当 ≥3 个独立来源指向同一个非预期模式时，系统自动标记为**涌现信号**，而不是当成异常值忽略。
+> 能量是有限的。计算有代价。聪明的算法胜过更大的模型。
 
-### 为什么这对科研至关重要
+不同于"堆参数"的暴力路线，本项目遵循 DeepSeek 的工程哲学：**混合专家路由（MoE）、稀疏激活、熵预算计算**。模块只在激活条件满足时才点火——从不计算不需要的东西。
 
-| 风险 | 传统做法 | 动态世界观的做法 |
-|:-----|:---------|:----------------|
-| **时效性差** | 用 2020 年的代码跑 2026 年的数据 | 包版本自动检查，标记"最后验证于 glmmTMB v1.1.10" |
-| **过度自信** | "研究表明 X" | "Smith(2022)发现X，但Jones(2024)补充了Y" |
-| **忽略新信号** | 把异常值当噪声 | ≥3个独立来源 → 涌现信号，主动追踪 |
-| **知识僵化** | 手册写死不再更新 | 验证记录含"下次复查"日期，按包活跃度动态计算 |
+| 风险 | 传统做法 | 我们的做法 |
+|:-----|:----------|:----------|
+| 知识陈旧 | 用旧代码跑新数据 | **概率陈旧评分** P(stale) = w·频率 + w·破坏性 + w·依赖度 |
+| 过度自信 | "研究表明 X" | **校准语言**："Smith(2022)发现X，Jones(2024)补充Y" |
+| 忽略信号 | 把异常当噪声 | **涌现检测**：≥3独立来源 → 主动追踪 |
+| 浪费计算 | 每次全量跑管线 | **MoE 稀疏激活**：模块只在显式触发条件满足时才运行 |
+| 文档僵化 | 手册从不更新 | **差分验证**：只检查有变更的包 |
+
+<p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
 ---
 
-## 🤔 这个项目是什么
+## 🤔 这是什么
 
-**Fish Ecology Assistant** 是一个将 [Reasonix Code](https://github.com/esengine/deepseek-reasonix) 从通用编码助手转变为**专业鱼类生态学研究团队**的完整配置包。
-
-它集成了 16 个 MCP 工具、12 个领域 AI 子智能体、5 引擎并行搜索、自动化的 5 阶段研究流水线，以及 R 统计计算环境——所有输出都遵循上述动态世界观。
+**Fish Ecology Assistant** 将 [Reasonix Code](https://github.com/esengine/deepseek-reasonix) 转变为鱼类生态学专业研究团队——16 工具、12 子智能体、5 引擎搜索、R 统计、13 个知识库。
 
 | 能力 | 原生 Reasonix | **加上本配置** |
 |:-----|:-------------:|:--------------:|
 | 搜索引擎 | 1 个 | **5 个** (tavily, exa, scholar, article, scholarly) |
 | MCP 服务 | 0 | **16 个** |
-| AI 子智能体 | 4 个（通用） | **12 个**（领域专用，含涌现检测） |
+| AI 子智能体 | 4 个（通用） | **12 个**（涌现感知，校准语言） |
 | R 统计 | — | ✅ R 4.6.0 + 20+ 生态学包 |
-| OCR 文字识别 | — | ✅ PaddleOCR + Tesseract.js |
-| 文献管理器 | — | ✅ 直接查询 Zotero |
-| 研究流水线 | — | ✅ 5 阶段 + 自动审查 + 涌现检测 |
-| 知识库 | — | ✅ 连接 13 个 ima 知识库 |
-| 新机器配置 | 手动 | ✅ 一个脚本，5 分钟 |
+| 知识库 | — | ✅ 13 个 ima KB（动态发现，MoE 路由） |
+| 验证 | — | ✅ 概率陈旧评分 + 差分验证 |
+| 配置 | 手动 | ✅ 一个脚本，5 分钟 |
 
 <p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
@@ -75,16 +72,14 @@ cd fish-ecology-assistant
 powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
 ```
 
-重启 Reasonix，全部就绪。
-
 ### 你说，它做
 
-| 你说 | 它做什么 |
-|:-----|:---------|
-| `"研究长江禁渔对鱼类群落的影响——跑流水线"` | 5 阶段：规划→搜索→分析→写作→审查（中英双语搜索，自动标记涌现信号） |
-| `"验证手册 2.2 章"` | 自动查 CRAN 包版本，比对手册，计算复查日期 |
-| `"在 ima 知识库里搜一下同位素生态位"` | 自动路由到正确知识库，多库并行搜索，合成结果 |
-| `"帮我做混合效应模型"` | R 代码 + 方法选择 + 诊断，标注"截至 YYYY-MM 的推荐做法" |
+| 你说 | 它做什么 | 熵预算 |
+|:-----|:---------|:-------|
+| `"研究长江禁渔——跑流水线"` | 5 阶段 + 涌现检测 + 中英双语搜索 | 全额 |
+| `"验证手册 2.2 章"` | 自动查 CRAN，概率陈旧评分，差分验证 | 中等 |
+| `"搜 ima 知识库：同位素生态位"` | IG 关键词路由，跨库去重，MoE 激活 | 轻量 |
+| `"快速问题：NMDS stress 阈值？"` | 单阶段查询，无冗余计算 | 最小 |
 
 <p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
@@ -92,30 +87,29 @@ powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
 
 ## 🧠 AI 子智能体
 
-### 研究流水线（5 阶段自动编排）
+### 研究管线 — 稀疏激活
 
-| # | 智能体 | 角色 | 动态世界观体现 |
-|:-:|:-------|:-----|:--------------|
-| 🎯 | `research-orchestrator` | **调度器** | 调度全部 5 阶段 |
-| ① | `research-planner` | 🧑‍💼 规划 | 中英双语关键词，覆盖国内外文献 |
-| ② | `research-executor` | 🔍 搜索 | 5 引擎并行，标注文献发表年份 |
-| ③ | `research-analyst` | 📊 分析 | **共识演变时间轴** + **涌现信号检测** |
-| ④ | `research-writer` | ✍️ 写作 | **calibrated language**，时间锚定，不确定性标记 |
-| ⑤ | `research-reviewer` | ✅ 审查 | 4 维评分，≤3 轮修订 |
+| # | 智能体 | 激活条件 |
+|:-:|:------|:---------|
+| ① | `research-planner` | **始终**（轻量路由） |
+| ② | `research-executor` | 规划器返回 ≥1 搜索词 |
+| ③ | `research-analyst` | 执行器返回 ≥1 结果 |
+| ④ | `research-writer` | 分析师返回 ≥1 发现 |
+| ⑤ | `research-reviewer` | 写手输出 ≥500 字 |
 
 ### 领域专家
 
-| 智能体 | 功能 | 哲学体现 |
-|:-------|:-----|:---------|
-| 📖 `paper-analyzer` | 深度分析论文 | **时间轴**（发表时→至今→当前）+ **涌现信号** |
-| 📊 `stats-assistant` | R 代码+方法选择 | 代码标注版本，方法标注验证日期 |
-| 🔍 `stats-method-finder` | 搜索 CRAN/期刊 | 标记方法的"最后验证时间" |
-| 🧠 `ima-smart-search` | 跨知识库智能搜索 | 动态发现 KB，不过期不硬编码 |
-| ✅ `verify-stats-handbook` | 验证手册代码 | 自动查 CRAN 版本，按活跃度算复查周期 |
-| 🔭 `frontier-tracker` | 跟踪前沿实验室 | 按时间排序最新发现 |
-| 🎓 `phd-proposal-writer` | 博士 proposal | 参考文献动态覆盖，标注时效性 |
-| 📚 `zotero-assistant` | 查 Zotero 文献库 | — |
-| 📝 `obsidian-assistant` | 读写 Obsidian | — |
+| 智能体 | 触发条件 |
+|:------|:---------|
+| 📖 `paper-analyzer` | 提供论文 DOI 或摘要 |
+| 📊 `stats-assistant` | 涉及代码/方法/包 |
+| 🔍 `stats-method-finder` | 请求不熟悉的方法 |
+| 🧠 `ima-smart-search` | 领域匹配到 ≥1 个 ima KB |
+| ✅ `verify-stats-handbook` | 明确请求验证手册章节 |
+| 🔭 `frontier-tracker` | 明确请求跟踪实验室 |
+| 🎓 `phd-proposal-writer` | 明确请求写 proposal |
+| 📚 `zotero-assistant` | 涉及 Zotero 查询 |
+| 📝 `obsidian-assistant` | 涉及 Obsidian 读写 |
 
 <p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
@@ -125,21 +119,13 @@ powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
 
 | 服务 | 引擎 | 用途 |
 |:-----|:-----|:------|
-| `tavily` | AI 深度搜索 | 全网搜索 |
-| `exa` | 语义搜索 | 按含义搜索 |
-| `scholar` | Google Scholar | 学术论文 |
-| `article` | 文献元数据 | 全文摘要 |
-| `scholarly` | 多源聚合 | 跨库学术搜索 |
-| `ima` | ima OpenAPI | **13 个知识库 + 笔记（14 个工具）** |
+| `tavily` / `exa` / `scholar` / `article` / `scholarly` | 多引擎搜索 | 5 源并行 |
+| `ima` | ima OpenAPI | 13 KBs，IG 关键词路由，MoE 动态发现 |
 | `rplay` | R 4.6.0 | 形态测量、同位素、群落生态 |
-| `coderunner` | 沙箱 | 多语言代码执行 |
-| `echarts` | ECharts | 图表可视化 |
-| `ocr` | PaddleOCR | 中英文 OCR |
-| `ocr-fallback` | Tesseract.js | 离线 OCR |
-| `playwright` | Chromium | 网页抓取 |
-| `git` | Git CLI | 版本控制 |
-| `github` | GitHub API | 仓库管理 |
-| `zotero` | SQLite | Zotero 查询 |
+| `coderunner` | 沙箱 | 多语言执行 |
+| `echarts` / `ocr` / `ocr-fallback` / `playwright` | 可视化 + 提取 | 图表、OCR、抓取 |
+| `git` / `github` | 版本控制 | 仓库管理 |
+| `zotero` | SQLite | 文献库查询 |
 
 <p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
@@ -149,43 +135,33 @@ powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
 
 ```
 fish-ecology-assistant/
-├── README.md                 ← English
-├── README.zh.md              ← 中文
-│
+├── README.md · README.zh.md
 ├── .reasonix/
 │   ├── mcp-servers/          ← 16 个 MCP 包装器
-│   │   └── ima-server.mjs   ← 14 个工具（知识库+笔记+动态发现+多库搜索）
-│   │
+│   │   └── ima-server.mjs   ← 14 个工具（KB + MoE 发现 + IG 路由）
 │   ├── skills/               ← 12 个 AI 子智能体
-│   │   ├── ima-smart-search.md       ← 跨库智能搜索
-│   │   ├── verify-stats-handbook.md  ← 自动 CRAN 版本检查
-│   │   ├── paper-analyzer.md         ← 时间轴+涌现检测
-│   │   ├── research-analyst.md       ← 共识演变+涌现信号
-│   │   ├── research-writer.md        ← calibrated language
-│   │   └── ...（其余 7 个技能）
-│   │
+│   │   ├── karpathy-guard.md        ← 熵预算 + 万物皆变
+│   │   ├── research-orchestrator.md ← 稀疏激活调度器
+│   │   ├── verify-stats-handbook.md ← P(stale)评分 + 差分验证
+│   │   ├── ima-smart-search.md      ← IG 关键词优化 + 去重
+│   │   └── ... (8 more)
 │   ├── handbooks/
-│   │   ├── stats-methods.md   ← 统计方法手册（含版本追踪+复查日期）
-│   │   └── learning-guide.md  ← 学习路径手册
-│   │
-│   └── setup-migrate.ps1     ← 一键安装脚本
-│
-└── research_output/          ← 生成的研究报告
+│   │   ├── stats-methods.md   ← 版本追踪 R 模板
+│   │   └── learning-guide.md  ← 学习路径
+│   └── setup-migrate.ps1     ← 一键安装
+└── research_output/
 ```
 
 <p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
 ---
 
-## 🌱 万物皆变 · Panta Rhei
+## 🌱 万物皆变 · DeepSeek 驱动
 
-> 赫拉克利特说：人不能两次踏进同一条河流。
->
-> 我们说：你也不能用上个月的代码分析今天的生态数据。
+> 赫拉克利特：人不能两次踏进同一条河流。
+> DeepSeek：聪明的算法胜过更大的模型。
 
-这个项目不是一套固定的工具集——它是一个**活的系统**。每个组件都内置了过期机制、版本追踪和涌现感知。随着你的研究深入、R 包更新、新方法涌现，它会和你一起进化。
-
-**最后更新：2026-06-04**
-**适用环境：Reasonix Code · DeepSeek 驱动**
+**最后更新：2026-06-05**
+**运行环境：Reasonix Code · DeepSeek 驱动**
 
 <p align="right">(<a href="#readme-top">回到顶部</a>)</p>

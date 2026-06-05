@@ -4,62 +4,61 @@
 
 <div align="center">
   <h1>🌊 Panta Rhei · Everything Flows</h1>
-  <p><strong>Turn your coding agent into a PhD-level research team with a dynamic worldview.</strong></p>
+  <p><strong>Turn your coding agent into a PhD-level research team with a dynamic worldview and DeepSeek-grade engineering.</strong></p>
   <p>16 MCP tools · 12 AI subagents · 5 search engines · 13 knowledge bases</p>
 </div>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
-  <a href="#"><img src="https://img.shields.io/badge/dynamic_worldview-core-6366f1?style=flat-square" alt="Dynamic Worldview"></a>
-  <a href="#"><img src="https://img.shields.io/badge/MCP-16-22c55e?style=flat-square" alt="MCP:16"></a>
-  <a href="#"><img src="https://img.shields.io/badge/subagents-12-f59e0b?style=flat-square" alt="Subagents:12"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Panta_Rhei-core-6366f1?style=flat-square" alt="Panta Rhei"></a>
+  <a href="#"><img src="https://img.shields.io/badge/entropy_aware-efficient-22c55e?style=flat-square" alt="Entropy Aware"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MoE_routing-sparse-f59e0b?style=flat-square" alt="MoE Routing"></a>
+  <a href="USERGUIDE.md"><img src="https://img.shields.io/badge/docs-guide-0ea5e9?style=flat-square" alt="Docs"></a>
 </p>
 
 ---
 
-## 🏛️ Core Philosophy
+## 🏛️ Philosophy + Engineering
 
-> **The world is dynamic. Knowledge is provisional. Emergence is the norm.**
+This project is built on two pillars: **dynamic worldview** (what we know) and **sparse computation** (how we compute).
 
-This isn't a slogan. It's the operating system that runs through every line of code, every search query, and every paper analysis in this project.
+### 🌊 Panta Rhei — The World Is Dynamic
 
-### Three Tenets
+> The world is dynamic. Knowledge is provisional. Emergence is the norm.
 
-**🌍 The World Is Dynamic**
-R packages update. Species distributions shift. Scientific consensus evolves. Climate change reshapes ecosystems. A correct conclusion today may be obsolete in six months. **We treat no knowledge as eternal truth** — everything is anchored on a timeline.
+Every output carries a timestamp. Every claim uses calibrated language. Every analysis checks for emergence signals. Nothing is treated as eternal truth.
 
-**📖 Knowledge Is Provisional**
-The bedrock of science is falsifiability (Popper). No finding is final — only "the best current explanation." We use **calibrated language**: say "evidence suggests" not "proves," say "Smith (2022) found" not "studies show." Every output carries a timestamp.
+### ⚡ DeepSeek Engineering — Efficiency Is Intelligence
 
-**🔬 Emergence Is the Norm**
-Life, consciousness, ecosystems, AI reasoning — all are **emergent** phenomena. Analyzing parts in isolation never reveals the whole. When ≥3 independent sources point to the same unexpected pattern, the system flags it as an **emergence signal** — not dismisses it as noise.
+> Energy is finite. Computation has a cost. Smarter algorithms beat bigger models.
 
-### Why This Matters for Research
+Unlike brute-force parameter scaling, this project follows DeepSeek's engineering philosophy: **Mixture of Experts routing, sparse activation, entropy-budgeted computation**. Modules only fire when their activation condition is met — never compute what you don't need.
 
-| Risk | Traditional Approach | Dynamic Worldview Approach |
-|:-----|:--------------------|:---------------------------|
-| **Stale knowledge** | Run 2020 code on 2026 data | Auto-check CRAN versions, mark "verified on glmmTMB v1.1.10" |
-| **Overconfidence** | "Research shows X" | "Smith (2022) found X, but Jones (2024) added Y" |
-| **Ignoring signals** | Dismiss outliers as noise | ≥3 independent sources → emergence signal, actively tracked |
-| **Frozen docs** | Handbook never updated | Verification log with "next review" date, calculated from package activity |
+| Risk | Traditional Approach | Our Approach |
+|:-----|:--------------------|:-------------|
+| Stale knowledge | Run old code on new data | **Probabilistic stale score** P(stale) = w·freq + w·breaking + w·dep |
+| Overconfidence | "Research shows X" | **Calibrated language**: "Smith (2022) found X, Jones (2024) added Y" |
+| Ignoring signals | Dismiss outliers | **Emergence detection**: ≥3 independent sources → active tracking |
+| Wasted compute | Full pipeline on every query | **MoE sparse activation**: modules fire only on explicit triggers |
+| Frozen docs | Handbook never updated | **Differential verification**: only check what changed |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
-## 🤔 What Is This
+## 🤔 What This Is
 
-**Fish Ecology Assistant** transforms [Reasonix Code](https://github.com/esengine/deepseek-reasonix) from a general-purpose coding agent into a **domain-specialized fish ecology research team** — with 16 integrated MCP tools, 12 AI subagents, a 5-stage auto-orchestrated research pipeline, R statistics, and 13 connected knowledge bases. All outputs follow the dynamic worldview above.
+**Fish Ecology Assistant** transforms [Reasonix Code](https://github.com/esengine/deepseek-reasonix) into a domain-specialized fish ecology research team with 16 tools, 12 subagents, 5-engine search, R statistics, and 13 knowledge bases.
 
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
 | Search engines | 1 | **5** (tavily, exa, scholar, article, scholarly) |
 | MCP services | 0 | **16** |
-| AI subagents | 4 (generic) | **12** (domain-specialized, with emergence detection) |
+| AI subagents | 4 (generic) | **12** (emergence-aware, calibrated language) |
 | R statistics | — | ✅ R 4.6.0 + 20+ ecology packages |
-| OCR | — | ✅ PaddleOCR + Tesseract.js |
-| Reference manager | — | ✅ Direct Zotero SQL queries |
-| Research pipeline | — | ✅ 5-stage + auto-review + emergence detection |
-| Knowledge bases | — | ✅ 13 ima knowledge bases connected |
-| Setup on new machine | Manual | ✅ One script, 5 minutes |
+| Knowledge bases | — | ✅ 13 ima KBs (dynamic discovery, MoE routing) |
+| Verification | — | ✅ Probabilistic stale scoring + differential checks |
+| Setup | Manual | ✅ One script, 5 minutes |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -73,47 +72,44 @@ cd fish-ecology-assistant
 powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
 ```
 
-Restart Reasonix — everything is ready.
-
 ### Say This, Get That
 
-| Say this | What happens |
-|:---------|:-------------|
-| `"Research Yangtze fishing ban effects on fish — run full pipeline"` | 5 stages: plan → search → analyze → write → review (bilingual EN/CN, auto emergence signals) |
-| `"Verify handbook chapter 2.2"` | Auto-check CRAN versions, compare with handbook, calculate next review date |
-| `"Search my ima knowledge bases for stable isotope niche"` | Auto-route to correct KBs, parallel search, synthesize results |
-| `"Help me with a mixed effects model"` | R code + method selection + diagnostics, annotated "as of YYYY-MM recommended practice" |
+| Say this | What happens | Budget used |
+|:---------|:-------------|:------------|
+| `"Research Yangtze fishing ban — run pipeline"` | 5 stages with emergence detection | Full |
+| `"Verify handbook 2.2"` | Auto-check CRAN, probabilistic stale score, differential verification | Medium |
+| `"Search ima for stable isotope niche"` | IG-keyword routing, cross-KB dedup, MoE activation | Light |
+| `"Quick question: NMDS stress value threshold?"` | Single-stage lookup, no heavy compute | Minimal |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
-## 🧠 AI Subagents
+## 🧠 Skills (Subagents)
 
-### Research Pipeline (5-stage auto-orchestrated)
+### Research Pipeline — Sparse Activation
 
-| # | Agent | Role | Dynamic Worldview Feature |
-|:-:|:------|:-----|:--------------------------|
-| 🎯 | `research-orchestrator` | **Scheduler** | Coordinates all 5 stages |
-| ① | `research-planner` | 🧑‍💼 Plan | Bilingual EN/CN keywords, covers local + international lit |
-| ② | `research-executor` | 🔍 Search | 5 engines parallel, annotates publication year |
-| ③ | `research-analyst` | 📊 Analyze | **Consensus evolution timeline** + **emergence signal detection** |
-| ④ | `research-writer` | ✍️ Write | **Calibrated language**, temporal anchoring, uncertainty markers |
-| ⑤ | `research-reviewer` | ✅ Review | 4-dimension scoring, ≤3 revision rounds |
+| # | Agent | Activation Condition |
+|:-:|:------|:---------------------|
+| ① | `research-planner` | **Always** (lightweight routing) |
+| ② | `research-executor` | Planner returns ≥1 query |
+| ③ | `research-analyst` | Executor returns ≥1 result |
+| ④ | `research-writer` | Analyst returns ≥1 finding |
+| ⑤ | `research-reviewer` | Writer output ≥500 words |
 
 ### Domain Specialists
 
-| Agent | Does | Philosophical Feature |
-|:------|:------|:----------------------|
-| 📖 `paper-analyzer` | Deep paper analysis | **Timeline** (at publication → since → today) + **emergence signals** |
-| 📊 `stats-assistant` | R code + method selection | Code annotated with version, method with verification date |
-| 🔍 `stats-method-finder` | Search CRAN/journals | Marks "last verified" timestamp on methods |
-| 🧠 `ima-smart-search` | Cross-KB intelligent search | Dynamic KB discovery, no hardcoded IDs |
-| ✅ `verify-stats-handbook` | Validate handbook code | Auto-check CRAN versions, calculates review cycle from activity |
-| 🔭 `frontier-tracker` | Track frontier labs | Time-sorted latest findings |
-| 🎓 `phd-proposal-writer` | PhD proposal writing | Dynamic reference coverage, timeliness annotations |
-| 📚 `zotero-assistant` | Query Zotero | — |
-| 📝 `obsidian-assistant` | Read/write Obsidian | — |
+| Agent | Trigger |
+|:------|:--------|
+| 📖 `paper-analyzer` | Paper DOI or abstract provided |
+| 📊 `stats-assistant` | Code/methods/packages involved |
+| 🔍 `stats-method-finder` | Unfamiliar method requested |
+| 🧠 `ima-smart-search` | Domain maps to ≥1 ima KB |
+| ✅ `verify-stats-handbook` | Handbook chapter explicitly requested |
+| 🔭 `frontier-tracker` | Lab tracking explicitly requested |
+| 🎓 `phd-proposal-writer` | PhD proposal explicitly requested |
+| 📚 `zotero-assistant` | Zotero query involved |
+| 📝 `obsidian-assistant` | Obsidian write/read involved |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,21 +119,13 @@ Restart Reasonix — everything is ready.
 
 | Service | Engine | Best For |
 |:--------|:-------|:---------|
-| `tavily` | AI deep search | Broad web |
-| `exa` | Semantic search | Meaning-aware search |
-| `scholar` | Google Scholar | Academic papers |
-| `article` | Article metadata | Full abstracts |
-| `scholarly` | Multi-source | Cross-database search |
-| `ima` | ima OpenAPI | **13 knowledge bases + notes (14 tools)** |
+| `tavily` / `exa` / `scholar` / `article` / `scholarly` | Multi-engine search | 5-source parallel |
+| `ima` | ima OpenAPI | 13 KBs, IG-keyword routing, MoE discovery |
 | `rplay` | R 4.6.0 | Morphometrics, isotopes, community ecology |
 | `coderunner` | Sandbox | Multi-language execution |
-| `echarts` | ECharts | Publication-ready charts |
-| `ocr` | PaddleOCR | Chinese/English OCR |
-| `ocr-fallback` | Tesseract.js | Offline OCR |
-| `playwright` | Chromium | Web scraping |
-| `git` | Git CLI | Version control |
-| `github` | GitHub API | Repository management |
-| `zotero` | SQLite | Zotero library query |
+| `echarts` / `ocr` / `ocr-fallback` / `playwright` | Viz + extraction | Charts, OCR, scraping |
+| `git` / `github` | Version control | Repo management |
+| `zotero` | SQLite | Reference library |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -147,43 +135,33 @@ Restart Reasonix — everything is ready.
 
 ```
 fish-ecology-assistant/
-├── README.md                 ← English
-├── README.zh.md              ← 中文
-│
+├── README.md · README.zh.md
 ├── .reasonix/
 │   ├── mcp-servers/          ← 16 MCP wrappers
-│   │   └── ima-server.mjs   ← 14 tools (KB + notes + discovery + multi-search)
-│   │
-│   ├── skills/               ← 12 AI subagent playbooks
-│   │   ├── ima-smart-search.md       ← Cross-KB intelligent search
-│   │   ├── verify-stats-handbook.md  ← Auto CRAN version check
-│   │   ├── paper-analyzer.md         ← Timeline + emergence detection
-│   │   ├── research-analyst.md       ← Consensus evolution + emergence signals
-│   │   ├── research-writer.md        ← Calibrated language
-│   │   └── ... (7 more skills)
-│   │
+│   │   └── ima-server.mjs   ← 14 tools (KB + MoE discovery + IG routing)
+│   ├── skills/               ← 12 AI subagents
+│   │   ├── karpathy-guard.md        ← Entropy Budget + Panta Rhei
+│   │   ├── research-orchestrator.md ← Sparse activation scheduler
+│   │   ├── verify-stats-handbook.md ← P(stale) scoring + differential verification
+│   │   ├── ima-smart-search.md      ← IG keyword optimization + dedup
+│   │   └── ... (8 more)
 │   ├── handbooks/
-│   │   ├── stats-methods.md   ← Stats handbook (version-tracked + review dates)
-│   │   └── learning-guide.md  ← Learning path guide
-│   │
-│   └── setup-migrate.ps1     ← One-click setup script
-│
-└── research_output/          ← Generated reports
+│   │   ├── stats-methods.md   ← Version-tracked R templates
+│   │   └── learning-guide.md  ← Learning paths
+│   └── setup-migrate.ps1     ← One-click setup
+└── research_output/
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
-## 🌱 Panta Rhei · Everything Flows
+## 🌱 Panta Rhei · Powered by DeepSeek
 
-> Heraclitus said: No man ever steps in the same river twice.
->
-> We say: You can't analyze today's ecological data with last month's R package versions.
+> Heraclitus: No man ever steps in the same river twice.
+> DeepSeek: Smarter algorithms beat bigger models.
 
-This project is not a fixed toolset — it's a **living system**. Every component has built-in expiry awareness, version tracking, and emergence detection. As your research deepens, R packages update, and new methods emerge, it evolves with you.
-
-**Last updated: 2026-06-04**
+**Last updated: 2026-06-05**
 **Runtime: Reasonix Code · Powered by DeepSeek**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
