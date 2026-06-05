@@ -1,257 +1,191 @@
-﻿<p align=center>
-  🇬🇧 <a href=README.md>English</a>
+﻿<p align="center">
+  🇬🇧 <a href="README.md">English</a>
 </p>
 
-<div align=center>
-  <h1>🧠 Reasonix 研究助手</h1>
-  <p><strong>把你的编码智能体变成博士级研究团队。</strong></p>
-  <p>16 个 MCP 工具 · 12 个 AI 子智能体 · 5 引擎搜索 · 一键迁移</p>
+<div align="center">
+  <h1>🌊 万物皆变 · Panta Rhei</h1>
+  <p><strong>把你的编码智能体变成拥有动态世界观的博士级研究团队。</strong></p>
+  <p>16 MCP 工具 · 12 AI 子智能体 · 5 引擎搜索 · 13 个知识库</p>
 </div>
 
-<p align=center>
-  <a href=LICENSE><img src=https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square alt=License></a>
-  <a href=#><img src=https://img.shields.io/badge/Reasonix_Code-6366f1?style=flat-square alt=Reasonix></a>
-  <a href=#><img src=https://img.shields.io/badge/MCP-16-22c55e?style=flat-square alt=MCP:16></a>
-  <a href=#><img src=https://img.shields.io/badge/智能体-12-f59e0b?style=flat-square alt=智能体:12></a>
-  <a href=USERGUIDE.md><img src=https://img.shields.io/badge/文档-用户指南-0ea5e9?style=flat-square alt=文档></a>
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
+  <a href="#"><img src="https://img.shields.io/badge/动态世界观-core-6366f1?style=flat-square" alt="动态世界观"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MCP-16-22c55e?style=flat-square" alt="MCP:16"></a>
+  <a href="#"><img src="https://img.shields.io/badge/智能体-12-f59e0b?style=flat-square" alt="智能体:12"></a>
 </p>
-
-<details>
-  <summary>📖 目录</summary>
-  <ol>
-    <li><a href=#-为什么做这个>为什么做这个</a></li>
-    <li><a href=#-你能得到什么>你能得到什么</a></li>
-    <li><a href=#-架构>架构</a></li>
-    <li><a href=#-快速上手>快速上手</a></li>
-    <li><a href=#-开始使用>开始使用</a></li>
-    <li><a href=#-ai-子智能体-skills>AI 子智能体</a></li>
-    <li><a href=#-mcp-服务工具>MCP 服务工具</a></li>
-    <li><a href=#-项目结构>项目结构</a></li>
-    <li><a href=#-参与贡献>参与贡献</a></li>
-    <li><a href=#-许可证>许可证</a></li>
-  </ol>
-</details>
 
 ---
 
-## 🤔 为什么做这个
+## 🏛️ 核心哲学
 
-Reasonix Code 本身能写代码，但科研不只是写代码——它还需要检索学术数据库、拆解问题、交叉验证来源、跑统计模型、OCR 扫描论文、查询文献管理器、迭代修改稿件。
+> **世界是动态的，知识是暂时的，涌现是常态。**
 
-这个仓库把所有这些打包成一个可移植的配置。
+这不是一句口号，而是贯穿整个项目每一行代码、每一次搜索、每一篇分析的**操作系统**。
 
-| 能力 | 原生 Reasonix | **加上 fish-ecology-assistant** |
-|:-----|:-------------:|:----------------------:|
-| 搜索引擎 | 1 个 (`web_search`) | **5 个** (tavily, exa, scholar, article, scholarly) |
+### 三大信条
+
+**🌍 世界是动态的**
+R 包在更新，物种分布在变化，科学共识在演变，气候变化在重塑生态系统。今天正确的结论半年后可能过时。我们**不把任何知识当作永恒真理**，而是放在时间轴上动态看待。
+
+**📖 知识是暂时的**
+科学精神的基石是证伪主义（Popper）。没有发现是终极真理，只有"当前最佳解释"。我们使用 **calibrated language**（校准语言）——说"证据表明"而不说"证明了"，说"Smith(2022)发现"而不说"研究表明"。每一个输出都标注时间锚点。
+
+**🔬 涌现是常态**
+生命、意识、生态系统、AI 推理能力——都是**涌现**的结果。单独分析局部拼凑不出整体。当 ≥3 个独立来源指向同一个非预期模式时，系统自动标记为**涌现信号**，而不是当成异常值忽略。
+
+### 为什么这对科研至关重要
+
+| 风险 | 传统做法 | 动态世界观的做法 |
+|:-----|:---------|:----------------|
+| **时效性差** | 用 2020 年的代码跑 2026 年的数据 | 包版本自动检查，标记"最后验证于 glmmTMB v1.1.10" |
+| **过度自信** | "研究表明 X" | "Smith(2022)发现X，但Jones(2024)补充了Y" |
+| **忽略新信号** | 把异常值当噪声 | ≥3个独立来源 → 涌现信号，主动追踪 |
+| **知识僵化** | 手册写死不再更新 | 验证记录含"下次复查"日期，按包活跃度动态计算 |
+
+---
+
+## 🤔 这个项目是什么
+
+**Fish Ecology Assistant** 是一个将 [Reasonix Code](https://github.com/esengine/deepseek-reasonix) 从通用编码助手转变为**专业鱼类生态学研究团队**的完整配置包。
+
+它集成了 16 个 MCP 工具、12 个领域 AI 子智能体、5 引擎并行搜索、自动化的 5 阶段研究流水线，以及 R 统计计算环境——所有输出都遵循上述动态世界观。
+
+| 能力 | 原生 Reasonix | **加上本配置** |
+|:-----|:-------------:|:--------------:|
+| 搜索引擎 | 1 个 | **5 个** (tavily, exa, scholar, article, scholarly) |
 | MCP 服务 | 0 | **16 个** |
-| AI 子智能体 | 4 个（通用） | **12 个**（领域专用） |
+| AI 子智能体 | 4 个（通用） | **12 个**（领域专用，含涌现检测） |
 | R 统计 | — | ✅ R 4.6.0 + 20+ 生态学包 |
 | OCR 文字识别 | — | ✅ PaddleOCR + Tesseract.js |
 | 文献管理器 | — | ✅ 直接查询 Zotero |
-| 研究流水线 | — | ✅ 5 阶段 + 自动审查 |
+| 研究流水线 | — | ✅ 5 阶段 + 自动审查 + 涌现检测 |
 | 知识库 | — | ✅ 连接 13 个 ima 知识库 |
 | 新机器配置 | 手动 | ✅ 一个脚本，5 分钟 |
 
-<p align=right>(<a href=#readme-top>回到顶部</a>)</p>
-
----
-
-## 🎁 你能得到什么
-
-| 类别 | 内容 | 用途 |
-|:-----|:-----|:-----|
-| 🔍 **5 个搜索引擎** | tavily, exa, scholar, article, scholarly | 从学术数据库到全网 |
-| 📊 **R 统计** | R 4.6.0 + 20+ 生态学包 | 形态测量、同位素、群落分析 |
-| 🧠 **13 个知识库** | ima 知识库 MCP 集成 | 搜索你的私有和订阅知识库 |
-| 🖼️ **双引擎 OCR** | PaddleOCR + Tesseract.js | 扫描论文和截图文字提取 |
-| 📚 **Zotero 集成** | 直接 SQL 查询 | 不离开对话查文献库 |
-| 📝 **Obsidian 集成** | 读写你的 Obsidian 库 | 研究笔记沉淀到知识库 |
-| 🌐 **浏览器自动化** | Playwright | 网页数据抓取和截图 |
-| 📈 **图表生成** | ECharts | 可发表的图表 |
-| 🎓 **博士申请书写器** | 结构化生成+参考文献 | 从研究主题到完整 proposal |
-| 🔄 **自审流水线** | 4 维评分 + 3 轮修订 | 质量可控的输出 |
-| 🚀 **一键迁移** | `setup-migrate.ps1` | 克隆 → 运行 → 完成 |
-
-<p align=right>(<a href=#readme-top>回到顶部</a>)</p>
-
----
-
-## 🏗 架构
-
-<pre>
-┌──────────────────────────┐
-│  研究 X 主题， │
-│ 跑完整流水线           │     编排器
-│                           │   (主调度器)
-└──────────┬───────────────┘   12 skills · 16 tools
-           │
-    ┌──────▼───────┐    ┌─────────────────┐
-    │ ① 规划器     │───▶│ 子方向          │
-    │  🧑‍💼 Plan   │    │  关键词          │
-    └──────┬───────┘    │  搜索策略        │
-           │            └─────────────────┘
-    ┌──────▼───────┐
-    │ ② 执行器     │    5 引擎并行
-    │  🔍 Search  │    tavily · exa · scholar
-    └──────┬───────┘    article · scholarly
-           │
-    ┌──────▼───────┐
-    │ ③ 分析师     │    分类、模式识别、
-    │  📊 Analyze │    矛盾检测、涌现信号
-    └──────┬───────┘
-           │
-    ┌──────▼───────┐
-    │ ④ 写手       │    结构化综述
-    │  ✍️ Write   │    含引用
-    └──────┬───────┘
-           │
-    ┌──────▼───────┐    ┌──────────────┐
-    │ ⑤ 审查员     │───▶│ ✅通过→保存  │
-    │  ✅ Review  │    └──────────────┘
-    └──────┬───────┘    ┌──────────────┐
-           └────────────│ 🔄 修订(≤3次)│
-                        └──────────────┘
-</pre>
-
-<p align=right>(<a href=#readme-top>回到顶部</a>)</p>
+<p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
 ---
 
 ## ⚡ 快速上手
 
-配置好后，直接对 Reasonix 说：
+```bash
+git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
+cd fish-ecology-assistant
+powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
+```
+
+重启 Reasonix，全部就绪。
+
+### 你说，它做
 
 | 你说 | 它做什么 |
 |:-----|:---------|
-| `研究[主题]——跑完整流水线` | 5 阶段：规划→搜索→分析→写作→审查 |
-| `在 ima 知识库里搜一下[关键词]` | 自动路由到正确知识库，搜索所有相关库，合成结果 |
-| `帮我做[统计分析]` | R 代码 + 方法选择 + 诊断 |
-| `分析这篇论文：[DOI]` | 深度剖析：方法、质量、可复现性 |
-| `查一下我的 Zotero 里关于[主题]` | 直接 SQL 查询文献库 |
-| `用 paddleocr 提取这个图片的文字` | OCR 识别中英文 |
-| `画一个图表显示[数据]` | ECharts 可视化 |
+| `"研究长江禁渔对鱼类群落的影响——跑流水线"` | 5 阶段：规划→搜索→分析→写作→审查（中英双语搜索，自动标记涌现信号） |
+| `"验证手册 2.2 章"` | 自动查 CRAN 包版本，比对手册，计算复查日期 |
+| `"在 ima 知识库里搜一下同位素生态位"` | 自动路由到正确知识库，多库并行搜索，合成结果 |
+| `"帮我做混合效应模型"` | R 代码 + 方法选择 + 诊断，标注"截至 YYYY-MM 的推荐做法" |
 
-> 💡 **越具体越好。** `找 2022–2025 年关于长江禁渔的 ≥8 篇同行评审论文` 比 `搜禁渔` 好得多。
-
-<p align=right>(<a href=#readme-top>回到顶部</a>)</p>
+<p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
 ---
 
-## 🚀 开始使用
-
-```bash
-# 1. 克隆仓库
-git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
-cd fish-ecology-assistant
-
-# 2. 运行一键迁移脚本
-powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
-
-# 3. 重启 Reasonix — 16 个工具 + 12 个技能全部就绪
-```
-
-脚本自动处理：依赖检查 → 配置生成 → API 密钥验证 → 路径检测。
-
-> ⚠️ API 密钥文件（`tavily.bat` 等）被 git 忽略——从原机器复制。
-
-<p align=right>(<a href=#readme-top>回到顶部</a>)</p>
-
----
-
-## 🧠 AI 子智能体 (Skills)
+## 🧠 AI 子智能体
 
 ### 研究流水线（5 阶段自动编排）
 
-| # | 智能体 | 角色 | 功能 |
-|:-:|:-------|:-----|:-----|
-| 🎯 | `research-orchestrator` | **调度器** | 调度全部 5 阶段，重试和回退 |
-| ① | `research-planner` | 🧑‍💼 规划 | 拆解问题→关键词+策略，**中英双语** |
-| ② | `research-executor` | 🔍 搜索 | 5 引擎并行搜索，**中英双语**查询 |
-| ③ | `research-analyst` | 📊 分析 | 分类、模式、矛盾、**涌现检测** |
-| ④ | `research-writer` | ✍️ 写作 | 结构化综述，时间锚定 |
+| # | 智能体 | 角色 | 动态世界观体现 |
+|:-:|:-------|:-----|:--------------|
+| 🎯 | `research-orchestrator` | **调度器** | 调度全部 5 阶段 |
+| ① | `research-planner` | 🧑‍💼 规划 | 中英双语关键词，覆盖国内外文献 |
+| ② | `research-executor` | 🔍 搜索 | 5 引擎并行，标注文献发表年份 |
+| ③ | `research-analyst` | 📊 分析 | **共识演变时间轴** + **涌现信号检测** |
+| ④ | `research-writer` | ✍️ 写作 | **calibrated language**，时间锚定，不确定性标记 |
 | ⑤ | `research-reviewer` | ✅ 审查 | 4 维评分，≤3 轮修订 |
 
 ### 领域专家
 
-| 智能体 | 功能 |
-|:-------|:------|
-| 🎓 `phd-proposal-writer` | 结构化博士申请 proposal |
-| 📊 `stats-assistant` | R 代码 + 方法选择 + 结果解读 |
-| 🔍 `stats-method-finder` | 搜索 CRAN、期刊、教科书 |
-| 📖 `paper-analyzer` | 深度分析：质量评分+可复现性+涌现信号 |
-| 🔭 `frontier-tracker` | 跟踪 15+ 个顶级鱼类生态实验室 |
-| 📚 `zotero-assistant` | 直接 SQL 查 Zotero |
-| 📝 `obsidian-assistant` | 读写 Obsidian 库 |
-| 🧠 `ima-smart-search` | 跨知识库智能搜索（自动路由到正确库） |
-| ✅ `verify-stats-handbook` | 对比 CRAN + ima 验证手册代码 |
+| 智能体 | 功能 | 哲学体现 |
+|:-------|:-----|:---------|
+| 📖 `paper-analyzer` | 深度分析论文 | **时间轴**（发表时→至今→当前）+ **涌现信号** |
+| 📊 `stats-assistant` | R 代码+方法选择 | 代码标注版本，方法标注验证日期 |
+| 🔍 `stats-method-finder` | 搜索 CRAN/期刊 | 标记方法的"最后验证时间" |
+| 🧠 `ima-smart-search` | 跨知识库智能搜索 | 动态发现 KB，不过期不硬编码 |
+| ✅ `verify-stats-handbook` | 验证手册代码 | 自动查 CRAN 版本，按活跃度算复查周期 |
+| 🔭 `frontier-tracker` | 跟踪前沿实验室 | 按时间排序最新发现 |
+| 🎓 `phd-proposal-writer` | 博士 proposal | 参考文献动态覆盖，标注时效性 |
+| 📚 `zotero-assistant` | 查 Zotero 文献库 | — |
+| 📝 `obsidian-assistant` | 读写 Obsidian | — |
 
-> 🌱 **动态世界观**：所有输出标注时间戳，使用不确定性语言，标记涌现模式。科学在演变——知识是暂时的。
-
-<p align=right>(<a href=#readme-top>回到顶部</a>)</p>
+<p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
 ---
 
-## 📡 MCP 服务（工具）
+## 📡 MCP 服务（16 个工具）
 
-| 服务 | 引擎 | 最佳用途 |
-|:-----|:-----|:---------|
-| `tavily` | AI 深度搜索 | 全网搜索，15 条结果 |
+| 服务 | 引擎 | 用途 |
+|:-----|:-----|:------|
+| `tavily` | AI 深度搜索 | 全网搜索 |
 | `exa` | 语义搜索 | 按含义搜索 |
-| `scholar` | Google Scholar | 学术论文、引用数 |
+| `scholar` | Google Scholar | 学术论文 |
 | `article` | 文献元数据 | 全文摘要 |
 | `scholarly` | 多源聚合 | 跨库学术搜索 |
-| `ima` | ima OpenAPI | 13 个知识库 + 笔记（12 个工具） |
+| `ima` | ima OpenAPI | **13 个知识库 + 笔记（14 个工具）** |
 | `rplay` | R 4.6.0 | 形态测量、同位素、群落生态 |
-| `coderunner` | 沙箱 | R / Python / JS / Bash |
-| `echarts` | ECharts | 可发表的图表 |
-| `ocr` | PaddleOCR | 中英文文字识别 |
+| `coderunner` | 沙箱 | 多语言代码执行 |
+| `echarts` | ECharts | 图表可视化 |
+| `ocr` | PaddleOCR | 中英文 OCR |
 | `ocr-fallback` | Tesseract.js | 离线 OCR |
-| `playwright` | Chromium | 网页抓取、截图 |
+| `playwright` | Chromium | 网页抓取 |
 | `git` | Git CLI | 版本控制 |
 | `github` | GitHub API | 仓库管理 |
-| `zotero` | SQLite（只读） | Zotero 文献库查询 |
+| `zotero` | SQLite | Zotero 查询 |
 
-<p align=right>(<a href=#readme-top>回到顶部</a>)</p>
+<p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
 ---
 
 ## 📁 项目结构
 
-<pre>
+```
 fish-ecology-assistant/
 ├── README.md                 ← English
 ├── README.zh.md              ← 中文
-├── USERGUIDE.md / GUIDE.md / CHEATSHEET.md
 │
 ├── .reasonix/
-│   ├── mcp-servers/          ← 16 个 MCP wrapper
+│   ├── mcp-servers/          ← 16 个 MCP 包装器
+│   │   └── ima-server.mjs   ← 14 个工具（知识库+笔记+动态发现+多库搜索）
+│   │
 │   ├── skills/               ← 12 个 AI 子智能体
-│   ├── handbooks/            ← 统计手册 + 学习手册
+│   │   ├── ima-smart-search.md       ← 跨库智能搜索
+│   │   ├── verify-stats-handbook.md  ← 自动 CRAN 版本检查
+│   │   ├── paper-analyzer.md         ← 时间轴+涌现检测
+│   │   ├── research-analyst.md       ← 共识演变+涌现信号
+│   │   ├── research-writer.md        ← calibrated language
+│   │   └── ...（其余 7 个技能）
+│   │
+│   ├── handbooks/
+│   │   ├── stats-methods.md   ← 统计方法手册（含版本追踪+复查日期）
+│   │   └── learning-guide.md  ← 学习路径手册
+│   │
 │   └── setup-migrate.ps1     ← 一键安装脚本
 │
 └── research_output/          ← 生成的研究报告
-</pre>
+```
 
-<p align=right>(<a href=#readme-top>回到顶部</a>)</p>
-
----
-
-## 🤝 参与贡献
-
-把这个适配到物理、医学或法律领域了？欢迎 PR！
-
-**改进方向：** Linux/macOS 移植 · 其他领域模板 · Docker 部署
-
-见 [issues 页](https://github.com/fangtaocai041/fish-ecology-assistant/issues)。
-
-<p align=right>(<a href=#readme-top>回到顶部</a>)</p>
+<p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
 ---
 
-## 📄 许可证
+## 🌱 万物皆变 · Panta Rhei
 
-MIT — 见 [LICENSE](LICENSE)。
+> 赫拉克利特说：人不能两次踏进同一条河流。
+>
+> 我们说：你也不能用上个月的代码分析今天的生态数据。
 
-基于 Reasonix Code 构建 · 由 DeepSeek 驱动
+这个项目不是一套固定的工具集——它是一个**活的系统**。每个组件都内置了过期机制、版本追踪和涌现感知。随着你的研究深入、R 包更新、新方法涌现，它会和你一起进化。
 
-<p align=right>(<a href=#readme-top>回到顶部</a>)</p>
+**最后更新：2026-06-04**
+**适用环境：Reasonix Code · DeepSeek 驱动**
+
+<p align="right">(<a href="#readme-top">回到顶部</a>)</p>
