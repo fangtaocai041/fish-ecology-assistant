@@ -2,65 +2,73 @@
   🇨🇳 <a href="README.zh.md">中文</a>
 </p>
 
-<p align="center">
-  <em>"We both step and do not step into the same rivers."</em><br>
-  <sub>Heraclitus, Fragment B49a · ~500 BCE</sub>
-</p>
-
 <div align="center">
-  <h1>🌊 Panta Rhei</h1>
-  <p><strong>Your coding agent, with a sense of time.</strong></p>
-  <p>16 MCP tools &nbsp;·&nbsp; 12 subagents &nbsp;·&nbsp; 5 engines &nbsp;·&nbsp; 13 knowledge bases</p>
+  <h1>🌊 Panta Rhei · Everything Flows</h1>
+  <p><strong>Turn your coding agent into a PhD-level research team with a dynamic worldview and DeepSeek-grade engineering efficiency.</strong></p>
+  <p>16 MCP tools · 12 AI subagents · 5 search engines · 13 knowledge bases</p>
 </div>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License"></a>
-  <a href="#"><img src="https://img.shields.io/badge/panta_rhei-6366f1?style=flat-square" alt="Panta Rhei"></a>
-  <a href="#"><img src="https://img.shields.io/badge/tools-16-22c55e?style=flat-square" alt="16 tools"></a>
-  <a href="#"><img src="https://img.shields.io/badge/agents-12-f59e0b?style=flat-square" alt="12 agents"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
+  <a href="#"><img src="https://img.shields.io/badge/dynamic_worldview-core-6366f1?style=flat-square" alt="Dynamic Worldview"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MCP-16-22c55e?style=flat-square" alt="MCP:16"></a>
+  <a href="#"><img src="https://img.shields.io/badge/subagents-12-f59e0b?style=flat-square" alt="Subagents:12"></a>
 </p>
 
 ---
 
-## Philosophy
+## 🏛️ Core Philosophy
 
-> The world is dynamic. Knowledge is provisional. Emergence is the norm.
+> **The world is dynamic. Knowledge is provisional. Emergence is the norm.**
 
-Research is not about collecting answers. It is about **seeing the world as it is, asking what hasn't been asked, and changing what can be changed.** Knowledge is the footprint. The question is the path.
+This isn't a slogan. It's the operating system that runs through every line of code, every search query, and every paper analysis in this project.
 
-**The world moves.**
-R packages update. Species ranges shift. Scientific consensus evolves. A correct answer today may be wrong in six months. We anchor everything to time — no conclusion treated as final.
+### Three Tenets
 
-**Knowledge is provisional.**
-Falsifiability is the bedrock of science. Every finding is only "the best current explanation." We use calibrated language: "evidence suggests" not "proves." "Smith (2022) found" not "studies show." Every output carries a timestamp.
+**🌍 The World Is Dynamic**
+R packages update. Species distributions shift. Scientific consensus evolves. Climate change reshapes ecosystems. A correct conclusion today may be obsolete in six months. **We treat no knowledge as eternal truth** — everything is anchored on a timeline.
 
-**Emergence is everywhere.**
-Life, consciousness, ecosystems — none can be understood by analyzing parts alone. When three or more independent sources converge on an unexpected pattern, we flag it as an **emergence signal**. Not noise. A message.
+**📖 Knowledge Is Provisional**
+The bedrock of science is falsifiability (Popper). No finding is final — only "the best current explanation." We use **calibrated language**: say "evidence suggests" not "proves," say "Smith (2022) found" not "studies show." Every output carries a timestamp.
 
-| Without this | With this |
-|:-------------|:----------|
-| Run 2020 code on 2026 data | Auto-check CRAN, mark "verified on glmmTMB v1.1.10" |
-| "Research shows X" | "Smith (2022) found X; Jones (2024) added Y" |
-| Dismiss outliers as noise | ≥3 independent sources → actively tracked |
-| Frozen documentation | Dynamic review dates, probabilistic stale scoring |
+**⚡ Efficiency Is Intelligence**\
+Energy is finite. Computation has a cost. DeepSeek taught us: smarter algorithms beat bigger models. This project follows the same principle — entropy-budgeted compute, MoE sparse routing that fires only needed modules, differential verification that checks only changed packages. Donnot compute what you donnot need.
+
+**🔬 Emergence Is the Norm**
+Life, consciousness, ecosystems, AI reasoning — all are **emergent** phenomena. Analyzing parts in isolation never reveals the whole. When ≥3 independent sources point to the same unexpected pattern, the system flags it as an **emergence signal** — not dismisses it as noise.
+
+### Why This Matters for Research
+
+| Risk | Traditional Approach | Dynamic Worldview Approach |
+|:-----|:--------------------|:---------------------------|
+| **Stale knowledge** | Run 2020 code on 2026 data | Auto-check CRAN versions, mark "verified on glmmTMB v1.1.10" |
+| **Overconfidence** | "Research shows X" | "Smith (2022) found X, but Jones (2024) added Y" |
+| **Ignoring signals** | Dismiss outliers as noise | ≥3 independent sources → emergence signal, actively tracked |
+| **Frozen docs** | Handbook never updated | Verification log with "next review" date, calculated from package activity |
 
 ---
 
-## What This Is
+## 🤔 What Is This
 
-**Fish Ecology Assistant** — a configuration that turns a general-purpose coding agent into a fish ecology research team governed by the principles above.
+**Fish Ecology Assistant** transforms [Reasonix Code](https://github.com/esengine/deepseek-reasonix) from a general-purpose coding agent into a **domain-specialized fish ecology research team** — with 16 integrated MCP tools, 12 AI subagents, a 5-stage auto-orchestrated research pipeline, R statistics, and 13 connected knowledge bases. All outputs follow the dynamic worldview above.
 
-| | Before | After |
-|:--|:-----:|:-----:|
-| Search engines | 1 | **5** |
+| Capability | Vanilla Reasonix | **With This Config** |
+|:-----------|:----------------:|:--------------------:|
+| Search engines | 1 | **5** (tavily, exa, scholar, article, scholarly) |
 | MCP services | 0 | **16** |
-| AI subagents | 4 generic | **12** (emergence-aware) |
-| R statistics | — | 20+ ecology packages |
-| Knowledge bases | — | 13 ima KBs, dynamic discovery |
+| AI subagents | 4 (generic) | **12** (domain-specialized, with emergence detection) |
+| R statistics | — | ✅ R 4.6.0 + 20+ ecology packages |
+| OCR | — | ✅ PaddleOCR + Tesseract.js |
+| Reference manager | — | ✅ Direct Zotero SQL queries |
+| Research pipeline | — | ✅ 5-stage + auto-review + emergence detection |
+| Knowledge bases | — | ✅ 13 ima knowledge bases connected |
+| Setup on new machine | Manual | ✅ One script, 5 minutes |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
-## Quick Start
+## ⚡ Quick Start
 
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
@@ -68,79 +76,116 @@ cd fish-ecology-assistant
 powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
 ```
 
-| You say | It does |
-|:--------|:--------|
-| `Research Yangtze fishing ban — run pipeline` | 5 stages · plan → search → analyze → write → review · bilingual · emergence-aware |
-| `Verify handbook chapter 2.2` | Auto-check CRAN · probabilistic stale scoring · differential verification |
-| `Search ima for stable isotope niche` | Auto-route to correct KBs · multi-KB parallel · IG-keyword ordering |
-| `Help me with a mixed effects model` | R code · method selection · diagnostics · version-annotated |
+Restart Reasonix — everything is ready.
+
+### Say This, Get That
+
+| Say this | What happens |
+|:---------|:-------------|
+| `"Research Yangtze fishing ban effects on fish — run full pipeline"` | 5 stages: plan → search → analyze → write → review (bilingual EN/CN, auto emergence signals) |
+| `"Verify handbook chapter 2.2"` | Auto-check CRAN versions, compare with handbook, calculate next review date |
+| `"Search my ima knowledge bases for stable isotope niche"` | Auto-route to correct KBs, parallel search, synthesize results |
+| `"Help me with a mixed effects model"` | R code + method selection + diagnostics, annotated "as of YYYY-MM recommended practice" |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
-## Subagents
+## 🧠 AI Subagents
 
-| Agent | Does | Activates |
-|:------|:-----|:----------|
-| 🎯 Research Pipeline (×5) | Plan → Search → Analyze → Write → Review | Stage-by-stage trigger |
-| 📖 Paper Analyzer | Timeline analysis + emergence signals | DOI or abstract given |
-| 📊 Stats Assistant | R code + method selection | Code or methods involved |
-| 🔍 Method Finder | Search CRAN, journals, textbooks | Unfamiliar method requested |
-| 🧠 ima Smart Search | Cross-13-KB intelligent search | Domain maps to ≥1 KB |
-| ✅ Handbook Verifier | Auto CRAN check + stale scoring | Explicitly requested |
-| 🎓 Proposal Writer | PhD research proposal | Explicitly requested |
+### Research Pipeline (5-stage auto-orchestrated)
 
----
+| # | Agent | Role | Dynamic Worldview Feature |
+|:-:|:------|:-----|:--------------------------|
+| 🎯 | `research-orchestrator` | **Scheduler** | Coordinates all 5 stages |
+| ① | `research-planner` | 🧑‍💼 Plan | Bilingual EN/CN keywords, covers local + international lit |
+| ② | `research-executor` | 🔍 Search | 5 engines parallel, annotates publication year |
+| ③ | `research-analyst` | 📊 Analyze | **Consensus evolution timeline** + **emergence signal detection** |
+| ④ | `research-writer` | ✍️ Write | **Calibrated language**, temporal anchoring, uncertainty markers |
+| ⑤ | `research-reviewer` | ✅ Review | 4-dimension scoring, ≤3 revision rounds |
 
-## Tools
+### Domain Specialists
 
-| Category | Services |
-|:---------|:---------|
-| Search | `tavily` · `exa` · `scholar` · `article` · `scholarly` |
-| Knowledge | `ima` (13 KBs · 14 tools · MoE routing) |
-| Compute | `rplay` (R 4.6.0) · `coderunner` |
-| Visual | `echarts` · `ocr` · `ocr-fallback` · `playwright` |
-| System | `git` · `github` · `zotero` |
+| Agent | Does | Philosophical Feature |
+|:------|:------|:----------------------|
+| 📖 `paper-analyzer` | Deep paper analysis | **Timeline** (at publication → since → today) + **emergence signals** |
+| 📊 `stats-assistant` | R code + method selection | Code annotated with version, method with verification date |
+| 🔍 `stats-method-finder` | Search CRAN/journals | Marks "last verified" timestamp on methods |
+| 🧠 `ima-smart-search` | Cross-KB intelligent search | Dynamic KB discovery, no hardcoded IDs |
+| ✅ `verify-stats-handbook` | Validate handbook code | Auto-check CRAN versions, calculates review cycle from activity |
+| 🔭 `frontier-tracker` | Track frontier labs | Time-sorted latest findings |
+| 🎓 `phd-proposal-writer` | PhD proposal writing | Dynamic reference coverage, timeliness annotations |
+| 📚 `zotero-assistant` | Query Zotero | — |
+| 📝 `obsidian-assistant` | Read/write Obsidian | — |
 
----
-
-## How It Works
-
-Philosophy is the soul. Engineering is the body. **Energy is finite — smarter algorithms beat brute force.**
-
-**Entropy budget** — PhD topic: full pipeline. Quick question: single step. No wasted compute.
-
-**Sparse activation** — Planner always runs. Executor only with search queries. Analyst only with results. Writer only with findings. Modules don't idle.
-
-**Differential verification** — Only check packages that actually changed since last review.
-
-**Information gain routing** — P0 exact terms first. Stop on hit. P2 redundant terms skip.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
-## Structure
+## 📡 MCP Services (16 Tools)
+
+| Service | Engine | Best For |
+|:--------|:-------|:---------|
+| `tavily` | AI deep search | Broad web |
+| `exa` | Semantic search | Meaning-aware search |
+| `scholar` | Google Scholar | Academic papers |
+| `article` | Article metadata | Full abstracts |
+| `scholarly` | Multi-source | Cross-database search |
+| `ima` | ima OpenAPI | **13 knowledge bases + notes (14 tools)** |
+| `rplay` | R 4.6.0 | Morphometrics, isotopes, community ecology |
+| `coderunner` | Sandbox | Multi-language execution |
+| `echarts` | ECharts | Publication-ready charts |
+| `ocr` | PaddleOCR | Chinese/English OCR |
+| `ocr-fallback` | Tesseract.js | Offline OCR |
+| `playwright` | Chromium | Web scraping |
+| `git` | Git CLI | Version control |
+| `github` | GitHub API | Repository management |
+| `zotero` | SQLite | Zotero library query |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## 📁 Project Structure
 
 ```
 fish-ecology-assistant/
-├── README.md · README.zh.md
+├── README.md                 ← English
+├── README.zh.md              ← 中文
+│
 ├── .reasonix/
-│   ├── mcp-servers/    ← 16 wrappers
-│   ├── skills/         ← 12 subagent playbooks
-│   ├── handbooks/      ← stats + learning
-│   ├── readme-versions/ ← all historical READMEs
-│   └── setup-migrate.ps1
-└── research_output/
+│   ├── mcp-servers/          ← 16 MCP wrappers
+│   │   └── ima-server.mjs   ← 14 tools (KB + notes + discovery + multi-search)
+│   │
+│   ├── skills/               ← 12 AI subagent playbooks
+│   │   ├── ima-smart-search.md       ← Cross-KB intelligent search
+│   │   ├── verify-stats-handbook.md  ← Auto CRAN version check
+│   │   ├── paper-analyzer.md         ← Timeline + emergence detection
+│   │   ├── research-analyst.md       ← Consensus evolution + emergence signals
+│   │   ├── research-writer.md        ← Calibrated language
+│   │   └── ... (7 more skills)
+│   │
+│   ├── handbooks/
+│   │   ├── stats-methods.md   ← Stats handbook (version-tracked + review dates)
+│   │   └── learning-guide.md  ← Learning path guide
+│   │
+│   └── setup-migrate.ps1     ← One-click setup script
+│
+└── research_output/          ← Generated reports
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
-<p align="center">
-  <em>"The sun is new each day."</em> — Heraclitus, Fragment B6<br>
-  <em>"Upon those who step into the same rivers, different and again different waters flow."</em> — Fragment B12<br>
-  <br>
-  Understand the world. Ask what hasn't been asked. Change what can be changed.<br>
-  No answer lasts forever. But a good question can.
-</p>
+## 🌱 Panta Rhei · Everything Flows
 
-<p align="center">
-  <sub>Built with Reasonix Code · Powered by DeepSeek · 2026</sub>
-</p>
+> Heraclitus said: No man ever steps in the same river twice.
+>
+
+This project is not a fixed toolset — it's a **living system**. Every component has built-in expiry awareness, version tracking, and emergence detection. As your research deepens, R packages update, and new methods emerge, it evolves with you.
+
+**Last updated: 2026-06-04**
+**DeepSeek: Smarter algorithms beat bigger models.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
