@@ -43,11 +43,18 @@ Life, consciousness, ecosystems, AI reasoning — all are **emergent** phenomena
 | **Ignoring signals** | Dismiss outliers as noise | ≥3 independent sources → emergence signal, actively tracked |
 | **Frozen docs** | Handbook never updated | Verification log with "next review" date, calculated from package activity |
 
-### ⚡ DeepSeek Engineering — Efficiency Is Intelligence
 
-Energy is finite. Computation has a cost. DeepSeek taught us: smarter algorithms beat bigger models. This project follows the same principle — entropy-budgeted compute, MoE sparse routing that fires only needed modules, differential verification that checks only changed packages. Donot compute what you donot need.
+Energy is finite. Computation has a cost. DeepSeek does not scale parameters — it scales algorithms. This project applies the same engineering philosophy in four concrete implementations:
 
+**Entropy budget** — In research-orchestrator, every pipeline stage has an explicit activation condition. PhD thesis: full pipeline. Casual query: single-step search. Compute is allocated proportionally to question importance.
 
+**Sparse activation** — karpathy-guard defines MoE-style routing rules. Planner always runs (lightweight). Executor only with queries. Analyst only with results. Writer only with findings. Each module is a silent neuron — it fires only when the signal crosses threshold.
+
+**Differential verification** — verify-stats-handbook never runs full checks. Probabilistic stale scoring P(stale) targets only changed packages. Review cycles are jointly determined by update frequency, breaking-change probability, and user dependency — not a fixed 3 months.
+
+**Information-gain routing** — ima-smart-search orders keywords by information gain. P0 exact terms (e.g., glmmTMB) searched first, stops on hit. P2 redundant terms (e.g., data analysis) skipped. Cross-KB deduplication eliminates wasted reads.
+
+Not brute force. Logic. Not more parameters. Smarter algorithms.
 ---
 
 ## 🤔 What Is This
@@ -70,7 +77,7 @@ Energy is finite. Computation has a cost. DeepSeek taught us: smarter algorithms
 
 ---
 
-## ⚡ Quick Start
+## 🐋 Quick Start
 
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
