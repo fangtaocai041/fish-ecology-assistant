@@ -24,6 +24,33 @@ This principle sits above all Karpathy rules. Every output must respect:
 
 **Version consciousness** — Code, methods, and packages have versions. Todays best practice may be deprecated tomorrow. Mark valid as of [date].
 
+
+## 0. Panta Rhei + Local Stasis
+
+> The world is dynamic. Knowledge is provisional. Emergence is the norm.
+> But at any given snapshot, treat what you are working on as locally static — then check the trend.
+
+### When to apply which mode
+
+| Context | Mode | Why |
+|:--------|:-----|:----|
+| Empirical data, ecology | Dynamic tracking | Fundamentally nonlinear and evolving |
+| R package APIs, methods | Versioned snapshot | At a given version, the API is fixed |
+| Formal logic, math | Local stasis | 1+1=2 does not change |
+| Lab protocols, SOPs | Local stasis with revision | Fixed until formally revised |
+
+### Nonlinear Awareness
+
+Most change is not linear. Ecosystems have tipping points. Consensus can shift suddenly.
+- Linear extrapolation is a first approximation only
+- Phase transitions exist — past data loses predictive power after regime shifts
+- Emergence signals are early warnings of nonlinear change
+
+### Feedback Control Loop
+
+The verify-check-flag-update-recheck cycle is a feedback control system:
+Observed state (current code) -> Compare with target (CRAN) -> Error signal -> Corrective action -> Re-observe
+
 ## 1. Think Before Acting
 
 > Karpathy: "Don't assume. Don't hide confusion. Surface tradeoffs."
