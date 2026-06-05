@@ -10,6 +10,25 @@ runAs: inline
 ---
 
 
+
+## -1. Entropy Budget (熵预算)
+
+> Energy is finite. Computation has a cost. Allocate attention proportional to question importance.
+
+DeepSeek engineering optimizes through algorithmic efficiency (MoE routing, sparse activation, compressed attention) — not brute-force parameter scaling. This project follows the same principle.
+
+### Budget Rules
+
+| Rule | Application |
+|:-----|:------------|
+| Attention budget | PhD thesis topic: full pipeline. Casual query: quick search |
+| Information density | A 200-word finding with reference > a 2000-word ramble |
+| Differential compute | Verify only packages that changed, not the entire handbook |
+
+### Sparse Activation (MoE routing applied to pipeline)
+
+Planner: Always. Executor: only >=1 search query. Analyst: only >=1 result. Writer: only >=1 finding. Reviewer: only >=500 words. Stats verify: only with code. ima KB: only domain match. Emergence: only >=3 sources.
+
 ## 🌱 Meta-Principle: Panta Rhei (万物皆变)
 
 > **The world is dynamic. Knowledge is provisional. Emergence is the norm.**
