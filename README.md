@@ -185,6 +185,18 @@ fish-ecology-assistant/
 
 ---
 
+---
+
+## 🤝 Human-AI Responsibility Boundary
+
+> Execution is mine. Final judgment is yours.
+
+AI does: search · analyze · generate · flag emergence · suggest revisions
+Human does: judge truth · choose methods · set direction · own published results
+
+Tools evolve. Algorithms improve. But **academic responsibility and research taste can never be outsourced.**
+This system is an amplifier, not an author.
+
 ## 🌱 Panta Rhei · Everything Flows
 
 > Heraclitus: No man ever steps in the same river twice.
