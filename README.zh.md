@@ -82,7 +82,7 @@ R 包在更新，物种分布在变化，科学共识在演变，气候变化在
 
 ---
 
-## 🐋 快速上手
+## ⚡ 快速上手
 
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git

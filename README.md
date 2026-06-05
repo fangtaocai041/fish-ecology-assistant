@@ -78,7 +78,7 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 
 ---
 
-## 🐋 Quick Start
+## ⚡ Quick Start
 
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
