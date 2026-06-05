@@ -58,8 +58,6 @@ R 包在更新，物种分布在变化，科学共识在演变，气候变化在
 
 ---
 
----
-
 ## 🤔 这个项目是什么
 
 **Fish Ecology Assistant** 是一个将 [Reasonix Code](https://github.com/esengine/deepseek-reasonix) 从通用编码助手转变为**专业鱼类生态学研究团队**的完整配置包。

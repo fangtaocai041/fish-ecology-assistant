@@ -43,6 +43,7 @@ Life, consciousness, ecosystems, AI reasoning — all are **emergent** phenomena
 | **Ignoring signals** | Dismiss outliers as noise | ≥3 independent sources → emergence signal, actively tracked |
 | **Frozen docs** | Handbook never updated | Verification log with "next review" date, calculated from package activity |
 
+## 🐋 One Engineering Principle: Efficiency Is Intelligence
 
 
 Energy is finite. Computation has a cost. DeepSeek does not scale parameters — it scales algorithms. This project applies the same engineering philosophy in four concrete implementations:
@@ -56,8 +57,6 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 **Information-gain routing** — ima-smart-search orders keywords by information gain. P0 exact terms (e.g., glmmTMB) searched first, stops on hit. P2 redundant terms (e.g., data analysis) skipped. Cross-KB deduplication eliminates wasted reads.
 
 
-
----
 ## 🤔 What Is This
 
 **Fish Ecology Assistant** transforms [Reasonix Code](https://github.com/esengine/deepseek-reasonix) from a general-purpose coding agent into a **domain-specialized fish ecology research team** — with 16 integrated MCP tools, 12 AI subagents, a 5-stage auto-orchestrated research pipeline, R statistics, and 13 connected knowledge bases. All outputs follow the dynamic worldview above.
