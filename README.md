@@ -55,7 +55,6 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 **Information-gain routing** — ima-smart-search orders keywords by information gain. P0 exact terms (e.g., glmmTMB) searched first, stops on hit. P2 redundant terms (e.g., data analysis) skipped. Cross-KB deduplication eliminates wasted reads.
 
 Not brute force. Logic. Not more parameters. Smarter algorithms.
----
 
 ## 🤔 What Is This
 
