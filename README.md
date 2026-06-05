@@ -31,9 +31,6 @@ R packages update. Species distributions shift. Scientific consensus evolves. Cl
 **📖 Knowledge Is Provisional**
 The bedrock of science is falsifiability (Popper). No finding is final — only "the best current explanation." We use **calibrated language**: say "evidence suggests" not "proves," say "Smith (2022) found" not "studies show." Every output carries a timestamp.
 
-**⚡ Efficiency Is Intelligence**\
-Energy is finite. Computation has a cost. DeepSeek taught us: smarter algorithms beat bigger models. This project follows the same principle — entropy-budgeted compute, MoE sparse routing that fires only needed modules, differential verification that checks only changed packages. Donnot compute what you donnot need.
-
 **🔬 Emergence Is the Norm**
 Life, consciousness, ecosystems, AI reasoning — all are **emergent** phenomena. Analyzing parts in isolation never reveals the whole. When ≥3 independent sources point to the same unexpected pattern, the system flags it as an **emergence signal** — not dismisses it as noise.
 
@@ -45,6 +42,11 @@ Life, consciousness, ecosystems, AI reasoning — all are **emergent** phenomena
 | **Overconfidence** | "Research shows X" | "Smith (2022) found X, but Jones (2024) added Y" |
 | **Ignoring signals** | Dismiss outliers as noise | ≥3 independent sources → emergence signal, actively tracked |
 | **Frozen docs** | Handbook never updated | Verification log with "next review" date, calculated from package activity |
+
+### ⚡ DeepSeek Engineering — Efficiency Is Intelligence
+
+Energy is finite. Computation has a cost. DeepSeek taught us: smarter algorithms beat bigger models. This project follows the same principle — entropy-budgeted compute, MoE sparse routing that fires only needed modules, differential verification that checks only changed packages. Donot compute what you donot need.
+
 
 ---
 
