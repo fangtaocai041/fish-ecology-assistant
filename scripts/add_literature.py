@@ -47,7 +47,7 @@ TOPIC_KW = {
 
 # 国内关键词
 DOMESTIC_KW = ["yangtze", "china", "chinese", "长江", "中国", "鄱阳湖", "洞庭湖",
-                "汉江", "珠江", "刘凯", "淡水渔业", "水生生物"]
+                "汉江", "珠江", "淡水渔业", "水生生物", "中国科学院"]
 
 
 def fetch_crossref(doi: str) -> dict | None:

@@ -7,9 +7,9 @@ providers:
     api_key_env: "DEEPSEEK_API_KEY"
     models:
       - id: "deepseek-chat"
-        name: "DeepSeek V3"
-        context_window: 65536
-        max_output_tokens: 8192
+        name: "DeepSeek"
+        context_window: 131072
+        max_output_tokens: 16384
         cost_per_1k_input: 0.00014
         cost_per_1k_output: 0.00028
         suitable_for:
@@ -20,9 +20,9 @@ providers:
           - planning
 
       - id: "deepseek-reasoner"
-        name: "DeepSeek R1"
-        context_window: 65536
-        max_output_tokens: 8192
+        name: "DeepSeek (Reasoner)"
+        context_window: 131072
+        max_output_tokens: 16384
         cost_per_1k_input: 0.00055
         cost_per_1k_output: 0.00219
         suitable_for:
