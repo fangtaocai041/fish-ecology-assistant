@@ -1,4 +1,4 @@
-# Reasonix Research Assistant — User Guide
+﻿# Reasonix Research Assistant — User Guide
 
 > When you don't know "what this thing can do" or "how to command it", open this file.
 
@@ -174,3 +174,28 @@ All subagents follow `karpathy-guard` 4 principles:
 ---
 
 *Last updated: 2026-06*
+
+---
+
+## 7. Human-AI Responsibility Boundary
+
+> **Execution is mine. Final judgment is yours.**
+
+This system amplifies your research capability — it does not replace your judgment.
+
+| Role | Does |
+|:-----|:------|
+| **AI** | Execute search queries across 5 engines and 13 knowledge bases |
+| | Run statistical analyses (R code) |
+| | Draft structured reviews with citations |
+| | Flag emergence signals from >= 3 independent sources |
+| | Suggest revisions based on reviewer scores |
+| | **Never** fabricate results or pretend certainty |
+| **Human** | Decide which research questions matter |
+| | Judge whether a finding is credible or fabricated |
+| | Choose which method is appropriate for the data |
+| | Accept or reject any output before publication |
+| | Take full responsibility for all published results |
+
+Tools evolve. Algorithms improve. But **academic responsibility and research taste can never be outsourced.**
+
