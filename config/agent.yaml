@@ -8,6 +8,11 @@ agent:
   lab: "Jianghan University / Freshwater Fisheries Research Center"
   description: "鱼类生态学 AI 研究助手 — 双核哲学引擎 (Panta Rhei + 系统论)"
   user: "Researcher — MSc Aquatic Biology"
+  philosophy:
+    worldview: "Panta Rhei — 世界是动态的，知识是暂态的，涌现是常态"
+    methodology: "Systems Thinking — 矛盾分析 · 实践验证 · 阶段推进 · 集中突破"
+    handbook: ".reasonix/handbooks/systems-thinking.md"
+    grammar: ".reasonix/handbooks/engineering-grammar.md"
 
 # 求同: 共享协议 (两个项目一致)
 shared:
@@ -15,11 +20,16 @@ shared:
   rule_framework: "FB-1..DS-4 (18 rules)"
   philosophy: "dual-core (Panta Rhei + Systems Thinking)"
   coordination: "config/coordination.yaml"
-  philosophy:
-    worldview: "Panta Rhei — 世界是动态的，知识是暂态的，涌现是常态"
-    methodology: "Systems Thinking — 矛盾分析 · 实践验证 · 阶段推进 · 集中突破"
-    handbook: ".reasonix/handbooks/systems-thinking.md"
-    grammar: ".reasonix/handbooks/engineering-grammar.md"
+
+# DeepSeek 标准配置 (YAML 1.2)
+llm:
+  provider: deepseek
+  model: deepseek-chat
+  api_base: https://api.deepseek.com/v1
+  api_key: ${DEEPSEEK_API_KEY}
+  params:
+    temperature: 0.7
+    max_tokens: 8192
 
 orchestrator:
   max_steps: 100
