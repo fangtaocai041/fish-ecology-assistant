@@ -31,6 +31,17 @@ llm:
     temperature: 0.7
     max_tokens: 8192
 
+# 多 Provider 兼容 (Gemini + OpenAI)
+gemini:
+  provider: google
+  model: gemini-2.5-pro
+  api_key: ${GEMINI_API_KEY}
+
+openai:
+  provider: openai
+  model: gpt-4o
+  api_key: ${OPENAI_API_KEY}
+
 orchestrator:
   max_steps: 100
   max_tool_calls_per_step: 5
