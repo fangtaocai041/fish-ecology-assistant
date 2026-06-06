@@ -5,7 +5,7 @@
 <div align="center">
   <h1>🌊 Panta Rhei · Everything Flows</h1>
   <p><strong>Turn your coding agent into a PhD-level research team — dual-core philosophy: Panta Rhei + Systems Thinking.</strong></p>
-  <p>18 MCP tools · 14 AI subagents · 5 search engines · 13 knowledge bases · 18 engineering rules · Docker</p>
+  <p>18 MCP tools · 14 AI subagents · 11 search engines · 13 knowledge bases · 18 engineering rules · Docker</p>
 </div>
 
 <p align="center">
@@ -95,7 +95,7 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
-| Search engines | 1 | **5** (tavily, exa, scholar, article, scholarly) |
+| Search engines | 1 | **11** (scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
 | MCP services | 0 | **18** (incl. DeepWiki) |
 | AI subagents | 4 (generic) | **14** (domain-specialized, rule-auditor, emergence detection) |
 | R statistics | — | ✅ R 4.6.0 + 20+ ecology packages |
@@ -148,7 +148,7 @@ Restart Reasonix — everything is ready.
 |:-:|:------|:-----|:--------------------------|
 | 🎯 | `research-orchestrator` | **Scheduler** | Coordinates all 5 stages |
 | ① | `research-planner` | 🧑‍💼 Plan | Bilingual EN/CN keywords, covers local + international lit |
-| ② | `research-executor` | 🔍 Search | 5 engines parallel, annotates publication year |
+| ② | `research-executor` | 🔍 Search | 11 engines parallel (GS priority + 4 Chinese sources), annotates publication year |
 | ③ | `research-analyst` | 📊 Analyze | **Consensus evolution timeline** + **emergence signal detection** |
 | ④ | `research-writer` | ✍️ Write | **Calibrated language**, temporal anchoring, uncertainty markers |
 | ⑤ | `research-reviewer` | ✅ Review | 4-dimension scoring, ≤3 revision rounds |
@@ -177,11 +177,16 @@ Restart Reasonix — everything is ready.
 
 | Service | Engine | Best For |
 |:--------|:-------|:---------|
-| `tavily` | AI deep search | Broad web |
-| `exa` | Semantic search | Meaning-aware search |
-| `scholar` | Google Scholar | Academic papers |
-| `article` | Article metadata | Full abstracts |
-| `scholarly` | Multi-source | Cross-database search |
+| `scholar` | **Google Scholar** | **优先搜索引擎** · 学术论文 |
+| `article` | Article metadata | 全文摘要 |
+| `scholarly` | Multi-source | 跨数据库搜索 |
+| `baidu_scholar` | 百度学术 (site:) | 中文论文 |
+| `cnki` | 知网 CNKI (site:) | 中文核心期刊 |
+| `wanfang` | 万方数据 (site:) | 中文学位论文 |
+| `cas` | 中科院 IHBCAS (site:) | 水生所/动物所出版物 |
+| `ncbi` | PubMed | 生物医学文献 |
+| `tavily` | AI deep search | 广泛网页内容 |
+| `exa` | Semantic search | 语义级搜索 |
 | `ima` | ima OpenAPI | **13 knowledge bases + notes (14 tools)** |
 | `rplay` | R 4.6.0 | Morphometrics, isotopes, community ecology |
 | `coderunner` | Sandbox | Multi-language execution |
@@ -264,7 +269,7 @@ This system is an amplifier, not an author.
 
 This project is not a fixed toolset. It is a **living system**. Every component has built-in expiry awareness, version tracking, and emergence detection. As your research deepens, R packages update, and new methods emerge, it evolves with you.
 
-**Last updated: 2026-06-06**
+**Last updated: 2026-06-07**
 **Running on Reasonix Code · Powered by DeepSeek**
 
 ---
@@ -275,7 +280,7 @@ This project is not a fixed toolset. It is a **living system**. Every component 
 
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
-| **v4** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Maoist systems thinking), 7 system + 4 DeepSeek efficiency principles, Engineering Grammar (18 WHEN→THEN rules), full code mapping |
+| **v5** | 2026-06-06 | Search v3.0 | 11 搜索引擎 (GS优先 + 知网/万方/百度学术/中科院), google-scholar-search skill, 鳤文献全面检索 |\n| **v4** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Maoist systems thinking), 7 system + 4 DeepSeek efficiency principles, Engineering Grammar (18 WHEN→THEN rules), full code mapping |
 | **v3** | 2026-06-05 | Engineering | Complete rewrite: Panta Rhei philosophy, capability comparison, engineering efficiency principles, sparse activation |
 | **v2** | 2026-06-05 | Panta Rhei | Dynamic worldview integration, emergence detection, calibrated language |
 | **v1** | 2026-06-05 | Original | Initial release — fish ecology research assistant with 5 search engines + 12 subagents |

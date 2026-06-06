@@ -5,7 +5,7 @@
 <div align="center">
   <h1>🌊 万物皆变 · Panta Rhei</h1>
   <p><strong>把你的编码智能体变成拥有双核哲学引擎（Panta Rhei + 系统论）的博士级研究团队。</strong></p>
-  <p>18 MCP 工具 · 14 AI 子智能体 · 5 引擎搜索 · 13 个知识库 · 18 工程规则 · Docker</p>
+  <p>18 MCP 工具 · 14 AI 子智能体 · 11 引擎搜索 · 13 个知识库 · 18 工程规则 · Docker</p>
 </div>
 
 <p align="center">
@@ -97,11 +97,11 @@ R 包在更新，物种分布在变化，科学共识在演变，气候变化在
 
 **Fish Ecology Assistant** 是一个将 [Reasonix Code](https://github.com/esengine/deepseek-reasonix) 从通用编码助手转变为**专业鱼类生态学研究团队**的完整配置包。
 
-它集成了 18 个 MCP 工具、14 个领域 AI 子智能体、5 引擎并行搜索、自动化的 5 阶段研究流水线、13 个知识库、18 条工程规则，以及 R 统计计算环境——所有输出都遵循上述双核哲学。
+它集成了 18 个 MCP 工具、14 个领域 AI 子智能体、11 引擎并行搜索（Google Scholar 优先 + 知网/万方/百度学术/中科院）、自动化的 5 阶段研究流水线、13 个知识库、18 条工程规则，以及 R 统计计算环境——所有输出都遵循上述双核哲学。
 
 | 能力 | 原生 Reasonix | **加上本配置** |
 |:-----|:-------------:|:--------------:|
-| 搜索引擎 | 1 个 | **5 个** (tavily, exa, scholar, article, scholarly) |
+| 搜索引擎 | 1 个 | **11 个** (scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
 | MCP 服务 | 0 | **18 个**（含 DeepWiki） |
 | AI 子智能体 | 4 个（通用） | **14 个**（领域专用，含规则审计，涌现检测） |
 | R 统计 | — | ✅ R 4.6.0 + 20+ 生态学包 |
@@ -154,7 +154,7 @@ docker compose up
 |:-:|:-------|:-----|:--------------|
 | 🎯 | `research-orchestrator` | **调度器** | 调度全部 5 阶段 |
 | ① | `research-planner` | 🧑‍💼 规划 | 中英双语关键词，覆盖国内外文献 |
-| ② | `research-executor` | 🔍 搜索 | 5 引擎并行，标注文献发表年份 |
+| ② | `research-executor` | 🔍 搜索 | 11 引擎并行（GS 优先 + 4 国内源），标注文献发表年份 |
 | ③ | `research-analyst` | 📊 分析 | **共识演变时间轴** + **涌现信号检测** |
 | ④ | `research-writer` | ✍️ 写作 | **calibrated language**，时间锚定，不确定性标记 |
 | ⑤ | `research-reviewer` | ✅ 审查 | 4 维评分，≤3 轮修订 |
@@ -183,11 +183,16 @@ docker compose up
 
 | 服务 | 引擎 | 用途 |
 |:-----|:-----|:------|
-| `tavily` | AI 深度搜索 | 全网搜索 |
-| `exa` | 语义搜索 | 按含义搜索 |
-| `scholar` | Google Scholar | 学术论文 |
+| `scholar` | **Google Scholar** | **优先搜索引擎** · 学术论文 |
 | `article` | 文献元数据 | 全文摘要 |
 | `scholarly` | 多源聚合 | 跨库学术搜索 |
+| `baidu_scholar` | 百度学术 | 中文论文 |
+| `cnki` | 知网 CNKI | 中文核心期刊 |
+| `wanfang` | 万方数据 | 中文学位论文 |
+| `cas` | 中科院 IHBCAS | 水生所/动物所出版物 |
+| `ncbi` | PubMed | 生物医学文献 |
+| `tavily` | AI 深度搜索 | 全网搜索 |
+| `exa` | 语义搜索 | 按含义搜索 |
 | `ima` | ima OpenAPI | **13 个知识库 + 笔记（14 个工具）** |
 | `rplay` | R 4.6.0 | 形态测量、同位素、群落生态 |
 | `coderunner` | 沙箱 | 多语言代码执行 |
@@ -271,7 +276,7 @@ fish-ecology-assistant/
 
 这个项目不是一套固定的工具集——它是一个**活的系统**。每个组件都内置了过期机制、版本追踪和涌现感知。随着你的研究深入、R 包更新、新方法涌现，它会和你一起进化。
 
-**最后更新：2026-06-06**
+**最后更新：2026-06-07**
 **运行于 Reasonix Code · 由 DeepSeek 驱动**
 
 ---
@@ -282,7 +287,7 @@ fish-ecology-assistant/
 
 | 版本 | 日期 | 主题 | 变更内容 |
 |:------|:-----|:------|:-------------|
-| **v4** | 2026-06-06 | 系统论 | + 双核哲学（Panta Rhei + 毛泽东思想系统论），7 大系统原则 + 4 DeepSeek 效率原则，工程语法 (18 条 WHEN→THEN)，全量代码映射 |
+| **v5** | 2026-06-06 | 搜索 v3.0 | 11 搜索引擎 (GS优先 + 知网/万方/百度学术/中科院), google-scholar-search 技能, 鳤文献全面检索 |\n| **v4** | 2026-06-06 | 系统论 | + 双核哲学（Panta Rhei + 毛泽东思想系统论），7 大系统原则 + 4 DeepSeek 效率原则，工程语法 (18 条 WHEN→THEN)，全量代码映射 |
 | **v3** | 2026-06-05 | 工程化 | 全面重写：Panta Rhei 哲学，能力对比，工程效率原则，稀疏激活 |
 | **v2** | 2026-06-05 | Panta Rhei | 动态世界观整合，涌现检测，校准语言 |
 | **v1** | 2026-06-05 | 原始版本 | 初始发布 — 鱼类生态学助手，5 引擎 + 12 子智能体 |

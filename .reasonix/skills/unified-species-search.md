@@ -87,34 +87,37 @@ paid_available = filter(available, λt: t in [tavily_*, exa_*])
 
 若无任何学术搜索工具可用→降级为 `web_search` + `web_fetch` 手动抓取。
 
-### 1.2 7 引擎全并行 [v3.3]
+### 1.2 11 引擎全并行 [v3.3.2 — 新增国内源]
 
 **所有 query 同时发出，不等待前面的结果：**
 
 ```
 FOR EACH query IN all_queries:
   PARALLEL (只调用 available 中的工具):
-    ncbi_esearch(query, maxResults=50)               # PubMed 免费
-    scholar_search_literature_graph(query, limit=20)  # Google Scholar
+    scholar_search_literature_graph(query, limit=20)  # Google Scholar ← 首选
     article_search_literature(keyword=query, max_results=10)  # Europe PMC
     scholarly_search(query, limit=15)                 # Semantic Scholar
+    ncbi_esearch(query, maxResults=50)                # PubMed
     tavily_search(query, max_results=15)              # AI 深度搜索
     exa_web_search(query, num_results=10)             # 语义搜索
     web_search(query, topK=10)                        # Reasonix 内置
 
-# 额外：中文名搜索
+# 额外：中文名搜索 + 国内学术源
 FOR EACH chinese_alias:
   PARALLEL:
     scholar_search_google_scholar_key_words(chinese_alias, num_results=10)
-    web_search(chinese_alias, topK=10)
+    web_search("site:xueshu.baidu.com " + chinese_alias, topK=10)  # 百度学术
+    web_search("site:cnki.net " + chinese_alias, topK=10)           # 知网
+    web_search("site:wanfangdata.com.cn " + chinese_alias, topK=10) # 万方
+    web_search("site:ihb.ac.cn " + chinese_alias, topK=10)          # 中科院水生所
 ```
 
-### 1.3 Fallback 链 [v3.2 新增]
+### 1.3 Fallback 链 [v3.3.2 — 新增国内源]
 
 ```
 学术搜索: scholar → article → scholarly → ncbi → web_search → web_fetch(DOI)
 网页搜索: tavily → exa → web_search
-中文搜索: web_search(chinese) → 引用回溯(从英文论文 References)
+中文搜索: scholar(也覆盖中文) → 百度学术(site:xueshu.baidu.com) → 知网(site:cnki.net) → 万方(site:wanfangdata.com.cn) → 中科院(site:ihb.ac.cn) → 引用回溯(从英文论文 References)
 ```
 
 合并所有 PMID + DOI + URL，去重。
@@ -197,12 +200,14 @@ FOR EACH paper IN deduped:
 
 ---
 
-## 关键提示 [v3.3]
+## 关键提示 [v3.3.2]
 - **Step 0 不可跳过** — 必须先读 config 才能开始搜索
 - **多 query 必须并行** — 禁止"先搜精确名，看结果再搜变体"
-- **7 引擎并行** — ncbi + scholar + article + scholarly + tavily + exa + web_search 同时发出
+- **11 引擎并行** — scholar + article + scholarly + ncbi + baidu_scholar + cnki + wanfang + cas + tavily + exa + web_search
+- **GS 优先** — scholar 排在第一位，结果 ≥ 5 篇就不换引擎
+- **国内源** — 中文名搜索自动走百度学术 + 知网 + 万方 + 中科院
 - **工具自检** — 先探测可用工具，区分免费/付费；仅调 available 的，静默跳过不可用的
-- **Fallback 链** — 学术搜索不可用 → 降级 web_search + web_fetch(DOI)；中文不可用 → 引用回溯
+- **Fallback 链** — 学术搜索不可用 → 降级 web_search + web_fetch(DOI)；中文不可用 → 百度学术 → 引用回溯
 - **拼写变体** — Ochetobius ≠ Ochetobibus，config + OCR 模型双保险
 - **分类学异名** — Luciobrama macrocephalus 曾为鳤的同义名，必须同步搜索
 - **引用回溯** — 中文论文不在 PubMed 中，但会被英文论文引用，从 References 抓

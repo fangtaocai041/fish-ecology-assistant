@@ -69,7 +69,7 @@ pipeline:
       skill: "research-executor"
       activation: "planner_returns_queries"
       model: "default"
-      engines: ["tavily", "exa", "scholar", "article", "scholarly", "ncbi", "web_search"]
+      engines: ["scholar", "article", "scholarly", "baidu_scholar", "cnki", "wanfang", "cas", "ncbi", "tavily", "exa", "web_search"]
 
     - id: analyst
       name: "数据分析"
@@ -96,14 +96,19 @@ agents:
     model: "deepseek-chat"
     max_papers_per_search: 30
     sources:
-      - tavily
-      - exa
       - scholar
       - article
       - scholarly
+      - baidu_scholar
+      - cnki
+      - wanfang
+      - cas
       - ncbi
+      - tavily
+      - exa
       - web_search
     bilingual: true
+    chinese_priority: true        # 中文关键词优先搜索国内学术源
 
   ecology:
     enabled: true

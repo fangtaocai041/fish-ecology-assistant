@@ -25,7 +25,7 @@ coordination:
       pipeline_type: "explicit_stages"
       skill_count: 24
       mcp_count: 21
-      search_engines: 7          # ncbi + scholar + article + scholarly + tavily + exa + web_search
+      search_engines: 11         # scholar + article + scholarly + baidu_scholar + cnki + wanfang + cas + ncbi + tavily + exa + web_search
       memory: "reasonix"
     porpoise:
       skill_dir: "src/skills"
@@ -41,20 +41,17 @@ coordination:
     fish_exports: ["stats-assistant","research-analyst","phd-proposal-writer","ima-smart-search"]
     porpoise_exports: ["detect-clicks","estimate-abundance","assess-threats","search-literature"]
 
-  # ===== 搜索引擎注册表 (v2.0, 三项目共享) =====
+  # ===== 搜索引擎注册表 (v3.0, Google Scholar 优先 + 国内学术源) =====
   search_engine_registry:
-    ncbi:
-      category: "academic"
-      requires_api_key: false
-      mcp_server: "ncbi"
-      tools: ["ncbi_ncbi_esearch","ncbi_ncbi_esummary","ncbi_ncbi_efetch"]
-      fallback_priority: 4
+    # ── 一级：Google Scholar（优先调用）─
     scholar:
       category: "academic"
       requires_api_key: false
       mcp_server: "scholar"
       tools: ["scholar_search_literature_graph","scholar_search_google_scholar_key_words"]
       fallback_priority: 1
+      primary: true
+    # ── 二级：国际学术 ─
     article:
       category: "academic"
       requires_api_key: false
@@ -67,34 +64,75 @@ coordination:
       mcp_server: "scholarly"
       tools: ["scholarly_search"]
       fallback_priority: 3
+    ncbi:
+      category: "academic"
+      requires_api_key: false
+      mcp_server: "ncbi"
+      tools: ["ncbi_ncbi_esearch","ncbi_ncbi_esummary","ncbi_ncbi_efetch"]
+      fallback_priority: 8
+    # ── 三级：国内学术源（通过 web_search site: 策略实现）─
+    baidu_scholar:
+      category: "chinese_academic"
+      requires_api_key: false
+      mcp_server: "reasonix_builtin"
+      tools: ["web_search"]
+      strategy: "site:xueshu.baidu.com"
+      language: "zh"
+      fallback_priority: 4
+    cnki:
+      category: "chinese_academic"
+      requires_api_key: false
+      mcp_server: "reasonix_builtin"
+      tools: ["web_search"]
+      strategy: "site:cnki.net OR site:navi.cnki.net"
+      language: "zh"
+      fallback_priority: 5
+    wanfang:
+      category: "chinese_academic"
+      requires_api_key: false
+      mcp_server: "reasonix_builtin"
+      tools: ["web_search"]
+      strategy: "site:wanfangdata.com.cn"
+      language: "zh"
+      fallback_priority: 6
+    cas:
+      category: "chinese_academic"
+      requires_api_key: false
+      mcp_server: "reasonix_builtin"
+      tools: ["web_search"]
+      strategy: "site:cas.cn OR site:ihb.ac.cn OR site:ioz.ac.cn"
+      language: "zh"
+      fallback_priority: 7
+    # ── 四级：AI 深度搜索（需 API key）─
     tavily:
       category: "web"
       requires_api_key: true
       env_var: "TAVILY_API_KEY"
       mcp_server: "tavily"
       tools: ["tavily_search","tavily_extract"]
-      fallback_priority: 5
+      fallback_priority: 9
     exa:
       category: "web"
       requires_api_key: true
       env_var: "EXA_API_KEY"
       mcp_server: "exa"
       tools: ["exa_web_search"]
-      fallback_priority: 6
+      fallback_priority: 10
+    # ── 五级：内置通用搜索（最终保底）─
     web_search:
       category: "builtin"
       requires_api_key: false
       mcp_server: "reasonix_builtin"
       tools: ["web_search","web_fetch"]
-      fallback_priority: 7
-    note: "MCP 服务器 (scholar/article/scholarly/tavily/exa) 需在 Reasonix 下次启动后生效"
+      fallback_priority: 11
+    note: "Scholar (GS) 为首选引擎。国内学术源无独立 MCP，通过 web_search site: 策略实现，需 Clash Verge 全局代理。"
 
   # ===== 并行策略 =====
   parallelism:
     search_engines:
-      max_concurrent: 7
+      max_concurrent: 11
       strategy: "fan_out"
-      engines: ["ncbi","scholar","article","scholarly","tavily","exa","web_search"]
+      engines: ["scholar","article","scholarly","baidu_scholar","cnki","wanfang","cas","ncbi","tavily","exa","web_search"]
     kb_search:
       max_concurrent: 13
       strategy: "fan_out"

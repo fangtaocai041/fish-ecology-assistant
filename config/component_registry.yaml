@@ -45,13 +45,17 @@ components:
       expiry_policy: { type: "manual_review", max_age_days: 90 }
 
   mcp_tools:
-    tavily:    { version: "latest", last_verified: "2026-06-20", expiry: { type: "auto_check", target: "npm", max_age_days: 30 }, tools: ["tavily_search","tavily_extract"] }
-    exa:       { version: "latest", last_verified: "2026-06-20", expiry: { type: "auto_check", target: "npm", max_age_days: 30 }, tools: ["exa_web_search"] }
-    scholar:   { version: "latest", last_verified: "2026-06-20", expiry: { type: "auto_check", target: "npm", max_age_days: 30 }, tools: ["scholar_search_literature_graph","scholar_search_google_scholar_key_words"] }
-    article:   { version: "latest", last_verified: "2026-06-20", expiry: { type: "auto_check", target: "npm", max_age_days: 30 }, tools: ["article_search_literature","article_get_article_details","article_get_references"] }
-    scholarly: { version: "latest", last_verified: "2026-06-20", expiry: { type: "auto_check", target: "npm", max_age_days: 30 }, tools: ["scholarly_search"] }
-    ncbi:      { version: "custom", last_verified: "2026-06-20", expiry: { type: "auto_check", target: "manual", max_age_days: 90 }, tools: ["ncbi_ncbi_esearch","ncbi_ncbi_esummary","ncbi_ncbi_efetch"] }
-    web_search: { version: "builtin", last_verified: "2026-06-20", expiry: { type: "manual_review", max_age_days: 90 }, tools: ["web_search","web_fetch"] }
+    scholar:   { version: "latest", last_verified: "2026-06-06", expiry: { type: "auto_check", target: "npm", max_age_days: 30 }, tools: ["scholar_search_literature_graph","scholar_search_google_scholar_key_words"], primary: true }
+    article:   { version: "latest", last_verified: "2026-06-06", expiry: { type: "auto_check", target: "npm", max_age_days: 30 }, tools: ["article_search_literature","article_get_article_details","article_get_references"] }
+    scholarly: { version: "latest", last_verified: "2026-06-06", expiry: { type: "auto_check", target: "npm", max_age_days: 30 }, tools: ["scholarly_search"] }
+    ncbi:      { version: "custom", last_verified: "2026-06-06", expiry: { type: "auto_check", target: "manual", max_age_days: 90 }, tools: ["ncbi_ncbi_esearch","ncbi_ncbi_esummary","ncbi_ncbi_efetch"] }
+    baidu_scholar: { version: "builtin", last_verified: "2026-06-06", expiry: { type: "manual_review", max_age_days: 90 }, tools: ["web_search"], strategy: "site:xueshu.baidu.com", lang: "zh" }
+    cnki:      { version: "builtin", last_verified: "2026-06-06", expiry: { type: "manual_review", max_age_days: 90 }, tools: ["web_search"], strategy: "site:cnki.net", lang: "zh" }
+    wanfang:   { version: "builtin", last_verified: "2026-06-06", expiry: { type: "manual_review", max_age_days: 90 }, tools: ["web_search"], strategy: "site:wanfangdata.com.cn", lang: "zh" }
+    cas:       { version: "builtin", last_verified: "2026-06-06", expiry: { type: "manual_review", max_age_days: 90 }, tools: ["web_search"], strategy: "site:cas.cn OR site:ihb.ac.cn", lang: "zh" }
+    tavily:    { version: "latest", last_verified: "2026-06-06", expiry: { type: "auto_check", target: "npm", max_age_days: 30 }, tools: ["tavily_search","tavily_extract"] }
+    exa:       { version: "latest", last_verified: "2026-06-06", expiry: { type: "auto_check", target: "npm", max_age_days: 30 }, tools: ["exa_web_search"] }
+    web_search: { version: "builtin", last_verified: "2026-06-06", expiry: { type: "manual_review", max_age_days: 90 }, tools: ["web_search","web_fetch"] }
     deepwiki:  { version: "latest", last_verified: "2026-06-06", expiry: { type: "auto_check", target: "mcp", max_age_days: 30 } }
 
   config:
