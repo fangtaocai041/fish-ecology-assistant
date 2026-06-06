@@ -72,15 +72,18 @@ EXTRACT all Latin binomial names from the research plan
 EXAMPLE: "Ochetobius elongatus", "Culter alburnus"
 ```
 
-### Step 2: Run fuzzy-species-search for each
+### Step 2: Run cognitive search for each species
 ```
-DELEGATE to fuzzy-species-search Skill:
+DELEGATE to cognitive-species-search Skill (v3, frontier):
   FOR EACH species_name:
-    → Layer 1: exact search (already done above)
-    → Layer 2: variant search (catches Ochetobibus, Ochetobus, etc.)
-    → Layer 3: substring search (Ochetob*)
-    → Layer 4: Chinese name search
-    → Layer 7: dedup & merge with exact results
+    → Semiotic decomposition (signifier → signified)
+    → Linguistic morphological analysis (root extraction, OCR patterns)
+    → Phonetic reconstruction (IPA + Soundex + Metaphone)
+    → Logical inference chain (deductive + abductive + inductive)
+    → DeepSeek CoT: info-gain ordering + sparse activation + entropy budget
+    → 11-layer search (active layers only per MoE routing)
+
+FALLBACK: fuzzy-species-search (v2) if cognitive search unavailable
 ```
 
 ### Step 3: Flag discrepancies

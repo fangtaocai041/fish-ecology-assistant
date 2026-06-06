@@ -15,6 +15,8 @@ allowed-tools:
 > **Problem solved**: Species name typos in academic publishing (0.5-2%) cause exact-match search to miss papers.
 > **Gemini's advantage**: Semantic/fuzzy matching catches "Ochetobibus" when searching "Ochetobius".
 > **Our solution**: Multi-layer protocol that replicates and exceeds Gemini's fuzzy matching by brute-force variant coverage.
+>
+> ⚠️ **v3 available**: [cognitive-species-search](cognitive-species-search.md) — adds semiotics, linguistics, phonetics, logic, and DeepSeek chain-of-thought. Use cognitive-species-search for maximum coverage.
 
 ## PREFLIGHT (MANDATORY)
 
