@@ -1,4 +1,8 @@
 #!/bin/bash
 # Tavily Search MCP — Linux/macOS
-export TAVILY_API_KEY="${TAVILY_API_KEY:-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}"
+if [ -z "$TAVILY_API_KEY" ]; then
+    echo "[ERROR] TAVILY_API_KEY not set. Check .env file." >&2
+    exit 1
+fi
+export TAVILY_API_KEY
 npx -y tavily-mcp@latest

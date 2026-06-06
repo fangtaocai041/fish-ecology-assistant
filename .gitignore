@@ -30,6 +30,12 @@ config/local.yaml
 # Temporary conversation screenshots
 *对话截图*
 
+# Python
+__pycache__/
+*.py[cod]
+dist/
+build/
+
 # Reasonix runtime cache
 .reasonix/truncated-results/
 
