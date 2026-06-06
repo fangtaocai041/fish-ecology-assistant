@@ -5,7 +5,7 @@
 <div align="center">
   <h1>🌊 Panta Rhei · Everything Flows</h1>
   <p><strong>Turn your coding agent into a PhD-level research team — dual-core philosophy: Panta Rhei + Systems Thinking.</strong></p>
-  <p>16 MCP tools · 12 AI subagents · 5 search engines · 13 knowledge bases · 7 system principles</p>
+  <p>18 MCP tools · 14 AI subagents · 5 search engines · 13 knowledge bases · 18 engineering rules · Docker</p>
 </div>
 
 <p align="center">
@@ -89,14 +89,14 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
 | Search engines | 1 | **5** (tavily, exa, scholar, article, scholarly) |
-| MCP services | 0 | **16** |
-| AI subagents | 4 (generic) | **12** (domain-specialized, with emergence detection) |
+| MCP services | 0 | **18** (incl. DeepWiki) |
+| AI subagents | 4 (generic) | **14** (domain-specialized, rule-auditor, emergence detection) |
 | R statistics | — | ✅ R 4.6.0 + 20+ ecology packages |
 | OCR | — | ✅ PaddleOCR + Tesseract.js |
 | Reference manager | — | ✅ Direct Zotero SQL queries |
 | Research pipeline | — | ✅ 5-stage + auto-review + emergence detection |
 | Knowledge bases | — | ✅ 13 ima knowledge bases connected |
-| Setup on new machine | Manual | ✅ One script, 5 minutes |
+| Setup on new machine | Manual | ✅ One script or `docker compose up` |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
