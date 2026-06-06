@@ -4,13 +4,13 @@
 
 <div align="center">
   <h1>🌊 万物皆变 · Panta Rhei</h1>
-  <p><strong>把你的编码智能体变成拥有动态世界观和DeepSeek级工程效率的博士级研究团队。</strong></p>
-  <p>16 MCP 工具 · 12 AI 子智能体 · 5 引擎搜索 · 13 个知识库</p>
+  <p><strong>把你的编码智能体变成拥有双核哲学引擎（Panta Rhei + 系统论）的博士级研究团队。</strong></p>
+  <p>16 MCP 工具 · 12 AI 子智能体 · 5 引擎搜索 · 13 个知识库 · 7 大系统原则</p>
 </div>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
-  <a href="#"><img src="https://img.shields.io/badge/动态世界观-core-6366f1?style=flat-square" alt="动态世界观"></a>
+  <a href="#"><img src="https://img.shields.io/badge/双核哲学-Panta_Rhei_%2B_系统论-6366f1?style=flat-square" alt="双核哲学"></a>
   <a href="#"><img src="https://img.shields.io/badge/MCP-16-22c55e?style=flat-square" alt="MCP:16"></a>
   <a href="#"><img src="https://img.shields.io/badge/智能体-12-f59e0b?style=flat-square" alt="智能体:12"></a>
 </p>
@@ -18,6 +18,14 @@
 ---
 
 ## 🏛️ 核心哲学
+
+> 🧠 **双核哲学引擎**：Panta Rhei（动态世界观）+ 系统论（矛盾·实践·阶段·集中）
+> 世界观回答"世界是什么样的"，方法论回答"我们怎样行动"。
+> 详见 `.reasonix/handbooks/systems-thinking.md`
+
+---
+
+### 🌍 Panta Rhei · 动态世界观
 
 > **世界是动态的，知识是暂时的，涌现是常态。**
 
@@ -45,6 +53,22 @@ R 包在更新，物种分布在变化，科学共识在演变，气候变化在
 
 <p align=right>(<a href=#readme-top>回到顶部</a>)</p>
 
+
+### 🧠 系统论 · 七大工程原则
+
+| # | 原则 | 源著作 | 工程映射 |
+|---|------|--------|---------|
+| ① | 认识论循环 | 《实践论》 | 实践→认识→再实践→再认识 = 验证闭环 |
+| ② | 矛盾分析 | 《矛盾论》 | 抓主要矛盾 → 资源聚焦 2.5x |
+| ③ | 阶段论 | 《论持久战》 | 战略防御→相持→反攻 = 五阶段流水线 |
+| ④ | 集中兵力 | 军事思想 | 主要矛盾方向 60% 计算资源 |
+| ⑤ | 主动权 | 《论持久战》 | 前沿追踪主动建议 + "你打你的，我打我的" |
+| ⑥ | 分类处理 | 《正确处理矛盾》 | 对抗性/非对抗性矛盾分流策略 |
+| ⑦ | 系统平衡 | 《论十大关系》 | 十大研究平衡 + 多目标优化 |
+
+<p align=right>(<a href=#readme-top>回到顶部</a>)</p>
+
+---
 
 ## 🐋 DeepSeek工程原则：效率即智慧
 
@@ -217,7 +241,26 @@ fish-ecology-assistant/
 
 这个项目不是一套固定的工具集——它是一个**活的系统**。每个组件都内置了过期机制、版本追踪和涌现感知。随着你的研究深入、R 包更新、新方法涌现，它会和你一起进化。
 
-**最后更新：2026-06-05**
+**最后更新：2026-06-06**
 **运行于 Reasonix Code · 由 DeepSeek 驱动**
+
+---
+
+## 📋 README 变更记录
+
+> 版本副本保存在 `.reasonix/readme-versions/`
+
+| 版本 | 日期 | 主题 | 变更内容 |
+|:------|:-----|:------|:-------------|
+| **v4** | 2026-06-06 | 系统论 | + 双核哲学（Panta Rhei + 毛泽东思想系统论），7 大系统原则，矛盾分析配置，认识论循环，阶段论 |
+| **v3** | 2026-06-05 | 工程化 | 全面重写：Panta Rhei 哲学，能力对比，工程效率原则，稀疏激活 |
+| **v2** | 2026-06-05 | Panta Rhei | 动态世界观整合，涌现检测，校准语言 |
+| **v1** | 2026-06-05 | 原始版本 | 初始发布 — 鱼类生态学助手，5 引擎 + 12 子智能体 |
+
+---
+
+## 📜 许可证
+
+MIT License © 2026 fangtaocai041
 
 <p align=right>(<a href=#readme-top>回到顶部</a>)</p>

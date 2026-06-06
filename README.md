@@ -19,6 +19,14 @@
 
 ## 🏛️ Core Philosophy
 
+> 🧠 **Dual-Core Engine**: Panta Rhei (worldview) + Systems Thinking (methodology)
+> What the world IS — dynamic, provisional, emergent. How we ACT — analyze contradictions, verify through practice, advance in phases, concentrate force.
+> See `.reasonix/handbooks/systems-thinking.md`
+
+---
+
+### 🌍 Panta Rhei · Dynamic Worldview
+
 > **The world is dynamic. Knowledge is provisional. Emergence is the norm.**
 
 This isn't a slogan. It's the operating system that runs through every line of code, every search query, and every paper analysis in this project.
@@ -42,6 +50,22 @@ Life, consciousness, ecosystems, AI reasoning — all are **emergent** phenomena
 | **Overconfidence** | "Research shows X" | "Smith (2022) found X, but Jones (2024) added Y" |
 | **Ignoring signals** | Dismiss outliers as noise | ≥3 independent sources → emergence signal, actively tracked |
 | **Frozen docs** | Handbook never updated | Verification log with "next review" date, calculated from package activity |
+
+### 🧠 Systems Thinking · Seven Engineering Principles
+
+| # | Principle | Source | Engineering Mapping |
+|---|-----------|--------|---------------------|
+| ① | Practice-Knowledge Cycle | *On Practice* (1937) | Data → Model → Verification → Revision (closed loop) |
+| ② | Contradiction Analysis | *On Contradiction* (1937) | Identify principal contradiction → focus 2.5x resources |
+| ③ | Phased Strategy | *On Protracted War* (1938) | Defense → Stalemate → Counter-offensive = 5-stage pipeline |
+| ④ | Concentration of Force | Military thought | 60% compute to principal contradiction |
+| ⑤ | Initiative & Agency | *On Protracted War* (1938) | Frontier-tracker proactive suggestions + independent path |
+| ⑥ | Differentiated Handling | *On Correct Handling of Contradictions* (1957) | Antagonistic vs non-antagonistic → different strategies |
+| ⑦ | Multi-Factor Balance | *On the Ten Major Relationships* (1956) | 10 research balances + multi-objective optimization |
+
+<p align=right>(<a href=#readme-top>back to top</a>)</p>
+
+---
 
 ## 🐋 One Engineering Principle: Efficiency Is Intelligence
 
