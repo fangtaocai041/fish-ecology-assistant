@@ -18,6 +18,12 @@
 
 ---
 
+## 🔺 S-T-V 三角角色: **State (S)**
+
+> S-T-V 刚性三角形: `fish(S) → porpoise(T) → cognitive(V) → fish(S)`
+> 提供知识、数据、矛盾分析和发现给流水线。
+> **D₂ 面**: 多 Agent 辩论网格 (`debate-validator`)。**三角验证**: ≥3 独立源。
+
 ## 🏛️ 核心哲学
 
 > 🧠 **双核哲学引擎**：Panta Rhei（动态世界观）+ 系统论（矛盾·实践·阶段·集中）

@@ -19,6 +19,12 @@
 
 ---
 
+## 🔺 S-T-V Triangle Role: **State (S)**
+
+> Part of the S-T-V rigid triangle: `fish(S) → porpoise(T) → cognitive(V) → fish(S)`
+> Provides knowledge, data, contradiction analysis, and findings to the pipeline.
+> **D₂ Plane**: multi-agent debate mesh (`debate-validator`). **Triangulation**: ≥3 sources.
+
 ## 🏛️ Core Philosophy
 
 > 🧠 **Dual-Core Engine**: Panta Rhei (worldview) + Systems Thinking (methodology)
