@@ -8,6 +8,13 @@ agent:
   lab: "Jianghan University / Freshwater Fisheries Research Center"
   description: "鱼类生态学 AI 研究助手 — 双核哲学引擎 (Panta Rhei + 系统论)"
   user: "Researcher — MSc Aquatic Biology"
+
+# 求同: 共享协议 (两个项目一致)
+shared:
+  version: "1.0.0"
+  rule_framework: "FB-1..DS-4 (18 rules)"
+  philosophy: "dual-core (Panta Rhei + Systems Thinking)"
+  coordination: "config/coordination.yaml"
   philosophy:
     worldview: "Panta Rhei — 世界是动态的，知识是暂态的，涌现是常态"
     methodology: "Systems Thinking — 矛盾分析 · 实践验证 · 阶段推进 · 集中突破"
@@ -269,3 +276,17 @@ research_balance:
   independent_path:
     enabled: true
     description: "不盲从主流方法，基于研究具体条件独立评估方法适用性"
+
+# ===== 跨项目委托 (Cross-Project Delegation) =====
+cross_delegation:
+  enabled: true
+  peer: "porpoise-agent"
+  export_skills:
+    - stats-assistant
+    - research-analyst
+    - phd-proposal-writer
+    - ima-smart-search
+  import_skills:
+    - detect-clicks
+    - estimate-abundance
+    - assess-threats
