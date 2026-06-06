@@ -18,7 +18,7 @@ orchestrator:
   max_steps: 100
   max_tool_calls_per_step: 5
   timeout_seconds: 300
-  max_revision_rounds: 3
+  max_revision_rounds: 3                        # MUST equal verification_loop.max_iterations
   human_in_loop: true
   approval_required_for:
     - field_survey_plan

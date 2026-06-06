@@ -58,6 +58,12 @@ DeepSeek engineering optimizes through algorithmic efficiency (MoE routing, spar
 ### Systems Thinking — Execution Rules (from agent.yaml + Engineering Grammar)
 
 **Runtime enforcement**: Before each action, check `config/agent.yaml` for the relevant rule.
+**Fallback**: If agent.yaml section is missing or unreadable, use hardcoded defaults:
+- `contradiction_budget_multiplier` → 2.5
+- `min_sources_core_claim` → 2
+- `max_iterations` → 3
+- `no_skip` → true, `allow_retreat` → true
+- Budget shares → primary 0.60, secondary 0.30, peripheral 0.10
 
 | ID | Rule | Config Path | Enforcement |
 |:---|:-----|:------------|:------------|
