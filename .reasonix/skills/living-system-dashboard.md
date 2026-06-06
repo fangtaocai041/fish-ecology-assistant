@@ -8,9 +8,7 @@ allowed-tools: []
 ---
 # Living System Dashboard
 
-> "这个项目不是一套固定的工具集——它是一个活的系统。"
-
-This Skill generates the complete health dashboard that proves it.
+This Skill generates `get_living_system_report() → HealthDashboard` from `component_registry.yaml`.
 
 ## PREFLIGHT (MANDATORY)
 
