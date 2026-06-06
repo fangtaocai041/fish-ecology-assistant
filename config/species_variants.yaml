@@ -1,8 +1,10 @@
 # ============================================================
-# 物种拼写变体配置 — Species Variants Configuration
+# ⚠️ DEPRECATED — 2026-06-07
 # ============================================================
-# 用于自动覆盖已知的学名拼写错误、别名、中文异名。
-# 所有搜索 Skills 执行前应读取此文件，避免漏检。
+# 此文件已迁移至 cognitive-search-engine/config/species_graph.yaml
+# 统一管理在 D:\Reasonix\cognitive-search-engine\config\species_graph.yaml
+# 变体数据现已作为 species.graph.species[].variants 字段管理。
+# 本文件保留为历史参考，不再被活跃使用。
 #
 # 格式规范：
 #   scientific_name: 权威学名（GBIF / FishBase / Catalog of Fishes 核验）
