@@ -150,11 +150,23 @@ servers:
     category: knowledge
     enabled: true
 
+  # ===== DeepWiki 知识源 (P3 集成) =====
+  deepwiki:
+    name: DeepWiki MCP
+    transport: sse
+    url: "https://mcp.deepwiki.com/sse"
+    description: AI-generated repo documentation — ask questions about any codebase
+    enabled: true
+    tools:
+      - ask_question
+      - read_wiki_structure
+      - read_wiki_contents
+
 # 服务器类别统计
 categories:
   search: 5
   data: 3
   compute: 4
   image: 3
-  knowledge: 2
-  total: 17
+  knowledge: 3
+  total: 18
