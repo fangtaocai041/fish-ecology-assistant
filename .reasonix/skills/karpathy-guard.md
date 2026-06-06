@@ -55,6 +55,17 @@ Traceability: Claim -> Source -> DOI/URL -> Raw data. If chain breaks, do NOT ge
 
 DeepSeek engineering optimizes through algorithmic efficiency (MoE routing, sparse activation, compressed attention) — not brute-force parameter scaling. This project follows the same principle.
 
+### Systems Thinking — Execution Rules (from Engineering Grammar)
+
+| ID | Rule | Application |
+|:---|:-----|:------------|
+| DS-1 | Entropy Budget | PhD → full pipeline, casual → single-step. Per-stage `activation` gate. |
+| DS-2 | Sparse Activation | MoE routing: each Skill fires only when condition met. ~2-4/12 active per request. |
+| DS-3 | Differential Verify | `P(stale)` check only changed packages, not full handbook. Review cycle = f(update_freq, risk, dependency). |
+| DS-4 | Info-Gain Routing | P0 exact terms first → stop on hit. P2 redundant terms skipped. Cross-KB dedup. |
+| FB-1 | Feedback Loop | Every claim tagged VERIFIED(✅)/PENDING(⚠️)/HYPOTHESIS(❓)/UNVERIFIABLE(🚫). |
+| FB-2 | Source Gate | `\|sources\| < 1` → BLOCK output. "没有调查就没有发言权." |
+
 ### Budget Rules
 
 | Rule | Application |
@@ -67,7 +78,11 @@ DeepSeek engineering optimizes through algorithmic efficiency (MoE routing, spar
 
 Planner: Always. Executor: only >=1 search query. Analyst: only >=1 result. Writer: only >=1 finding. Reviewer: only >=500 words. Stats verify: only with code. ima KB: only domain match. Emergence: only >=3 sources.
 
-## 🌱 Meta-Principle: Panta Rhei (万物皆变)
+## 🌱 Meta-Principle: Panta Rhei (万物皆变) + Systems Thinking (系统论)
+
+> 🧠 **Dual-Core Engine**: All runtime behavior governed by [Panta Rhei](.reasonix/handbooks/systems-thinking.md) (worldview) + [Engineering Grammar](.reasonix/handbooks/engineering-grammar.md) (code-mapped rules).
+
+### Panta Rhei — Dynamic Worldview
 
 > **The world is dynamic. Knowledge is provisional. Emergence is the norm.**
 

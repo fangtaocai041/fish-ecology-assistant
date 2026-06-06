@@ -181,6 +181,8 @@ All 12 skills have been optimized with the following principles:
 
 ## Philosophy
 
+> 🧠 **Dual-Core Engine**: [Panta Rhei](.reasonix/handbooks/systems-thinking.md) (worldview) + [Engineering Grammar](.reasonix/handbooks/engineering-grammar.md) (code-mapped rules).
+>
 > **You are the captain. I am the engine room, the navigation system, and all the cables.**
 
 The tool can search 50 papers in seconds, write a draft in minutes, and run R code instantly.
