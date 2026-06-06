@@ -1,5 +1,7 @@
 ---
 name: rule-auditor
+version: "1.0.0"
+last_updated: "2026-06-06"
 description: Audit all Skills for rule compliance — verify every engineering rule (FB-1..DS-4) has a corresponding config reference in at least one Skill
 runAs: subagent
 allowed-tools: []

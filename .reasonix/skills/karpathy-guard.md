@@ -1,5 +1,7 @@
 ﻿---
 name: karpathy-guard
+version: "1.0.0"
+last_updated: "2026-06-06"
 description: Behavior guardrails for research subagents — derived from Karpathy principles
 
 ## -2. Human-AI Responsibility Boundary (人机权责边界)

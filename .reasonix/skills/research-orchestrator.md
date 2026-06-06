@@ -1,5 +1,7 @@
 ﻿---
 name: research-orchestrator
+version: "1.0.0"
+last_updated: "2026-06-06"
 description: Complete research pipeline orchestration — auto-execute 5 stages: Plan → Search → Analyze → Write → Review (with up to 3 revision rounds)
 allowed-tools: []
 ---
