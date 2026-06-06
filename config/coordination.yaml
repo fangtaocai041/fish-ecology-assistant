@@ -15,6 +15,10 @@ coordination:
 
   # ===== 存异: 项目特定 =====
   project_specific:
+    cognitive_search:
+      skill_dir: "external/cognitive-search-engine/skills"
+      skills: ["graph-search-engine","cognitive-species-search","self-evolve"]
+      description: "认知搜索引擎 — 图谱遍历 + 自适应深度 + 引用验证"
     fish:
       skill_dir: ".reasonix/skills"
       pipeline_type: "explicit_stages"
