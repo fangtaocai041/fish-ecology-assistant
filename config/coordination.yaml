@@ -23,7 +23,7 @@ coordination:
     fish:
       skill_dir: ".reasonix/skills"
       pipeline_type: "explicit_stages"
-      skill_count: 24
+      skill_count: 25
       mcp_count: 21
       search_engines: 11         # scholar + article + scholarly + baidu_scholar + cnki + wanfang + cas + ncbi + tavily + exa + web_search
       memory: "reasonix"
@@ -39,7 +39,7 @@ coordination:
     enabled: true
     protocol: "DELEGATE to {project}: skill={name} context={...}"
     fish_exports: ["stats-assistant","research-analyst","phd-proposal-writer","ima-smart-search"]
-    porpoise_exports: ["detect-clicks","estimate-abundance","assess-threats","search-literature"]
+    porpoise_exports: ["detect-clicks","estimate-abundance","assess-threats"]
 
   # ===== 搜索引擎注册表 (v3.0, Google Scholar 优先 + 国内学术源) =====
   search_engine_registry:

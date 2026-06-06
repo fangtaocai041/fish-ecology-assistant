@@ -172,12 +172,13 @@ servers:
       - read_wiki_contents
 
 # 服务器类别统计
+# 19 个定义的服务 + web_search(built-in) + thinking(built-in) = 21 工具可用
 categories:
-  search: 7                      # scholar/article/scholarly/ncbi/tavily/exa + web_search(built-in)
-  data: 3
-  compute: 4
-  image: 3
-  knowledge: 3
+  search: 7                      # scholar/article/scholarly/ncbi/tavily/exa/deepwiki + web_search(built-in)
+  data: 3                        # filesystem/github/zotero
+  compute: 4                     # coderunner/rplay/git/echarts
+  image: 3                       # playwright/ocr/ocr_fallback
+  knowledge: 3                   # obsidian/thinking(built-in)/deepwiki
   total: 21
 
 # ===== 搜索引擎激活状态 (v2.0) =====

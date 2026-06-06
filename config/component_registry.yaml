@@ -195,8 +195,8 @@ components:
 # 活系统指标
 living_system:
   born: "2026-06-05"
-  total_components: 33
-  auto_checkable: 9
-  manual_review: 24
+  total_components: 51
+  auto_checkable: 10              # 9 mcp_tools (auto_check) + 1 methods (auto_check)
+  manual_review: 41               # 25 skills + 5 architecture + 3 config + 3 handbooks + 2 methods + 2 mcp_tools + 1 living_system
   last_health_check: "2026-06-06"
-  health_score: 100  # all components verified today
+  health_score: 95  # 51/51 verified today; minor count inconsistencies resolved
