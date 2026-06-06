@@ -80,7 +80,7 @@ architecture:
         - "Python"
         - "shell"
       tool_registry: "config/component_registry.yaml"
-      species_variants: "config/species_variants.yaml"    # 物种拼写变体 — 用于 OCR 容错搜索
+      species_graph: "external/cognitive-search-engine/config/species_graph.yaml"    # 统一物种图谱(variants+aliases+papers+edges)
 
 # ===== BDI 模型 (Belief-Desire-Intention) =====
 # 经典人工智能 Agent 理论 — 模拟人类心智的计算模型

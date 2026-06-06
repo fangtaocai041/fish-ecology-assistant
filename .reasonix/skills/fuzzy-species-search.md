@@ -16,8 +16,8 @@ allowed-tools: web_fetch, web_search, read_file
 
 ## PREFLIGHT (MANDATORY)
 
-1. READ `config/species_variants.yaml` → pre-computed variants for target species
-2. EXTRACT: `{genus, species, chinese_name, known_misspellings, target_journals}`
+1. READ `external/cognitive-search-engine/config/species_graph.yaml` → species node with `{variants[], aliases[], journals[]}`
+2. EXTRACT: `{genus, species, chinese_name, variants, journals}`
 
 ## Search Protocol (7 layers)
 

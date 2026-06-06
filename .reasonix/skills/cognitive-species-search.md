@@ -80,7 +80,7 @@ SIGNIFIED:
   Taxonomic context: {family, order, related_species}
   Ecological context: {habitat, distribution, conservation_status}
 
-KNOWN SIGNIFIER VARIANTS (from species_variants.yaml):
+KNOWN SIGNIFIER VARIANTS (from species_graph.yaml):
   {known_misspellings}
 ```
 
@@ -165,7 +165,7 @@ ORDER layers by IG × budget_weight:
 ```
 ACTIVATE layer N ONLY IF:
   Layer 1: ALWAYS
-  Layer 2: ALWAYS (species_variants.yaml exists)
+  Layer 2: ALWAYS (species_graph.yaml exists)
   Layer 3-5: ONLY IF Layer 1 returns < 10 results
   Layer 6: ONLY IF ≥2 engines used in Layer 1
   Layer 7: ALWAYS (merge after all active layers)

@@ -16,9 +16,9 @@ allowed-tools: web_fetch, web_search, read_file, ncbi_ncbi_esearch, ncbi_ncbi_es
 
 ### 0.1 读取物种变体配置 [必须]
 ```
-read_file "config/species_variants.yaml"
+read_file "external/cognitive-search-engine/config/species_graph.yaml"
 ```
-提取该物种的：`scientific_name`, `known_misspellings[]`, `taxonomic_synonyms[]`, `chinese_aliases[]`, `target_journals[]`。
+提取该物种的 `variants[]`, `aliases[]`, 目标 `journals[]`。数据已从 species_variants.yaml 迁移。
 
 **若 config 不存在：使用 OCR 错误模型自动生成变体（见 0.3）**
 
