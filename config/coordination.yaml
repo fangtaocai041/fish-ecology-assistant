@@ -44,7 +44,7 @@ coordination:
     search_engines:
       max_concurrent: 5
       strategy: "fan_out"
-      engines: ["tavily","exa","scholar","article","scholarly"]
+      engines: ["tavily","exa","scholar","article","scholarly","ncbi","web_search"]
     kb_search:
       max_concurrent: 13
       strategy: "fan_out"

@@ -1,14 +1,10 @@
 ---
 name: fuzzy-species-search
-version: "1.0.0"
+version: "2.0.0"
 last_updated: "2026-06-06"
-description: Multi-layer fuzzy species literature search — exact→variant→substring→Chinese name→cross-engine, auto-dedup
+description: "[已弃用] 请使用 unified-species-search — 多层模糊搜索逻辑已迁移至统一搜索"
 runAs: subagent
-allowed-tools:
-  - scholar_search_literature_graph
-  - article_search_literature
-  - scholar_search_google_scholar_key_words
-  - tavily_tavily_search
+allowed-tools: web_fetch, web_search, read_file
 ---
 # Fuzzy Species Search
 

@@ -2,7 +2,13 @@
 name: research-executor
 description: Search Web & collect literature with cited sources — execute per research plan, return raw materials with provenance
 runAs: subagent
-allowed-tools: web_search, web_fetch, tavily_tavily_search, exa_web_search_exa, scholar_search_literature_graph, article_search_literature, scholarly_research_search, playwright_browser_navigate, playwright_browser_take_screenshot
+allowed-tools: web_search, web_fetch
+# 搜索工具（付费+免费混合）：
+# tavily_tavily_search (Tavily), exa_web_search_exa (Exa),
+# scholar_search_literature_graph (Scholar), article_search_literature (Article),
+# scholarly_research_search (Scholarly), ncbi_ncbi_esearch (NCBI),
+# web_search / web_fetch (Reasonix 内置，免费)
+# 物种搜索请用 unified-species-search skill
 ---
 # Research Executor (ReAct Mode)
 
@@ -29,16 +35,17 @@ Observation: <Quality of results? Contradictions? Gaps?>
 
 ---
 
-## Search Engine Matrix
+## Search Engine Matrix（真实可用工具）
 
 | Scenario | Primary | Fallback | Example Query |
 |:---------|:--------|:---------|:--------------|
-| Academic papers | `scholar_search_literature_graph` | `article_search_literature` | "Yangtze fish community niche partitioning" |
-| Biology/Ecology | `scholarly_research_search` | `tavily_tavily_search` | Add PubMed MeSH terms |
-| General info | `tavily_tavily_search` (depth=advanced) | `exa_web_search_exa` | Natural language queries |
-| Gov data / Policy | `web_search` + `web_fetch` | `tavily_tavily_search` | "Yangtze ten-year fishing ban effects 2025" |
-| Chinese literature | `web_search` (Chinese keywords) | `scholar_search_literature_graph` | Chinese keywords |
-| English literature | `scholar_search_literature_graph` | `exa_web_search_exa` | Latin names + field terms |
+| Species academic search | `run_skill unified-species-search` | — | NCBI API + 拼写变体自动覆盖 |
+| General academic | `scholar_search_literature_graph` | `article_search_literature` | 多源学术交叉 |
+| Gov data / Policy | `web_search` + `web_fetch` | — | "Yangtze ten-year fishing ban effects 2025" |
+| Chinese literature | `web_search` (Chinese keywords) | 引用回溯 | 中文关键词 + 期刊定向扫描 |
+| English literature | `web_search` (site:pubmed) | NCBI API 直调 | Latin names + field terms |
+| Species name variants | `run_skill unified-species-search` | — | 自动从 species_variants.yaml 加载变体 |
+| Full-text papers | `article_get_article_details` | `web_fetch` (DOI) | PMC + OA 全文获取 |
 
 ---
 
@@ -114,7 +121,8 @@ Action: web_search("<Chinese keywords>")
 
 ### Round 3: Deep dive
 ```
-Action: tavily_tavily_search("<specific narrow query>")
+Action: web_search("<specific narrow query>")
+IF need_full_text: article_get_article_details(pmcid="PMC...")
 → Goal: Fill gaps from Rounds 1-2
 ```
 
@@ -122,7 +130,7 @@ Action: tavily_tavily_search("<specific narrow query>")
 ```
 Sub-topic 1 → scholar_search_literature_graph("morphological niche Culter sympatric")
 Sub-topic 2 → scholar_search_literature_graph("stable isotope niche partitioning freshwater fish")
-Sub-topic 3 → tavily_tavily_search("eDNA metabarcoding fish community Yangtze")
+Sub-topic 3 → article_search_literature(keyword="eDNA metabarcoding fish community Yangtze")
 → Merge results in Observation
 ```
 
@@ -178,5 +186,6 @@ Sub-topic 3 → tavily_tavily_search("eDNA metabarcoding fish community Yangtze"
 2. **Latin names**: Mark species names with italics on first occurrence
 3. **Source ranking**: SCI Q1 > SCI > Core journal > Gov report > Thesis > News
 4. **Cross-verification**: Key data from ≥ 2 independent sources
-5. **Fallback chain**: `scholar_search_literature_graph → tavily_tavily_search → web_search`
-6. **Tool failure**: Skip and annotate unavailable MCP tools, don't halt the pipeline
+5. **Fallback chain**: `scholar_search_literature_graph → article_search_literature → ncbi_ncbi_esearch → web_search`
+6. **Search engines are all free** — scholar/article/scholarly/ncbi 全部免费，无需 API key
+7. **Tool failure**: Skip and annotate unavailable MCP tools, don't halt the pipeline

@@ -4,6 +4,7 @@
 
 servers:
   # ===== 学术搜索 (5) =====
+  # 全部免费 · 科研聚焦
   scholar:
     name: Scholar MCP
     command: npx
@@ -24,7 +25,15 @@ servers:
     name: Scholarly MCP
     command: npx
     args: ["-y", "scholarly-research-mcp"]
-    description: Multi-source academic cross-database search
+    description: Multi-source academic cross-database (Semantic Scholar + PubMed + arXiv + JSTOR)
+    category: search
+    enabled: true
+
+  ncbi:
+    name: NCBI MCP
+    command: node
+    args: [".reasonix/mcp-servers/ncbi-mcp.mjs"]
+    description: PubMed E-utilities — ESearch + ESummary + EFetch (citation backtracking)
     category: search
     enabled: true
 
@@ -164,9 +173,9 @@ servers:
 
 # 服务器类别统计
 categories:
-  search: 5
+  search: 7                      # scholar/article/scholarly/ncbi/tavily/exa + web_search(built-in)
   data: 3
   compute: 4
   image: 3
   knowledge: 3
-  total: 18
+  total: 21                      # +1 ncbi, tavily/exa re-enabled

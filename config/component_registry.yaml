@@ -45,9 +45,12 @@ components:
       expiry_policy: { type: "manual_review", max_age_days: 90 }
 
   mcp_tools:
-    tavily:    { version: "latest", last_verified: "2026-06-06", expiry: { type: "auto_check", target: "npm", max_age_days: 30 } }
-    exa:       { version: "latest", last_verified: "2026-06-06", expiry: { type: "auto_check", target: "npm", max_age_days: 30 } }
-    scholar:   { version: "latest", last_verified: "2026-06-06", expiry: { type: "auto_check", target: "npm", max_age_days: 30 } }
+    tavily:    { version: "latest", last_verified: "2026-06-20", expiry: { type: "auto_check", target: "npm", max_age_days: 30 } }
+    exa:       { version: "latest", last_verified: "2026-06-20", expiry: { type: "auto_check", target: "npm", max_age_days: 30 } }
+    scholar:   { version: "latest", last_verified: "2026-06-20", expiry: { type: "auto_check", target: "npm", max_age_days: 30 } }
+    article:   { version: "latest", last_verified: "2026-06-20", expiry: { type: "auto_check", target: "npm", max_age_days: 30 } }
+    scholarly: { version: "latest", last_verified: "2026-06-20", expiry: { type: "auto_check", target: "npm", max_age_days: 30 } }
+    ncbi:      { version: "custom", last_verified: "2026-06-20", expiry: { type: "auto_check", target: "manual", max_age_days: 90 } }
     deepwiki:  { version: "latest", last_verified: "2026-06-06", expiry: { type: "auto_check", target: "mcp", max_age_days: 30 } }
 
   config:

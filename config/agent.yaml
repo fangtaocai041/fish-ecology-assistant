@@ -69,7 +69,7 @@ pipeline:
       skill: "research-executor"
       activation: "planner_returns_queries"
       model: "default"
-      engines: ["tavily", "exa", "scholar", "article", "scholarly"]
+      engines: ["tavily", "exa", "scholar", "article", "scholarly", "ncbi", "web_search"]
 
     - id: analyst
       name: "数据分析"
@@ -101,6 +101,8 @@ agents:
       - scholar
       - article
       - scholarly
+      - ncbi
+      - web_search
     bilingual: true
 
   ecology:

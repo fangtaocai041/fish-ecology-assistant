@@ -42,6 +42,10 @@ build/
 # Reasonix auto-generated files
 deepseek-tokenizer.json.gz
 
+# 本地启动脚本（含代理地址）
+start-reasonix.bat
+start-reasonix.ps1
+
 # Playwright browser snapshots
 .playwright-mcp/
 ima-claw-page.md

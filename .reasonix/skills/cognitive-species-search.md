@@ -1,15 +1,10 @@
 ---
 name: cognitive-species-search
-version: "3.0.0"
+version: "3.1.0"
 last_updated: "2026-06-06"
-description: Cognitive Species Search Engine — semiotics + linguistics + phonetics + logic + DeepSeek chain-of-thought. The most advanced species literature search method.
+description: "[已弃用] 请使用 unified-species-search — 认知方法论保留在此，但执行层已迁移"
 runAs: subagent
-allowed-tools:
-  - scholar_search_literature_graph
-  - article_search_literature
-  - scholar_search_google_scholar_key_words
-  - tavily_tavily_search
-  - thinking_sequentialthinking
+allowed-tools: web_fetch, web_search, read_file
 ---
 # 🧠 Cognitive Species Search Engine (v3)
 
