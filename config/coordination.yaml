@@ -10,7 +10,7 @@ coordination:
   shared_protocols:
     preflight: "read config/agent.yaml before all Skills"
     rule_ids: ["FB-1","FB-2","CP-1","CP-2","SM-1","SM-2","WF-1","WF-2","PT-1","PT-2","EH-1","EH-2","MO-1","MO-2","DS-1","DS-2","DS-3","DS-4"]
-    verification: { min_sources_core_claim: 2, max_iterations: 3 }
+    verification: { min_sources_core_claim: 3, max_iterations: 3 }
     contradiction: { budget_multiplier: 2.5, transformation_threshold: 5 }
 
   # ===== 存异: 项目特定 =====
@@ -22,8 +22,8 @@ coordination:
     fish:
       skill_dir: ".reasonix/skills"
       pipeline_type: "explicit_stages"
-      skill_count: 15
-      mcp_count: 18
+      skill_count: 24
+      mcp_count: 21
       memory: "reasonix"
     porpoise:
       skill_dir: "src/skills"
