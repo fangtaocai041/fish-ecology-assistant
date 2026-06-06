@@ -357,7 +357,238 @@ WHEN conflict(A, B) THEN resolve by lexicographic order
 
 ---
 
-## 8. Metarules (元规则)
+## 8. DeepSeek Efficiency Principles (效率即智能)
+
+**Source**: DeepSeek engineering philosophy — "Efficiency Is Intelligence"
+
+These 4 principles are the **runtime optimization layer** — they govern HOW compute is spent, not just WHAT to do. They complement the 7 Systems Thinking principles by providing concrete execution efficiency.
+
+---
+
+### D1. Entropy Budget (熵预算)
+
+**Engineering translation**:
+> Compute resources are allocated **proportionally to question importance**, not uniformly.
+> PhD thesis → full pipeline. Casual query → single-step search. Each stage has an explicit `activation` condition.
+
+#### Formal Definition
+
+```
+Let Q be a question.
+Let Importance(Q) ∈ {LOW, MEDIUM, HIGH}.
+Let Pipeline = {planner, executor, analyst, writer, reviewer}.
+
+StageActivation(s, Q) :=
+  s = planner                           → ALWAYS (lightweight, always-on)
+  s = executor                          → planner_returns_queries(Q) ≠ ∅
+  s = analyst                           → executor_returns_results(Q) ≠ ∅
+  s = writer                            → analyst_returns_findings(Q) ≠ ∅
+  s = reviewer                          → |writer_output(Q)| ≥ 500 chars
+
+Budget(Q) :=
+  Importance(Q) = LOW    → single-stage (executor only)
+  Importance(Q) = MEDIUM → 3-stage (planner → executor → analyst)
+  Importance(Q) = HIGH   → full 5-stage pipeline
+```
+
+#### WHEN → THEN
+
+```
+WHEN question.received(Q)
+THEN
+  importance = classify_importance(Q)
+  SWITCH importance:
+    LOW:    route_to(executor) only
+    MEDIUM: route_to(planner → executor → analyst)
+    HIGH:   route_to(full_pipeline)
+  // Each stage uses its activation condition as a gate
+  // Inactive stages = zero compute cost
+```
+
+#### Code Mapping
+
+| Level | Path | Runtime |
+|-------|------|---------|
+| Config | `pipeline.stages[].activation` | Conditional gate per stage |
+| Config | `pipeline.stages[].model` | Model routing (default vs reasoning) |
+| Skill | `research-orchestrator` | Routes question → pipeline depth |
+| Skill | `karpathy-guard` | Enforces activation conditions |
+
+---
+
+### D2. Sparse Activation (稀疏激活)
+
+**Engineering translation**:
+> **MoE (Mixture of Experts) routing**: each Skill/module is a silent neuron — fires only when its signal crosses threshold.
+> Planner always runs (lightweight, 先头部队). All other stages are conditionally activated.
+
+#### Formal Definition
+
+```
+Let Skills = {planner, executor, analyst, writer, reviewer,
+              paper_analyzer, frontier_tracker, stats_assistant,
+              ima_smart_search, verify_stats_handbook, ...}
+
+Activation(s) :=
+  s = planner                  → ALWAYS (∀ Q)
+  s = executor                 → planner.produced_queries()
+  s = analyst                  → executor.produced_results()
+  s = writer                   → analyst.produced_findings()
+  s = reviewer                 → writer.produced_output() ∧ |output| ≥ 500
+  s = paper_analyzer           → user_requests_deep_analysis()
+  s = frontier_tracker         → background_poll_interval_elapsed()
+  s = stats_assistant          → analysis_involves_R_or_statistics()
+  s = ima_smart_search         → domain_matches_knowledge_base()
+  s = verify_stats_handbook    → code_or_method_referenced()
+
+Silent neurons: ∀ s ∉ ActiveSet(Q): s.cost = 0
+```
+
+#### WHEN → THEN
+
+```
+WHEN pipeline.routes_to_stage(s)
+THEN
+  karpathy-guard checks activation(s):
+    IF activation_condition_met THEN fire(s) → execute
+    ELSE skip(s) → zero_cost
+  // Result: only ~2-4 Skills active per request (not all 12+)
+```
+
+#### Code Mapping
+
+| Level | Path | Runtime |
+|-------|------|---------|
+| Config | `pipeline.stages[].activation` | Per-stage activation condition |
+| Config | `agents.*.enabled` | Agent enable/disable flags |
+| Skill | `karpathy-guard` | MoE-style routing: entropy budget + sparse activation |
+| Skill | `research-orchestrator` | Pipeline coordinator, activates stages per conditions |
+
+---
+
+### D3. Differential Verification (差分验证)
+
+**Engineering translation**:
+> **Probabilistic stale scoring**: never run full checks. Compute `P(stale)` only for changed packages.
+> Review cycle = f(update_frequency, breaking_change_probability, user_dependency) — not fixed 3 months.
+
+#### Formal Definition
+
+```
+Let H be a handbook chapter with R packages P = {p₁, ..., pₙ}.
+
+For each p ∈ P:
+  days_since_verify = now - p.last_verified
+  update_frequency = mean_days_between_releases(p)
+  breaking_change_risk = P(major_version_bump | update)
+
+  P_stale(p) := 1 - exp(-λ × days_since_verify)
+    where λ = f(update_frequency, breaking_change_risk, user_dependency)
+
+  IF P_stale(p) > config.staleness_threshold
+    THEN mark_for_review(p)
+    ELSE skip(p)
+
+ReviewCycle(p) := max(
+  base_interval,
+  min(update_frequency(p), user_dependency(p) × base_interval)
+)
+// NOT a fixed 3-month cycle — jointly determined
+```
+
+#### WHEN → THEN
+
+```
+WHEN verify_stats_handbook.triggered(chapter)
+THEN
+  packages = extract_dependencies(chapter)
+  FOR EACH p IN packages:
+    P_stale = compute_stale_probability(p)
+    IF P_stale > threshold THEN verify_and_update(p)
+    ELSE skip(p)
+  // Only changed/unstable packages are checked
+  // Stable packages are trusted until expiry
+
+  next_review = compute_review_cycle(packages)  // dynamic, not fixed
+  annotate chapter with {verified_date, next_review, packages_checked}
+```
+
+#### Code Mapping
+
+| Level | Path | Runtime |
+|-------|------|---------|
+| Skill | `verify-stats-handbook` | Probabilistic stale scoring + differential verification |
+| Config | (implicit in skill) | Staleness threshold, CRAN version check |
+| Handbook | `.reasonix/handbooks/stats-methods.md` | Version-tracked method templates |
+
+---
+
+### D4. Information-Gain Routing (信息增益路由)
+
+**Engineering translation**:
+> Keywords ordered by **information gain**. P0 exact terms searched first → stop on hit.
+> P2 redundant terms skipped. Cross-KB deduplication eliminates wasted reads.
+
+#### Formal Definition
+
+```
+Let Q be a search query with keywords K = {k₁, ..., kₙ}.
+
+InformationGain(k) := specificity(k) × rareness(k) / frequency_in_corpus(k)
+
+Priority classes:
+  P0 (exact):   specificity = high, unambiguous   → e.g. "glmmTMB", "SIBER"
+  P1 (specific): specificity = medium              → e.g. "mixed effects model"
+  P2 (generic):  specificity = low, high-frequency → e.g. "data analysis", "research"
+
+SearchStrategy(K):
+  1. Order K by InformationGain descending
+  2. For each P0 term: search → IF hit THEN stop (no need for P1/P2)
+  3. For P1 terms (if P0 no-hit): search → deduplicate
+  4. Skip P2 terms (redundant, low signal)
+
+Cross-KB dedup:
+  ∀ result r₁ ∈ KBₐ, r₂ ∈ KB_b: IF sim(r₁, r₂) > τ THEN keep_higher_quality(r)
+```
+
+#### WHEN → THEN
+
+```
+WHEN search_query(Q)
+THEN
+  keywords = extract_keywords(Q)
+  classify by information_gain:
+    P0: ["glmmTMB", "δ¹³C", "SIBER"]         → search first, stop on hit
+    P1: ["model selection", "niche overlap"]  → search if P0 no-hit
+    P2: ["analysis methods", "ecology"]       → SKIP (redundant)
+  FOR EACH KB:
+    search in parallel
+    cross-KB deduplicate (keep higher quality)
+  log("info_gain_routing", {P0_hits, P1_hits, P2_skipped, dedup_count})
+```
+
+#### Code Mapping
+
+| Level | Path | Runtime |
+|-------|------|---------|
+| Skill | `ima-smart-search` | Information-gain keyword ordering + cross-KB dedup |
+| Config | (implicit in skill) | P0/P1/P2 classification rules |
+| Knowledge Base | `knowledge_bases.ima` (13 KBs) | Target KB set for dedup |
+
+---
+
+### DeepSeek Principles — Rule Index (addendum)
+
+| ID | Name | Trigger | Action | Config Path / Skill |
+|----|------|---------|--------|---------------------|
+| DS-1 | Entropy Budget | question received | allocate compute by importance | `pipeline.stages[].activation` + `research-orchestrator` |
+| DS-2 | Sparse Activation | stage routing | fire only if condition met | `pipeline.stages[].activation` + `karpathy-guard` |
+| DS-3 | Differential Verify | handbook chapter referenced | P(stale) check, not full verify | `verify-stats-handbook` skill |
+| DS-4 | Info-Gain Routing | search query | P0 first → stop on hit, skip P2 | `ima-smart-search` skill |
+
+---
+
+## 9. Metarules (元规则)
 
 ```
 M1: Specificity wins — more specific rule overrides general.
@@ -366,6 +597,7 @@ M3: Human gate — ∀ action ∈ {field_survey, conservation, publication, data
 M4: Audit everything — ∀ state_change: log(before, after, trigger, timestamp).
 M5: Fail loudly, recover gracefully — log(ERROR), retreat if recoverable, else alert.
 M6: Sparse activation — each Skill fires only when its activation condition is met (karpathy-guard routing).
+M7: Efficiency is intelligence — entropy budget over uniform allocation, differential over full verification, information-gain over exhaustive search.
 ```
 
 ---
@@ -388,6 +620,10 @@ M6: Sparse activation — each Skill fires only when its activation condition is
 | EH-2 | Warning | NON_ANTAGONISTIC | annotate + continue | `contradiction_analysis.contradiction_types.non_antagonistic` |
 | MO-1 | Pareto Check | reviewer evaluates | check balance | `research_balance.priorities` + `research-reviewer` |
 | MO-2 | Lexicographic | objective conflict | higher-priority wins | `research_balance.priorities[].rule` |
+| DS-1 | Entropy Budget | question received | allocate compute by importance | `pipeline.stages[].activation` + `research-orchestrator` |
+| DS-2 | Sparse Activation | stage routing | fire only if condition met | `pipeline.stages[].activation` + `karpathy-guard` |
+| DS-3 | Differential Verify | handbook referenced | P(stale) check, not full verify | `verify-stats-handbook` skill |
+| DS-4 | Info-Gain Routing | search query | P0 first → stop on hit, skip P2 | `ima-smart-search` skill |
 
 ---
 
