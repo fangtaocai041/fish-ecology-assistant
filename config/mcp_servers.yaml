@@ -178,4 +178,20 @@ categories:
   compute: 4
   image: 3
   knowledge: 3
-  total: 21                      # +1 ncbi, tavily/exa re-enabled
+  total: 21
+
+# ===== 搜索引擎激活状态 (v2.0) =====
+search_engine_status:
+  activated_session:             # 当前会话中可用
+    - ncbi                       # ✅ node ncbi-mcp.mjs (已注册)
+    - web_search                 # ⚠️ Reasonix 内置 (fetch failed, 待排查)
+  activated_next_startup:        # 下次启动后生效 (Reasonix 已注册，需重启)
+    - scholar                    # npx scholar-mcp
+    - article                    # npx article-mcp
+    - scholarly                  # npx scholarly-research-mcp
+    - tavily                     # npx tavily-mcp@latest (需要 TAVILY_API_KEY)
+    - exa                        # npx exa-mcp-server (需要 EXA_API_KEY)
+  api_keys:
+    TAVILY_API_KEY: "configured_in_.env"
+    EXA_API_KEY: "configured_in_.env"
+  note: "scholar/article/scholarly/tavily/exa 的 MCP 工具在下一次 Reasonix 启动后生效。API key 已在 .env 中配置。"

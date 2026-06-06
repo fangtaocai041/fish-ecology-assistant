@@ -1,14 +1,15 @@
 ---
 name: research-executor
+version: "2.1.0"
+last_updated: "2026-06-20"
 description: Search Web & collect literature with cited sources — execute per research plan, return raw materials with provenance
 runAs: subagent
-allowed-tools: web_search, web_fetch
-# 搜索工具（付费+免费混合）：
-# tavily_tavily_search (Tavily), exa_web_search_exa (Exa),
-# scholar_search_literature_graph (Scholar), article_search_literature (Article),
-# scholarly_research_search (Scholarly), ncbi_ncbi_esearch (NCBI),
-# web_search / web_fetch (Reasonix 内置，免费)
-# 物种搜索请用 unified-species-search skill
+allowed-tools: web_search, web_fetch, ncbi_ncbi_esearch, ncbi_ncbi_esummary, ncbi_ncbi_efetch, scholar_search_literature_graph, scholar_search_google_scholar_key_words, article_search_literature, article_get_article_details, article_get_references, scholarly_search, tavily_search, tavily_extract, exa_web_search
+# 7 引擎并行搜索矩阵 (v2.1)：
+# 免费: ncbi(Pubmed) + scholar(Google Scholar) + article(Europe PMC) + scholarly(Semantic Scholar) + web_search/web_fetch(Reasonix 内置)
+# 付费: tavily(Tavily AI, needs TAVILY_API_KEY) + exa(Exa semantic, needs EXA_API_KEY)
+# 物种搜索: run_skill unified-species-search (7引擎并行 + OCR变体 + 引用回溯)
+# MCP 激活: scholar/article/scholarly/tavily/exa 需在 Reasonix 下次启动后生效
 ---
 # Research Executor (ReAct Mode)
 
@@ -24,6 +25,29 @@ Follow the Karpathy principles:
 
 ---
 
+## Step 0: 工具可用性自检 [v2.1 升级]
+
+执行搜索前先探测哪些工具有效：
+```
+AVAILABLE = [web_search, web_fetch]  # 始终可用
+FREE_ENGINES = [ncbi_ncbi_esearch, scholar_search_literature_graph,
+                article_search_literature, scholarly_search]
+PAID_ENGINES = [tavily_search, exa_web_search]  # 需要 API key: TAVILY_API_KEY, EXA_API_KEY
+
+FOR tool IN FREE_ENGINES + PAID_ENGINES:
+    TRY tool("test", maxResults=1):
+        AVAILABLE.add(tool)
+    CATCH:
+        IF tool in PAID_ENGINES:
+            log(tool + " 不可用 — API key 未配置或失效")
+        ELSE:
+            log(tool + " 不可用 — MCP 服务未加载（下次启动后生效）")
+```
+
+记录 `AVAILABLE` 列表，后续搜索只调可用工具。若无任何学术搜索工具可用→降级为纯 `web_search` + `web_fetch`。
+
+---
+
 ## ReAct Loop
 
 ```
@@ -35,17 +59,18 @@ Observation: <Quality of results? Contradictions? Gaps?>
 
 ---
 
-## Search Engine Matrix（真实可用工具）
+## Search Engine Matrix [v2.0 升级 — 7 引擎]
 
-| Scenario | Primary | Fallback | Example Query |
-|:---------|:--------|:---------|:--------------|
-| Species academic search | `run_skill unified-species-search` | — | NCBI API + 拼写变体自动覆盖 |
-| General academic | `scholar_search_literature_graph` | `article_search_literature` | 多源学术交叉 |
-| Gov data / Policy | `web_search` + `web_fetch` | — | "Yangtze ten-year fishing ban effects 2025" |
-| Chinese literature | `web_search` (Chinese keywords) | 引用回溯 | 中文关键词 + 期刊定向扫描 |
-| English literature | `web_search` (site:pubmed) | NCBI API 直调 | Latin names + field terms |
-| Species name variants | `run_skill unified-species-search` | — | 自动从 species_variants.yaml 加载变体 |
-| Full-text papers | `article_get_article_details` | `web_fetch` (DOI) | PMC + OA 全文获取 |
+| Scenario | Primary | Fallback 1 | Fallback 2 | Example Query |
+|:---------|:--------|:-----------|:-----------|:--------------|
+| 物种搜索 (+变体) | `run_skill unified-species-search` | — | — | 自动 7引擎+OCR+引用回溯 |
+| 通用学术 | `scholar_search_literature_graph` | `article_search_literature` | `scholarly_search` | 多源学术交叉 |
+| AI 深度搜索 | `tavily_search` | `exa_web_search` | `web_search` | 深度学习网络内容 |
+| 政府/政策数据 | `web_search` + `web_fetch` | `tavily_search` | — | "Yangtze ten-year fishing ban" |
+| 中文文献 | `web_search` (Chinese kw) | 引用回溯 | — | 中文关键词 + 期刊定向扫描 |
+| 英文文献 | `web_search` (site:pubmed) | `ncbi_ncbi_esearch` | — | Latin names + field terms |
+| 全文获取 | `article_get_article_details` | `web_fetch`(DOI) | `tavily_extract` | PMC + OA 全文 |
+| 作者引用回溯 | `ncbi_ncbi_efetch` | `article_get_references` | — | 从已知论文找引用 |
 
 ---
 
@@ -103,35 +128,50 @@ IF any paper found ONLY by fuzzy search:
 
 ---
 
-## Search Strategy
+## Search Strategy [v2.0 升级 — 7引擎并行]
 
 **English-first, supplement with Chinese.**
 
-### Round 1: English academic core search
+### Round 1: 7 引擎并行搜索 [v2.0 新增]
+对主查询，同时发出所有可用引擎：
 ```
-Action: scholar_search_literature_graph("<English query with latin names>")
-→ Goal: ≥3 peer-reviewed papers from 2022-2025
+PARALLEL (只调 Step 0 中确定的 AVAILABLE 工具):
+  scholar_search_literature_graph("<English query>")
+  article_search_literature(keyword="<query>")
+  scholarly_search("<English query>")
+  tavily_search("<English query>")
+  exa_web_search("<English query>")
+  web_search("<English query>")
+  ncbi_ncbi_esearch(query="<query>")
+→ 合并去重，Goal: ≥5 篇高质量论文
 ```
 
 ### Round 2: Chinese supplement
 ```
-Action: web_search("<Chinese keywords>")
+PARALLEL:
+  web_search("<Chinese keywords>")
+  scholar_search_google_scholar_key_words("<Chinese keywords>")
+  tavily_search("<Chinese keywords>")
 → Goal: ≥2 Chinese core journal papers or policy reports
 ```
 
-### Round 3: Deep dive
+### Round 3: Deep dive + 全文获取
 ```
 Action: web_search("<specific narrow query>")
-IF need_full_text: article_get_article_details(pmcid="PMC...")
+IF need_full_text:
+  article_get_article_details(pmcid="PMC...")
+  web_fetch("https://doi.org/<doi>")
+  tavily_extract(url="<paper URL>")
 → Goal: Fill gaps from Rounds 1-2
 ```
 
-### Parallel (when sub-topics are independent)
+### Parallel sub-topics [v2.0 升级]
 ```
-Sub-topic 1 → scholar_search_literature_graph("morphological niche Culter sympatric")
-Sub-topic 2 → scholar_search_literature_graph("stable isotope niche partitioning freshwater fish")
-Sub-topic 3 → article_search_literature(keyword="eDNA metabarcoding fish community Yangtze")
-→ Merge results in Observation
+Sub-topic 1 → scholar_search_literature_graph("morphological niche")
+Sub-topic 2 → tavily_search("stable isotope niche partitioning")
+Sub-topic 3 → article_search_literature(keyword="eDNA fish community")
+Sub-topic 4 → exa_web_search("RAD-seq Yangtze fish")
+→ Merge all results in Observation
 ```
 
 ---
@@ -180,12 +220,16 @@ Sub-topic 3 → article_search_literature(keyword="eDNA metabarcoding fish commu
 3. < 3 results → auto-switch engine and retry
 4. Zero results → explicitly state "No results found" — **never fabricate**
 
-## Rules
+## Rules [v2.1 更新]
 
-1. **ReAct first**: Write Thought before each search, Observation after
-2. **Latin names**: Mark species names with italics on first occurrence
-3. **Source ranking**: SCI Q1 > SCI > Core journal > Gov report > Thesis > News
-4. **Cross-verification**: Key data from ≥ 2 independent sources
-5. **Fallback chain**: `scholar_search_literature_graph → article_search_literature → ncbi_ncbi_esearch → web_search`
-6. **Search engines are all free** — scholar/article/scholarly/ncbi 全部免费，无需 API key
-7. **Tool failure**: Skip and annotate unavailable MCP tools, don't halt the pipeline
+1. **工具自检优先**: Step 0 先探测可用工具，区分免费/付费；仅调 AVAILABLE
+2. **ReAct first**: Write Thought before each search, Observation after
+3. **Latin names**: Mark species names with italics on first occurrence
+4. **Source ranking**: SCI Q1 > SCI > Core journal > Gov report > Thesis > News
+5. **Cross-verification**: Key data from ≥ 2 independent sources
+6. **Fallback chain**: `scholar → article → scholarly → ncbi → tavily → exa → web_search → web_fetch`
+7. **7 引擎优先并行**: 主查询优先用 7 引擎并行，而非串行逐个试
+8. **物种搜索 → unified-species-search**: 涉及物种名必须委托该 Skill（含 OCR+引用回溯）
+9. **Tool failure**: Skip unavailable, don't halt. Log which tools skipped + 原因（MCP未加载/API key缺失）
+10. **零结果**: 明确报告"No results found"，绝不虚构
+11. **MCP 激活提醒**: scholar/article/scholarly/tavily/exa 需 Reasonix 重启后生效；如当前会话不可用，降级 web_search

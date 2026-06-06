@@ -1,14 +1,14 @@
 ---
 name: unified-species-search
-version: "3.1.0"
-last_updated: "2026-06-06"
-description: 统一物种文献搜索——OCR 变体预生成 + 多 query 并行 + 引用回溯 + 新论文检测。5 步全覆盖，零遗漏。
+version: "3.3.0"
+last_updated: "2026-06-20"
+description: 统一物种文献搜索——7 引擎并行 (ncbi+scholar+article+scholarly+tavily+exa+web) + OCR 变体预生成 + 引用回溯 + 新论文检测。零遗漏。
 runAs: subagent
-allowed-tools: web_fetch, web_search, read_file, ncbi_ncbi_esearch, ncbi_ncbi_esummary, ncbi_ncbi_efetch, scholar_search_literature_graph, scholar_search_google_scholar_key_words, article_search_literature
+allowed-tools: web_fetch, web_search, read_file, ncbi_ncbi_esearch, ncbi_ncbi_esummary, ncbi_ncbi_efetch, scholar_search_literature_graph, scholar_search_google_scholar_key_words, article_search_literature, scholarly_search, tavily_search, exa_web_search
 ---
-# Unified Species Search v3.1
+# Unified Species Search v3.3
 
-> **核心理念**：OCR 变体预生成 + 多 query 并行 + 引用回溯 + 新论文检测。禁止只搜精确学名一次。
+> **核心理念**：7 引擎并行 (ncbi + scholar + article + scholarly + tavily + exa + web_search) + OCR 变体预生成 + 引用回溯 + 新论文检测。禁止只搜精确学名一次。
 
 ---
 
@@ -66,35 +66,75 @@ ELSE: mode = "satisficing"              # 满意即止
 
 ---
 
-## 1. 多引擎并行搜索 [v3.1 强制并行]
+## 1. 7 引擎并行搜索 [v3.3 强制并行]
+
+### 1.1 工具可用性自检 [v3.3]
+
+启动时先执行一次探测，记录可用工具：
+```
+available = []
+FOR tool_name IN [scholar_search_literature_graph, article_search_literature, scholarly_search,
+                   tavily_search, exa_web_search, ncbi_ncbi_esearch, web_search]:
+    TRY tool_name("test", maxResults=1)
+        available.add(tool_name)
+    CATCH:
+        skip  # 静默跳过不可用工具；若为 API-key 型工具，config 中标注 requires_api_key
+
+# 分类统计
+free_available = filter(available, λt: t in [scholar_*, article_*, scholarly_*, ncbi_*, web_search])
+paid_available = filter(available, λt: t in [tavily_*, exa_*])
+```
+
+若无任何学术搜索工具可用→降级为 `web_search` + `web_fetch` 手动抓取。
+
+### 1.2 7 引擎全并行 [v3.3]
 
 **所有 query 同时发出，不等待前面的结果：**
 
 ```
 FOR EACH query IN all_queries:
-  PARALLEL:
-    ncbi_esearch(query, maxResults=50)
-    scholar_search_literature_graph(query, limit=20)
-    article_search_literature(keyword=query, max_results=10)
+  PARALLEL (只调用 available 中的工具):
+    ncbi_esearch(query, maxResults=50)               # PubMed 免费
+    scholar_search_literature_graph(query, limit=20)  # Google Scholar
+    article_search_literature(keyword=query, max_results=10)  # Europe PMC
+    scholarly_search(query, limit=15)                 # Semantic Scholar
+    tavily_search(query, max_results=15)              # AI 深度搜索
+    exa_web_search(query, num_results=10)             # 语义搜索
+    web_search(query, topK=10)                        # Reasonix 内置
 
-# 额外：中文名只搜 scholar
+# 额外：中文名搜索
 FOR EACH chinese_alias:
-  scholar_search_google_scholar_key_words(chinese_alias, num_results=10)
+  PARALLEL:
+    scholar_search_google_scholar_key_words(chinese_alias, num_results=10)
+    web_search(chinese_alias, topK=10)
 ```
 
-合并所有 PMID + DOI，去重。
+### 1.3 Fallback 链 [v3.2 新增]
+
+```
+学术搜索: scholar → article → scholarly → ncbi → web_search → web_fetch(DOI)
+网页搜索: tavily → exa → web_search
+中文搜索: web_search(chinese) → 引用回溯(从英文论文 References)
+```
+
+合并所有 PMID + DOI + URL，去重。
 
 ---
 
-## 2. ESummary + EFetch（批量拉元数据 + 单位）
+## 2. 元数据提取 + 全文拉取 [v3.3]
 
 ```
-# 批量拉元数据
+# NCBI: 批量拉 PubMed 元数据
 ncbi_esummary(pmids=all_pmids_csv)
 
 # 逐篇拉单位 + 引用回溯
 FOR EACH pmid IN relevant_pmids:
   ncbi_efetch(pmid=pmid)
+
+# 非 PubMed 来源: 用 web_fetch 拉 DOI 页面
+FOR EACH paper WITH doi AND no pmid:
+  web_fetch("https://doi.org/" + paper.doi)
+  # 提取标题、作者、摘要
 ```
 
 从 EFetch XML 提取：
@@ -115,11 +155,13 @@ IF ref.title 含 "Ochetob" OR ref.title 含 "鳤" OR ref.title 含 variant:
 
 ---
 
-## 4. DOI 去重 + 合并
+## 4. 多源去重 + 合并 [v3.3]
 
 ```
-all_papers = merge(ncbi_results, scholar_results, article_search_results)
-deduped = doi_dedup(all_papers)  # DOI 优先；无 DOI 则 title 模糊匹配
+all_papers = merge(ncbi_results, scholar_results, article_results,
+                   scholarly_results, tavily_results, exa_results, web_results)
+deduped = doi_dedup(all_papers)   # DOI 优先
+deduped = title_dedup(deduped)    # 无 DOI 则 title 模糊匹配 (阈值 0.85)
 ```
 
 ---
@@ -155,11 +197,15 @@ FOR EACH paper IN deduped:
 
 ---
 
-## 关键提示
+## 关键提示 [v3.3]
 - **Step 0 不可跳过** — 必须先读 config 才能开始搜索
 - **多 query 必须并行** — 禁止"先搜精确名，看结果再搜变体"
+- **7 引擎并行** — ncbi + scholar + article + scholarly + tavily + exa + web_search 同时发出
+- **工具自检** — 先探测可用工具，区分免费/付费；仅调 available 的，静默跳过不可用的
+- **Fallback 链** — 学术搜索不可用 → 降级 web_search + web_fetch(DOI)；中文不可用 → 引用回溯
 - **拼写变体** — Ochetobius ≠ Ochetobibus，config + OCR 模型双保险
 - **分类学异名** — Luciobrama macrocephalus 曾为鳤的同义名，必须同步搜索
 - **引用回溯** — 中文论文不在 PubMed 中，但会被英文论文引用，从 References 抓
 - **分类标准** — 正标题含 Ochetobius/鳤/Luciobrama = 专项；仅材料中出现 = 附带提及
 - **新论文标记** — year >= 2025 且无 PMID → flag + 推荐直接查 DOI
+- **MCP 激活提醒** — scholar/article/scholarly/tavily/exa 需在 Reasonix 下次启动后生效

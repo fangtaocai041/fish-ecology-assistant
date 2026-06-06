@@ -4,7 +4,7 @@
 # 存异 (Reserved Differences): project-specific implementations
 
 coordination:
-  version: "1.0.0"
+  version: "2.0.0"
 
   # ===== 求同: 共享协议 =====
   shared_protocols:
@@ -18,12 +18,14 @@ coordination:
     cognitive_search:
       skill_dir: "external/cognitive-search-engine/skills"
       skills: ["graph-search-engine","cognitive-species-search","self-evolve"]
-      description: "认知搜索引擎 — 图谱遍历 + 自适应深度 + 引用验证"
+      versions: { graph-search-engine: "4.1.0" }
+      description: "认知搜索引擎 v4.1 — 7引擎图谱遍历 + 自适应深度 + 引用验证 + TOOL_REGISTRY"
     fish:
       skill_dir: ".reasonix/skills"
       pipeline_type: "explicit_stages"
       skill_count: 24
       mcp_count: 21
+      search_engines: 7          # ncbi + scholar + article + scholarly + tavily + exa + web_search
       memory: "reasonix"
     porpoise:
       skill_dir: "src/skills"
@@ -39,12 +41,60 @@ coordination:
     fish_exports: ["stats-assistant","research-analyst","phd-proposal-writer","ima-smart-search"]
     porpoise_exports: ["detect-clicks","estimate-abundance","assess-threats","search-literature"]
 
+  # ===== 搜索引擎注册表 (v2.0, 三项目共享) =====
+  search_engine_registry:
+    ncbi:
+      category: "academic"
+      requires_api_key: false
+      mcp_server: "ncbi"
+      tools: ["ncbi_ncbi_esearch","ncbi_ncbi_esummary","ncbi_ncbi_efetch"]
+      fallback_priority: 4
+    scholar:
+      category: "academic"
+      requires_api_key: false
+      mcp_server: "scholar"
+      tools: ["scholar_search_literature_graph","scholar_search_google_scholar_key_words"]
+      fallback_priority: 1
+    article:
+      category: "academic"
+      requires_api_key: false
+      mcp_server: "article"
+      tools: ["article_search_literature","article_get_article_details","article_get_references"]
+      fallback_priority: 2
+    scholarly:
+      category: "academic"
+      requires_api_key: false
+      mcp_server: "scholarly"
+      tools: ["scholarly_search"]
+      fallback_priority: 3
+    tavily:
+      category: "web"
+      requires_api_key: true
+      env_var: "TAVILY_API_KEY"
+      mcp_server: "tavily"
+      tools: ["tavily_search","tavily_extract"]
+      fallback_priority: 5
+    exa:
+      category: "web"
+      requires_api_key: true
+      env_var: "EXA_API_KEY"
+      mcp_server: "exa"
+      tools: ["exa_web_search"]
+      fallback_priority: 6
+    web_search:
+      category: "builtin"
+      requires_api_key: false
+      mcp_server: "reasonix_builtin"
+      tools: ["web_search","web_fetch"]
+      fallback_priority: 7
+    note: "MCP 服务器 (scholar/article/scholarly/tavily/exa) 需在 Reasonix 下次启动后生效"
+
   # ===== 并行策略 =====
   parallelism:
     search_engines:
-      max_concurrent: 5
+      max_concurrent: 7
       strategy: "fan_out"
-      engines: ["tavily","exa","scholar","article","scholarly","ncbi","web_search"]
+      engines: ["ncbi","scholar","article","scholarly","tavily","exa","web_search"]
     kb_search:
       max_concurrent: 13
       strategy: "fan_out"
