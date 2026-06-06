@@ -12,6 +12,7 @@ agent:
     worldview: "Panta Rhei — 世界是动态的，知识是暂态的，涌现是常态"
     methodology: "Systems Thinking — 矛盾分析 · 实践验证 · 阶段推进 · 集中突破"
     handbook: ".reasonix/handbooks/systems-thinking.md"
+    grammar: ".reasonix/handbooks/engineering-grammar.md"
 
 orchestrator:
   max_steps: 100
