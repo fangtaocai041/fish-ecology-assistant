@@ -102,8 +102,8 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
-| Search engines | 1 | **11** (scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
-| MCP services | 0 | **18** (incl. DeepWiki) |
+| Search engines | 1 | **12** (cognitive_search + scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
+| MCP services | 0 | **19** (incl. DeepWiki + cognitive-search-mcp) |
 | AI subagents | 4 (generic) | **14** (domain-specialized, rule-auditor, emergence detection) |
 | R statistics | — | ✅ R 4.6.0 + 20+ ecology packages |
 | OCR | — | ✅ PaddleOCR + Tesseract.js |
@@ -184,6 +184,7 @@ Restart Reasonix — everything is ready.
 
 | Service | Engine | Best For |
 |:--------|:-------|:---------|
+| `cognitive_search` | **CognitiveSearch (DirectLoader)** | **核心搜索引擎** · importlib 加载, 引擎更新自动生效, 双模式(轻量/完整) |
 | `scholar` | **Google Scholar** | **优先搜索引擎** · 学术论文 |
 | `article` | Article metadata | 全文摘要 |
 | `scholarly` | Multi-source | 跨数据库搜索 |
@@ -206,6 +207,74 @@ Restart Reasonix — everything is ready.
 | `zotero` | SQLite | Zotero library query |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+---
+
+## 🧠 Cognitive Search Engine · DirectLoader Protocol
+
+> **Core search infrastructure shared across all three projects** under `D:\Reasonix\`
+
+The cognitive-search-engine is the **central perception layer** — not a remote MCP server, but a local Python module loaded via `importlib`:
+
+### Architecture
+
+```
+LiteratureAgent (Reasonix)
+  └─ CognitiveSearchAdapter.search(genus, species, full_pipeline=True|False)
+       ├─ importlib → D:\Reasonix\cognitive-search-engine\src\   ← 引擎更新自动生效
+       │
+       ├─ full_pipeline=False (轻量模式)
+       │   ├─ variant_generator.generate()    → OCR 变体列表 (Ochetobius→Ochetobibus)
+       │   ├─ build_search_queries()          → 精确名 + 变体 + 中文名
+       │   └─ ParallelSearch.search_all()     → PubMed × Crossref × OpenAlex 并行
+       │
+       └─ full_pipeline=True (完整管线)
+           └─ CognitiveAgent.search()
+               ├─ Layer 1 (Perception)   → 输入 + query 形成
+               ├─ Layer 2 (Cognitive)    → BDI phase 选择 (Think)
+               ├─ Layer 3 (Memory)       → graph_lookup (0 token) + 轨迹记录
+               ├─ Layer 4 (Mapping)      → 意图 → 搜索工具映射
+               └─ Layer 5 (Execution)    → Act + Observe + Reflect
+                   └─ 循环: Think → Act → Observe → Reflect
+                       停止条件: Desire满足 / budget耗尽 / diminishing returns
+```
+
+### Dual-Mode Selection
+
+| 场景 | 模式 | 原因 |
+|------|:----:|------|
+| 文献量 > 200（满意模式） | `full_pipeline=False` | `ParallelSearch` 8-12 篇即够 |
+| 文献量 20-200（分类归纳） | `full_pipeline=True` | 需要 Phase 分类 + 用户选方向 |
+| 文献量 < 20（穷举） | `full_pipeline=True` | 全 12 层 + 引用遍历 + 作者回溯 |
+| 需要引用图遍历 | `full_pipeline=True` | 轻量模式无 `citation_traversal` |
+
+### Three Breakthroughs
+
+| # | 特性 | 说明 |
+|---|------|------|
+| ① | **DirectLoader (零进程)** | `importlib` 直接从 `D:\Reasonix\cognitive-search-engine\src\` 加载 `.py` 模块，引擎更新后下次导入自动生效，无 MCP 进程开销 |
+| ② | **Dual-Mode Search** | 轻量 `ParallelSearch` 覆盖 80% 场景；完整 `CognitiveAgent` 提供 5 层 BDI ReAct 循环，包括 phase 选择、IG 追踪、自适应停止 |
+| ③ | **知识图谱进化** | `species_graph.yaml` 积累已知论文、变体、作者、引用边；graph_lookup 阶段 0 token 复用；图谱在三项目间共享 |
+
+### Cross-Project Sharing
+
+```
+D:\Reasonix\
+├── cognitive-search-engine\    ← 引擎唯一代码源（配置 + 源码 + 图谱）
+├── fish-ecology-assistant\     ← submodule 引用
+└── porpoise-agent\             ← submodule 引用
+```
+
+引擎进化一次，三个项目同步受益。
+
+### Quick Reference
+
+- 引擎源码: `D:\Reasonix\cognitive-search-engine\src\`
+- 搜索协议: `config/search_rules.yaml`
+- 物种图谱: `config/species_graph.yaml`
+- 适配器入口: `CognitiveSearchAdapter.search(genus, species, full_pipeline)`
 
 ---
 
@@ -287,7 +356,7 @@ This project is not a fixed toolset. It is a **living system**. Every component 
 
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
-| **v5** | 2026-06-06 | Search v3.0 | 11 搜索引擎 (GS优先 + 知网/万方/百度学术/中科院), google-scholar-search skill, 鳤文献全面检索 |\n| **v4** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Maoist systems thinking), 7 system + 4 DeepSeek efficiency principles, Engineering Grammar (18 WHEN→THEN rules), full code mapping |
+| **v6** | 2026-06-07 | Cognitive Search Engine | + DirectLoader 协议 (importlib 零进程加载), 双模式搜索 (ParallelSearch 轻量 / CognitiveAgent 完整 BDI ReAct), 知识图谱进化, 三项目共享引擎\n| **v5** | 2026-06-06 | Search v3.0 | 11 搜索引擎 (GS优先 + 知网/万方/百度学术/中科院), google-scholar-search skill, 鳤文献全面检索 |\n| **v4** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Maoist systems thinking), 7 system + 4 DeepSeek efficiency principles, Engineering Grammar (18 WHEN→THEN rules), full code mapping |
 | **v3** | 2026-06-05 | Engineering | Complete rewrite: Panta Rhei philosophy, capability comparison, engineering efficiency principles, sparse activation |
 | **v2** | 2026-06-05 | Panta Rhei | Dynamic worldview integration, emergence detection, calibrated language |
 | **v1** | 2026-06-05 | Original | Initial release — fish ecology research assistant with 5 search engines + 12 subagents |
