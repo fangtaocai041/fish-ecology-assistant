@@ -15,6 +15,24 @@ allowed-tools:
 
 > **定位**: 市面上最先进的物种文献搜索方法。
 > **核心理念**: 不是"字符串匹配"，而是**认知重建** — 像分类学家一样思考，从破碎的符号中恢复完整的所指。
+> **v3.1**: 自适应搜索深度 — 文献量 < 20 穷举，20-200 分类归纳，> 200 满意即止
+
+---
+
+## -1. Adaptive Search Depth (自适应搜索深度)
+
+```
+PRE-SEARCH: Estimate literature volume
+  → Quick Scholar count + Graph nodes + Author productivity
+
+IF volume < 20:    → EXHAUSTIVE (穷举 — 如鳤 8 篇，一篇不漏)
+IF volume 20-200:  → CLASSIFIED (先分类归纳，再逐类展开)
+IF volume > 200:   → SATISFICING (满意即止，输出分类概览)
+```
+
+**穷举模式**: 所有 11 层激活，满意阈值 = ∞，连续 2 层无新论文才停止。
+**分类归纳模式**: Phase 1 按子主题分类（不展开内容）→ Phase 2 人选类别后穷举。
+**满意模式**: 找到代表性样本后停止，输出分类概览 + "深入某类别"选项。
 
 ---
 
