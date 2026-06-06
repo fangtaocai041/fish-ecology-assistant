@@ -1,22 +1,173 @@
 # Fish Ecology Assistant 主配置
-# 借鉴 porpoise-agent 的结构化 YAML 架构
-# 双核哲学引擎：Panta Rhei (动态世界观) + Systems Thinking (系统论·控制论·工程论)
+# 标准智能体分层架构模型 (Standard Agent Architectural Model)
+# 5 层抽象: 交互感知 → 认知决策 → 记忆系统 → 映射转换 → 工具执行
+# 元方法论驱动: Panta Rhei (动态世界观) + Systems Thinking (系统论·控制论·工程论)
 
 agent:
   name: "Fish Ecology Assistant"
-  version: "1.0.0"
+  version: "2.0.0"
   lab: "Jianghan University / Freshwater Fisheries Research Center"
-  description: "鱼类生态学 AI 研究助手 — 双核哲学引擎 (Panta Rhei + 系统论)"
+  description: "鱼类生态学 AI 研究助手 — 标准 5 层 Agent 架构 + BDI + ReAct/ToT 推理"
   user: "Researcher — MSc Aquatic Biology"
   philosophy:
     worldview: "Panta Rhei — 世界是动态的，知识是暂态的，涌现是常态"
     methodology: "Systems Thinking — 矛盾分析 · 实践验证 · 阶段推进 · 集中突破"
     handbook: ".reasonix/handbooks/systems-thinking.md"
     grammar: ".reasonix/handbooks/engineering-grammar.md"
+  architecture_ref: "docs/ARCHITECTURE.md"
+
+# ===== 标准 5 层 Agent 架构配置 =====
+# 详见 docs/ARCHITECTURE.md
+architecture:
+  version: "2.0.0"
+  layers:
+    perception:
+      name: "交互与感知层 (Interaction & Perception)"
+      enabled: true
+      mechanisms:
+        - "natural_language_input"      # NLU: 自然语言解析与降噪
+        - "context_routing"             # 上下文路由到认知层
+        - "response_rendering"          # 结果包装与呈现
+      human_in_loop: true               # 人工审批关卡
+      frontend: "Reasonix Chat UI"      # 显示层
+
+    cognitive:
+      name: "认知与决策层 (Cognitive & Decision)"
+      enabled: true
+      core_model: "deepseek-chat"        # LLM 大脑
+      reasoning_backend: "deepseek-reasoner"
+      max_steps: 100
+      task_decomposition: true           # CoT 任务分解
+      self_reflection: true             # Reflexion 自我反思
+      error_correction: true            # 从执行层反馈中自我修正
+
+    memory:
+      name: "记忆系统层 (Memory System)"
+      enabled: true
+      short_term:
+        type: "context_window"
+        max_tokens: 8000
+      long_term:
+        type: "reasonix_memory"         # 迁移至向量数据库时改 chromadb
+        retrieval: "semantic_similarity"
+        knowledge_bases:
+          ima: { count: 13, description: "个人知识库 + 共享知识库" }
+      memory_update_function: "Φ(M_t, O_t, A_t) → M_{t+1}"
+
+    mapping:
+      name: "逻辑映射与转换层 (Mapping & Translation)"
+      enabled: true
+      engineering_language: true         # 工程语言化规则
+      grammar_ref: ".reasonix/handbooks/engineering-grammar.md"
+      routing:
+        skill_dir: ".reasonix/skills"
+        mcp_registry: "config/mcp_servers.yaml"
+        coordination: "config/coordination.yaml"
+      serialization_formats:
+        - "Python_code"
+        - "R_code"
+        - "JSON"
+        - "RESTful_API_params"
+        - "SQL_queries"
+
+    execution:
+      name: "工具与执行层 (Tool & Execution)"
+      enabled: true
+      mcp_servers: 21
+      sandbox_execution: true
+      environments:
+        - "R_4.6.0"
+        - "Python"
+        - "shell"
+      tool_registry: "config/component_registry.yaml"
+
+# ===== BDI 模型 (Belief-Desire-Intention) =====
+# 经典人工智能 Agent 理论 — 模拟人类心智的计算模型
+bdi:
+  enabled: true
+  belief:                                 # 对当前环境状态的认知
+    source: "context_window + long_term_memory"
+    update_trigger: "perception_layer_feedback"
+    description: "Prompt + 上下文窗口 + 记忆构成信念状态"
+  desire:                                 # 系统目标 / 优化方向
+    source: "system_prompt + user_goal + philosophy"
+    primary: "publish-quality ecology research output"
+    constraints:
+      - "科学严谨 > 速度"
+      - "生态意义 > 统计显著"
+      - "本地知识 ≥ 国际文献"
+  intention:                              # 当前正在执行的行动计划
+    source: "LLM_generated_CoT_steps"
+    monitoring: "orchestrator.revision_rounds"
+    max_active_intentions: 5
+
+# ===== 认知推理模式 (Reasoning Paradigms) =====
+reasoning:
+  default_mode: "react"                   # ReAct: 思考→行动→观察→再思考
+  modes:
+    react:
+      enabled: true
+      pattern: "[Think → Act → Observe → Re-think]"
+      description: "最经典的闭环反馈推理 — 思考与行动交替螺旋"
+    tree_of_thoughts:
+      enabled: true
+      algorithm: "MCTS_lite"             # 蒙特卡洛树搜索简化版
+      max_branches: 3                    # 每步最多 3 个候选
+      max_depth: 5                       # 最大搜索深度
+      heuristic: "self_evaluation"       # 启发式评估修剪分支
+      allow_backtracking: true           # 允许回溯
+    graph_of_thoughts:
+      enabled: false                     # 实验性功能
+      description: "DAG 拓扑 — 推理分支可合并/协同"
+    reflexion:
+      enabled: true
+      critic: "LLM_self_critique"        # 内部批判模型
+      max_reflexion_rounds: 3
+      verbal_feedback: true              # 语言反馈作为下一次迭代上下文
+
+# ===== 多智能体协作拓扑 (Multi-Agent System, MAS) =====
+mas:
+  enabled: true
+  topology: "hybrid"                     # 混合拓扑
+  topologies:
+    static_workflow:
+      description: "SOP 式固定角色流水线"
+      roles:
+        planner:  { skill: "research-planner",  model: "default" }
+        executor: { skill: "research-executor",  model: "default" }
+        analyst:  { skill: "research-analyst",   model: "reasoning" }
+        writer:   { skill: "research-writer",    model: "default" }
+        reviewer: { skill: "research-reviewer",  model: "reasoning" }
+      flow: "sequential"                # 严格有向图
+    debate:
+      enabled: true
+      pairs:
+        - { generator: "writer",   critic: "reviewer", max_rounds: 3 }
+    subagent:
+      enabled: true
+      max_concurrent: 3
+      spawn_condition: "context_blowup OR true_parallelism"
+    cross_project:
+      enabled: true
+      peer: "porpoise-agent"
+      protocol: "DELEGATE to {project}: skill={name} context={...}"
+      exports: ["stats-assistant", "research-analyst", "phd-proposal-writer", "ima-smart-search"]
+      imports: ["detect-clicks", "estimate-abundance", "assess-threats"]
+
+# ===== 控制论反馈循环 =====
+feedback_loop:
+  enabled: true
+  paradigm: "cybernetic"                 # 控制论闭环
+  stages:
+    - { from: "execution",   to: "cognitive", trigger: "error",       action: "self_correct" }
+    - { from: "execution",   to: "cognitive", trigger: "success",     action: "continue_chain" }
+    - { from: "reviewer",    to: "writer",    trigger: "needs_revision", action: "revision_loop" }
+    - { from: "reviewer",    to: "planner",   trigger: "retreat",     action: "return_to_planner" }
+  max_loop_iterations: 3
 
 # 求同: 共享协议 (两个项目一致)
 shared:
-  version: "1.0.0"
+  version: "2.0.0"
   rule_framework: "FB-1..DS-4 (18 rules)"
   philosophy: "dual-core (Panta Rhei + Systems Thinking)"
   coordination: "config/coordination.yaml"
@@ -154,6 +305,7 @@ skills:
     - obsidian-assistant
   guard_skills:
     - karpathy-guard
+    - rule-auditor
 
 # 记忆配置
 memory:

@@ -4,16 +4,17 @@
 
 <div align="center">
   <h1>🌊 Panta Rhei · Everything Flows</h1>
-  <p><strong>Turn your coding agent into a PhD-level research team — dual-core philosophy: Panta Rhei + Systems Thinking.</strong></p>
-  <p>18 MCP tools · 14 AI subagents · 11 search engines · 13 knowledge bases · 18 engineering rules · Docker</p>
+  <p><strong>Turn your coding agent into a PhD-level research team — Standard 5-Layer Agent Architecture: Panta Rhei + Systems Thinking.</strong></p>
+  <p>21 MCP services · 25 AI Skills · 11 search engines · 13 knowledge bases · 18 engineering rules · BDI + ReAct/ToT + MAS · Docker</p>
 </div>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
   <a href="https://deepwiki.com/fangtaocai041/fish-ecology-assistant"><img src="https://devin.ai/assets/askdeepwiki.png" alt="Ask DeepWiki" height="20"></a>
   <a href="#"><img src="https://img.shields.io/badge/dual_core-Panta_Rhei_%2B_Systems_Thinking-6366f1?style=flat-square" alt="Dual Core"></a>
-  <a href="#"><img src="https://img.shields.io/badge/MCP-18-22c55e?style=flat-square" alt="MCP:18"></a>
-  <a href="#"><img src="https://img.shields.io/badge/subagents-14-f59e0b?style=flat-square" alt="Subagents:14"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MCP-21-22c55e?style=flat-square" alt="MCP:21"></a>
+  <a href="#"><img src="https://img.shields.io/badge/skills-25-f59e0b?style=flat-square" alt="Skills:25"></a>
+  <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/architecture-5_layer-8b5cf6?style=flat-square" alt="Architecture:5-Layer"></a>
   <a href="#"><img src="https://img.shields.io/badge/rules-18-8b5cf6?style=flat-square" alt="Rules:18"></a>
 </p>
 
@@ -25,7 +26,13 @@
 > Provides knowledge, data, contradiction analysis, and findings to the pipeline.
 > **D₂ Plane**: multi-agent debate mesh (`debate-validator`). **Triangulation**: ≥3 sources.
 
-## 🏛️ Core Philosophy
+## 🏛️ Architecture · Standard 5-Layer Agent Model
+
+> See full documentation at [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+> **5 Layers**: Interaction & Perception → Cognitive & Decision → Memory System → Mapping & Translation → Tool & Execution
+> **Theoretical Foundations**: BDI (Belief-Desire-Intention) · MDP/POMDP Formalism · ReAct/ToT/GoT Reasoning · Reflexion Self-Correction · MAS Multi-Agent Topology
+
+## 🧠 Core Philosophy
 
 > 🧠 **Dual-Core Engine**: Panta Rhei (worldview) + Systems Thinking (methodology)
 > What the world IS — dynamic, provisional, emergent. How we ACT — analyze contradictions, verify through practice, advance in phases, concentrate force.
@@ -210,7 +217,7 @@ fish-ecology-assistant/
 ├── README.zh.md              ← 中文
 │
 ├── .reasonix/
-│   ├── mcp-servers/             ← 18 MCP wrappers (incl. deepwiki)
+│   ├── mcp-servers/             ← 21 MCP services (incl. deepwiki)
 │   │   └── ima-server.mjs      ← 14 tools (KB + notes + discovery + multi-search)
 │   │
 │   ├── skills/                  ← 14 AI subagent playbooks

@@ -4,15 +4,16 @@
 
 <div align="center">
   <h1>🌊 万物皆变 · Panta Rhei</h1>
-  <p><strong>把你的编码智能体变成拥有双核哲学引擎（Panta Rhei + 系统论）的博士级研究团队。</strong></p>
-  <p>18 MCP 工具 · 14 AI 子智能体 · 11 引擎搜索 · 13 个知识库 · 18 工程规则 · Docker</p>
+  <p><strong>把你的编码智能体变成拥有标准 5 层 Agent 架构 + 双核哲学引擎（Panta Rhei + 系统论）的博士级研究团队。</strong></p>
+  <p>21 个 MCP 服务 · 25 个 AI Skills · 11 引擎搜索 · 13 个知识库 · 18 工程规则 · BDI + ReAct/ToT + MAS · Docker</p>
 </div>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
   <a href="#"><img src="https://img.shields.io/badge/双核哲学-Panta_Rhei_%2B_系统论-6366f1?style=flat-square" alt="双核哲学"></a>
-  <a href="#"><img src="https://img.shields.io/badge/MCP-18-22c55e?style=flat-square" alt="MCP:18"></a>
-  <a href="#"><img src="https://img.shields.io/badge/智能体-14-f59e0b?style=flat-square" alt="智能体:14"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MCP-21-22c55e?style=flat-square" alt="MCP:21"></a>
+  <a href="#"><img src="https://img.shields.io/badge/skills-25-f59e0b?style=flat-square" alt="Skills:25"></a>
+  <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/架构-5_层-8b5cf6?style=flat-square" alt="架构:5层"></a>
   <a href="#"><img src="https://img.shields.io/badge/规则-18-8b5cf6?style=flat-square" alt="规则:18"></a>
 </p>
 
@@ -24,7 +25,13 @@
 > 提供知识、数据、矛盾分析和发现给流水线。
 > **D₂ 面**: 多 Agent 辩论网格 (`debate-validator`)。**三角验证**: ≥3 独立源。
 
-## 🏛️ 核心哲学
+## 🏛️ 架构 · 标准 5 层 Agent 模型
+
+> 完整文档见 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+> **5 层架构**：交互感知 → 认知决策 → 记忆系统 → 映射转换 → 工具执行
+> **理论根基**：BDI 模型 · MDP/POMDP 形式化 · ReAct/ToT/GoT 推理 · Reflexion 自我修正 · MAS 多智能体拓扑
+
+## 🧠 核心哲学
 
 > 🧠 **双核哲学引擎**：Panta Rhei（动态世界观）+ 系统论（矛盾·实践·阶段·集中）
 > 世界观回答"世界是什么样的"，方法论回答"我们怎样行动"。
@@ -97,13 +104,13 @@ R 包在更新，物种分布在变化，科学共识在演变，气候变化在
 
 **Fish Ecology Assistant** 是一个将 [Reasonix Code](https://github.com/esengine/deepseek-reasonix) 从通用编码助手转变为**专业鱼类生态学研究团队**的完整配置包。
 
-它集成了 18 个 MCP 工具、14 个领域 AI 子智能体、11 引擎并行搜索（Google Scholar 优先 + 知网/万方/百度学术/中科院）、自动化的 5 阶段研究流水线、13 个知识库、18 条工程规则，以及 R 统计计算环境——所有输出都遵循上述双核哲学。
+它基于**标准 5 层 Agent 架构模型**（交互感知 → 认知决策 → 记忆系统 → 映射转换 → 工具执行），集成了 21 个 MCP 服务、25 个 AI Skills（6 流水线 + 17 领域 + 2 守护）、11 引擎并行搜索、13 个知识库、BDI 推理 + ReAct/ToT/MAS 多智能体拓扑、18 条工程规则，以及 R 统计计算环境——所有输出都遵循上述双核哲学。
 
 | 能力 | 原生 Reasonix | **加上本配置** |
 |:-----|:-------------:|:--------------:|
 | 搜索引擎 | 1 个 | **11 个** (scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
-| MCP 服务 | 0 | **18 个**（含 DeepWiki） |
-| AI 子智能体 | 4 个（通用） | **14 个**（领域专用，含规则审计，涌现检测） |
+| MCP 服务 | 0 | **21 个**（含 DeepWiki） |
+| AI Skills | 4 个（通用） | **25 个**（6 流水线 + 17 领域 + 2 守护，涌现检测） |
 | R 统计 | — | ✅ R 4.6.0 + 20+ 生态学包 |
 | OCR 文字识别 | — | ✅ PaddleOCR + Tesseract.js |
 | 文献管理器 | — | ✅ 直接查询 Zotero |
@@ -216,16 +223,20 @@ fish-ecology-assistant/
 ├── README.zh.md              ← 中文
 │
 ├── .reasonix/
-│   ├── mcp-servers/             ← 18 个 MCP 包装器（含 deepwiki）
+│   ├── mcp-servers/             ← 21 个 MCP 服务（含 deepwiki）
 │   │   └── ima-server.mjs      ← 14 个工具
 │   │
-│   ├── skills/                  ← 14 个 AI 子智能体
-│   │   ├── karpathy-guard.md          ← 稀疏激活 + MoE 路由
-│   │   ├── rule-auditor.md            ← 18 规则合规检查
-│   │   ├── ima-smart-search.md        ← 跨库智能搜索
-│   │   ├── verify-stats-handbook.md   ← 自动 CRAN 版本检查
-│   │   ├── research-orchestrator.md   ← 5 阶段流水线调度
-│   │   └── ...（其余 9 个技能）
+│   ├── skills/                  ← 25 个 AI Skill 剧本
+│   │   ├── (6 流水线)   research-orchestrator/planner/executor/analyst/writer/reviewer
+│   │   ├── (4 物种搜索)  academic/cognitive/fuzzy/unified-species-search
+│   │   ├── (3 研究)     frontier-tracker / paper-analyzer / phd-proposal-writer
+│   │   ├── (3 工具)     ima-smart-search / zotero-assistant / obsidian-assistant
+│   │   ├── (3 统计)     stats-assistant / stats-method-finder / verify-stats-handbook
+│   │   ├── (2 守护)     karpathy-guard / rule-auditor
+│   │   ├── (2 系统)     component-health-check / living-system-dashboard
+│   │   ├── (1 搜索)     google-scholar-search
+│   │   ├── (1 辩论)     debate-validator
+│   │   └── (1 架构)     explore (内置)
 │   │
 │   ├── handbooks/
 │   │   ├── systems-thinking.md        ← 7 大系统原则
