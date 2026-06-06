@@ -11,8 +11,9 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
   <a href="#"><img src="https://img.shields.io/badge/双核哲学-Panta_Rhei_%2B_系统论-6366f1?style=flat-square" alt="双核哲学"></a>
-  <a href="#"><img src="https://img.shields.io/badge/MCP-16-22c55e?style=flat-square" alt="MCP:16"></a>
-  <a href="#"><img src="https://img.shields.io/badge/智能体-12-f59e0b?style=flat-square" alt="智能体:12"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MCP-18-22c55e?style=flat-square" alt="MCP:18"></a>
+  <a href="#"><img src="https://img.shields.io/badge/智能体-14-f59e0b?style=flat-square" alt="智能体:14"></a>
+  <a href="#"><img src="https://img.shields.io/badge/规则-18-8b5cf6?style=flat-square" alt="规则:18"></a>
 </p>
 
 ---
@@ -90,7 +91,7 @@ R 包在更新，物种分布在变化，科学共识在演变，气候变化在
 
 **Fish Ecology Assistant** 是一个将 [Reasonix Code](https://github.com/esengine/deepseek-reasonix) 从通用编码助手转变为**专业鱼类生态学研究团队**的完整配置包。
 
-它集成了 16 个 MCP 工具、12 个领域 AI 子智能体、5 引擎并行搜索、自动化的 5 阶段研究流水线，以及 R 统计计算环境——所有输出都遵循上述动态世界观。
+它集成了 18 个 MCP 工具、14 个领域 AI 子智能体、5 引擎并行搜索、自动化的 5 阶段研究流水线、13 个知识库、18 条工程规则，以及 R 统计计算环境——所有输出都遵循上述双核哲学。
 
 | 能力 | 原生 Reasonix | **加上本配置** |
 |:-----|:-------------:|:--------------:|
@@ -103,6 +104,9 @@ R 包在更新，物种分布在变化，科学共识在演变，气候变化在
 | 研究流水线 | — | ✅ 5 阶段 + 自动审查 + 涌现检测 |
 | 知识库 | — | ✅ 连接 13 个 ima 知识库 |
 | 新机器配置 | 手动 | ✅ 一个脚本 或 `docker compose up` |
+| CI/CD | — | ✅ GitHub Actions 自动验证 |
+| 工程规则 | — | ✅ 18 条 WHEN→THEN 含代码映射 |
+| 跨项目 | — | ✅ fish↔porpoise 互委托协议 |
 
 <p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
@@ -114,6 +118,11 @@ R 包在更新，物种分布在变化，科学共识在演变，气候变化在
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
 cd fish-ecology-assistant
 powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
+```
+
+或使用 Docker：
+```bash
+docker compose up
 ```
 
 重启 Reasonix，全部就绪。
@@ -157,12 +166,14 @@ powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
 | 🎓 `phd-proposal-writer` | 博士 proposal | 参考文献动态覆盖，标注时效性 |
 | 📚 `zotero-assistant` | 查 Zotero 文献库 | — |
 | 📝 `obsidian-assistant` | 读写 Obsidian | — |
+| 🛡️ `karpathy-guard` | 行为准则守护 | 熵预算 + 稀疏激活，MoE 路由 |
+| 🔍 `rule-auditor` | 规则合规审计 | 扫描全部 Skills 的 18 规则覆盖 |
 
 <p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
 ---
 
-## 📡 MCP 服务（16 个工具）
+## 📡 MCP 服务（18 个工具）
 
 | 服务 | 引擎 | 用途 |
 |:-----|:-----|:------|
@@ -194,22 +205,33 @@ fish-ecology-assistant/
 ├── README.zh.md              ← 中文
 │
 ├── .reasonix/
-│   ├── mcp-servers/          ← 16 个 MCP 包装器
-│   │   └── ima-server.mjs   ← 14 个工具（知识库+笔记+动态发现+多库搜索）
+│   ├── mcp-servers/             ← 18 个 MCP 包装器（含 deepwiki）
+│   │   └── ima-server.mjs      ← 14 个工具
 │   │
-│   ├── skills/               ← 12 个 AI 子智能体
-│   │   ├── ima-smart-search.md       ← 跨库智能搜索
-│   │   ├── verify-stats-handbook.md  ← 自动 CRAN 版本检查
-│   │   ├── paper-analyzer.md         ← 时间轴+涌现检测
-│   │   ├── research-analyst.md       ← 共识演变+涌现信号
-│   │   ├── research-writer.md        ← calibrated language
-│   │   └── ...（其余 7 个技能）
+│   ├── skills/                  ← 14 个 AI 子智能体
+│   │   ├── karpathy-guard.md          ← 稀疏激活 + MoE 路由
+│   │   ├── rule-auditor.md            ← 18 规则合规检查
+│   │   ├── ima-smart-search.md        ← 跨库智能搜索
+│   │   ├── verify-stats-handbook.md   ← 自动 CRAN 版本检查
+│   │   ├── research-orchestrator.md   ← 5 阶段流水线调度
+│   │   └── ...（其余 9 个技能）
 │   │
 │   ├── handbooks/
-│   │   ├── stats-methods.md   ← 统计方法手册（含版本追踪+复查日期）
-│   │   └── learning-guide.md  ← 学习路径手册
+│   │   ├── systems-thinking.md        ← 7 大系统原则
+│   │   ├── engineering-grammar.md     ← 18 条 WHEN→THEN
+│   │   ├── activation-matrix.md       ← 组件协调
+│   │   ├── ADVANTAGES.md              ← 前沿对比
+│   │   ├── WEAKNESSES.md              ← 缺口分析
+│   │   ├── IMPROVEMENT_PLAN.md        ← 改进路线图
+│   │   ├── CROSS_PROJECT_PROTOCOL.md  ← 跨智能体委托
+│   │   ├── DEEPWIKI_INTEGRATION.md    ← DeepWiki 集成
+│   │   ├── README_UPDATE_RULE.md      ← README 同步协议
+│   │   ├── stats-methods.md           ← 统计方法手册
+│   │   └── learning-guide.md          ← 学习路径
 │   │
-│   └── setup-migrate.ps1     ← 一键安装脚本
+│   ├── .github/workflows/validate.yml ← CI/CD 自动验证
+│   ├── Dockerfile                     ← Docker 部署
+│   └── setup-migrate.ps1              ← 一键安装
 │
 └── research_output/          ← 生成的研究报告
 ```

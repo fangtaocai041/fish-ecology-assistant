@@ -12,8 +12,9 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
   <a href="https://deepwiki.com/fangtaocai041/fish-ecology-assistant"><img src="https://devin.ai/assets/askdeepwiki.png" alt="Ask DeepWiki" height="20"></a>
   <a href="#"><img src="https://img.shields.io/badge/dual_core-Panta_Rhei_%2B_Systems_Thinking-6366f1?style=flat-square" alt="Dual Core"></a>
-  <a href="#"><img src="https://img.shields.io/badge/MCP-16-22c55e?style=flat-square" alt="MCP:16"></a>
-  <a href="#"><img src="https://img.shields.io/badge/subagents-12-f59e0b?style=flat-square" alt="Subagents:12"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MCP-18-22c55e?style=flat-square" alt="MCP:18"></a>
+  <a href="#"><img src="https://img.shields.io/badge/subagents-14-f59e0b?style=flat-square" alt="Subagents:14"></a>
+  <a href="#"><img src="https://img.shields.io/badge/rules-18-8b5cf6?style=flat-square" alt="Rules:18"></a>
 </p>
 
 ---
@@ -84,7 +85,7 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 
 ## 🤔 What Is This
 
-**Fish Ecology Assistant** transforms [Reasonix Code](https://github.com/esengine/deepseek-reasonix) from a general-purpose coding agent into a **domain-specialized fish ecology research team** — with 16 integrated MCP tools, 12 AI subagents, a 5-stage auto-orchestrated research pipeline, R statistics, and 13 connected knowledge bases. All outputs follow the dynamic worldview above.
+**Fish Ecology Assistant** transforms [Reasonix Code](https://github.com/esengine/deepseek-reasonix) from a general-purpose coding agent into a **domain-specialized fish ecology research team** — with 18 MCP tools, 14 AI subagents, a 5-stage auto-orchestrated research pipeline, R statistics, 13 knowledge bases, and 18 engineering rules. All outputs follow the dual-core philosophy above.
 
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
@@ -97,6 +98,9 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 | Research pipeline | — | ✅ 5-stage + auto-review + emergence detection |
 | Knowledge bases | — | ✅ 13 ima knowledge bases connected |
 | Setup on new machine | Manual | ✅ One script or `docker compose up` |
+| CI/CD | — | ✅ GitHub Actions auto-validate |
+| Engineering rules | — | ✅ 18 WHEN→THEN rules with code mapping |
+| Cross-project | — | ✅ fish↔porpoise delegation protocol |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,6 +112,11 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
 cd fish-ecology-assistant
 powershell -ExecutionPolicy Bypass -File .reasonix\setup-migrate.ps1
+```
+
+Or with Docker:
+```bash
+docker compose up
 ```
 
 Restart Reasonix — everything is ready.
@@ -151,12 +160,14 @@ Restart Reasonix — everything is ready.
 | 🎓 `phd-proposal-writer` | PhD proposal writing | Dynamic reference coverage, timeliness annotations |
 | 📚 `zotero-assistant` | Query Zotero | — |
 | 📝 `obsidian-assistant` | Read/write Obsidian | — |
+| 🛡️ `karpathy-guard` | Behavior guardrails | Entropy budget + sparse activation, MoE routing |
+| 🔍 `rule-auditor` | Rule compliance audit | Scans all Skills for 18-rule coverage |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
-## 📡 MCP Services (16 Tools)
+## 📡 MCP Services (18 Tools)
 
 | Service | Engine | Best For |
 |:--------|:-------|:---------|
@@ -188,22 +199,33 @@ fish-ecology-assistant/
 ├── README.zh.md              ← 中文
 │
 ├── .reasonix/
-│   ├── mcp-servers/          ← 16 MCP wrappers
-│   │   └── ima-server.mjs   ← 14 tools (KB + notes + discovery + multi-search)
+│   ├── mcp-servers/             ← 18 MCP wrappers (incl. deepwiki)
+│   │   └── ima-server.mjs      ← 14 tools (KB + notes + discovery + multi-search)
 │   │
-│   ├── skills/               ← 12 AI subagent playbooks
-│   │   ├── ima-smart-search.md       ← Cross-KB intelligent search
-│   │   ├── verify-stats-handbook.md  ← Auto CRAN version check
-│   │   ├── paper-analyzer.md         ← Timeline + emergence detection
-│   │   ├── research-analyst.md       ← Consensus evolution + emergence signals
-│   │   ├── research-writer.md        ← Calibrated language
-│   │   └── ... (7 more skills)
+│   ├── skills/                  ← 14 AI subagent playbooks
+│   │   ├── karpathy-guard.md          ← Sparse activation + MoE routing
+│   │   ├── rule-auditor.md            ← 18-rule compliance checker
+│   │   ├── ima-smart-search.md        ← Cross-KB intelligent search
+│   │   ├── verify-stats-handbook.md   ← Auto CRAN version check
+│   │   ├── research-orchestrator.md   ← 5-stage pipeline coordinator
+│   │   └── ... (9 more skills)
 │   │
 │   ├── handbooks/
-│   │   ├── stats-methods.md   ← Stats handbook (version-tracked + review dates)
-│   │   └── learning-guide.md  ← Learning path guide
+│   │   ├── systems-thinking.md        ← 7 system principles
+│   │   ├── engineering-grammar.md     ← 18 WHEN→THEN rules
+│   │   ├── activation-matrix.md       ← Component coordination
+│   │   ├── ADVANTAGES.md              ← Frontier comparison
+│   │   ├── WEAKNESSES.md              ← Gap analysis
+│   │   ├── IMPROVEMENT_PLAN.md        ← Improvement roadmap
+│   │   ├── CROSS_PROJECT_PROTOCOL.md  ← Cross-agent delegation
+│   │   ├── DEEPWIKI_INTEGRATION.md    ← DeepWiki adoption
+│   │   ├── README_UPDATE_RULE.md      ← README sync protocol
+│   │   ├── stats-methods.md           ← Stats handbook
+│   │   └── learning-guide.md          ← Learning path
 │   │
-│   └── setup-migrate.ps1     ← One-click setup script
+│   ├── .github/workflows/validate.yml ← CI/CD auto-validation
+│   ├── Dockerfile                     ← Docker deployment
+│   └── setup-migrate.ps1              ← One-click setup
 │
 └── research_output/          ← Generated reports
 ```
