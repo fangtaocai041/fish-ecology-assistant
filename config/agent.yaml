@@ -1,12 +1,17 @@
 # Fish Ecology Assistant 主配置
 # 借鉴 porpoise-agent 的结构化 YAML 架构
+# 双核哲学引擎：Panta Rhei (动态世界观) + Systems Thinking (系统论·控制论·工程论)
 
 agent:
   name: "Fish Ecology Assistant"
   version: "1.0.0"
   lab: "Jianghan University / Freshwater Fisheries Research Center"
-  description: "鱼类生态学 AI 研究助手 — Panta Rhei 动态世界观版"
+  description: "鱼类生态学 AI 研究助手 — 双核哲学引擎 (Panta Rhei + 系统论)"
   user: "Researcher — MSc Aquatic Biology"
+  philosophy:
+    worldview: "Panta Rhei — 世界是动态的，知识是暂态的，涌现是常态"
+    methodology: "Systems Thinking — 矛盾分析 · 实践验证 · 阶段推进 · 集中突破"
+    handbook: ".reasonix/handbooks/systems-thinking.md"
 
 orchestrator:
   max_steps: 100
@@ -134,3 +139,132 @@ emergence:
     3_sources: "low"
     4_sources: "medium"
     5_plus_sources: "high"
+
+# ===== 系统论框架：矛盾分析 (Contradiction Analysis) =====
+# 源：《矛盾论》—— 抓主要矛盾，区分矛盾类型
+contradiction_analysis:
+  enabled: true
+  # 矛盾等级与资源分配（集中优势兵力原则）
+  contradiction_budget_multiplier: 2.5       # 主要矛盾方向获得 2.5x token 预算
+  contradiction_levels:
+    primary:
+      name: "主要矛盾"
+      budget_share: 0.60                     # 60% 计算资源
+      description: "决定研究性质和方向的核心问题"
+    secondary:
+      name: "次要矛盾"
+      budget_share: 0.30                     # 30% 计算资源
+      description: "从属于主要矛盾的子问题"
+    peripheral:
+      name: "边缘问题"
+      budget_share: 0.10                     # 10% 计算资源
+      description: "可延后或跳过的问题"
+  # 矛盾类型分类（正确处理两类矛盾）
+  contradiction_types:
+    antagonistic:
+      label: "🔴 对抗性"
+      strategy: "强制解决 — 阻塞后续阶段"
+      trigger: "数据逻辑冲突、方法完全失效"
+    non_antagonistic:
+      label: "🟡 非对抗性"
+      strategy: "标注并存 — 不阻塞"
+      trigger: "不同研究视角差异、方法偏好"
+    structural:
+      label: "🔵 结构性"
+      strategy: "记录约束 — 优化配置"
+      trigger: "资源/时间/数据限制"
+    phasic:
+      label: "⚪ 阶段性"
+      strategy: "标记 — 阶段切换时复核"
+      trigger: "当前阶段特有的限制"
+  # 矛盾转化检测（当涌现信号指向新核心问题时触发）
+  transformation_detection: true
+  transformation_threshold: 5                 # ≥5 独立源指向新矛盾时触发重分析
+
+# ===== 系统论框架：认识论循环 (Practice-Knowledge Cycle) =====
+# 源：《实践论》—— 实践、认识、再实践、再认识
+verification_loop:
+  enabled: true
+  max_iterations: 3                           # 与 reviewer max_iterations 一致
+  # 验证状态标签系统
+  verification_status:
+    verified:
+      label: "✅ 已验证"
+      criteria: "≥2 独立来源或实测数据确认"
+      allowed_in_output: true
+    pending:
+      label: "⚠️ 待验证"
+      criteria: "逻辑推断但未经独立验证"
+      allowed_in_output: true                 # 允许但需标注
+    hypothesis:
+      label: "❓ 假设"
+      criteria: "有理据但缺乏直接证据"
+      allowed_in_output: true                 # 仅 Discussion 部分
+    unverifiable:
+      label: "🚫 不可验证"
+      criteria: "无法找到来源或实测路径"
+      allowed_in_output: false                # 禁止写入正式输出
+  # "没有调查就没有发言权"规则
+  investigation_first:
+    min_sources_per_claim: 1                  # 每声明最少来源数
+    min_sources_core_claim: 2                 # 核心声明最少来源数
+    no_source_penalty: "block"                # 无来源声明：block/review/warn
+  # 循环触发条件
+  cycle_triggers:
+    new_data_available: true                  # 新数据出现 → 重新分析
+    contradiction_shift: true                 # 主要矛盾变化 → 重新规划
+    method_update: true                       # 关键方法更新 → 重新验证
+    time_based: true                          # 定期复核（基于 package 活跃度）
+
+# ===== 系统论框架：阶段论 (Phased Strategy) =====
+# 源：《论持久战》—— 战略防御→相持→反攻
+phased_strategy:
+  enabled: true
+  # 三层目标体系：战略 → 战役 → 战术
+  target_layers:
+    strategic:
+      name: "战略目标"
+      question: "为什么要做？解决什么根本问题？"
+      scope: "全局"
+    operational:
+      name: "战役目标"
+      question: "这个阶段要产出什么？"
+      scope: "阶段"
+    tactical:
+      name: "战术动作"
+      question: "具体执行哪些操作？"
+      scope: "步骤"
+  # 阶段切换规则
+  phase_gating:
+    no_skip: true                             # 不可跳跃阶段
+    allow_retreat: true                       # 允许战略退却（遇到死胡同时回退）
+    retreat_strategy: "return_to_planner"      # 退却目标：return_to_planner / return_to_previous
+  # 持久战映射到研究流水线
+  protracted_war_mapping:
+    defensive:
+      phase: "文献调研"
+      strategy: "保存自己 — 摸清现状，不急于下结论"
+    stalemate:
+      phase: "数据分析 + 野外调查"
+      strategy: "深度耕耘 — 积累证据，反复验证"
+    counter_offensive:
+      phase: "报告撰写 + 发表"
+      strategy: "夺取胜利 — 产出结论，影响领域"
+
+# ===== 系统论框架：十大关系平衡 =====
+# 源：《论十大关系》—— 统筹兼顾
+research_balance:
+  enabled: true
+  priorities:
+    - pair: ["scientific_rigor", "speed"]
+      rule: "科学严谨 > 速度"
+    - pair: ["ecological_significance", "statistical_significance"]
+      rule: "生态意义 > 统计显著"
+    - pair: ["local_knowledge", "international_literature"]
+      rule: "本地知识 ≥ 国际文献（鱼类生态学领域）"
+    - pair: ["depth", "breadth"]
+      rule: "主要矛盾方向深度优先，次要矛盾方向广度覆盖"
+  # "你打你的，我打我的" — 独立研究路径
+  independent_path:
+    enabled: true
+    description: "不盲从主流方法，基于研究具体条件独立评估方法适用性"

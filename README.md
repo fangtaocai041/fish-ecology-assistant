@@ -4,13 +4,13 @@
 
 <div align="center">
   <h1>🌊 Panta Rhei · Everything Flows</h1>
-  <p><strong>Turn your coding agent into a PhD-level research team with a dynamic worldview and DeepSeek-grade engineering efficiency.</strong></p>
-  <p>16 MCP tools · 12 AI subagents · 5 search engines · 13 knowledge bases</p>
+  <p><strong>Turn your coding agent into a PhD-level research team — dual-core philosophy: Panta Rhei + Systems Thinking.</strong></p>
+  <p>16 MCP tools · 12 AI subagents · 5 search engines · 13 knowledge bases · 7 system principles</p>
 </div>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
-  <a href="#"><img src="https://img.shields.io/badge/dynamic_worldview-core-6366f1?style=flat-square" alt="Dynamic Worldview"></a>
+  <a href="#"><img src="https://img.shields.io/badge/dual_core-Panta_Rhei_%2B_Systems_Thinking-6366f1?style=flat-square" alt="Dual Core"></a>
   <a href="#"><img src="https://img.shields.io/badge/MCP-16-22c55e?style=flat-square" alt="MCP:16"></a>
   <a href="#"><img src="https://img.shields.io/badge/subagents-12-f59e0b?style=flat-square" alt="Subagents:12"></a>
 </p>
@@ -209,7 +209,20 @@ This system is an amplifier, not an author.
 
 This project is not a fixed toolset. It is a **living system**. Every component has built-in expiry awareness, version tracking, and emergence detection. As your research deepens, R packages update, and new methods emerge, it evolves with you.
 
-**Last updated: 2026-06-05**
+**Last updated: 2026-06-06**
 **Running on Reasonix Code · Powered by DeepSeek**
+
+---
+
+## 📋 README Changelog
+
+> Versioned copies preserved in `.reasonix/readme-versions/`
+
+| Version | Date | Theme | What Changed |
+|:--------|:-----|:------|:-------------|
+| **v4** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Maoist systems thinking), 7 system principles, contradiction analysis config, verification loop, phased strategy |
+| **v3** | 2026-06-05 | Engineering | Complete rewrite: Panta Rhei philosophy, capability comparison, engineering efficiency principles, sparse activation |
+| **v2** | 2026-06-05 | Panta Rhei | Dynamic worldview integration, emergence detection, calibrated language |
+| **v1** | 2026-06-05 | Original | Initial release — fish ecology research assistant with 5 search engines + 12 subagents |
 
 <p align=right>(<a href=#readme-top>back to top</a>)</p>
