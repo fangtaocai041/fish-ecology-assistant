@@ -16,9 +16,9 @@ It defines not interfaces, but **human-AI boundaries, an attitude toward knowled
 
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
-| Search engines | 1 | **5** |
-| MCP tools | 0 | **16** |
-| AI subagents | 4 generic | **12 specialized** |
+| Search engines | 1 | **11** |
+| MCP tools | 0 | **21** |
+| AI subagents | 4 generic | **24 specialized** |
 | Knowledge bases | — | **13 ima KBs** (including 31,830-article statistics KB) |
 | R statistics | — | R 4.6.0 + 20+ ecology packages |
 | Research pipeline | — | 5-stage auto-orchestrated + emergence detection |
@@ -79,7 +79,7 @@ It defines not interfaces, but **human-AI boundaries, an attitude toward knowled
 
 ---
 
-**Last updated: 2026-06-05**
+**Last updated: 2026-06-07**
 **Running on Reasonix Code · Powered by DeepSeek**
 
 <p align=right>(<a href=#readme-top>back to top</a>)</p>

@@ -18,9 +18,9 @@
 
 | 能力 | 原生 Reasonix | **加上本配置** |
 |:-----|:-------------:|:--------------:|
-| 搜索引擎 | 1 个（web_search） | **5 个**（tavily, exa, scholar, article, scholarly） |
-| MCP 工具 | 0 | **16 个** |
-| AI 子智能体 | 4 个（通用） | **12 个**（领域专用） |
+| 搜索引擎 | 1 个（web_search） | **11 个**（scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search） |
+| MCP 工具 | 0 | **21 个** |
+| AI 子智能体 | 4 个（通用） | **24 个**（领域专用） |
 | 知识库接入 | — | **13 个 ima 知识库**（含 31830 篇统计学库） |
 | R 统计环境 | — | R 4.6.0 + 20+ 生态学包 |
 | 研究流水线 | — | 5 阶段自动编排 + 涌现检测 |
@@ -95,7 +95,7 @@
 
 ---
 
-**最后更新：2026-06-05**
+**最后更新：2026-06-07**
 **运行于 Reasonix Code · 由 DeepSeek 驱动**
 
 <p align=right>(<a href=#readme-top>回到顶部</a>)</p>
