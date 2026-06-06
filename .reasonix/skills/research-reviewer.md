@@ -17,13 +17,27 @@ The final station of the research pipeline. Quality gate: decide pass, revise, o
 - Required: full document draft (via arguments)
 - Optional: review focus (citations / accuracy / format / language)
 
+## Config Reference (from agent.yaml)
+
+Before reviewing, read `config/agent.yaml`:
+- `verification_loop.verification_status` → 4-level tagging: VERIFIED(✅)/PENDING(⚠️)/HYPOTHESIS(❓)/UNVERIFIABLE(🚫)
+- `verification_loop.investigation_first.min_sources_core_claim` (=2) → core claims need ≥2 sources
+- `verification_loop.investigation_first.no_source_penalty` (=block) → BLOCK output on zero-source claims
+- `verification_loop.max_iterations` (=3) → max revision rounds
+- `research_balance.priorities` → multi-objective balance check (MO-1, MO-2)
+- Rule: FB-1 (Feedback Loop) — tag every claim with verification status
+- Rule: FB-2 (Source Gate) — `|sources| < 1` → BLOCK
+- Rule: MO-1 (Pareto Check) — check for imbalance per `research_balance.priorities` pairs
+
 ## Steps
-1. Parse document → identify all claims, citations, data points
-2. Verify traceability → every claim → source → DOI/URL
-3. Score 4 dimensions → completeness / accuracy / format / language
-4. Classify issues → critical / moderate / minor
-5. Render decision → pass / revise / fail
-6. If revise → output specific revision notes with line references
+1. **READ agent.yaml verification_loop** → apply verification tags to every claim
+2. Parse document → identify all claims, citations, data points
+3. Verify traceability → every claim → source → DOI/URL
+4. Score 4 dimensions → completeness / accuracy / format / language
+5. **CHECK research_balance.priorities** → warn if output shows imbalance (e.g., speed over rigor)
+6. Classify issues → critical / moderate / minor
+7. Render decision → pass / revise / fail per verification_loop rules
+8. If revise → output specific revision notes with line references (max 3 rounds)
 
 ## Decision Points
 - 0 critical + ≤ 2 moderate → ✅ Pass

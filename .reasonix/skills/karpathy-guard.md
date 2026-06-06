@@ -55,16 +55,24 @@ Traceability: Claim -> Source -> DOI/URL -> Raw data. If chain breaks, do NOT ge
 
 DeepSeek engineering optimizes through algorithmic efficiency (MoE routing, sparse activation, compressed attention) — not brute-force parameter scaling. This project follows the same principle.
 
-### Systems Thinking — Execution Rules (from Engineering Grammar)
+### Systems Thinking — Execution Rules (from agent.yaml + Engineering Grammar)
 
-| ID | Rule | Application |
-|:---|:-----|:------------|
-| DS-1 | Entropy Budget | PhD → full pipeline, casual → single-step. Per-stage `activation` gate. |
-| DS-2 | Sparse Activation | MoE routing: each Skill fires only when condition met. ~2-4/12 active per request. |
-| DS-3 | Differential Verify | `P(stale)` check only changed packages, not full handbook. Review cycle = f(update_freq, risk, dependency). |
-| DS-4 | Info-Gain Routing | P0 exact terms first → stop on hit. P2 redundant terms skipped. Cross-KB dedup. |
-| FB-1 | Feedback Loop | Every claim tagged VERIFIED(✅)/PENDING(⚠️)/HYPOTHESIS(❓)/UNVERIFIABLE(🚫). |
-| FB-2 | Source Gate | `\|sources\| < 1` → BLOCK output. "没有调查就没有发言权." |
+**Runtime enforcement**: Before each action, check `config/agent.yaml` for the relevant rule.
+
+| ID | Rule | Config Path | Enforcement |
+|:---|:-----|:------------|:------------|
+| DS-1 | Entropy Budget | `pipeline.stages[].activation` | PhD→full pipeline, casual→single-step. Inactive stages=zero cost. |
+| DS-2 | Sparse Activation | `pipeline.stages[].activation` | MoE routing: each Skill fires only when condition met. ~2-4/12 active. |
+| DS-3 | Differential Verify | `verify-stats-handbook` skill | `P(stale)` check only changed packages. Dynamic review cycle. |
+| DS-4 | Info-Gain Routing | `ima-smart-search` skill | P0 exact→stop on hit. P2 skip. Cross-KB dedup. |
+| FB-1 | Feedback Loop | `verification_loop.verification_status` | Tag every claim: ✅/⚠️/❓/🚫. |
+| FB-2 | Source Gate | `verification_loop.investigation_first` | `\|sources\|<1`→BLOCK. "没有调查就没有发言权." |
+| CP-1 | Critical Path | `contradiction_analysis.contradiction_levels` | Identify principal contradiction in planner. |
+| CP-2 | Budget Alloc | `contradiction_analysis.contradiction_budget_multiplier` | PRIMARY→2.5x budget, 60% share. |
+| EH-1 | Blocker | `contradiction_analysis.contradiction_types.antagonistic` | ANTAGONISTIC→force-resolve, BLOCK downstream. |
+| EH-2 | Warning | `contradiction_analysis.contradiction_types.non_antagonistic` | NON_ANTAGONISTIC→annotate, pass with note. |
+| MO-1 | Pareto Check | `research_balance.priorities` | Phase output must not over-bias one dimension. |
+| WF-2 | Independent Path | `research_balance.independent_path` | Evaluate methods independently, not default to mainstream. |
 
 ### Budget Rules
 
