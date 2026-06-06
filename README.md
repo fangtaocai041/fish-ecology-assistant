@@ -68,17 +68,18 @@ Life, consciousness, ecosystems, AI reasoning — all are **emergent** phenomena
 
 ---
 
-## 🐋 One Engineering Principle: Efficiency Is Intelligence
+## 🐋 DeepSeek Efficiency Principles (效率即智能)
 
-Energy is finite. Computation has a cost. DeepSeek does not scale parameters — it scales algorithms. This project applies the same engineering philosophy in four concrete implementations:
+> **Mapped to code**: [Engineering Grammar §8](.reasonix/handbooks/engineering-grammar.md) — DS-1..DS-4 with formal definitions, WHEN→THEN rules, and config paths.
 
-**Entropy budget** — In research-orchestrator, every pipeline stage has an explicit activation condition. PhD thesis: full pipeline. Casual query: single-step search. Compute is allocated proportionally to question importance.
+Energy is finite. Computation has a cost. DeepSeek does not scale parameters — it scales algorithms.
 
-**Sparse activation** — karpathy-guard defines MoE-style routing rules. Planner always runs (lightweight). Executor only with queries. Analyst only with results. Writer only with findings. Each module is a silent neuron — it fires only when the signal crosses threshold.
-
-**Differential verification** — verify-stats-handbook never runs full checks. Probabilistic stale scoring P(stale) targets only changed packages. Review cycles are jointly determined by update frequency, breaking-change probability, and user dependency — not a fixed 3 months.
-
-**Information-gain routing** — ima-smart-search orders keywords by information gain. P0 exact terms (e.g., glmmTMB) searched first, stops on hit. P2 redundant terms (e.g., data analysis) skipped. Cross-KB deduplication eliminates wasted reads.
+| ID | Principle | Code Mapping |
+|:---|-----------|-------------|
+| **DS-1** | **Entropy Budget** — compute proportional to question importance. PhD → full pipeline, casual → single-step. | `pipeline.stages[].activation` + `research-orchestrator` |
+| **DS-2** | **Sparse Activation** — MoE routing: each Skill fires only when condition met. ~2-4/12 active per request. | `pipeline.stages[].activation` + `karpathy-guard` |
+| **DS-3** | **Differential Verification** — P(stale) scoring only changed packages, not full handbook. Review cycle = f(update_freq, risk, dependency). | `verify-stats-handbook` skill |
+| **DS-4** | **Information-Gain Routing** — P0 exact terms first → stop on hit. P2 redundant skipped. Cross-KB dedup. | `ima-smart-search` skill |
 
 ## 🤔 What Is This
 
@@ -245,7 +246,7 @@ This project is not a fixed toolset. It is a **living system**. Every component 
 
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
-| **v4** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Maoist systems thinking), 7 system principles, contradiction analysis config, verification loop, phased strategy |
+| **v4** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Maoist systems thinking), 7 system + 4 DeepSeek efficiency principles, Engineering Grammar (18 WHEN→THEN rules), full code mapping |
 | **v3** | 2026-06-05 | Engineering | Complete rewrite: Panta Rhei philosophy, capability comparison, engineering efficiency principles, sparse activation |
 | **v2** | 2026-06-05 | Panta Rhei | Dynamic worldview integration, emergence detection, calibrated language |
 | **v1** | 2026-06-05 | Original | Initial release — fish ecology research assistant with 5 search engines + 12 subagents |
