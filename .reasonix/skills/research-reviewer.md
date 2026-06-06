@@ -42,6 +42,15 @@ The final station of the research pipeline. Quality gate: decide pass, revise, o
 7. Render decision → pass / revise / fail per verification_loop rules
 8. If revise → output specific revision notes with line references (max 3 rounds)
 
+## D₂ Debate Validation (网状交叉验证)
+
+IF core claims ≥ 3:
+  DELEGATE to `debate-validator`:
+    → statistician: p-value < 0.05, effect size, no p-hacking
+    → mathematician: assumptions, convergence, formulas
+    → code_auditor: reproducibility, version pinning
+    → ≥2/3 agree → ✅; else → return to writer
+
 ## Decision Points
 - 0 critical + ≤ 2 moderate → ✅ Pass
 - ≥ 3 critical → ❌ Fail
