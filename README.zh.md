@@ -21,7 +21,8 @@
 
 > 🧠 **双核哲学引擎**：Panta Rhei（动态世界观）+ 系统论（矛盾·实践·阶段·集中）
 > 世界观回答"世界是什么样的"，方法论回答"我们怎样行动"。
-> 详见 `.reasonix/handbooks/systems-thinking.md`
+> **全部哲学语言已映射为可执行代码** — 参见 [工程语法](.reasonix/handbooks/engineering-grammar.md)：每条原则有精确的 `WHEN→THEN` 规则、config 路径和 Skill 触发器。
+> `.reasonix/handbooks/systems-thinking.md`（哲学） + `.reasonix/handbooks/engineering-grammar.md`（代码映射）
 
 ---
 

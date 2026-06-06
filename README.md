@@ -21,7 +21,8 @@
 
 > 🧠 **Dual-Core Engine**: Panta Rhei (worldview) + Systems Thinking (methodology)
 > What the world IS — dynamic, provisional, emergent. How we ACT — analyze contradictions, verify through practice, advance in phases, concentrate force.
-> See `.reasonix/handbooks/systems-thinking.md`
+> **All philosophy mapped to executable code** via [Engineering Grammar](.reasonix/handbooks/engineering-grammar.md) — every principle has a precise `WHEN→THEN` rule, config path, and Skill trigger.
+> See `.reasonix/handbooks/systems-thinking.md` (philosophy) + `.reasonix/handbooks/engineering-grammar.md` (code mapping)
 
 ---
 
