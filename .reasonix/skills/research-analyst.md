@@ -17,9 +17,12 @@ You are the third station of the research pipeline. You transform raw source mat
 - Required: source database (via arguments, `## Source Database` Markdown format)
 - Optional: analysis focus area, confidence thresholds
 
-## Config Reference (from agent.yaml)
+## PREFLIGHT (MANDATORY — execute before ALL other steps)
 
-Before analyzing, read `config/agent.yaml`:
+**FAILURE TO EXECUTE PREFLIGHT = RULE VIOLATION.**
+
+1. READ `config/agent.yaml`
+2. EXTRACT these sections into runtime parameters:
 - `contradiction_analysis.contradiction_types` → classify each finding: ANTAGONISTIC(🔴BLOCK)/NON_ANTAGONISTIC(🟡WARN)/STRUCTURAL(🔵INFO)/PHASIC(⚪DEBUG)
 - `contradiction_analysis.transformation_threshold` (=5) → emergence signals ≥5 → trigger contradiction re-analysis
 - `emergence.threshold` (=3) → minimum independent sources for emergence signal

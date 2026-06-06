@@ -17,9 +17,12 @@ The final station of the research pipeline. Quality gate: decide pass, revise, o
 - Required: full document draft (via arguments)
 - Optional: review focus (citations / accuracy / format / language)
 
-## Config Reference (from agent.yaml)
+## PREFLIGHT (MANDATORY — execute before ALL other steps)
 
-Before reviewing, read `config/agent.yaml`:
+**FAILURE TO EXECUTE PREFLIGHT = RULE VIOLATION.**
+
+1. READ `config/agent.yaml`
+2. EXTRACT these sections into runtime parameters:
 - `verification_loop.verification_status` → 4-level tagging: VERIFIED(✅)/PENDING(⚠️)/HYPOTHESIS(❓)/UNVERIFIABLE(🚫)
 - `verification_loop.investigation_first.min_sources_core_claim` (=2) → core claims need ≥2 sources
 - `verification_loop.investigation_first.no_source_penalty` (=block) → BLOCK output on zero-source claims

@@ -55,10 +55,15 @@ Traceability: Claim -> Source -> DOI/URL -> Raw data. If chain breaks, do NOT ge
 
 DeepSeek engineering optimizes through algorithmic efficiency (MoE routing, sparse activation, compressed attention) — not brute-force parameter scaling. This project follows the same principle.
 
-### Systems Thinking — Execution Rules (from agent.yaml + Engineering Grammar)
+## PREFLIGHT (MANDATORY — execute before ALL guard checks)
 
-**Runtime enforcement**: Before each action, check `config/agent.yaml` for the relevant rule.
-**Fallback**: If agent.yaml section is missing or unreadable, use hardcoded defaults:
+**FAILURE TO EXECUTE PREFLIGHT = GUARD DISABLED.**
+
+1. READ `config/agent.yaml`
+2. LOAD all config sections into runtime parameters
+3. IF any section is missing or unreadable → USE hardcoded fallback → LOG warning
+
+**Fallback defaults** (when agent.yaml unavailable):
 - `contradiction_budget_multiplier` → 2.5
 - `min_sources_core_claim` → 2
 - `max_iterations` → 3
