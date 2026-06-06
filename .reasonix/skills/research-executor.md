@@ -14,6 +14,7 @@ Follow the Karpathy principles:
 - **Search in English first** — English results are more timely and authoritative for scientific content.
 
 > **Principle**: English-first for scientific search. Supplement with Chinese when needed.
+> **Fuzzy Fallback**: After exact search, run fuzzy-species-search for any species names in the query (catches typos like Ochetobius→Ochetobibus).
 
 ---
 
@@ -57,6 +58,38 @@ sympatric coexistence | functional diversity
 
 ### Target Journals
 *Fisheries Research*, *Ecology and Evolution*, *Journal of Fish Biology*, *Freshwater Biology*, *Global Change Biology*, *Journal of Animal Ecology*
+
+---
+
+## Fuzzy Fallback Protocol (MANDATORY after exact search)
+
+**When**: Any search query contains a species Latin name.
+**Why**: Academic publishing has 0.5-2% species name typo rate. Exact search misses these.
+
+### Step 1: Identify species in query
+```
+EXTRACT all Latin binomial names from the research plan
+EXAMPLE: "Ochetobius elongatus", "Culter alburnus"
+```
+
+### Step 2: Run fuzzy-species-search for each
+```
+DELEGATE to fuzzy-species-search Skill:
+  FOR EACH species_name:
+    → Layer 1: exact search (already done above)
+    → Layer 2: variant search (catches Ochetobibus, Ochetobus, etc.)
+    → Layer 3: substring search (Ochetob*)
+    → Layer 4: Chinese name search
+    → Layer 7: dedup & merge with exact results
+```
+
+### Step 3: Flag discrepancies
+```
+IF any paper found ONLY by fuzzy search:
+  → MARK as 🆕 "found via typo correction"
+  → NOTE the specific misspelling in the source database
+  → ALERT user: "论文标题存在拼写错误，已通过模糊搜索捕获"
+```
 
 ---
 
