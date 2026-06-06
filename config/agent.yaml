@@ -236,7 +236,7 @@ verification_loop:
   # "没有调查就没有发言权"规则
   investigation_first:
     min_sources_per_claim: 1                  # 每声明最少来源数
-    min_sources_core_claim: 2                 # 核心声明最少来源数
+    min_sources_core_claim: 3                 # 核心声明最少来源数 (三角验证: ≥3 独立源)
     no_source_penalty: "block"                # 无来源声明：block/review/warn
   # 循环触发条件
   cycle_triggers:
