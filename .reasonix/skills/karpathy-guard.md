@@ -85,6 +85,25 @@ DeepSeek engineering optimizes through algorithmic efficiency (MoE routing, spar
 | MO-1 | Pareto Check | `research_balance.priorities` | Phase output must not over-bias one dimension. |
 | WF-2 | Independent Path | `research_balance.independent_path` | Evaluate methods independently, not default to mainstream. |
 
+---
+
+## Activation Tracking (P2 — empirical measurement)
+
+**Purpose**: Prove "2-4/12 Skills active per request" with data, not assertion.
+
+BEFORE executing any Skill:
+  1. INCREMENT `activation_counter[skill_name]`
+  2. LOG: `{timestamp, skill_name, trigger_condition, contradiction_level}`
+
+AFTER pipeline completes:
+  3. REPORT: `{total_skills: N, active: M, inactive: N-M, efficiency_ratio: M/N}`
+  4. IF `efficiency_ratio > 0.33` (more than 4/12 active) → FLAG for optimization review
+
+**Tracking format** (append to audit log):
+```json
+{"event": "activation_tracked", "skill": "research-analyst", "trigger": "executor_returns_results", "contradiction_level": "primary"}
+```
+
 ### Budget Rules
 
 | Rule | Application |
