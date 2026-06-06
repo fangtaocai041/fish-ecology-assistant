@@ -3,8 +3,16 @@
 # 借鉴 porpoise-agent 的结构化服务器定义
 
 servers:
-  # ===== 学术搜索 (5) =====
+  # ===== 学术搜索 (6) =====
   # 全部免费 · 科研聚焦
+  cognitive_search:
+    name: Cognitive Search Engine MCP
+    command: node
+    args: [".reasonix/mcp-servers/cognitive-search-mcp.mjs"]
+    description: 认知搜索引擎 — 全流程物种文献搜索 (graph_lookup + 7引擎并行 + OCR变体 + 引用遍历 + 图谱进化)，引擎可动态更新
+    category: search
+    enabled: true
+
   scholar:
     name: Scholar MCP
     command: npx
@@ -174,12 +182,12 @@ servers:
 # 服务器类别统计
 # 19 个定义的服务 + web_search(built-in) + thinking(built-in) = 21 工具可用
 categories:
-  search: 7                      # scholar/article/scholarly/ncbi/tavily/exa/deepwiki + web_search(built-in)
+  search: 8                      # cognitive_search + scholar/article/scholarly/ncbi/tavily/exa/deepwiki + web_search(built-in)
   data: 3                        # filesystem/github/zotero
   compute: 4                     # coderunner/rplay/git/echarts
   image: 3                       # playwright/ocr/ocr_fallback
   knowledge: 3                   # obsidian/thinking(built-in)/deepwiki
-  total: 21
+  total: 22
 
 # ===== 搜索引擎激活状态 (v2.0) =====
 search_engine_status:
@@ -187,6 +195,7 @@ search_engine_status:
     - ncbi                       # ✅ node ncbi-mcp.mjs (已注册)
     - web_search                 # ⚠️ Reasonix 内置 (fetch failed, 待排查)
   activated_next_startup:        # 下次启动后生效 (Reasonix 已注册，需重启)
+    - cognitive_search           # ✅ node cognitive-search-mcp.mjs (引擎动态更新)
     - scholar                    # npx scholar-mcp
     - article                    # npx article-mcp
     - scholarly                  # npx scholarly-research-mcp
