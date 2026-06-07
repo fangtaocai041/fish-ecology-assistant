@@ -21,13 +21,13 @@
 
 ---
 
-## 🔺 S-T-V Triangle Role: **State (S)**
+## 🔺 S-T-V-P₁-P₂ Architecture Role: **State (S)**
 
-> Part of the S-T-V rigid triangle: `fish(S) → porpoise(T) → cognitive(V) → fish(S)`
-> Provides knowledge, data, contradiction analysis, and findings to the pipeline.
+> Part of the S-T-V-P₁-P₂ ecosystem. T-layer coordination by [meso-cosmos-agent](https://github.com/fangtaocai041/meso-cosmos-agent).
+> Provides knowledge, Yangtze 443 species data, contradiction analysis, and ecological findings.
 > **D₂ Plane**: multi-agent debate mesh (`debate-validator`). **Triangulation**: ≥3 sources.
 
-### 🔗 Linked Projects (S-T-V Triangle)
+### 🔗 Linked Projects (S-T-V-P₁-P₂ Ecosystem)
 
 | Project | Role | Stack | Description |
 |---------|:----:|-------|-------------|
@@ -380,7 +380,7 @@ This project is not a fixed toolset. It is a **living system**. Every component 
 |:--------|:-----|:------|:-------------|
 | **v6.1** | 2026-06-07 | Cross-Project Co-Evolution | + agent.version badge (v2.0.0), + S-T-V 三角角色增强, + 三项目协同进化描述, + coordination.yaml 统一协调 |
 | **v6** | 2026-06-07 | Cognitive Search Engine | + DirectLoader 协议 (importlib 零进程加载), 双模式搜索 (ParallelSearch 轻量 / CognitiveAgent 完整 BDI ReAct), 知识图谱进化, 三项目共享引擎 |
-| **v5** | 2026-06-06 | Search v3.0 | 11 搜索引擎 (GS优先 + 知网/万方/百度学术/中科院), google-scholar-search skill, 鳤文献全面检索 |\n| **v4** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Maoist systems thinking), 7 system + 4 DeepSeek efficiency principles, Engineering Grammar (18 WHEN→THEN rules), full code mapping |
+| **v5** | 2026-06-06 | Search v3.0 | 12 搜索引擎 (GS优先 + 知网/万方/百度学术/中科院), google-scholar-search skill, 鳤文献全面检索 |\n| **v4** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Maoist systems thinking), 7 system + 4 DeepSeek efficiency principles, Engineering Grammar (18 WHEN→THEN rules), full code mapping |
 | **v3** | 2026-06-05 | Engineering | Complete rewrite: Panta Rhei philosophy, capability comparison, engineering efficiency principles, sparse activation |
 | **v2** | 2026-06-05 | Panta Rhei | Dynamic worldview integration, emergence detection, calibrated language |
 | **v1** | 2026-06-05 | Original | Initial release — fish ecology research assistant with 5 search engines + 12 subagents |
