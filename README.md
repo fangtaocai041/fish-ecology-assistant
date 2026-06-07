@@ -31,6 +31,19 @@
 > Provides knowledge, Yangtze 443 species data, contradiction analysis, and ecological findings.
 > **D₂ Plane**: multi-agent debate mesh. **Triangulation**: ≥3 sources.
 
+## 📊 Self-Assessment
+
+| Dimension | Rating | Notes |
+|-----------|:-----:|-------|
+| 📚 Knowledge Breadth | ⭐⭐⭐⭐⭐ | 12 search engines + 13 KBs + Yangtze 443 species database |
+| 🧘 Philosophy Integration | ⭐⭐⭐⭐⭐ | Panta Rhei + Systems Thinking — 18 WHEN→THEN engineering rules |
+| 🔬 Research Pipeline | ⭐⭐⭐⭐⭐ | 5-stage: Plan→Search→Analyze→Write→Review, 28 AI Skills |
+| 🌏 Chinese Literature | ⭐⭐⭐⭐⭐ | CNKI/万方/百度学术/中科院 — unique coverage Western DBs miss |
+| 🔗 Ecosystem Role | ⭐⭐⭐⭐⭐ | S-layer in S-T-V-P₁-P₂, coordinated by meso-cosmos-agent (T) |
+| 🧪 Test Coverage | ⭐⭐⭐⭐☆ | Cross-project validation + rule compliance checks |
+
+> **Core Strength**: Universal fish ecology research platform. Dual-core philosophy (Panta Rhei + Systems Thinking) is not decoration but runtime constraint — contradiction analysis drives search strategy, phased strategy determines stopping conditions.
+
 ### 🔗 Linked Projects (S-T-V-P₁-P₂ Ecosystem)
 
 | Project | Role | Stack | Description |
