@@ -42,6 +42,19 @@
 | 🔗 Ecosystem Role | ⭐⭐⭐⭐⭐ | S-layer in S-T-V-P₁-P₂, coordinated by meso-cosmos-agent (T) |
 | 🧪 Test Coverage | ⭐⭐⭐⭐☆ | Cross-project validation + rule compliance checks |
 
+---
+
+## 📋 Version History
+
+| Version | Date | Changes |
+|---------|------|---------|
+| **v6.2** | 2026-06-08 | S-T-V-P₁-P₂ ecosystem · Yangtze 443 species KB · Meso-Cosmos intelligent scheduling |
+| **v6.1** | 2026-06-07 | Cross-project co-evolution · S-T-V triangle role · coordination.yaml |
+| **v6.0** | 2026-06-07 | Cognitive Search Engine DirectLoader · dual-mode search |
+| **v5.0** | 2026-06-06 | 12 search engines · GS-first + Chinese sources |
+
+> **Latest**: v6.2 · 2026-06-08 · `311e401`
+
 > **Core Strength**: Universal fish ecology research platform. Dual-core philosophy (Panta Rhei + Systems Thinking) is not decoration but runtime constraint — contradiction analysis drives search strategy, phased strategy determines stopping conditions.
 
 ### 🔗 Linked Projects (S-T-V-P₁-P₂ Ecosystem)
