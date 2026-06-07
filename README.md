@@ -5,17 +5,18 @@
 <div align="center">
   <h1>🌊 Panta Rhei · Everything Flows</h1>
   <p><strong>Turn your coding agent into a PhD-level research team — Standard 5-Layer Agent Architecture: Panta Rhei + Systems Thinking.</strong></p>
-  <p>22 MCP services · 25 AI Skills · 12 search engines · 13 knowledge bases · 18 engineering rules · BDI + ReAct/ToT + MAS · Docker</p>
+  <p>21 MCP services · 27 AI Skills · 12 search engines · 13 knowledge bases · 18 engineering rules · BDI + ReAct/ToT + MAS · Docker</p>
 </div>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
   <a href="https://deepwiki.com/fangtaocai041/fish-ecology-assistant"><img src="https://devin.ai/assets/askdeepwiki.png" alt="Ask DeepWiki" height="20"></a>
   <a href="#"><img src="https://img.shields.io/badge/dual_core-Panta_Rhei_%2B_Systems_Thinking-6366f1?style=flat-square" alt="Dual Core"></a>
-  <a href="#"><img src="https://img.shields.io/badge/MCP-22-22c55e?style=flat-square" alt="MCP:22"></a>
-  <a href="#"><img src="https://img.shields.io/badge/skills-25-f59e0b?style=flat-square" alt="Skills:25"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MCP-21-22c55e?style=flat-square" alt="MCP:21"></a>
+  <a href="#"><img src="https://img.shields.io/badge/skills-27-f59e0b?style=flat-square" alt="Skills:27"></a>
   <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/architecture-5_layer-8b5cf6?style=flat-square" alt="Architecture:5-Layer"></a>
   <a href="#"><img src="https://img.shields.io/badge/rules-18-8b5cf6?style=flat-square" alt="Rules:18"></a>
+  <a href="config/agent.yaml"><img src="https://img.shields.io/badge/agent-v2.0.0-ec4899?style=flat-square" alt="Agent:v2.0.0"></a>
 </p>
 
 ---
@@ -25,6 +26,27 @@
 > Part of the S-T-V rigid triangle: `fish(S) → porpoise(T) → cognitive(V) → fish(S)`
 > Provides knowledge, data, contradiction analysis, and findings to the pipeline.
 > **D₂ Plane**: multi-agent debate mesh (`debate-validator`). **Triangulation**: ≥3 sources.
+
+### 🔗 Linked Projects (S-T-V Triangle)
+
+| Project | Role | Stack | Description |
+|---------|:----:|-------|-------------|
+| **cognitive-search-engine** | **V** (Validation) | Python · BDI+ReAct | 权威可信度评分 · Hub-and-Spoke 搜索 · 共享知识图谱 |
+| **porpoise-agent** | **T** (Transition) | Python · orchestrator | 5-phase 管线 · 声学分析 · 野外调查 · 保护评估 |
+
+> **Co-evolution**: Fish provides knowledge & data → Porpoise executes pipeline → Cognitive validates & scores.
+> Cognitive graph evolves → all three benefit. Engine updates via submodule → auto-propagate.
+> Full spec: workspace root `coordination.yaml`.
+
+### 🧠 Meso-Cosmos Agent (Workspace Level)
+
+> **Macro(BDI) → Meso(Coordination) → Micro(Execution)** — unified coordination across all three S-T-V projects.
+> See `config/meso_agent.yaml` + `skills/meso-orchestrator.md` at workspace root.
+
+```
+UNDERSTAND → ROUTE → EXECUTE → VALIDATE → SYNTHESIZE → EVOLVE
+ (Macro)     (Meso)   (Micro)   (Cross)     (Merge)     (Feedback)
+```
 
 ## 🏛️ Architecture · Standard 5-Layer Agent Model
 
@@ -356,7 +378,9 @@ This project is not a fixed toolset. It is a **living system**. Every component 
 
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
-| **v6** | 2026-06-07 | Cognitive Search Engine | + DirectLoader 协议 (importlib 零进程加载), 双模式搜索 (ParallelSearch 轻量 / CognitiveAgent 完整 BDI ReAct), 知识图谱进化, 三项目共享引擎\n| **v5** | 2026-06-06 | Search v3.0 | 11 搜索引擎 (GS优先 + 知网/万方/百度学术/中科院), google-scholar-search skill, 鳤文献全面检索 |\n| **v4** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Maoist systems thinking), 7 system + 4 DeepSeek efficiency principles, Engineering Grammar (18 WHEN→THEN rules), full code mapping |
+| **v6.1** | 2026-06-07 | Cross-Project Co-Evolution | + agent.version badge (v2.0.0), + S-T-V 三角角色增强, + 三项目协同进化描述, + coordination.yaml 统一协调 |
+| **v6** | 2026-06-07 | Cognitive Search Engine | + DirectLoader 协议 (importlib 零进程加载), 双模式搜索 (ParallelSearch 轻量 / CognitiveAgent 完整 BDI ReAct), 知识图谱进化, 三项目共享引擎 |
+| **v5** | 2026-06-06 | Search v3.0 | 11 搜索引擎 (GS优先 + 知网/万方/百度学术/中科院), google-scholar-search skill, 鳤文献全面检索 |\n| **v4** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Maoist systems thinking), 7 system + 4 DeepSeek efficiency principles, Engineering Grammar (18 WHEN→THEN rules), full code mapping |
 | **v3** | 2026-06-05 | Engineering | Complete rewrite: Panta Rhei philosophy, capability comparison, engineering efficiency principles, sparse activation |
 | **v2** | 2026-06-05 | Panta Rhei | Dynamic worldview integration, emergence detection, calibrated language |
 | **v1** | 2026-06-05 | Original | Initial release — fish ecology research assistant with 5 search engines + 12 subagents |

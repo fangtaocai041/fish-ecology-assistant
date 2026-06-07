@@ -166,12 +166,20 @@ feedback_loop:
     - { from: "reviewer",    to: "planner",   trigger: "retreat",     action: "return_to_planner" }
   max_loop_iterations: 3
 
-# 求同: 共享协议 (两个项目一致)
+# 求同: 共享协议 (三个项目一致)
 shared:
   version: "2.0.0"
   rule_framework: "FB-1..DS-4 (18 rules)"
   philosophy: "dual-core (Panta Rhei + Systems Thinking)"
-  coordination: "config/coordination.yaml"
+  coordination: "D:\\Reasonix\\coordination.yaml"
+  meso_agent:
+    enabled: true
+    config: "D:\\Reasonix\\config\\meso_agent.yaml"
+    skill: "D:\\Reasonix\\skills\\meso-orchestrator.md"
+    role: "S (State) — knowledge provider, contradiction analysis, data supply"
+  peers:
+    - { project: "porpoise-agent", role: "T (Transition)", config: "../porpoise-agent/config/agent.yaml" }
+    - { project: "cognitive-search-engine", role: "V (Validation)", config: "../cognitive-search-engine/config/agent.yaml" }
 
 # DeepSeek 标准配置 (YAML 1.2)
 llm:
@@ -304,6 +312,9 @@ skills:
     - verify-stats-handbook
     - zotero-assistant
     - obsidian-assistant
+    - cross-delegate              # 跨项目委托 (→ porpoise / cognitive)
+  evolution_skills:
+    - self-evolve                 # 自进化引擎
   guard_skills:
     - karpathy-guard
     - rule-auditor

@@ -130,6 +130,15 @@ components:
       created: "2026-06-06"
       last_verified: "2026-06-06"
       expiry_policy: { type: "manual_review", max_age_days: 90 }
+    # ── 进化 (v6.1 新增) ──
+    self-evolve:
+      version: "1.0.0"
+      created: "2026-06-07"
+      last_verified: "2026-06-07"
+      expiry_policy: { type: "manual_review", max_age_days: 90 }
+      description: "Post-pipeline feedback → auto-adjust 6 params, cross-project evolution share"
+      source: "借鉴 cognitive-search-engine/skills/self-evolve.md"
+      path: ".reasonix/skills/self-evolve.md"
 
   mcp_tools:
     scholar:   { version: "latest", last_verified: "2026-06-06", expiry: { type: "auto_check", target: "npm", max_age_days: 30 }, tools: ["scholar_search_literature_graph","scholar_search_google_scholar_key_words"], primary: true }
@@ -178,9 +187,10 @@ components:
       layer: "cognitive"
 
   config:
-    agent.yaml:           { version: "2.0.0", last_verified: "2026-06-06", expiry: { type: "manual_review", max_age_days: 90 } }
+    agent.yaml:           { version: "2.0.0", last_verified: "2026-06-07", expiry: { type: "manual_review", max_age_days: 90 } }
     models.yaml:          { version: "1.0.0", last_verified: "2026-06-06", expiry: { type: "manual_review", max_age_days: 90 } }
     mcp_servers.yaml:     { version: "1.0.0", last_verified: "2026-06-06", expiry: { type: "manual_review", max_age_days: 90 } }
+    evolution.yaml:       { version: "1.0.0", created: "2026-06-07", last_verified: "2026-06-07", expiry: { type: "manual_review", max_age_days: 90 }, description: "6 adaptive params, 7 triggers, cross-project feedback" }
 
   handbooks:
     systems-thinking.md:       { version: "2.0.0", last_verified: "2026-06-06", expiry: { type: "manual_review", max_age_days: 180 } }
@@ -195,8 +205,11 @@ components:
 # 活系统指标
 living_system:
   born: "2026-06-05"
-  total_components: 51
-  auto_checkable: 10              # 9 mcp_tools (auto_check) + 1 methods (auto_check)
-  manual_review: 41               # 25 skills + 5 architecture + 3 config + 3 handbooks + 2 methods + 2 mcp_tools + 1 living_system
-  last_health_check: "2026-06-06"
-  health_score: 95  # 51/51 verified today; minor count inconsistencies resolved
+  total_components: 53  # +2: self-evolve skill + evolution.yaml config
+  auto_checkable: 10
+  manual_review: 43
+  last_health_check: "2026-06-07"
+  health_score: 100
+  cross_project:
+    evolution_share: true
+    peers: ["porpoise-agent", "cognitive-search-engine"]

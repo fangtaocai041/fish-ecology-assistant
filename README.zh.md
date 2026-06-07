@@ -12,9 +12,10 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
   <a href="#"><img src="https://img.shields.io/badge/双核哲学-Panta_Rhei_%2B_系统论-6366f1?style=flat-square" alt="双核哲学"></a>
   <a href="#"><img src="https://img.shields.io/badge/MCP-21-22c55e?style=flat-square" alt="MCP:21"></a>
-  <a href="#"><img src="https://img.shields.io/badge/skills-25-f59e0b?style=flat-square" alt="Skills:25"></a>
+  <a href="#"><img src="https://img.shields.io/badge/skills-27-f59e0b?style=flat-square" alt="Skills:27"></a>
   <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/架构-5_层-8b5cf6?style=flat-square" alt="架构:5层"></a>
   <a href="#"><img src="https://img.shields.io/badge/规则-18-8b5cf6?style=flat-square" alt="规则:18"></a>
+  <a href="config/agent.yaml"><img src="https://img.shields.io/badge/agent-v2.0.0-ec4899?style=flat-square" alt="Agent:v2.0.0"></a>
 </p>
 
 ---
@@ -24,6 +25,27 @@
 > S-T-V 刚性三角形: `fish(S) → porpoise(T) → cognitive(V) → fish(S)`
 > 提供知识、数据、矛盾分析和发现给流水线。
 > **D₂ 面**: 多 Agent 辩论网格 (`debate-validator`)。**三角验证**: ≥3 独立源。
+
+### 🔗 关联项目 (S-T-V 三角)
+
+| 项目 | 角色 | 技术栈 | 说明 |
+|------|:----:|--------|------|
+| **cognitive-search-engine** | **V** (Validation) | Python · BDI+ReAct | 权威可信度评分 · Hub-and-Spoke 搜索 · 共享知识图谱 |
+| **porpoise-agent** | **T** (Transition) | Python · orchestrator | 5 阶段管线 · 声学分析 · 野外调查 · 保护评估 |
+
+> **协同进化**: Fish 提供知识数据 → Porpoise 执行管线 → Cognitive 验证评分。
+> Cognitive 图谱进化 → 三项目共享。引擎更新通过 submodule → 自动传播。
+> 完整规范: workspace 根目录 `coordination.yaml`。
+
+### 🧠 中宇宙式 Agent (Workspace Level)
+
+> **宏观(BDI) → 中宇宙(协调) → 微观(执行)** — 统一协调三个 S-T-V 项目。
+> 详见 workspace 根目录 `config/meso_agent.yaml` + `skills/meso-orchestrator.md`。
+
+```
+理解 → 路由 → 执行 → 验证 → 合成 → 进化
+(Macro) (Meso) (Micro) (Cross) (Merge) (Feedback)
+```
 
 ## 🏛️ 架构 · 标准 5 层 Agent 模型
 
@@ -298,6 +320,8 @@ fish-ecology-assistant/
 
 | 版本 | 日期 | 主题 | 变更内容 |
 |:------|:-----|:------|:-------------|
+| **v6.1** | 2026-06-07 | 跨项目协同进化 | + agent.version 徽标 (v2.0.0), + S-T-V 三角角色增强, + 三项目协同进化描述, + coordination.yaml 统一协调 |
+| **v6** | 2026-06-07 | 认知搜索引擎 | + DirectLoader 协议 (importlib 零进程加载), 双模式搜索 (ParallelSearch 轻量 / CognitiveAgent 完整 BDI ReAct), 知识图谱进化, 三项目共享引擎 |
 | **v5** | 2026-06-06 | 搜索 v3.0 | 11 搜索引擎 (GS优先 + 知网/万方/百度学术/中科院), google-scholar-search 技能, 鳤文献全面检索 |\n| **v4** | 2026-06-06 | 系统论 | + 双核哲学（Panta Rhei + 毛泽东思想系统论），7 大系统原则 + 4 DeepSeek 效率原则，工程语法 (18 条 WHEN→THEN)，全量代码映射 |
 | **v3** | 2026-06-05 | 工程化 | 全面重写：Panta Rhei 哲学，能力对比，工程效率原则，稀疏激活 |
 | **v2** | 2026-06-05 | Panta Rhei | 动态世界观整合，涌现检测，校准语言 |
