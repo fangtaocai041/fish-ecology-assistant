@@ -20,13 +20,17 @@
 
 ---
 
-## 🔺 S-T-V 三角角色: **State (S)**
+## 🧠 由 Meso-Cosmos 智能调度
 
-> S-T-V 刚性三角形: `fish(S) → porpoise(T) → cognitive(V) → fish(S)`
-> 提供知识、数据、矛盾分析和发现给流水线。
-> **D₂ 面**: 多 Agent 辩论网格 (`debate-validator`)。**三角验证**: ≥3 独立源。
+> S 层由 [meso-cosmos-agent (T)](https://github.com/fangtaocai041/meso-cosmos-agent) 智能调度：**混沌增强路由** · **学者级统计停止** (Rule of Three) · **DeepSeek 级 MoE 门控**。
+> 长江 443 种鱼类知识库 (`yangtze_fish_species.yaml`) 基于 2017-2021 本底调查。
 
-### 🔗 关联项目 (S-T-V 三角)
+## 🔺 S-T-V-P₁-P₂ 架构角色: **State (S)**
+
+> 提供知识、长江 443 种鱼类数据、矛盾分析和生态发现。
+> **D₂ 面**: 多 Agent 辩论网格。**三角验证**: ≥3 独立源。
+
+### 🔗 关联项目 (S-T-V-P₁-P₂ 生态系统)
 
 | 项目 | 角色 | 技术栈 | 说明 |
 |------|:----:|--------|------|

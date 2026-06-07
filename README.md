@@ -21,11 +21,15 @@
 
 ---
 
+## 🧠 Powered by Meso-Cosmos Intelligent Optimization
+
+> S-layer coordinated by [meso-cosmos-agent (T)](https://github.com/fangtaocai041/meso-cosmos-agent): **Chaos-enhanced routing** (Rössler + wildcard) · **Scholarly stopping** (Rule of Three) · **DeepSeek MoE gating**.
+> Yangtze 443 species knowledge base (`yangtze_fish_species.yaml`) from 2017-2021 national survey.
+
 ## 🔺 S-T-V-P₁-P₂ Architecture Role: **State (S)**
 
-> Part of the S-T-V-P₁-P₂ ecosystem. T-layer coordination by [meso-cosmos-agent](https://github.com/fangtaocai041/meso-cosmos-agent).
 > Provides knowledge, Yangtze 443 species data, contradiction analysis, and ecological findings.
-> **D₂ Plane**: multi-agent debate mesh (`debate-validator`). **Triangulation**: ≥3 sources.
+> **D₂ Plane**: multi-agent debate mesh. **Triangulation**: ≥3 sources.
 
 ### 🔗 Linked Projects (S-T-V-P₁-P₂ Ecosystem)
 
