@@ -5,14 +5,14 @@
 <div align="center">
   <h1>🌊 Panta Rhei · Everything Flows</h1>
   <p><strong>Turn your coding agent into a PhD-level research team — Standard 5-Layer Agent Architecture: Panta Rhei + Systems Thinking.</strong></p>
-  <p>21 MCP services · 25 AI Skills · 11 search engines · 13 knowledge bases · 18 engineering rules · BDI + ReAct/ToT + MAS · Docker</p>
+  <p>22 MCP services · 25 AI Skills · 12 search engines · 13 knowledge bases · 18 engineering rules · BDI + ReAct/ToT + MAS · Docker</p>
 </div>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
   <a href="https://deepwiki.com/fangtaocai041/fish-ecology-assistant"><img src="https://devin.ai/assets/askdeepwiki.png" alt="Ask DeepWiki" height="20"></a>
   <a href="#"><img src="https://img.shields.io/badge/dual_core-Panta_Rhei_%2B_Systems_Thinking-6366f1?style=flat-square" alt="Dual Core"></a>
-  <a href="#"><img src="https://img.shields.io/badge/MCP-21-22c55e?style=flat-square" alt="MCP:21"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MCP-22-22c55e?style=flat-square" alt="MCP:22"></a>
   <a href="#"><img src="https://img.shields.io/badge/skills-25-f59e0b?style=flat-square" alt="Skills:25"></a>
   <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/architecture-5_layer-8b5cf6?style=flat-square" alt="Architecture:5-Layer"></a>
   <a href="#"><img src="https://img.shields.io/badge/rules-18-8b5cf6?style=flat-square" alt="Rules:18"></a>
@@ -103,7 +103,7 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
 | Search engines | 1 | **12** (cognitive_search + scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
-| MCP services | 0 | **19** (incl. DeepWiki + cognitive-search-mcp) |
+| MCP services | 0 | **22** (incl. cognitive_search MCP + DeepWiki) |
 | AI subagents | 4 (generic) | **14** (domain-specialized, rule-auditor, emergence detection) |
 | R statistics | — | ✅ R 4.6.0 + 20+ ecology packages |
 | OCR | — | ✅ PaddleOCR + Tesseract.js |
@@ -180,7 +180,7 @@ Restart Reasonix — everything is ready.
 
 ---
 
-## 📡 MCP Services (18 Tools)
+## 📡 MCP Services (22 Tools)
 
 | Service | Engine | Best For |
 |:--------|:-------|:---------|
@@ -286,7 +286,7 @@ fish-ecology-assistant/
 ├── README.zh.md              ← 中文
 │
 ├── .reasonix/
-│   ├── mcp-servers/             ← 21 MCP services (incl. deepwiki)
+│   ├── mcp-servers/             ← 22 MCP services (incl. deepwiki + cognitive_search)
 │   │   └── ima-server.mjs      ← 14 tools (KB + notes + discovery + multi-search)
 │   │
 │   ├── skills/                  ← 14 AI subagent playbooks
