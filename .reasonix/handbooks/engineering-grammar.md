@@ -1,5 +1,7 @@
 # 🔧 Engineering Grammar — 工程语法
 
+> **Architecture Note**: fish-ecology-assistant runs on the **Reasonix Skill runtime** (Markdown playbooks + config-driven routing), not a Python orchestrator. The 18 WHEN→THEN rules execute at the Skill routing layer — Reasonix reads `agent.yaml` → matches rules → invokes Skills. There is no Python `orchestrator.py`; the "orchestrator" is Reasonix itself. For Python-level contradiction-driven execution, see porpoise-agent (`src/agent/orchestrator.py`) and cognitive-search-engine (`src/meso_agent._analyze_contradiction()`).
+>
 > **Purpose**: Translate philosophical principles into **precise, machine-actionable engineering language**.
 > Each rule is expressed as `WHEN condition THEN action WITH confidence`, mapped to concrete `config/agent.yaml` paths and Reasonix Skill names.
 >
