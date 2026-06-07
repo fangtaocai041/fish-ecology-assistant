@@ -247,7 +247,7 @@ LiteratureAgent (Reasonix)
 |------|:----:|------|
 | 文献量 > 200（满意模式） | `full_pipeline=False` | `ParallelSearch` 8-12 篇即够 |
 | 文献量 20-200（分类归纳） | `full_pipeline=True` | 需要 Phase 分类 + 用户选方向 |
-| 文献量 < 20（穷举） | `full_pipeline=True` | 全 12 层 + 引用遍历 + 作者回溯 |
+| 文献量 < 20（穷举法） | `full_pipeline=True` | 全 12 层 + 引用遍历 + 作者回溯 |
 | 需要引用图遍历 | `full_pipeline=True` | 轻量模式无 `citation_traversal` |
 
 ### Three Breakthroughs
