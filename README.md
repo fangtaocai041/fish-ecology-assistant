@@ -398,6 +398,17 @@ This system is an amplifier, not an author.
 
 This project is not a fixed toolset. It is a **living system**. Every component has built-in expiry awareness, version tracking, and emergence detection. As your research deepens, R packages update, and new methods emerge, it evolves with you.
 
+## 🗺️ 演进方向 (Personalized Roadmap)
+
+| # | 方向 | 痛点 | 优先级 |
+|:--:|------|------|:----:|
+| 1 | **物种一键搜索** | 输入中文名→自动查 species_graph→中英双语 | 🔴 P0 |
+| 2 | **长江鱼类知识库扩充** | yangtze_fish_species.yaml 目前 443 种，部分缺 genetic/morphology 数据 | 🔴 P0 |
+| 3 | **生态调查报告自动生成** | 野外调查数据 → 自动生成物种名录/多样性指数/优势种 | 🟡 P1 |
+| 4 | **栖息地适宜性模型** | GBIF分布 + WorldClim + 水文数据 → MaxEnt/SDM 自动建模 | 🟡 P1 |
+| 5 | **eDNA 数据对接** | 环境DNA 测序结果 → 自动匹配物种 → 文献检索 | 🟢 P2 |
+| 6 | **渔业资源评估** | CPUE 数据 → 资源量估算 → 管理建议 | 🟢 P2 |
+
 **Last updated: 2026-06-07**
 **Running on Reasonix Code · Powered by DeepSeek**
 
