@@ -54,7 +54,7 @@
 | **v6.0** | 2026-06-07 | Cognitive Search Engine DirectLoader · dual-mode search |
 | **v5.0** | 2026-06-06 | 12 search engines · GS-first + Chinese sources |
 
-> **Latest**: v6.3.0 · 2026-06-08 · `7578914`
+> **Latest**: v6.3.0 · 2026-06-08
 
 > **Core Strength**: Universal fish ecology research platform. Dual-core philosophy (Panta Rhei + Systems Thinking) is not decoration but runtime constraint — contradiction analysis drives search strategy, phased strategy determines stopping conditions.
 
