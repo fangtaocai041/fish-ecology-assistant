@@ -48,12 +48,13 @@
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.3.0** | 2026-06-08 | ☯️ TAO (土·化育) + 🔥 WUXING dynamics + config/tao.yaml |
 | **v6.2** | 2026-06-08 | S-T-V-P₁-P₂ ecosystem · Yangtze 443 species KB · Meso-Cosmos intelligent scheduling |
 | **v6.1** | 2026-06-07 | Cross-project co-evolution · S-T-V triangle role · coordination.yaml |
 | **v6.0** | 2026-06-07 | Cognitive Search Engine DirectLoader · dual-mode search |
 | **v5.0** | 2026-06-06 | 12 search engines · GS-first + Chinese sources |
 
-> **Latest**: v6.2 · 2026-06-08 · `311e401`
+> **Latest**: v6.3.0 · 2026-06-08 · `7e6b095`
 
 > **Core Strength**: Universal fish ecology research platform. Dual-core philosophy (Panta Rhei + Systems Thinking) is not decoration but runtime constraint — contradiction analysis drives search strategy, phased strategy determines stopping conditions.
 
