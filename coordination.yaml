@@ -1,59 +1,88 @@
 # ============================================================
-# S-T-V 三角协调配置 — Unified Coordination Config
+# 道生一 · 一生二 · 二生三 · 三生万物
 # ============================================================
-# 路径: D:\Reasonix\coordination.yaml
-# 所有三个项目共享此文件。
+# 道 (Dao)     = 外界 — 用户的研究问题, 现实世界的生态学需求
+# 一 (One)     = 输入命令到模型 — fish-ecology-assistant 作为统一入口
+# 二 (Two)     = 太极生两仪 — S(知识/静/阴) ↔ V(验证/动/阳) 二元对立
+# 三 (Three)   = 三角结构 — fish(S) + cognitive(V) + eon-core(Coordinator)
+#                矛盾统一体, 产生结构的最小封闭集合
+# 万物 (Myriad)= 所有事物 — 衍生项目 + Skills + 输出 + 论文 + 分析
+#                无限演化, 非"一万种"
 #
-# S (State):    fish-ecology-assistant  — 知识库
-# T (Transition): porpoise-agent         — 管线执行
-# V (Value):    cognitive-search-engine  — 知识引擎
+# 铁律: 三角密闭(缺一不可)·万物开放(无限衍生)·三角不依赖万物
 #
-# 🧠 Meso-Cosmos Agent (v4.0): workspace-level coordination
-#    Macro(BDI意图) → Meso(跨项目协调) → Micro(项目执行)
-#    Config: D:\Reasonix\config\meso_agent.yaml
-#    Skill:  D:\Reasonix\skills\meso-orchestrator.md
+# 加载入口: fish-ecology-assistant/src/project_hub.py → ProjectHub
 
 coordination:
-  version: "4.0.0"
+  version: "7.0.0"
+  philosophy: "Dao begets One, One begets Two, Two begets Three, Three begets the Myriad"
   root: "D:\\Reasonix"
-  last_sync: "2026-06-07"
+  last_sync: "2026-06-20"
   changelog:
-    - "v3.2.0 (2026-06-07): Cross-project evolution engine propagation — +evolution.yaml (porpoise + fish), +component_registry.yaml (porpoise), +self-evolve skill (porpoise + fish). All three projects now have self-evolution capability."
-    - "v4.0.0 (2026-06-07): Meso-Cosmos Agent — workspace-level coordination layer. +config/meso_agent.yaml, +skills/meso-orchestrator.md. Macro(BDI)→Meso(Route)→Micro(Execute) across all 3 S-T-V projects."
-    - "v3.2.0 (2026-06-07): Cross-project evolution engine propagation — +evolution.yaml (porpoise + fish), +component_registry.yaml (porpoise), +self-evolve skill (porpoise + fish). All three projects now have self-evolution capability."
-    - "v3.1.0 (2026-06-07): Full cross-project co-evolution pass — all READMEs (EN+ZH) synced with Linked Projects sections, agent.version badges on all 3 projects, cognitive agent.yaml +shared section, fish + porpoise WEAKNESSES.md refreshed, porpoise zh README v3→v4.1"
+    - "v7.0.0 (2026-06-20): 道→一→二→三→万物 完整哲学链。英文修正: Myriad Things (非 Ten Thousand Species)。"
+    - "v6.0.0 (2026-06-20): 三生万物架构初版"
 
-  # ===== Meso-Cosmos Agent (Workspace Level) =====
-  meso_cosmos:
-    enabled: true
-    config: "D:\\Reasonix\\config\\meso_agent.yaml"
-    skill: "D:\\Reasonix\\skills\\meso-orchestrator.md"
-    architecture: "Macro(BDI意图) → Meso(跨项目协调) → Micro(项目执行)"
-    description: "统一入口 — 解析研究问题 → 路由到 S-T-V 项目 → 协调管线执行 → 交叉验证 → 进化反馈"
-    pipeline:
-      - { phase: 0, name: "UNDERSTAND", layer: "Macro-BDI", action: "解析问题 → 识别领域 → 形成意图" }
-      - { phase: 1, name: "ROUTE", layer: "Meso-Coordination", action: "路由到 S/T/V 项目 → 资源分配" }
-      - { phase: 2, name: "EXECUTE", layer: "Micro-Execution", action: "委派到项目 agent → 并行监控" }
-      - { phase: 3, name: "VALIDATE", layer: "Cross-Verification", action: "权威评分 → 三角验证 → 矛盾检测" }
-      - { phase: 4, name: "SYNTHESIZE", layer: "Merge", action: "多项目结果合并 → 统一报告" }
-      - { phase: 5, name: "EVOLVE", layer: "Feedback", action: "评估 → 触发跨项目进化" }
+  # ===== 道 · Dao (外界) =====
+  dao:
+    description: "外部世界 — 用户的研究问题, 长江生态系统的真实需求"
+    entry: "用户命令 → 一"
 
-  # ===== S-T-V 三角 =====
-  stv_triangle:
-    state:
+  # ===== 一 · One (入口) =====
+  one:
+    description: "太极 — 统一入口, 未分阴阳的初始态"
+    project: "fish-ecology-assistant"
+    hub: "src/project_hub.py → ProjectHub"
+
+  # ===== 二 · Two (阴阳) =====
+  two:
+    description: "两仪 — S(知识/阴/静) 与 V(验证/阳/动) 的二元对立统一"
+    yin:
+      symbol: "S/V0 · 阴"
       project: "fish-ecology-assistant"
-      role: "知识库, 数据供给, 矛盾分析"
-      exports: ["stats-assistant", "research-analyst", "phd-proposal-writer", "ima-smart-search"]
-    transition:
-      project: "porpoise-agent"
-      role: "管线执行, 阶段编排, 野外调查"
-      exports: ["detect-clicks", "estimate-abundance", "assess-threats", "search-literature"]
-    value:
+      nature: "静 — 知识供给, 状态表征"
+    yang:
+      symbol: "V/V1 · 阳"
       project: "cognitive-search-engine"
-      role: "认知搜索, 图谱进化, 变体生成"
-      exports: ["graph-search-engine", "cognitive-species-search", "self-evolve"]
-      engine_path: "D:\\Reasonix\\cognitive-search-engine\\"
-      loader: "importlib (DirectLoader, 零 MCP 进程)"
+      nature: "动 — 搜索验证, 变化驱动"
+
+  # ===== 三 · Three (三角结构) =====
+  three:
+    description: "三体 — 矛盾统一的三角最小封闭结构"
+    sealed: true
+    count: 3
+    members:
+      fish:
+        symbol: "S/V0"
+        project: "fish-ecology-assistant"
+        role: "知识供给 · 阴"
+      cognitive:
+        symbol: "V/V1"
+        project: "cognitive-search-engine"
+        role: "搜索验证 · 阳"
+        engine_path: "D:\\Reasonix\\cognitive-search-engine\\"
+        loader: "importlib (DirectLoader)"
+      eon:
+        symbol: "Coordinator"
+        project: "eon-core"
+        role: "协调内核 · 太极点"
+
+  # ===== 万物 · Myriad (无限演化) =====
+  myriad:
+    description: "万物 — 三角赋能, 无限衍生, 非一万种"
+    sealed: false
+    members:
+      porpoise:
+        symbol: "P₁"
+        project: "porpoise-agent"
+        role: "江豚专研 — NBHF声学 + 种群评估"
+      coilia:
+        symbol: "P₂"
+        project: "coilia-agent"
+        role: "刀鲚专研 — 耳石微化学 + 洄游生态"
+      conflict:
+        symbol: "C"
+        project: "conflict-arbiter"
+        role: "冲突仲裁 — 保护级别冲突检测"
 
   # ===== 求同: 共享协议 =====
   shared:

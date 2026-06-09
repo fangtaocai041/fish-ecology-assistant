@@ -16,7 +16,7 @@
   <a href="#"><img src="https://img.shields.io/badge/skills-28-f59e0b?style=flat-square" alt="Skills:27"></a>
   <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/architecture-5_layer-8b5cf6?style=flat-square" alt="Architecture:5-Layer"></a>
   <a href="#"><img src="https://img.shields.io/badge/rules-18-8b5cf6?style=flat-square" alt="Rules:18"></a>
-  <a href="config/agent.yaml"><img src="https://img.shields.io/badge/agent-v6.3.0-ec4899?style=flat-square" alt="Agent:v6.3.0"></a>
+  <a href="config/agent.yaml"><img src="https://img.shields.io/badge/agent-v6.5.0-ec4899?style=flat-square" alt="Agent:v6.5.0"></a>
 </p>
 
 ---
@@ -26,21 +26,23 @@
 > S-layer (V0) coordinated by [eon-core](https://github.com/fangtaocai041/eon-core) (10-layer unified kernel): **Chaos-enhanced routing** (Rössler + wildcard) · **Scholarly stopping** (Rule of Three) · **DeepSeek MoE gating** · **Samsara karma engine**.
 > Multi-basin fish species knowledge base (`config/fish_species_kb.yaml`) — continent → country → basin hierarchy. Yangtze 443-species + expanding to Tumen/Suifen/Amur basins.
 
-## 🔺 S-T-V-P₁-P₂ Architecture Role: **State (S / V0)**
+## 🔺 Architecture Role: **Triangle Core Member (V0 / Knowledge Supply)**
 
-> Part of the S-T-V-P₁-P₂ ecosystem, coordinated by [eon-core](https://github.com/fangtaocai041/eon-core).
-> Provides knowledge, Yangtze 443 species data, contradiction analysis, and ecological findings.
+> Triangle Core: fish(Knowledge) + cognitive(Validation) + eon-core(Coordinator) — sealed_set(3)
+> Derived: P₁(porpoise) · P₂(coilia) · C(conflict) — open_set(≥0)
+> Coordinated by [eon-core](https://github.com/fangtaocai041/eon-core).
+> Provides knowledge, multi-basin fish data (Yangtze 443 + Tumen + Suifen + Amur expanding), contradiction analysis, and ecological findings.
 > **D₂ Plane**: multi-agent debate mesh. **Triangulation**: ≥3 sources.
 
 ## 📊 Self-Assessment
 
 | Dimension | Rating | Notes |
 |-----------|:-----:|-------|
-| 📚 Knowledge Breadth | ⭐⭐⭐⭐⭐ | 12 search engines + 13 KBs + Yangtze 443 species database |
+| 📚 Knowledge Breadth | ⭐⭐⭐⭐⭐ | 12 search engines + 13 KBs + multi-basin fish DB (Yangtze 443 + Tumen + Suifen) |
 | 🧘 Philosophy Integration | ⭐⭐⭐⭐⭐ | Panta Rhei + Systems Thinking — 18 WHEN→THEN engineering rules |
 | 🔬 Research Pipeline | ⭐⭐⭐⭐⭐ | 5-stage: Plan→Search→Analyze→Write→Review, 28 AI Skills |
 | 🌏 Chinese Literature | ⭐⭐⭐⭐⭐ | CNKI/万方/百度学术/中科院 — unique coverage Western DBs miss |
-| 🔗 Ecosystem Role | ⭐⭐⭐⭐⭐ | S/V0 layer in S-T-V-P₁-P₂, coordinated by eon-core |
+| 🔗 Ecosystem Role | ⭐⭐⭐⭐⭐ | Triangle Core member (V0), coordinated by eon-core |
 | 🧪 Test Coverage | ⭐⭐⭐⭐☆ | Cross-project validation + rule compliance checks |
 
 ---
@@ -49,6 +51,7 @@
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.5.0** | 2026-06-20 | 🧬 KB-First 两阶段搜索 + 🏠 宿主容器架构 — `ProjectHub` 统一加载5个子系统 (⊂cognitive ∥porpoise ∥coilia ⫛eon-core ⊢conflict) · `search_species()` 统一入口 · `delegate_to()` 跨项目委托 |
 | **v6.4.0** | 2026-06-09 | 🔧 Engineering architecture · exact match(_match_species) · taxonomy_log · detect_taxonomy_discrepancy · verify_architecture.py |
 | **v6.3.0** | 2026-06-08 | ☯️ 10-layer concentric architecture + conflict-arbiter (V4) integration |
 | **v6.2** | 2026-06-08 | S-T-V-P₁-P₂ ecosystem · Yangtze 443 species KB · Meso-Cosmos intelligent scheduling |
@@ -56,20 +59,22 @@
 | **v6.0** | 2026-06-07 | Cognitive Search Engine DirectLoader · dual-mode search |
 | **v5.0** | 2026-06-06 | 12 search engines · GS-first + Chinese sources |
 
-> **Latest**: v6.4.0 · 2026-06-09
+> **Latest**: v6.5.0 · 2026-06-20
 
 > **Core Strength**: Universal fish ecology research platform. Dual-core philosophy (Panta Rhei + Systems Thinking) is not decoration but runtime constraint — contradiction analysis drives search strategy, phased strategy determines stopping conditions.
 
-### 🔗 Linked Projects (S-T-V-P₁-P₂ Ecosystem)
+### 🔗 Linked Projects (Triangle Core + Derived)
 
-| Project | Role | Stack | Description |
-|---------|:----:|-------|-------------|
-| **eon-core** | **Coordinator** | Python · 10-layer kernel | EventBus · Samsara karma · DAG routing · 4-vertex topology |
-| **cognitive-search-engine** | **V / V1** (Validation) | Python · BDI+ReAct | 权威可信度评分 · Hub-and-Spoke 搜索 · 共享知识图谱 |
-| **porpoise-agent** | **P₁ / V2** (Porpoise) | Python · orchestrator | 5-phase 管线 · 声学分析 · 野外调查 · 保护评估 |
-| **coilia-agent** | **P₂ / V3** (Coilia) | Python · 3 skills | 刀鲚专研 · 耳石微化学 · 洄游生态 |
+| Project | Layer | Role | Description |
+|---------|:-----:|------|-------------|
+| **eon-core** | **Triangle** | Coordinator | EventBus · Samsara karma · DAG routing · 4-vertex topology |
+| **cognitive-search-engine** | **Triangle V1** | Validation | BDI+ReAct · Authority scoring · Hub-and-Spoke search · Shared graph |
+| **porpoise-agent** | **Derived P₁** | Porpoise domain | 5-phase pipeline · Acoustic analysis · Field survey · Conservation |
+| **coilia-agent** | **Derived P₂** | Coilia domain | Otolith microchemistry · Migration ecology · Resource assessment |
+| **conflict-arbiter** | **Derived C** | Conflict arbitration | Multi-source protection-level conflict detection · Weighted verdict |
 
-> **Co-evolution**: Fish (S/V0) provides knowledge → Cognitive (V/V1) validates → Porpoise (P₁/V2) + Coilia (P₂/V3) execute domain pipelines.
+> **Co-evolution**: Triangle Core (fish+cognitive+eon-core) provides knowledge and validation → Derived projects P₁(porpoise) + P₂(coilia) execute domain pipelines.
+> The triangle is incomplete without any one corner; derived projects are independent and the triangle runs without them. pipelines.
 > Knowledge graph evolves → all five projects benefit. Engine updates via submodule → auto-propagate.
 > Full spec: workspace root `coordination.yaml`.
 
@@ -177,6 +182,82 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 
 ---
 
+## 🧬 KB-First 两阶段搜索（v6.5.0 新增）
+
+> **先查知识库，再决定是否搜索。** 不再直接触发 7 引擎外部搜索。
+
+```
+用户: "检索珠星三块鱼"
+         │
+         ▼
+┌──────────────────────────────────────┐
+│  Stage 1: kb_first_lookup()          │
+│  ──────────────────────────────────  │
+│  查询 f项目 fish_species_kb.yaml     │
+│  ├─ 精确匹配: scientific / chinese   │
+│  ├─ 别名匹配: aliases[]              │
+│  ├─ 同义名匹配: synonyms[]  ← NEW   │
+│  └─ 模糊匹配: genus + 中文字符交叉   │
+│         │                            │
+│         ▼                            │
+│  KbFirstResult {                     │
+│    found: true / false               │
+│    summary_text: "三块鱼 / 鲤科 ..." │
+│    recommendation: stay_in_kb /      │
+│                    continue_to_c     │
+│  }                                   │
+└──────────────────────────────────────┘
+         │
+         ▼
+┌──────────────────────────────────────┐
+│  ask_choice: 🅰️ 留步 | 🅱️ 继续搜索  │
+└──────────────────────────────────────┘
+         │
+    ┌────┴────┐
+    ▼         ▼
+  留步     继续搜索
+ (返回KB)     │
+              ▼
+┌──────────────────────────────────────┐
+│  Stage 2: continue_full_search()     │
+│  ──────────────────────────────────  │
+│  c项目 coordinated_search():         │
+│    → check_taxonomy                  │
+│    → estimate_mode                   │
+│    → 7引擎并行 (ncbi+scholar+        │
+│      article+tavily+exa+web+scholarly)│
+│    → citation_traversal              │
+│    → variant_safety_net              │
+│    → dedup + classify + CN/EN标注    │
+└──────────────────────────────────────┘
+```
+
+### Python API
+
+```python
+from src.search_coordinator import kb_first, continue_full_search
+
+# Stage 1: KB check
+result = kb_first("珠星三块鱼")
+print(result.ask_user_prompt())
+# 📚 f项目知识库已收录: 三块鱼（*Tribolodon brandti*）
+# 科属: 鲤科 | 分布: 图们江/绥芬河/北海道...
+# ───
+# **是否继续？**
+# - 🅰️ 留步 — 仅使用知识库数据
+# - 🅱️ 继续搜索 — c项目全量文献搜索
+
+# Stage 2: Full search (only if user chooses B)
+result = continue_full_search(result, group="full")
+print(result.full_search.summary())
+```
+
+### Skill 层面
+
+`unified-species-search` skill 已升级至 v4.0，内置 KB-First 流程（§0）。调用时自动先查 `fish_species_kb.yaml`，命中后暂停并询问用户。
+
+---
+
 ## ⚡ Quick Start
 
 ```bash
@@ -267,6 +348,84 @@ Restart Reasonix — everything is ready.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
+
+---
+
+## ☯️ 道生一 · 一生二 · 二生三 · 三生万物
+
+> **Dao begets One, One begets Two, Two begets Three, Three begets the Myriad.**
+> — *Dao De Jing*, Chapter 42
+
+```
+        道 (Dao)
+    外部世界 · 用户的研究问题
+    长江生态系统的真实需求
+              │
+              ▼
+        一 (One)  — 太极
+    命令进入系统 · 统一入口
+    fish-ecology-assistant
+              │
+    ┌─────────┴─────────┐
+    ▼                   ▼
+  阴 (Yin)           阳 (Yang)
+  S/V0 · 静           V/V1 · 动
+  知识供给            搜索验证
+  fish                cognitive
+    │                   │
+    └────────┬──────────┘
+             │ 矛盾统一
+             ▼
+        三 (Three)  — 三体
+    三角最小封闭结构
+    S + V + Coordinator
+             │
+    ┌────────┼────────┐
+    ▼        ▼        ▼
+  P₁       P₂       C
+porpoise  coilia  conflict
+    │        │        │
+    └────────┼────────┘
+             ▼
+    万物 (Myriad Things)
+    一切事物 · 无限演化
+    Skills · Papers · Analyses
+    Reports · Models · Insights
+```
+
+**不是"一万种物种"。是"一切"。**
+
+| 层 | 中文 | English | 在系统中的含义 |
+|----|------|---------|---------------|
+| **道** | 外界, 自然 | Dao — the external world | 用户的研究问题, 长江生态的现实需求 |
+| **一** | 太极, 命令 | One — the undivided | 命令进入 fish-ecology-assistant, 统一入口 |
+| **二** | 阴阳, 两仪 | Two — Yin and Yang | S(知识/静) ↔ V(验证/动), 太极生两仪 |
+| **三** | 三体, 三角 | Three — the Triangle | fish + cognitive + eon-core, 矛盾统一的封闭结构 |
+| **万物** | 一切事物 | Myriad — all things | 衍生项目 + Skills + 论文 + 输出, 无限演化 |
+
+> **铁律**: 三角密闭 (缺一不可) · 万物开放 (无限衍生) · 三角不依赖万物 · 二生三即矛盾统一
+
+### ProjectHub API
+
+```python
+from src.orchestrator import FishEcologyOrchestrator
+orch = FishEcologyOrchestrator()
+
+# 一 (命令进入) → 二 (S↔V阴阳对立) → 三 (三角闭环)
+result = orch.search_species("珠星三块鱼")
+
+# 道 → 一 → 二 → 三 → 万物 哲学链检查
+orch.is_triangle_complete      # 三角是否完整?
+orch.triangle_status           # 阴阳三角详细状态
+
+# 万物 — 三角赋能, 无限衍生
+orch.delegate_to("porpoise", "分析江豚声学数据")
+orch.hub.porpoise              # P₁ (按需加载)
+
+# 完整健康状态
+orch.health()                  # → { one: ..., two: {...}, three: {...}, myriad: {...} }
+print(orch.hub.relationship_map())  # 道→一→二→三→万物 ASCII 图
+```
 
 ---
 
@@ -426,6 +585,7 @@ This project is not a fixed toolset. It is a **living system**. Every component 
 
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
+| **v6.5** | 2026-06-20 | KB-First Workflow | + `kb_first_lookup()` + `KbFirstResult` 两阶段搜索, + synonyms 匹配增强, + `search_coordinator.kb_first()` API, + `unified-species-search` v4.0 |
 | **v6.1** | 2026-06-07 | Cross-Project Co-Evolution | + agent.version badge (v2.0.0), + S-T-V 三角角色增强, + 三项目协同进化描述, + coordination.yaml 统一协调 |
 | **v6** | 2026-06-07 | Cognitive Search Engine | + DirectLoader 协议 (importlib 零进程加载), 双模式搜索 (ParallelSearch 轻量 / CognitiveAgent 完整 BDI ReAct), 知识图谱进化, 三项目共享引擎 |
 | **v5** | 2026-06-06 | Search v3.0 | 12 搜索引擎 (GS优先 + 知网/万方/百度学术/中科院), google-scholar-search skill, 鳤文献全面检索 |\n| **v4** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Maoist systems thinking), 7 system + 4 DeepSeek efficiency principles, Engineering Grammar (18 WHEN→THEN rules), full code mapping |

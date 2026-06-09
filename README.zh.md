@@ -28,7 +28,7 @@
 ## 🔺 S-T-V-P₁-P₂ 架构角色: **State (S / V0)**
 
 > S-T-V-P₁-P₂ 生态系统，由 [eon-core](https://github.com/fangtaocai041/eon-core) 统一协调。
-> 提供知识、长江 443 种鱼类数据、矛盾分析和生态发现。
+> 提供知识、多流域鱼类数据（长江443种+图们江+绥芬河+黑龙江扩充中）、矛盾分析和生态发现。
 > **D₂ 面**: 多 Agent 辩论网格。**三角验证**: ≥3 独立源。
 
 ### 🔗 关联项目 (S-T-V-P₁-P₂ 生态系统)
@@ -37,10 +37,11 @@
 |------|:----:|--------|------|
 | **eon-core** | **协调器** | Python · 10层内核 | EventBus · 六道轮回 · DAG路由 · 四顶点拓扑 |
 | **cognitive-search-engine** | **V / V1** (Validation) | Python · BDI+ReAct | 权威可信度评分 · Hub-and-Spoke 搜索 · 共享知识图谱 |
-| **porpoise-agent** | **P₁ / V2** (Porpoise) | Python · orchestrator | 5 阶段管线 · 声学分析 · 野外调查 · 保护评估 |
-| **coilia-agent** | **P₂ / V3** (Coilia) | Python · 3 skills | 刀鲚专研 · 耳石微化学 · 洄游生态 |
+| **porpoise-agent** | **衍生 P₁** (Porpoise) | Python · orchestrator | 江豚专研 — 5 阶段管线 · 声学分析 · 野外调查 · 保护评估 |
+| **coilia-agent** | **衍生 P₂** (Coilia) | Python · 3 skills | 刀鲚专研 — 耳石微化学 · 洄游生态 · 资源评估 |
 
-> **协同进化**: Fish (S/V0) 提供知识 → Cognitive (V/V1) 验证 → Porpoise (P₁/V2) + Coilia (P₂/V3) 执行领域管线。
+> **协同进化**: 三角闭环(fish+cognitive+eon-core) 提供知识和验证 → 衍生项目 P₁(江豚) + P₂(刀鲚) 执行领域管线。
+> 闭环缺一角即不完整；衍生项目从三角派生，三角不需它们也能独立运行。
 > 知识图谱进化 → 五项目共享。引擎更新通过 submodule → 自动传播。
 > 完整规范: workspace 根目录 `coordination.yaml`。
 
@@ -61,7 +62,7 @@
 
 f项目 (fish-ecology-assistant) — 知识库
   lookup_species(name) 精确匹配 (学名/中文名)
-  fish_species_kb.yaml: 443种长江鱼类分类/分布/保护等级
+  fish_species_kb.yaml: 多流域鱼类分类/分布/保护等级（长江443种+图们江+绥芬河）
   taxonomy_log: 科属变更记录含时间·期刊·作者证据
 
 c项目 (cognitive-search-engine) — 搜索引掣
@@ -412,7 +413,7 @@ fish-ecology-assistant/
 
 | 维度 | 评分 | 说明 |
 |------|:--:|------|
-| 📚 知识广度 | ⭐⭐⭐⭐⭐ | 12 搜索引擎 + 13 知识库 + 长江 443 种鱼类数据库 + 28 AI Skills |
+| 📚 知识广度 | ⭐⭐⭐⭐⭐ | 12 搜索引擎 + 13 知识库 + 多流域鱼类数据库（长江443种+图们江+绥芬河） + 28 AI Skills |
 | 🧘 哲学集成 | ⭐⭐⭐⭐⭐ | Panta Rhei + 系统论 — 18 条 WHEN→THEN 工程规则 |
 | 🔬 研究管线 | ⭐⭐⭐⭐⭐ | 5 阶段：规划→搜索→分析→撰写→评审，28 AI Skills |
 | 🌏 中文文献 | ⭐⭐⭐⭐⭐ | 知网/万方/百度学术/中科院 — 弥补西方数据库系统性盲区 |

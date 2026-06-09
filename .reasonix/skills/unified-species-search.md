@@ -1,31 +1,158 @@
 ---
 name: unified-species-search
-version: "3.3.0"
+version: "5.0.0"
 last_updated: "2026-06-20"
-description: 统一物种文献搜索——7 引擎并行 (ncbi+scholar+article+scholarly+tavily+exa+web) + OCR 变体预生成 + 引用回溯 + 新论文检测。零遗漏。
+description: KB-First 两阶段搜索 —— 先查 f项目KB → 询问用户 → c项目 agent (coordinated_search) → P7 taxonomy feedback 写回
 runAs: subagent
 allowed-tools: web_fetch, web_search, read_file, ncbi_ncbi_esearch, ncbi_ncbi_esummary, ncbi_ncbi_efetch, scholar_search_literature_graph, scholar_search_google_scholar_key_words, article_search_literature, scholarly_search, tavily_search, exa_web_search
 ---
-# Unified Species Search v3.3
+# Unified Species Search v5.0 — Agent-Native · P7 Feedback
 
-> **核心理念**：7 引擎并行 (ncbi + scholar + article + scholarly + tavily + exa + web_search) + OCR 变体预生成 + 引用回溯 + 新论文检测。禁止只搜精确学名一次。
+> **v5.0 关键变更**: 不再自行调用 MCP 搜索工具。KB命中后暂停询问用户；若继续，**委托给 c项目 agent** (`search_coordinator.continue_full_search`)，搜索完成后自动运行 **P7 taxonomy feedback** (c项目发现的分类变更 → 写回 f项目知识库)。
 
 ---
 
-## 0. 前处理（强制执行，不可跳过）
+## 0. KB-FIRST: 知识库优先检查（强制执行，不可跳过）⚠️ v4.0 核心变更
 
-### 0.1 读取物种变体配置 [必须]
+### 0.1 解析用户查询
+从 arguments 或用户消息中提取：
+- `scientific_name`: 学名（如 "Tribolodon hakonensis"）
+- `chinese_name`: 中文名（如 "珠星三块鱼"）
+- `query`: 通用查询字符串（兜底）
+
+### 0.2 调用 f项目知识库 [必须]
+
+**必须使用 `search_content` 在 f项目知识库中搜索**：
+
 ```
-read_file "external/cognitive-search-engine/config/species_graph.yaml"
+search_content "species_name_or_chinese_name" path="fish-ecology-assistant/config/fish_species_kb.yaml"
 ```
-提取该物种的 `variants[]`, `aliases[]`, 目标 `journals[]`。数据已从 species_variants.yaml 迁移。
 
-**若 config 不存在：使用 OCR 错误模型自动生成变体（见 0.3）**
+搜索关键词依次尝试（任一命中即停止）：
+1. 完整中文名（如 "珠星三块鱼"）
+2. 学名（如 "Tribolodon"）
+3. 学名关键词（如 "hakonensis"）
 
-### 0.2 解析 arguments
+### 0.3 读取命中的物种条目
+
+若 `search_content` 在 `fish_species_kb.yaml` 中返回结果，使用 `read_file` 读取该条目周围的完整 YAML 内容（前后约 50 行），提取：
+- `name` (中文名)
+- `scientific` (学名)
+- `aliases` (别名列表)
+- `synonyms` (同义名)
+- `family` (科属)
+- `order` (目)
+- `ecology` (生态描述)
+- `distribution` (分布)
+- `economic_value` (经济价值)
+- `conservation` (保护等级)
+
+### 0.4 呈现 KB 结果 + 询问用户 [强制暂停]
+
+**组装 KB 摘要并以明确的询问格式输出给用户**：
+
+```
+📚 **f项目知识库检索结果**
+
+物种：{chinese_name}（*{scientific_name}*）
+科属：{family}
+生态：{ecology}
+分布：{basins} / {countries}
+别名：{aliases}
+同义名：{synonyms[:5]}
+...
+
+───
+**下一步？**
+- 🅰️ **留步** — 仅使用知识库数据（已获取到基本信息）
+- 🅱️ **继续搜索** — 启动 c项目全量文献搜索
+  （PubMed/Google Scholar/Europe PMC/Crossref + 引用回溯 + OCR变体安全网）
+```
+
+**⚠️ 此时必须 STOP 并等待用户回复。不要自动继续。**
+
+### 0.5 根据用户选择分支
+
+```
+IF 用户选择 "留步" / "A" / "stay" / "够了":
+    → 返回 KB 数据作为最终输出，标注 `source: fish-ecology-assistant KB`
+    → 结束
+
+IF 用户选择 "继续搜索" / "B" / "continue" / "搜索":
+    → 继续执行下面的 §1-§6（7引擎并行搜索管线）
+    → 最终输出标注 `source: cognitive-search-engine (enriched by f-KB)`
+```
+
+### 0.6 若 KB 未命中
+
+若 `search_content` 未在 `fish_species_kb.yaml` 中找到匹配：
+
+```
+🔍 **f项目知识库未收录**: {species_name}
+
+是否启动 c项目全量文献搜索？
+（多引擎并行 + 引用回溯 + 变体安全网 — 但无 KB 预填数据加速）
+```
+
+等待用户确认后，继续执行 §1-§6。
+
+### 0.7 变体来源（若进入全量搜索）
+
+若用户选择继续搜索，变体/别名/同义名从 KB 已读取的数据中获取，**无需再读 species_graph.yaml**（KB 已提供）。仅当 KB 未命中时，才回退到：
+
+```
+read_file "cognitive-search-engine/config/species_graph.yaml"
+```
+
+提取 `variants[]`, `aliases[]`。
+
+---
+
+## P7. 分类反馈（c项目发现 → f项目知识库写回）⚠️ v5.0 新增
+
+### P7.1 触发条件
+
+当 c项目 `coordinated_search()` 完成后，检查返回的 `taxonomy_warning` 字段。
+
+```
+IF result.full_search.taxonomy_warning IS NOT None:
+  运行 P7 反馈
+```
+
+### P7.2 执行写回
+
+```
+from fish_ecology_assistant.src.adapter import FishEcologyAdapter
+adapter = FishEcologyAdapter()
+result = adapter.update_taxonomy(
+    species_name=taxonomy_warning.species,
+    discrepancy=taxonomy_warning
+)
+```
+
+### P7.3 回写内容
+
+- **字段**: `family` (科级变更), `genus` (属级变更)
+- **目标文件**: `fish-ecology-assistant/config/fish_species_kb.yaml`
+- **去重**: 相同 note 不重复追加 `taxonomy_log` 条目
+- **示例**: c项目发现 `Tribolodon → Pseudaspius`, 自动在 KB 条目的 `synonyms` 中追加 `Pseudaspius hakonensis`
+
+### P7.4 阴阳闭环
+
+```
+阴(S/知识) → 阳(V/搜索) → 发现变更 → P7反馈 → 阴(S/知识更新) → 下次查询自动命中
+```
+
+**P7 是二生三的关键闭环: 阳的发现反馈给阴, 阴阳统一于三。**
+
+---
+
+## 1. 前处理（KB-first 之后，仅在「继续搜索」时执行）
+
+### 1.1 解析 arguments
 收到格式如 `"中文名：鳤，学名：Ochetobius elongatus"`，解析出 `chinese_name` 和 `scientific_name`。
 
-### 0.3 OCR 错误模型自动生成变体 [v3.1 新增]
+### 1.2 OCR 错误模型自动生成变体
 
 基于拉丁学名字符特征自动生成：
 ```
@@ -45,21 +172,21 @@ variants += vowel_confusion(genus)                # e↔i, a↔o, u↔o
 variants += tail_drop(species)                   # "elongatu", "elongates"
 ```
 
-### 0.4 构建搜索词列表
+### 1.3 构建搜索词列表
 ```
 base_queries = [scientific_name] + known_misspellings + taxonomic_synonyms + chinese_aliases
 
-# v3.1 新增：生态关键词组合
+# 生态关键词组合
 ecology_keywords = ["diet", "feeding", "habitat", "reproduction", "conservation", "genome", "morphology"]
 keyword_queries = [scientific_name + " " + kw for kw in ecology_keywords]
 
 all_queries = base_queries + keyword_queries
 ```
 
-### 0.5 预估文献量 + 自适应策略
+### 1.4 预估文献量 + 自适应策略
 ```
 count = ncbi_esearch(scientific_name).total_count
-IF count < 20: mode = "exhaustive"      # 穷举，100% recall，12层全开
+IF count < 20: mode = "exhaustive"      # 穷举，100% recall
 ELSE IF count 20-200: mode = "classified"   # 先分类
 ELSE: mode = "satisficing"              # 满意即止
 ```

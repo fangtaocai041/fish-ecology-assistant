@@ -5,6 +5,29 @@
 
 ---
 
+## 2026-06-20
+
+### v6.5.0 — KB-First 两阶段搜索: 知识库优先
+
+#### ✨ 新增
+- `src/orchestrator.py` → `KbFirstResult` dataclass + `kb_first_lookup()` 方法
+- `src/orchestrator.py` → `_fuzzy_find_all()` + `_build_kb_hit_result()` + `_build_kb_miss_result()`
+- `src/orchestrator.py` → `synonyms` 字段匹配（`_find_species` 现在也匹配同义名列表）
+- `cognitive-search-engine/src/unified_search.py` → `KbFirstSearchResult` + `search_with_kb_first()` + `continue_full_search()` (§8)
+- `cognitive-search-engine/src/search_coordinator.py` → `kb_first()` + `continue_full_search()` 入口
+- `config/fish_species_kb.yaml` → `tribolodon_brandti` 条目新增 `Tribolodon hakonensis` / `Pseudaspius hakonensis` 同义名
+
+#### 🔧 变更
+- `unified-species-search.md` → **v3.3 → v4.0**: §0 重写为 KB-First 两阶段流程
+- `_find_species()` → 新增 synonyms 匹配循环（第三层匹配，在 scientific + aliases 之后）
+
+#### 📖 文档
+- `README.md` / `README.zh.md` → v6.5: KB-First 工作流文档 + API 示例
+- cognitive-search-engine `README.md` → v5.7: KB-First API + 数据流图
+- porpoise-agent + coilia-agent `README.md` → 跨项目 KB-First 集成标注
+
+---
+
 ## 2026-06-07
 
 ### v3.0 — 搜索引擎革命: Google Scholar 优先 + 国内学术源
