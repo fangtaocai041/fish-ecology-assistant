@@ -5,7 +5,7 @@ Bridges the gap between the Reasonix skill-based pipeline (28 markdown skills,
 
 This is NOT a replacement for the Reasonix skill system — it's a lightweight
 Python wrapper that:
-  1. Loads species knowledge base (yangtze_fish_species.yaml)
+  1. Loads species knowledge base (fish_species_kb.yaml — multi-basin)
   2. Generates DELEGATE protocol messages for Reasonix skill dispatch
   3. Provides structured data access for other projects via adapter.py
   4. Validates queries against known species/configurations
@@ -52,14 +52,16 @@ class FishEcologyOrchestrator:
         self._load_configs()
 
     def _load_configs(self) -> None:
-        """Load agent.yaml and yangtze_fish_species.yaml."""
+        """Load agent.yaml and fish_species_kb.yaml (multi-basin)."""
         try:
             import yaml
             agent_cfg = self._project_root / "config" / "agent.yaml"
             if agent_cfg.is_file():
                 self._agent_config = yaml.safe_load(agent_cfg.read_text(encoding="utf-8")) or {}
 
-            species_cfg = self._project_root / "config" / "yangtze_fish_species.yaml"
+            species_cfg = self._project_root / "config" / "fish_species_kb.yaml"
+            if not species_cfg.is_file():
+                species_cfg = self._project_root / "config" / "yangtze_fish_species.yaml"
             if species_cfg.is_file():
                 self._species_db = yaml.safe_load(species_cfg.read_text(encoding="utf-8")) or {}
         except Exception as exc:
@@ -114,79 +116,82 @@ class FishEcologyOrchestrator:
     def _match_species(query: str, chinese: str, s_name: str, c_name: str) -> bool:
         """Check if query matches a species by scientific or Chinese name.
 
-        Match rules:
-          1. query contains scientific name (case-insensitive)
-          2. chinese parameter matches Chinese name
-          3. query itself IS the Chinese name
+        知识库精确匹配规则 (f项目不做模糊):
+          1. query == 学名 (大小写不敏感) ← 优先
+          2. query == 中文名 ← 精确
+          3. chinese 参数 == 中文名 ← 跨项目调用
+          4.学名子串匹配 ← 支持部分拉丁名查询如 "Ochetobius"
+
+        ❌ 无中文名字串匹配 — 模糊搜索是 c项目的职责
         """
-        q = query.lower()
-        return (
-            (s_name and q in s_name.lower()) or
-            (chinese and c_name and chinese in c_name) or
-            (c_name and q == c_name) or
-            (c_name and len(q) >= 1 and q in c_name)
-        )
+        q = query.strip().lower()
+        s = s_name.lower() if s_name else ""
+        c = c_name.lower() if c_name else ""
+
+        if s and (q == s or (len(q) >= 3 and q in s)):
+            return True
+        if c and (q == c):
+            return True
+        if chinese and c and chinese == c:
+            return True
+        return False
 
     def _find_species(self, scientific: str, chinese: str = "") -> Dict[str, Any]:
-        """Search all sections of the knowledge base for a species.
+        """Search the flat species list in the knowledge base.
 
-        Searches: dominant_species list, protected_species list,
-        and top-level individual species dicts.
+        New multi-basin format: self._species_db["species"] is a list of
+        species dicts, each with name/scientific/distribution fields.
+        Falls back to old section-based format for backward compat.
         """
-        # Search in dominant_species list
-        for item in self._species_db.get("dominant_species", []) or []:
-            if not isinstance(item, dict):
-                continue
-            s_name = item.get("scientific", "")
-            c_name = item.get("name", "")
-            if self._match_species(scientific, chinese, s_name, c_name):
-                return {
-                    "chinese_name": c_name,
-                    "scientific_name": s_name,
-                    "family": item.get("family", ""),
-                    "conservation": item.get("conservation", ""),
-                    "source_section": "dominant_species",
-                    **item,
-                }
-
-        # Search in protected_species (may have nested lists: recorded, missing_or_extinct)
-        protected = self._species_db.get("protected_species", {})
-        if isinstance(protected, dict):
-            # Nested: {recorded: [...], missing_or_extinct: [...]}
-            for sub_key, sub_list in protected.items():
-                if not isinstance(sub_list, list):
+        # ── NEW: flat species list ──
+        species_list = self._species_db.get("species", [])
+        if species_list:
+            for item in species_list:
+                if not isinstance(item, dict):
                     continue
-                for item in sub_list:
-                    if not isinstance(item, dict):
-                        continue
-                    s_name = item.get("scientific", "")
-                    c_name = item.get("name", "")
-                    if self._match_species(scientific, chinese, s_name, c_name):
+                s_name = item.get("scientific", "")
+                c_name = item.get("name", "")
+                aliases = item.get("aliases", []) or []
+                if self._match_species(scientific, chinese, s_name, c_name):
+                    return {
+                        "chinese_name": c_name,
+                        "scientific_name": s_name,
+                        "aliases": aliases,
+                        "family": item.get("family", ""),
+                        "conservation": item.get("conservation", ""),
+                        "category": item.get("category", ""),
+                        "distribution": item.get("distribution", {}),
+                        **item,
+                    }
+                # Also match against aliases
+                for alias in aliases:
+                    if self._match_species(scientific, chinese, "", alias):
                         return {
-                            "chinese_name": c_name,
+                            "chinese_name": alias,
                             "scientific_name": s_name,
-                            "section": f"protected_species.{sub_key}",
-                            "protection_level": item.get("protection_level", ""),
-                            "status": item.get("status", ""),
-                            "iucn": item.get("iucn", ""),
+                            "aliases": aliases,
+                            "family": item.get("family", ""),
+                            "conservation": item.get("conservation", ""),
+                            "category": item.get("category", ""),
+                            "distribution": item.get("distribution", {}),
+                            "matched_by_alias": True,
                             **item,
                         }
-        elif isinstance(protected, list):
-            for item in protected:
+            return {}
+
+        # ── FALLBACK: old section-based format ──
+        for section_key in ["dominant_species", "protected_species", "key_endangered_species_in_graph"]:
+            section = self._species_db.get(section_key, []) or []
+            if not isinstance(section, list):
+                continue
+            for item in section:
                 if not isinstance(item, dict):
                     continue
                 s_name = item.get("scientific", "")
                 c_name = item.get("name", "")
                 if self._match_species(scientific, chinese, s_name, c_name):
-                    return {"chinese_name": c_name, "scientific_name": s_name,
-                            "section": "protected_species", **item}
-
-        # Search top-level individual species entries
-        species_key = scientific.replace(" ", "_").lower()
-        if species_key in self._species_db:
-            data = self._species_db[species_key]
-            if isinstance(data, dict):
-                return dict(data)
+                    return {**item, "chinese_name": c_name, "scientific_name": s_name,
+                            "section": section_key}
 
         return {}
 
@@ -194,11 +199,48 @@ class FishEcologyOrchestrator:
         """Look up a species in the knowledge base."""
         return self._find_species(scientific_name)
 
-    def list_species(self, family: str = "", limit: int = 50) -> List[Dict[str, Any]]:
-        """List all species from dominant_species + protected_species sections."""
+    def list_species(self, family: str = "", limit: int = 50,
+                     basin: str = "", country: str = "") -> List[Dict[str, Any]]:
+        """List species from the knowledge base, filterable by family/basin/country.
+
+        Args:
+            family: Filter by family name (e.g. "鲤科")
+            limit: Max results (default 50)
+            basin: Filter by basin name (e.g. "长江流域", "图们江流域")
+            country: Filter by country name (e.g. "中国")
+        """
         results = []
 
-        # Dominant species (flat list)
+        # ── NEW: flat species list ──
+        species_list = self._species_db.get("species", [])
+        if species_list:
+            for item in species_list:
+                if not isinstance(item, dict):
+                    continue
+                if family and item.get("family", "") != family:
+                    continue
+                dist = item.get("distribution", {})
+                if basin:
+                    item_basins = dist.get("basins", []) or []
+                    if basin not in item_basins:
+                        continue
+                if country:
+                    item_countries = dist.get("countries", []) or []
+                    if country not in item_countries:
+                        continue
+                results.append({
+                    "chinese_name": item.get("name", ""),
+                    "scientific_name": item.get("scientific", ""),
+                    "family": item.get("family", ""),
+                    "category": item.get("category", ""),
+                    "distribution": dist,
+                    "conservation": item.get("conservation", ""),
+                })
+                if len(results) >= limit:
+                    return results
+            return results
+
+        # ── FALLBACK: old section-based format ──
         for item in self._species_db.get("dominant_species", []) or []:
             if not isinstance(item, dict):
                 continue
@@ -212,36 +254,6 @@ class FishEcologyOrchestrator:
             })
             if len(results) >= limit:
                 return results
-
-        # Protected species (nested: recorded, missing_or_extinct)
-        protected = self._species_db.get("protected_species", {})
-        if isinstance(protected, dict):
-            for sub_key, sub_list in protected.items():
-                if not isinstance(sub_list, list):
-                    continue
-                for item in sub_list:
-                    if not isinstance(item, dict):
-                        continue
-                    if family and item.get("family", "") != family:
-                        continue
-                    results.append({
-                        "chinese_name": item.get("name", ""),
-                        "scientific_name": item.get("scientific", ""),
-                        "protection_level": item.get("protection_level", ""),
-                        "status": item.get("status", ""),
-                        "section": f"protected.{sub_key}",
-                    })
-                    if len(results) >= limit:
-                        return results
-        elif isinstance(protected, list):
-            for item in protected:
-                if not isinstance(item, dict):
-                    continue
-                results.append({
-                    "chinese_name": item.get("name", ""),
-                    "scientific_name": item.get("scientific", ""),
-                    "section": "protected",
-                })
 
         return results
 

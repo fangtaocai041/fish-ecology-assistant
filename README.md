@@ -16,7 +16,7 @@
   <a href="#"><img src="https://img.shields.io/badge/skills-28-f59e0b?style=flat-square" alt="Skills:27"></a>
   <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/architecture-5_layer-8b5cf6?style=flat-square" alt="Architecture:5-Layer"></a>
   <a href="#"><img src="https://img.shields.io/badge/rules-18-8b5cf6?style=flat-square" alt="Rules:18"></a>
-  <a href="config/agent.yaml"><img src="https://img.shields.io/badge/agent-v2.0.0-ec4899?style=flat-square" alt="Agent:v2.0.0"></a>
+  <a href="config/agent.yaml"><img src="https://img.shields.io/badge/agent-v6.3.0-ec4899?style=flat-square" alt="Agent:v6.3.0"></a>
 </p>
 
 ---
@@ -24,7 +24,7 @@
 ## 🧠 Powered by eon-core Intelligent Coordination
 
 > S-layer (V0) coordinated by [eon-core](https://github.com/fangtaocai041/eon-core) (10-layer unified kernel): **Chaos-enhanced routing** (Rössler + wildcard) · **Scholarly stopping** (Rule of Three) · **DeepSeek MoE gating** · **Samsara karma engine**.
-> Yangtze 443 species knowledge base (`yangtze_fish_species.yaml`) from 2017-2021 national survey.
+> Multi-basin fish species knowledge base (`config/fish_species_kb.yaml`) — continent → country → basin hierarchy. Yangtze 443-species + expanding to Tumen/Suifen/Amur basins.
 
 ## 🔺 S-T-V-P₁-P₂ Architecture Role: **State (S / V0)**
 
@@ -49,13 +49,14 @@
 
 | Version | Date | Changes |
 |---------|------|---------|
-| **v6.3.0** | 2026-06-08 | ☯️ TAO (土·化育) + 🔥 WUXING dynamics + config/tao.yaml |
+| **v6.4.0** | 2026-06-09 | 🔧 Engineering architecture · exact match(_match_species) · taxonomy_log · detect_taxonomy_discrepancy · verify_architecture.py |
+| **v6.3.0** | 2026-06-08 | ☯️ 10-layer concentric architecture + conflict-arbiter (V4) integration |
 | **v6.2** | 2026-06-08 | S-T-V-P₁-P₂ ecosystem · Yangtze 443 species KB · Meso-Cosmos intelligent scheduling |
 | **v6.1** | 2026-06-07 | Cross-project co-evolution · S-T-V triangle role · coordination.yaml |
 | **v6.0** | 2026-06-07 | Cognitive Search Engine DirectLoader · dual-mode search |
 | **v5.0** | 2026-06-06 | 12 search engines · GS-first + Chinese sources |
 
-> **Latest**: v6.3.0 · 2026-06-08
+> **Latest**: v6.4.0 · 2026-06-09
 
 > **Core Strength**: Universal fish ecology research platform. Dual-core philosophy (Panta Rhei + Systems Thinking) is not decoration but runtime constraint — contradiction analysis drives search strategy, phased strategy determines stopping conditions.
 
@@ -74,7 +75,7 @@
 
 ### 🧠 eon-core Unified Kernel (Workspace Level)
 
-> **10-layer concentric architecture** — OriginKernel → YinYang → 4 Vertices → 8 Trigrams → Tetrahedron → WuXing → Samsara → Sphere → Tendrils → Evolution.
+> **10-layer concentric architecture** — OriginKernel → YinYang → 5 Vertices (V0-V4) → 8 Trigrams → Tetrahedron → Samsara → Sphere → Tendrils → Evolution.
 > Unified coordination by [eon-core](https://github.com/fangtaocai041/eon-core). Replaces the deprecated meso-cosmos-agent (deleted v7.1).
 > See `eon-core/config/taiji.yaml` at workspace root.
 
@@ -161,7 +162,7 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 |:-----------|:----------------:|:--------------------:|
 | Search engines | 1 | **12** (cognitive_search + scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
 | MCP services | 0 | **21** (incl. cognitive_search DirectLoader + DeepWiki) |
-| AI subagents | 4 (generic) | **14** (domain-specialized, rule-auditor, emergence detection) |
+| AI subagents | 4 (generic) | **17** (domain-specialized, rule-auditor, emergence detection) |
 | R statistics | — | ✅ R 4.6.0 + 20+ ecology packages |
 | OCR | — | ✅ PaddleOCR + Tesseract.js |
 | Reference manager | — | ✅ Direct Zotero SQL queries |
@@ -237,7 +238,7 @@ Restart Reasonix — everything is ready.
 
 ---
 
-## 📡 MCP Services (22 Tools)
+## 📡 MCP Services (21 Tools)
 
 | Service | Engine | Best For |
 |:--------|:-------|:---------|
@@ -343,16 +344,16 @@ fish-ecology-assistant/
 ├── README.zh.md              ← 中文
 │
 ├── .reasonix/
-│   ├── mcp-servers/             ← 22 MCP services (incl. deepwiki + cognitive_search)
+│   ├── mcp-servers/             ← 21 MCP services (incl. deepwiki + cognitive_search)
 │   │   └── ima-server.mjs      ← 14 tools (KB + notes + discovery + multi-search)
 │   │
-│   ├── skills/                  ← 14 AI subagent playbooks
+│   ├── skills/                  ← 28 AI skill playbooks
 │   │   ├── karpathy-guard.md          ← Sparse activation + MoE routing
 │   │   ├── rule-auditor.md            ← 18-rule compliance checker
 │   │   ├── ima-smart-search.md        ← Cross-KB intelligent search
 │   │   ├── verify-stats-handbook.md   ← Auto CRAN version check
 │   │   ├── research-orchestrator.md   ← 5-stage pipeline coordinator
-│   │   └── ... (9 more skills)
+│   │   └── ... (23 more skills)
 │   │
 │   ├── handbooks/
 │   │   ├── systems-thinking.md        ← 7 system principles
@@ -367,9 +368,10 @@ fish-ecology-assistant/
 │   │   ├── stats-methods.md           ← Stats handbook
 │   │   └── learning-guide.md          ← Learning path
 │   │
-│   ├── .github/workflows/validate.yml ← CI/CD auto-validation
-│   ├── Dockerfile                     ← Docker deployment
-│   └── setup-migrate.ps1              ← One-click setup
+│   ├── setup-migrate.ps1              ← One-click setup
+│
+├── .github/workflows/validate.yml ← CI/CD auto-validation
+├── Dockerfile                     ← Docker deployment
 │
 └── research_output/          ← Generated reports
 ```
@@ -407,7 +409,7 @@ This project is not a fixed toolset. It is a **living system**. Every component 
 | # | 方向 | 痛点 | 优先级 |
 |:--:|------|------|:----:|
 | 1 | **物种一键搜索** | 输入中文名→自动查 species_graph→中英双语 | 🔴 P0 |
-| 2 | **长江鱼类知识库扩充** | yangtze_fish_species.yaml 目前 443 种，部分缺 genetic/morphology 数据 | 🔴 P0 |
+| 2 | **鱼类知识库跨流域扩充** | fish_species_kb.yaml 从长江专属→多流域 (大陆→国家→流域)，新添三块鱼等非长江物种 | 🔴 P0 |
 | 3 | **生态调查报告自动生成** | 野外调查数据 → 自动生成物种名录/多样性指数/优势种 | 🟡 P1 |
 | 4 | **栖息地适宜性模型** | GBIF分布 + WorldClim + 水文数据 → MaxEnt/SDM 自动建模 | 🟡 P1 |
 | 5 | **eDNA 数据对接** | 环境DNA 测序结果 → 自动匹配物种 → 文献检索 | 🟢 P2 |

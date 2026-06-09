@@ -23,7 +23,7 @@
 ## 🧠 由 eon-core 智能协调
 
 > S 层 (V0) 由 [eon-core](https://github.com/fangtaocai041/eon-core) (10层统一内核) 智能协调：**混沌增强路由** · **学者级统计停止** (Rule of Three) · **DeepSeek 级 MoE 门控** · **六道轮回业力引擎**。
-> 长江 443 种鱼类知识库 (`yangtze_fish_species.yaml`) 基于 2017-2021 本底调查。
+> 多流域鱼类物种知识库 (`config/fish_species_kb.yaml`) — 大陆→国家→流域分层。长江 443种 + 持续扩充图们江/绥芬河/黑龙江流域。
 
 ## 🔺 S-T-V-P₁-P₂ 架构角色: **State (S / V0)**
 
@@ -46,7 +46,7 @@
 
 ### 🧠 eon-core 统一内核 (Workspace Level)
 
-> **10层同心架构** — OriginKernel → YinYang → 4 Vertices → 8 Trigrams → Tetrahedron → WuXing → Samsara → Sphere → Tendrils → Evolution。
+> **10层同心架构** — OriginKernel → YinYang → 5 Vertices (V0-V4) → 8 Trigrams → Tetrahedron → Samsara → Sphere → Tendrils → Evolution。
 > 由 [eon-core](https://github.com/fangtaocai041/eon-core) 统一协调。替代已删除的 meso-cosmos-agent (v7.1)。
 > 详见 `eon-core/config/taiji.yaml`。
 
@@ -55,7 +55,77 @@
 (Macro) (Meso) (Micro) (Cross) (Merge) (Feedback)
 ```
 
-## 🏛️ 架构 · 标准 5 层 Agent 模型
+## 🔧 工程架构规范 · 职责边界与运行验证
+
+### 项目职责 (工程语言)
+
+f项目 (fish-ecology-assistant) — 知识库
+  lookup_species(name) 精确匹配 (学名/中文名)
+  fish_species_kb.yaml: 443种长江鱼类分类/分布/保护等级
+  taxonomy_log: 科属变更记录含时间·期刊·作者证据
+
+c项目 (cognitive-search-engine) — 搜索引掣
+  search_species(name) → CoordinatedSearchResult
+  管线: 分类学检查 → 模式路由 → 多引擎搜索 → 合并 → 学科分类
+  OCR变体 + 同义词扩展 + 附带论文判定
+  分类检测: detect_taxonomy_discrepancy() 自动比较两 yaml
+
+conflict-arbiter — 冲突仲裁
+  中国保护等级为权威 (chinese_red_list=100, provincial=90)
+  IUCN/CITES 仅参考, 冲突仍报告但不影响裁决
+  声明仲裁先检查时空一致性, 不同时空不构成冲突
+
+porpoise-agent — 保护评估 (长江旗舰种)
+coilia-agent — 洄游评估 (刀鲚等洄游鱼类)
+用户: "搜鳤的文献"
+  │
+  ├── Step 1: lookup_species("鳤")        → f项目知识库 (精确匹配)
+  ├── Step 2: 输出物种画像 (含taxonomy_log变更记录)
+  ├── Step 3: ask_choice 是否继续?
+  │     ├── A) 全管线: run_fish_pipeline()
+  │     ├── B) 仅文献: search_species()
+  │     └── C) 仅知识库
+  │
+  ├── WHILE 全管线:
+  │     Phase 1: f项目 lookup (独立运行)
+  │     Phase 2: c项目 search + detect_taxonomy_discrepancy
+  │     Phase 3: conflict-arbiter (region="china")
+  │     Phase 4: porpoise/coilia (仅旗舰种)
+  │     Phase 5: 汇总
+  │
+  └── 用户选择 C → 直接返回, 不调任何外部搜索
+```
+
+### 运行验证
+
+```bash
+# 运行验证脚本 (从 fish-ecology-assistant 目录)
+python scripts/verify_architecture.py
+```
+
+```python
+# 或直接导入库验证:
+from workspace import lookup_species
+from unified_search import detect_taxonomy_discrepancy
+from arbiter import ConflictArbiter
+
+# f项目: taxonomy_log 含 subgroup/evidence
+sd = lookup_species('鳤')['species_data']
+assert sd['family'] == 'Xenocyprididae (鲴科)'
+tax = sd['taxonomy_log'][0]
+assert tax['field'] == 'family' and tax['subgroup'] and tax['related_genera']
+
+# c项目: 分类学一致性
+assert detect_taxonomy_discrepancy('Ochetobius elongatus') is None
+
+# conflict-arbiter: 中国优先
+ca = ConflictArbiter()
+r = ca.detect_conflicts('鳤', sources=[
+    {'source':'iucn','iucn':'CR'},
+    {'source':'chinese_red_list','protection_level':'国家二级'},
+], region='china')
+assert r['consensus']['authority'] == 'chinese_classification'
+```
 
 > 完整文档见 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
 > **5 层架构**：交互感知 → 认知决策 → 记忆系统 → 映射转换 → 工具执行
