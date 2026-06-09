@@ -631,5 +631,21 @@ M7: Efficiency is intelligence — entropy budget over uniform allocation, diffe
 
 > **`assert(evidence.exists())`. No evidence → no claim. No investigation → no output.**
 
-**Last updated: 2026-06-06**
-**Architecture: Reasonix Skills (Markdown) — configured via agent.yaml, executed via Skill routing**
+**Last updated: 2026-06-09**
+**Architecture: Reasonix Skills (Markdown) + Python orchestrators (porpoise-agent, coilia-agent) — unified by eon-core。验证脚本: `scripts/verify_philosophy_rules.py` (18/18 通过)**
+
+### Cross-Project Python Code Mappings (2026-06-09 新增)
+
+| Rule ID | Python Implementation | Project |
+|---------|----------------------|---------|
+| FB-1 | `validator.py: enforce_independence()` | cognitive-search-engine |
+| FB-2 | `orchestrator.py: _tag_verification()` | porpoise-agent |
+| CP-1 | `meso_agent.py: _analyze_contradiction()` | cognitive-search-engine |
+| CP-2 | `orchestrator.py: budget_multiplier` | porpoise-agent |
+| SM-1 | `orchestrator.py: _should_continue()` | porpoise-agent |
+| SM-2 | `orchestrator.py: _detect_dead_end()` | porpoise-agent |
+| WF-1 | `orchestrator.py: budget_multiplier` | porpoise-agent |
+| WF-2 | `validator.py: enforce_independence()` | cognitive-search-engine |
+| DS-1 | `search_optimizer.py: CognitiveBudget` | eon-core |
+| DS-2 | `karpathy-guard` Skill (MoE routing) | fish-ecology-assistant |
+| DS-4 | `search_optimizer.py: EntropyGuide` | eon-core |

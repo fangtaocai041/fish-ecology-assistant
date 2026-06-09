@@ -21,13 +21,14 @@
 
 ---
 
-## 🧠 Powered by Meso-Cosmos Intelligent Optimization
+## 🧠 Powered by eon-core Intelligent Coordination
 
-> S-layer coordinated by [meso-cosmos-agent (T)](https://github.com/fangtaocai041/meso-cosmos-agent): **Chaos-enhanced routing** (Rössler + wildcard) · **Scholarly stopping** (Rule of Three) · **DeepSeek MoE gating**.
+> S-layer (V0) coordinated by [eon-core](https://github.com/fangtaocai041/eon-core) (10-layer unified kernel): **Chaos-enhanced routing** (Rössler + wildcard) · **Scholarly stopping** (Rule of Three) · **DeepSeek MoE gating** · **Samsara karma engine**.
 > Yangtze 443 species knowledge base (`yangtze_fish_species.yaml`) from 2017-2021 national survey.
 
-## 🔺 S-T-V-P₁-P₂ Architecture Role: **State (S)**
+## 🔺 S-T-V-P₁-P₂ Architecture Role: **State (S / V0)**
 
+> Part of the S-T-V-P₁-P₂ ecosystem, coordinated by [eon-core](https://github.com/fangtaocai041/eon-core).
 > Provides knowledge, Yangtze 443 species data, contradiction analysis, and ecological findings.
 > **D₂ Plane**: multi-agent debate mesh. **Triangulation**: ≥3 sources.
 
@@ -39,7 +40,7 @@
 | 🧘 Philosophy Integration | ⭐⭐⭐⭐⭐ | Panta Rhei + Systems Thinking — 18 WHEN→THEN engineering rules |
 | 🔬 Research Pipeline | ⭐⭐⭐⭐⭐ | 5-stage: Plan→Search→Analyze→Write→Review, 28 AI Skills |
 | 🌏 Chinese Literature | ⭐⭐⭐⭐⭐ | CNKI/万方/百度学术/中科院 — unique coverage Western DBs miss |
-| 🔗 Ecosystem Role | ⭐⭐⭐⭐⭐ | S-layer in S-T-V-P₁-P₂, coordinated by meso-cosmos-agent (T) |
+| 🔗 Ecosystem Role | ⭐⭐⭐⭐⭐ | S/V0 layer in S-T-V-P₁-P₂, coordinated by eon-core |
 | 🧪 Test Coverage | ⭐⭐⭐⭐☆ | Cross-project validation + rule compliance checks |
 
 ---
@@ -62,17 +63,20 @@
 
 | Project | Role | Stack | Description |
 |---------|:----:|-------|-------------|
-| **cognitive-search-engine** | **V** (Validation) | Python · BDI+ReAct | 权威可信度评分 · Hub-and-Spoke 搜索 · 共享知识图谱 |
-| **porpoise-agent** | **T** (Transition) | Python · orchestrator | 5-phase 管线 · 声学分析 · 野外调查 · 保护评估 |
+| **eon-core** | **Coordinator** | Python · 10-layer kernel | EventBus · Samsara karma · DAG routing · 4-vertex topology |
+| **cognitive-search-engine** | **V / V1** (Validation) | Python · BDI+ReAct | 权威可信度评分 · Hub-and-Spoke 搜索 · 共享知识图谱 |
+| **porpoise-agent** | **P₁ / V2** (Porpoise) | Python · orchestrator | 5-phase 管线 · 声学分析 · 野外调查 · 保护评估 |
+| **coilia-agent** | **P₂ / V3** (Coilia) | Python · 3 skills | 刀鲚专研 · 耳石微化学 · 洄游生态 |
 
-> **Co-evolution**: Fish provides knowledge & data → Porpoise executes pipeline → Cognitive validates & scores.
-> Cognitive graph evolves → all three benefit. Engine updates via submodule → auto-propagate.
+> **Co-evolution**: Fish (S/V0) provides knowledge → Cognitive (V/V1) validates → Porpoise (P₁/V2) + Coilia (P₂/V3) execute domain pipelines.
+> Knowledge graph evolves → all five projects benefit. Engine updates via submodule → auto-propagate.
 > Full spec: workspace root `coordination.yaml`.
 
-### 🧠 Meso-Cosmos Agent (Workspace Level)
+### 🧠 eon-core Unified Kernel (Workspace Level)
 
-> **Macro(BDI) → Meso(Coordination) → Micro(Execution)** — unified coordination across all three S-T-V projects.
-> See `config/meso_agent.yaml` + `skills/meso-orchestrator.md` at workspace root.
+> **10-layer concentric architecture** — OriginKernel → YinYang → 4 Vertices → 8 Trigrams → Tetrahedron → WuXing → Samsara → Sphere → Tendrils → Evolution.
+> Unified coordination by [eon-core](https://github.com/fangtaocai041/eon-core). Replaces the deprecated meso-cosmos-agent (deleted v7.1).
+> See `eon-core/config/taiji.yaml` at workspace root.
 
 ```
 UNDERSTAND → ROUTE → EXECUTE → VALIDATE → SYNTHESIZE → EVOLVE
@@ -156,7 +160,7 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
 | Search engines | 1 | **12** (cognitive_search + scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
-| MCP services | 0 | **22** (incl. cognitive_search MCP + DeepWiki) |
+| MCP services | 0 | **21** (incl. cognitive_search DirectLoader + DeepWiki) |
 | AI subagents | 4 (generic) | **14** (domain-specialized, rule-auditor, emergence detection) |
 | R statistics | — | ✅ R 4.6.0 + 20+ ecology packages |
 | OCR | — | ✅ PaddleOCR + Tesseract.js |

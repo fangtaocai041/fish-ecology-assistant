@@ -5,7 +5,7 @@
 
 agent:
   name: "Fish Ecology Assistant"
-  version: "2.0.0"
+  version: "6.3.0"
   lab: "Jianghan University / Freshwater Fisheries Research Center"
   description: "鱼类生态学 AI 研究助手 — 标准 5 层 Agent 架构 + BDI + ReAct/ToT 推理"
   user: "Researcher — MSc Aquatic Biology"
@@ -19,7 +19,7 @@ agent:
 # ===== 标准 5 层 Agent 架构配置 =====
 # 详见 docs/ARCHITECTURE.md
 architecture:
-  version: "2.0.0"
+  version: "6.3.0"
   layers:
     perception:
       name: "交互与感知层 (Interaction & Perception)"
@@ -168,7 +168,7 @@ feedback_loop:
 
 # 求同: 共享协议 (三个项目一致)
 shared:
-  version: "2.0.0"
+  version: "6.3.0"
   rule_framework: "FB-1..DS-4 (18 rules)"
   philosophy: "dual-core (Panta Rhei + Systems Thinking)"
   coordination: "D:\\Reasonix\\coordination.yaml"

@@ -5,7 +5,7 @@
 <div align="center">
   <h1>🌊 万物皆变 · Panta Rhei</h1>
   <p><strong>把你的编码智能体变成拥有标准 5 层 Agent 架构 + 双核哲学引擎（Panta Rhei + 系统论）的博士级研究团队。</strong></p>
-  <p>21 个 MCP 服务 · 25 个 AI Skills · 11 引擎搜索 · 13 个知识库 · 18 工程规则 · BDI + ReAct/ToT + MAS · Docker</p>
+  <p>21 个 MCP 服务 · 28 个 AI Skills · 12 引擎搜索 · 13 个知识库 · 18 工程规则 · BDI + ReAct/ToT + MAS · Docker</p>
 </div>
 
 <p align="center">
@@ -20,13 +20,14 @@
 
 ---
 
-## 🧠 由 Meso-Cosmos 智能调度
+## 🧠 由 eon-core 智能协调
 
-> S 层由 [meso-cosmos-agent (T)](https://github.com/fangtaocai041/meso-cosmos-agent) 智能调度：**混沌增强路由** · **学者级统计停止** (Rule of Three) · **DeepSeek 级 MoE 门控**。
+> S 层 (V0) 由 [eon-core](https://github.com/fangtaocai041/eon-core) (10层统一内核) 智能协调：**混沌增强路由** · **学者级统计停止** (Rule of Three) · **DeepSeek 级 MoE 门控** · **六道轮回业力引擎**。
 > 长江 443 种鱼类知识库 (`yangtze_fish_species.yaml`) 基于 2017-2021 本底调查。
 
-## 🔺 S-T-V-P₁-P₂ 架构角色: **State (S)**
+## 🔺 S-T-V-P₁-P₂ 架构角色: **State (S / V0)**
 
+> S-T-V-P₁-P₂ 生态系统，由 [eon-core](https://github.com/fangtaocai041/eon-core) 统一协调。
 > 提供知识、长江 443 种鱼类数据、矛盾分析和生态发现。
 > **D₂ 面**: 多 Agent 辩论网格。**三角验证**: ≥3 独立源。
 
@@ -34,17 +35,20 @@
 
 | 项目 | 角色 | 技术栈 | 说明 |
 |------|:----:|--------|------|
-| **cognitive-search-engine** | **V** (Validation) | Python · BDI+ReAct | 权威可信度评分 · Hub-and-Spoke 搜索 · 共享知识图谱 |
-| **porpoise-agent** | **T** (Transition) | Python · orchestrator | 5 阶段管线 · 声学分析 · 野外调查 · 保护评估 |
+| **eon-core** | **协调器** | Python · 10层内核 | EventBus · 六道轮回 · DAG路由 · 四顶点拓扑 |
+| **cognitive-search-engine** | **V / V1** (Validation) | Python · BDI+ReAct | 权威可信度评分 · Hub-and-Spoke 搜索 · 共享知识图谱 |
+| **porpoise-agent** | **P₁ / V2** (Porpoise) | Python · orchestrator | 5 阶段管线 · 声学分析 · 野外调查 · 保护评估 |
+| **coilia-agent** | **P₂ / V3** (Coilia) | Python · 3 skills | 刀鲚专研 · 耳石微化学 · 洄游生态 |
 
-> **协同进化**: Fish 提供知识数据 → Porpoise 执行管线 → Cognitive 验证评分。
-> Cognitive 图谱进化 → 三项目共享。引擎更新通过 submodule → 自动传播。
+> **协同进化**: Fish (S/V0) 提供知识 → Cognitive (V/V1) 验证 → Porpoise (P₁/V2) + Coilia (P₂/V3) 执行领域管线。
+> 知识图谱进化 → 五项目共享。引擎更新通过 submodule → 自动传播。
 > 完整规范: workspace 根目录 `coordination.yaml`。
 
-### 🧠 中宇宙式 Agent (Workspace Level)
+### 🧠 eon-core 统一内核 (Workspace Level)
 
-> **宏观(BDI) → 中宇宙(协调) → 微观(执行)** — 统一协调三个 S-T-V 项目。
-> 详见 workspace 根目录 `config/meso_agent.yaml` + `skills/meso-orchestrator.md`。
+> **10层同心架构** — OriginKernel → YinYang → 4 Vertices → 8 Trigrams → Tetrahedron → WuXing → Samsara → Sphere → Tendrils → Evolution。
+> 由 [eon-core](https://github.com/fangtaocai041/eon-core) 统一协调。替代已删除的 meso-cosmos-agent (v7.1)。
+> 详见 `eon-core/config/taiji.yaml`。
 
 ```
 理解 → 路由 → 执行 → 验证 → 合成 → 进化
@@ -135,9 +139,9 @@ R 包在更新，物种分布在变化，科学共识在演变，气候变化在
 
 | 能力 | 原生 Reasonix | **加上本配置** |
 |:-----|:-------------:|:--------------:|
-| 搜索引擎 | 1 个 | **11 个** (scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
-| MCP 服务 | 0 | **21 个**（含 DeepWiki） |
-| AI Skills | 4 个（通用） | **25 个**（6 流水线 + 17 领域 + 2 守护，涌现检测） |
+| 搜索引擎 | 1 个 | **12 个** (cognitive_search + scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
+| MCP 服务 | 0 | **21 个**（含 cognitive_search DirectLoader + DeepWiki） |
+| AI Skills | 4 个（通用） | **28 个**（6 流水线 + 20 领域 + 2 守护，涌现检测） |
 | R 统计 | — | ✅ R 4.6.0 + 20+ 生态学包 |
 | OCR 文字识别 | — | ✅ PaddleOCR + Tesseract.js |
 | 文献管理器 | — | ✅ 直接查询 Zotero |
@@ -213,7 +217,7 @@ docker compose up
 
 ---
 
-## 📡 MCP 服务（18 个工具）
+## 📡 MCP 服务（21 个工具）
 
 | 服务 | 引擎 | 用途 |
 |:-----|:-----|:------|
@@ -338,11 +342,11 @@ fish-ecology-assistant/
 
 | 维度 | 评分 | 说明 |
 |------|:--:|------|
-| 📚 知识广度 | ⭐⭐⭐⭐⭐ | 12 搜索引擎 + 13 知识库 + 长江 443 种鱼类数据库 |
+| 📚 知识广度 | ⭐⭐⭐⭐⭐ | 12 搜索引擎 + 13 知识库 + 长江 443 种鱼类数据库 + 28 AI Skills |
 | 🧘 哲学集成 | ⭐⭐⭐⭐⭐ | Panta Rhei + 系统论 — 18 条 WHEN→THEN 工程规则 |
 | 🔬 研究管线 | ⭐⭐⭐⭐⭐ | 5 阶段：规划→搜索→分析→撰写→评审，28 AI Skills |
 | 🌏 中文文献 | ⭐⭐⭐⭐⭐ | 知网/万方/百度学术/中科院 — 弥补西方数据库系统性盲区 |
-| 🔗 生态角色 | ⭐⭐⭐⭐⭐ | S-T-V-P₁-P₂ 中 S 层，由 meso-cosmos-agent (T) 统一调度 |
+| 🔗 生态角色 | ⭐⭐⭐⭐⭐ | S-T-V-P₁-P₂ 中 S/V0 层，由 eon-core 统一调度 |
 | 🧪 测试覆盖 | ⭐⭐⭐⭐☆ | 跨项目验证 + 规则合规检查 |
 
 > **核心优势**: 通用鱼类生态研究平台。双核哲学（Panta Rhei + 系统论）不是装饰性引用，而是运行时约束 — 矛盾分析决定搜索策略，阶段论决定停止条件。

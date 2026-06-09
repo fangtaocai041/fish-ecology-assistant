@@ -1,5 +1,9 @@
 """FishEcologyAdapter — fish-ecology-assistant (V0 / S-State).
 
+【核心专精】lookup_species(name: str) → SpeciesProfile
+    长江 443 种鱼类知识库查询 + 可信度评分
+    → 通路 P1(→cognitive) P2(←cognitive)
+
 Exposes fish ecology knowledge supply as a Python-callable interface.
 Uses FishEcologyOrchestrator when available, falls back to direct
 species DB + config loading for minimal viable operation.
@@ -13,8 +17,14 @@ from typing import Any, Dict, List, Optional
 
 logger = logging.getLogger(__name__)
 
+# Import shared adapter protocol (workspace root on sys.path)
+try:
+    from scripts.adapter_protocol import IProjectAdapter
+except ImportError:
+    IProjectAdapter = object  # fallback for standalone usage
 
-class FishEcologyAdapter:
+
+class FishEcologyAdapter(IProjectAdapter):
     """Adapter for fish-ecology-assistant (V0 — 知识供给层).
 
     Two-tier operation:
