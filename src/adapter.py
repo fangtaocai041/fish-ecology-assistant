@@ -15,6 +15,8 @@ import logging
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+from .shared import JOURNAL_WHITELIST, build_search_queries, generate_ocr_variants
+
 logger = logging.getLogger(__name__)
 
 # Import shared adapter protocol (workspace root on sys.path)
@@ -34,13 +36,6 @@ class FishEcologyAdapter(IProjectAdapter):
 
     project_name = "fish-ecology-assistant"
 
-    # Credibility scoring journal whitelist
-    JOURNAL_WHITELIST: Dict[str, int] = {
-        "水生生物学报": 25, "中国水产科学": 25, "水产学报": 25,
-        "生物多样性": 25, "湖泊科学": 25, "生态学报": 25,
-        "Scientific Reports": 30, "PLOS ONE": 30, "Gene": 30,
-    }
-
     def __init__(self) -> None:
         self._orchestrator: Any = None
         self._species_db: Dict[str, Any] = {}
@@ -59,8 +54,6 @@ class FishEcologyAdapter(IProjectAdapter):
         try:
             import yaml
             cfg = Path(__file__).resolve().parent.parent / "config" / "fish_species_kb.yaml"
-            if not cfg.is_file():
-                cfg = Path(__file__).resolve().parent.parent / "config" / "yangtze_fish_species.yaml"
             if cfg.is_file():
                 self._species_db = yaml.safe_load(cfg.read_text(encoding="utf-8")) or {}
         except Exception:
@@ -97,8 +90,8 @@ class FishEcologyAdapter(IProjectAdapter):
             "chinese_name": chinese_name,
             "known_species": bool(species_data),
             "species_data": species_data,
-            "search_queries": self._build_queries(species_name, chinese_name),
-            "ocr_variants": self._ocr_variants(species_name),
+            "search_queries": build_search_queries(species_name, chinese_name),
+            "ocr_variants": generate_ocr_variants(species_name),
             "sources": ["pubmed", "crossref", "openalex", "cnki", "cscd", "wanfang"],
         }
 
@@ -149,7 +142,7 @@ class FishEcologyAdapter(IProjectAdapter):
             score = 50  # baseline
             journal = (paper.get("journal") or "").lower()
             # Journal whitelist boost
-            for jname, bonus in self.JOURNAL_WHITELIST.items():
+            for jname, bonus in JOURNAL_WHITELIST.items():
                 if jname.lower() in journal:
                     score += bonus
                     break
@@ -208,9 +201,6 @@ class FishEcologyAdapter(IProjectAdapter):
         from pathlib import Path
 
         kb_path = Path(__file__).resolve().parent.parent / "config" / "fish_species_kb.yaml"
-        if not kb_path.is_file():
-            # Try alternative name
-            kb_path = Path(__file__).resolve().parent.parent / "config" / "yangtze_fish_species.yaml"
         if not kb_path.is_file():
             return {"status": "error", "error": "fish_species_kb.yaml not found"}
 
@@ -288,27 +278,6 @@ class FishEcologyAdapter(IProjectAdapter):
             "species": species_name,
             "reason": "duplicate — same note already exists in taxonomy_log",
         }
-
-    # ── Helpers ──
-
-    def _build_queries(self, scientific: str, chinese: str) -> List[str]:
-        queries = [scientific]
-        if chinese:
-            queries.append(chinese)
-        for direction in ["genetic", "morphology", "ecology", "survey"]:
-            queries.append(f"{scientific} {direction}")
-        return queries
-
-    def _ocr_variants(self, name: str) -> List[str]:
-        variants = set()
-        confusable = {"u": ["b"], "b": ["u"], "i": ["l", "e"], "l": ["i"]}
-        for i, ch in enumerate(name):
-            if ch.lower() in confusable:
-                for sub in confusable[ch.lower()]:
-                    variants.add(name[:i] + sub + name[i + 1:])
-        for n in range(1, min(4, len(name))):
-            variants.add(name[:-n])
-        return list(variants)[:15]
 
 
 def get_adapter() -> FishEcologyAdapter:

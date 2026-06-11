@@ -5,14 +5,14 @@
 <div align="center">
   <h1>🌊 Panta Rhei · Everything Flows</h1>
   <p><strong>Turn your coding agent into a PhD-level research team — Standard 5-Layer Agent Architecture: Panta Rhei + Systems Thinking.</strong></p>
-  <p>21 MCP services · 28 AI Skills · 12 search engines · 13 knowledge bases · 18 engineering rules · BDI + ReAct/ToT + MAS · Docker</p>
+  <p>20 MCP services · 28 AI Skills · 12 search engines · 13 knowledge bases · 18 engineering rules · BDI + ReAct/ToT + MAS · Docker</p>
 </div>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
   <a href="https://deepwiki.com/fangtaocai041/fish-ecology-assistant"><img src="https://devin.ai/assets/askdeepwiki.png" alt="Ask DeepWiki" height="20"></a>
   <a href="#"><img src="https://img.shields.io/badge/dual_core-Panta_Rhei_%2B_Systems_Thinking-6366f1?style=flat-square" alt="Dual Core"></a>
-  <a href="#"><img src="https://img.shields.io/badge/MCP-21-22c55e?style=flat-square" alt="MCP:21"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MCP-20-22c55e?style=flat-square" alt="MCP:20"></a>
   <a href="#"><img src="https://img.shields.io/badge/skills-28-f59e0b?style=flat-square" alt="Skills:27"></a>
   <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/architecture-5_layer-8b5cf6?style=flat-square" alt="Architecture:5-Layer"></a>
   <a href="#"><img src="https://img.shields.io/badge/rules-18-8b5cf6?style=flat-square" alt="Rules:18"></a>
@@ -71,6 +71,7 @@
 | **cognitive-search-engine** | **Triangle V1** | Validation | BDI+ReAct · Authority scoring · Hub-and-Spoke search · Shared graph |
 | **porpoise-agent** | **Derived P₁** | Porpoise domain | 5-phase pipeline · Acoustic analysis · Field survey · Conservation |
 | **coilia-agent** | **Derived P₂** | Coilia domain | Otolith microchemistry · Migration ecology · Resource assessment |
+| **culter-agent** | **Derived P₃** | Culter domain | Genomics · age-growth · isotopes · coexistence · resource assessment |
 | **conflict-arbiter** | **Derived C** | Conflict arbitration | Multi-source protection-level conflict detection · Weighted verdict |
 
 > **Co-evolution**: Triangle Core (fish+cognitive+eon-core) provides knowledge and validation → Derived projects P₁(porpoise) + P₂(coilia) execute domain pipelines.
@@ -166,7 +167,7 @@ Energy is finite. Computation has a cost. DeepSeek does not scale parameters —
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
 | Search engines | 1 | **12** (cognitive_search + scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
-| MCP services | 0 | **21** (incl. cognitive_search DirectLoader + DeepWiki) |
+| MCP services | 0 | **20** (incl. cognitive_search DirectLoader + DeepWiki) |
 | AI subagents | 4 (generic) | **17** (domain-specialized, rule-auditor, emergence detection) |
 | R statistics | — | ✅ R 4.6.0 + 20+ ecology packages |
 | OCR | — | ✅ PaddleOCR + Tesseract.js |
@@ -319,7 +320,7 @@ Restart Reasonix — everything is ready.
 
 ---
 
-## 📡 MCP Services (21 Tools)
+## 📡 MCP Services (20 Tools)
 
 | Service | Engine | Best For |
 |:--------|:-------|:---------|
@@ -431,7 +432,7 @@ print(orch.hub.relationship_map())  # 道→一→二→三→万物 ASCII 图
 
 ## 🧠 Cognitive Search Engine · DirectLoader Protocol
 
-> **Core search infrastructure shared across all three projects** under `D:\Reasonix\`
+> **Core search infrastructure shared across all three projects** under the workspace root
 
 The cognitive-search-engine is the **central perception layer** — not a remote MCP server, but a local Python module loaded via `importlib`:
 
@@ -440,7 +441,7 @@ The cognitive-search-engine is the **central perception layer** — not a remote
 ```
 LiteratureAgent (Reasonix)
   └─ CognitiveSearchAdapter.search(genus, species, full_pipeline=True|False)
-       ├─ importlib → D:\Reasonix\cognitive-search-engine\src\   ← 引擎更新自动生效
+       ├─ importlib → ../cognitive-search-engine/src/   ← 引擎更新自动生效
        │
        ├─ full_pipeline=False (轻量模式)
        │   ├─ variant_generator.generate()    → OCR 变体列表 (Ochetobius→Ochetobibus)
@@ -471,24 +472,24 @@ LiteratureAgent (Reasonix)
 
 | # | 特性 | 说明 |
 |---|------|------|
-| ① | **DirectLoader (零进程)** | `importlib` 直接从 `D:\Reasonix\cognitive-search-engine\src\` 加载 `.py` 模块，引擎更新后下次导入自动生效，无 MCP 进程开销 |
+| ① | **DirectLoader (零进程)** | `importlib` 直接从 `../cognitive-search-engine/src/` 加载 `.py` 模块，引擎更新后下次导入自动生效，无 MCP 进程开销 |
 | ② | **Dual-Mode Search** | 轻量 `ParallelSearch` 覆盖 80% 场景；完整 `CognitiveAgent` 提供 5 层 BDI ReAct 循环，包括 phase 选择、IG 追踪、自适应停止 |
 | ③ | **知识图谱进化** | `species_graph.yaml` 积累已知论文、变体、作者、引用边；graph_lookup 阶段 0 token 复用；图谱在三项目间共享 |
 
 ### Cross-Project Sharing
 
 ```
-D:\Reasonix\
-├── cognitive-search-engine\    ← 引擎唯一代码源（配置 + 源码 + 图谱）
-├── fish-ecology-assistant\     ← submodule 引用
-└── porpoise-agent\             ← submodule 引用
+<workspace>/
+├── cognitive-search-engine/    ← 引擎唯一代码源（配置 + 源码 + 图谱）
+├── fish-ecology-assistant/     ← submodule 引用
+└── porpoise-agent/             ← submodule 引用
 ```
 
 引擎进化一次，三个项目同步受益。
 
 ### Quick Reference
 
-- 引擎源码: `D:\Reasonix\cognitive-search-engine\src\`
+- 引擎源码: `../cognitive-search-engine/src/`
 - 搜索协议: `config/search_rules.yaml`
 - 物种图谱: `config/species_graph.yaml`
 - 适配器入口: `CognitiveSearchAdapter.search(genus, species, full_pipeline)`
@@ -503,7 +504,7 @@ fish-ecology-assistant/
 ├── README.zh.md              ← 中文
 │
 ├── .reasonix/
-│   ├── mcp-servers/             ← 21 MCP services (incl. deepwiki + cognitive_search)
+│   ├── mcp-servers/             ← 20 MCP services (incl. deepwiki + cognitive_search)
 │   │   └── ima-server.mjs      ← 14 tools (KB + notes + discovery + multi-search)
 │   │
 │   ├── skills/                  ← 28 AI skill playbooks
@@ -563,6 +564,17 @@ This system is an amplifier, not an author.
 
 This project is not a fixed toolset. It is a **living system**. Every component has built-in expiry awareness, version tracking, and emergence detection. As your research deepens, R packages update, and new methods emerge, it evolves with you.
 
+## ⚙️ Key Scripts
+
+```
+scripts/
+├─ credibility_scorer.py   三角验证评分 0-100 (🟢🟡🟠🔴)
+├─ self_evolve.py          搜索后6维度自进化反馈
+├─ kb_to_graph_sync.py     fish_species_kb.yaml ↔ species_graph.yaml 批量同步
+├─ run_lit_search.py       lit-search v3.1 命令行 (summary/table/json)
+└─ search_species.py       KB优先两阶段搜索
+```
+
 ## 🗺️ 演进方向 (Personalized Roadmap)
 
 | # | 方向 | 痛点 | 优先级 |
@@ -574,7 +586,7 @@ This project is not a fixed toolset. It is a **living system**. Every component 
 | 5 | **eDNA 数据对接** | 环境DNA 测序结果 → 自动匹配物种 → 文献检索 | 🟢 P2 |
 | 6 | **渔业资源评估** | CPUE 数据 → 资源量估算 → 管理建议 | 🟢 P2 |
 
-**Last updated: 2026-06-07**
+**Last updated: 2026-06-10**
 **Running on Reasonix Code · Powered by DeepSeek**
 
 ---
@@ -585,6 +597,7 @@ This project is not a fixed toolset. It is a **living system**. Every component 
 
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
+| **v7.0** | 2026-06-10 | Unified lit-search v3.1 | + lit-search v3.1 (同物异名全量展开→交互确认→12层自适应管线→三角验证评分→两阶段输出), + credibility_scorer.py (0-100 三角验证), + self_evolve.py (6维度自进化), + kb_to_graph_sync.py (KB↔图谱同步), + species_graph 33物种176论文, + 交互设计原则 |
 | **v6.5** | 2026-06-20 | KB-First Workflow | + `kb_first_lookup()` + `KbFirstResult` 两阶段搜索, + synonyms 匹配增强, + `search_coordinator.kb_first()` API, + `unified-species-search` v4.0 |
 | **v6.1** | 2026-06-07 | Cross-Project Co-Evolution | + agent.version badge (v2.0.0), + S-T-V 三角角色增强, + 三项目协同进化描述, + coordination.yaml 统一协调 |
 | **v6** | 2026-06-07 | Cognitive Search Engine | + DirectLoader 协议 (importlib 零进程加载), 双模式搜索 (ParallelSearch 轻量 / CognitiveAgent 完整 BDI ReAct), 知识图谱进化, 三项目共享引擎 |

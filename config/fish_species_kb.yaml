@@ -91,6 +91,16 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Cyprinus_carpio
+    note: '同步自图谱: Cyprinus_carpio'
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Myxocyprinus_asiaticus
+    note: '同步自图谱: Myxocyprinus_asiaticus'
+  species_graph_id: Myxocyprinus_asiaticus
 - id: carassius_auratus
   name: 鲫
   scientific: Carassius auratus
@@ -104,6 +114,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Carassius_auratus
+    note: '同步自图谱: Carassius_auratus'
+  species_graph_id: Carassius_auratus
 - id: hypophthalmichthys_molitrix
   name: 鲢
   scientific: Hypophthalmichthys molitrix
@@ -117,6 +133,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Hypophthalmichthys_molitrix
+    note: '同步自图谱: Hypophthalmichthys_molitrix'
+  species_graph_id: Hypophthalmichthys_molitrix
 - id: pelteobagrus_fulvidraco
   name: 黄颡鱼
   scientific: Pelteobagrus fulvidraco
@@ -130,6 +152,16 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Pelteobagrus_fulvidraco
+    note: '同步自图谱: Pelteobagrus_fulvidraco'
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Pelteobagrus_nitidus
+    note: '同步自图谱: Pelteobagrus_nitidus'
+  species_graph_id: Pelteobagrus_nitidus
 - id: coilia_brachygnathus
   name: 短颌鲚
   scientific: Coilia brachygnathus
@@ -143,6 +175,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Coilia_brachygnathus
+    note: '同步自图谱: Coilia_brachygnathus'
+  species_graph_id: Coilia_brachygnathus
 - id: silurus_asotus
   name: 鲇
   scientific: Silurus asotus
@@ -156,6 +194,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Silurus_asotus
+    note: '同步自图谱: Silurus_asotus'
+  species_graph_id: Silurus_asotus
 - id: saurogobio_dabryi
   name: 蛇鮈
   scientific: Saurogobio dabryi
@@ -169,6 +213,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Saurogobio_dabryi
+    note: '同步自图谱: Saurogobio_dabryi'
+  species_graph_id: Saurogobio_dabryi
 - id: ctenopharyngodon_idellus
   name: 草鱼
   scientific: Ctenopharyngodon idellus
@@ -182,6 +232,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Ctenopharyngodon_idellus
+    note: '同步自图谱: Ctenopharyngodon_idellus'
+  species_graph_id: Ctenopharyngodon_idellus
 - id: pelteobagrus_nitidus
   name: 光泽黄颡鱼
   scientific: Pelteobagrus nitidus
@@ -208,6 +264,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Hemiculter_leucisculus
+    note: '同步自图谱: Hemiculter_leucisculus'
+  species_graph_id: Hemiculter_leucisculus
 - id: siniperca_chuatsi
   name: 鳜
   scientific: Siniperca chuatsi
@@ -221,6 +283,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Siniperca_chuatsi
+    note: '同步自图谱: Siniperca_chuatsi'
+  species_graph_id: Siniperca_chuatsi
 - id: coreius_heterodon
   name: 铜鱼
   scientific: Coreius heterodon
@@ -234,6 +302,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Coreius_heterodon
+    note: '同步自图谱: Coreius_heterodon'
+  species_graph_id: Coreius_heterodon
 - id: culter_alburnus
   name: 翘嘴鲌
   scientific: Culter alburnus
@@ -258,6 +332,14 @@ species:
       author: Chen et al.
       journal: Molecular Phylogenetics and Evolution
       doi: 10.1016/j.ympev.2016.12.004
+  - detected_at: '2026-06-10'
+    field: family
+    new_value: Xenocyprididae
+    note: '同步自图谱: Xenocyprididae'
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Culter_alburnus
+    note: '同步自图谱: Culter_alburnus'
   distribution:
     continents:
     - 亚洲
@@ -265,6 +347,7 @@ species:
     - 中国
     basins:
     - 长江流域
+  species_graph_id: Culter_alburnus
 - id: parabramis_pekinensis
   name: 鳊
   scientific: Parabramis pekinensis
@@ -278,6 +361,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Parabramis_pekinensis
+    note: '同步自图谱: Parabramis_pekinensis'
+  species_graph_id: Parabramis_pekinensis
 - id: aristichthys_nobilis
   name: 鳙
   scientific: Aristichthys nobilis
@@ -291,6 +380,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Aristichthys_nobilis
+    note: '同步自图谱: Aristichthys_nobilis'
+  species_graph_id: Aristichthys_nobilis
 - id: acipenser_sinensis
   name: 中华鲟
   scientific: Acipenser sinensis
@@ -306,6 +401,16 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Acipenser_sinensis
+    note: '同步自图谱: Acipenser_sinensis'
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Acipenser_dabryanus
+    note: '同步自图谱: Acipenser_dabryanus'
+  species_graph_id: Acipenser_dabryanus
 - id: acipenser_dabryanus
   name: 长江鲟
   scientific: Acipenser dabryanus
@@ -349,6 +454,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Trachidermus_fasciatus
+    note: '同步自图谱: Trachidermus_fasciatus'
+  species_graph_id: Trachidermus_fasciatus
 - id: psephurus_gladius
   name: 白鲟
   scientific: Psephurus gladius
@@ -364,6 +475,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Psephurus_gladius
+    note: '同步自图谱: Psephurus_gladius'
+  species_graph_id: Psephurus_gladius
 - id: luciobrama_macrocephalus
   name: 鯮
   scientific: Luciobrama macrocephalus
@@ -387,6 +504,14 @@ species:
       author: Chen et al.
       journal: Molecular Phylogenetics and Evolution
       doi: 10.1016/j.ympev.2016.12.004
+  - detected_at: '2026-06-10'
+    field: family
+    new_value: Xenocyprididae
+    note: '同步自图谱: Xenocyprididae'
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Luciobrama_macrocephalus
+    note: '同步自图谱: Luciobrama_macrocephalus'
   distribution:
     continents:
     - 亚洲
@@ -394,6 +519,7 @@ species:
     - 中国
     basins:
     - 长江流域
+  species_graph_id: Luciobrama_macrocephalus
 - id: tenualosa_reevesii
   name: 鲥
   scientific: Tenualosa reevesii
@@ -408,6 +534,12 @@ species:
     - 中国
     basins:
     - 长江流域
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Tenualosa_reevesii
+    note: '同步自图谱: Tenualosa_reevesii'
+  species_graph_id: Tenualosa_reevesii
 - id: ochetobius_elongatus
   name: 鳤
   scientific: Ochetobius elongatus
@@ -438,6 +570,14 @@ species:
       author: Fricke et al.
       journal: Catalog of Fishes
       url: https://www.calacademy.org/scientists/projects/catalog-of-fishes
+  - detected_at: '2026-06-10'
+    field: family
+    new_value: Xenocyprididae
+    note: '同步自图谱: Xenocyprididae'
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Ochetobius_elongatus
+    note: '同步自图谱: Ochetobius_elongatus'
   distribution:
     continents:
     - 亚洲
@@ -445,6 +585,7 @@ species:
     - 中国
     basins:
     - 长江流域
+  species_graph_id: Ochetobius_elongatus
 - id: elopichthys_bambusa
   name: 鳡
   scientific: Elopichthys bambusa
@@ -468,6 +609,14 @@ species:
       author: Chen et al.
       journal: Molecular Phylogenetics and Evolution
       doi: 10.1016/j.ympev.2016.12.004
+  - detected_at: '2026-06-10'
+    field: family
+    new_value: Xenocyprididae
+    note: '同步自图谱: Xenocyprididae'
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Elopichthys_bambusa
+    note: '同步自图谱: Elopichthys_bambusa'
   distribution:
     continents:
     - 亚洲
@@ -475,6 +624,7 @@ species:
     - 中国
     basins:
     - 长江流域
+  species_graph_id: Elopichthys_bambusa
 - id: neophocaena_asiaeorientalis
   name: 长江江豚
   scientific: Neophocaena asiaeorientalis
@@ -496,23 +646,40 @@ species:
   - 禁捕后种群规模有望稳中有升
   research_group: 淡水渔业研究中心 刘凯研究员课题组
   dedicated_agent: porpoise-agent
-- id: tribolodon_brandti
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Neophocaena_asiaeorientalis
+    note: '同步自图谱: Neophocaena_asiaeorientalis'
+  species_graph_id: Neophocaena_asiaeorientalis
+- id: pseudaspius_hakonensis
   name: 三块鱼
   aliases:
   - 珠星三块鱼
   - 东北三块鱼
   - 小鳞三块鱼
   - 珠星滩头鱼
-  scientific: Tribolodon brandti
+  scientific: Pseudaspius hakonensis
+  authority: (Günther, 1877)
   synonyms:
-  - Leuciscus brandti
-  - Pseudaspius brandti
-  - Tribolodon hakonensis
-  - Pseudaspius hakonensis
-  - Leuciscus hakonensis
-  family: 鲤科
-  subfamily: 雅罗鱼亚科
-  order: 鲤形目
+  - name: Leuciscus hakonensis
+    status: original_combination
+    ref: Günther, 1877
+  - name: Tribolodon hakonensis
+    status: genus_reassigned
+    ref: pre-2020 consensus
+  - name: Tribolodon hakuensis
+    status: spelling_variant
+    ref: Günther 1880; corrected by Ishikawa 1895
+  family: Leuciscidae (雅罗鱼科)
+  family_ref: Eschmeyer's Catalog of Fishes (CAS); 2018年从鲤科雅罗鱼亚科升级为科
+  subfamily: Pseudaspininae (拟赤稍鱼亚科)
+  genus: Pseudaspius
+  genus_cn: 拟赤稍鱼属
+  genus_cn_note: 旧称三块鱼属 (Tribolodon); Sakai et al. 2020 将 Tribolodon 整体并入 Pseudaspius
+  order: 鲤形目 (Cypriniformes)
+  note: ⚠️ Tribolodon brandti / Pseudaspius brandtii 为不同种 (Pacific redfin / 滩头三块鱼),
+    非本种异名。
   conservation: 无
   ecology: 溯河洄游鱼类
   max_length_cm: 50
@@ -521,6 +688,12 @@ species:
 
     '
   economic_value: 东北亚重要经济鱼类，在日本被称作ウグイ (Ugui)
+  species_graph_id: Pseudaspius_hakonensis
+  papers_in_graph: 135
+  papers_in_graph_updated: '2026-06-10'
+  lit_search_version: 3.0.0
+  papers_in_graph_note: 珠星三块鱼（含 Pseudaspius hakonensis / Tribolodon hakonensis 名下论文），图谱覆盖
+    1974-2026 年， 涵盖寄生虫学/遗传学/生态学/形态学/生理学/基因组学 6 大方向。图谱中 ~30 篇 auto_ingest + 9 篇 manual_ingest。
   category: diadromous
   distribution:
     continents:
@@ -537,6 +710,708 @@ species:
     - 滨海边疆区沿岸
     - 北海道沿岸
     - 东海岸
+  taxonomy_log:
+  - field: genus
+    recorded_as: Tribolodon
+    current_consensus: Pseudaspius
+    updated_at: '2026-06-11'
+    note: Tribolodon 属整体并入 Pseudaspius; 亚科 Pseudaspininae (原雅罗鱼亚科 Leuciscinae)
+    evidence:
+    - year: 2020
+      author: Sakai et al.
+      journal: Ichthyological Research
+      doi: 10.1007/s10228-019-00723-0
+      title: A revised generic taxonomy for Far East Asian minnow Rhynchocypris and
+        dace Pseudaspius
+    - year: 2026
+      author: Eschmeyer's Catalog of Fishes (CAS)
+      url: https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatget.asp?spid=30354
+      status: 'Current status: Valid as Pseudaspius hakonensis (Günther, 1877)'
+  - detected_at: '2026-06-10'
+    field: family
+    c_project_value: Leuciscidae
+    f_project_value: 鲤科
+    note: Cyprinidae → Leuciscidae (科级拆分); Leuciscidae 为现接受科名
+    evidence:
+    - year: 2020
+      author: Sakai et al.
+      journal: Ichthyological Research
+      doi: 10.1007/s10228-019-00723-0
+    source: P3_cross_project_search
+  - detected_at: '2026-06-10'
+    field: species_graph_id
+    new_value: Pseudaspius_hakonensis
+    note: '同步自图谱: Pseudaspius_hakonensis'
+  literature:
+  - doi: 10.7499/j.issn.1008-8830.2311058
+    title: '[Two cases of cytopenia associated with multiple malformations].'
+    year: 2024
+    journal: ''
+    authors:
+    - Chang LX
+    - Zhang L
+    - Gao YM
+    - Zhu XF.
+    category: ☣️ 毒理与环境
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.3724/sp.j.1123.2024.01011
+    title: '[Recent advances of molecular imprinting technology for the separation
+      and recognition of complex biological sample systems].'
+    year: 2024
+    journal: ''
+    authors:
+    - Xie BX
+    - Lyu Y
+    - Liu Z.
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.3724/zdxbyxb-2022-0728
+    title: Research progress in leveraging biomaterials for enhancing NK cell immunotherapy.
+    year: 2023
+    journal: ''
+    authors:
+    - Tang Y
+    - Qian C.
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.3724/sp.j.1123.2024.08012
+    title: '[Research advances of liposomes and exosomes in drug delivery and biomarker
+      screening].'
+    year: 2025
+    journal: ''
+    authors:
+    - Su YT
+    - Qian XH
+    - Qin WJ.
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1186/s13002-015-0019-1
+    title: Ethnobotanical study on medicinal plants used by Maonan people in China.
+    year: 2015
+    journal: ''
+    authors:
+    - Hong L
+    - Guo Z
+    - Huang K
+    - Wei S
+    - Liu B
+    category: 🐟 养殖与繁育
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: ''
+    title: Volume 6 Indexes
+    year: 2010
+    journal: ''
+    authors:
+    - Zhou J
+    - Xie G
+    - Yan X.
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.3390/genes17010076
+    title: Comparative Transcriptome Analysis Reveals the Seawater Adaptation Mechanism
+      in &lt;i&gt;Pseudaspius hakonensis&lt;/i&gt;.
+    year: 2026
+    journal: ''
+    authors:
+    - Xu Z
+    - Zheng W
+    - Chen W
+    - Zhou M
+    - Zhai D
+    category: 🧪 基因组学
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1017/s0022149x24000233
+    title: 'Morphological and molecular data on <i>Pseudozoogonoides ugui</i> Shimazu,
+      1974 (Digenea: Microphalloidea: Zoogonidae) ex <i>Pseudaspius hakonensis</i>
+      (Günther, 1877) and taxonomic problems in Zoogoninae genera.'
+    year: 2024
+    journal: ''
+    authors:
+    - Atopkin DM
+    - Ivashko YI
+    - Izrailskaia AV
+    - Tatonova YV
+    - Besprozvannykh VV.
+    category: 🧬 遗传与分子
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1186/s12915-024-01885-2
+    title: Genomic insights into the seawater adaptation in Cyprinidae.
+    year: 2024
+    journal: ''
+    authors:
+    - Wang Y
+    - Zhang X
+    - Wang J
+    - Wang C
+    - Xiong F
+    category: 🧪 基因组学
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.3390/life14080974
+    title: 'Morphological and Molecular Characterization of Three Myxosporean Species
+      of the Genera <i>Myxobolus</i>, <i>Henneguya</i>, and <i>Myxidium</i> (Cnidaria:
+      Myxozoa) Infecting Freshwater Fish, Isolated for the First Time in Japan.'
+    year: 2024
+    journal: ''
+    authors:
+    - Sekiya M
+    - Sakai H
+    - Li YC
+    - Rosyadi I
+    - Yunus M
+    category: 📐 形态与表型
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1016/j.jenvrad.2022.107103
+    title: Factors affecting <sup>137</sup>Cs radioactivity and water-to-body concentration
+      ratios of fish in river and pond environments near the Fukushima Dai-ichi Nuclear
+      Power Plant.
+    year: 2023
+    journal: ''
+    authors:
+    - Wada T
+    - Hinata A
+    - Furuta Y
+    - Sasaki K
+    - Konoplev A
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.3390/ani15202974
+    title: Ecological Characteristics of Large-Bodied Sharks in the East Sea of Korea.
+    year: 2025
+    journal: ''
+    authors:
+    - Seong GC
+    - Baek JI
+    - Gal JK
+    - Lee SK
+    - Shim JM
+    category: 🍽️ 食性与生理
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1016/j.parint.2022.102605
+    title: 'Resolution of cryptic species complexes within the genus Metagonimus (Trematoda:
+      Heterophyidae) in Japan, with descriptions of four new species.'
+    year: 2022
+    journal: ''
+    authors:
+    - Nakao M
+    - Ishikawa T
+    - Hibino Y
+    - Ohari Y
+    - Taniguchi R
+    category: 🧬 遗传与分子
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1002/ece3.11091
+    title: Vertical eDNA distribution of cold-water fishes in response to environmental
+      variables in stratified lake.
+    year: 2024
+    journal: ''
+    authors:
+    - Fukumori K
+    - Kondo NI
+    - Kohzu A
+    - Tsuchiya K
+    - Ito H
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1126/sciadv.adq0945
+    title: Sequential migrations of diverse fish community provide seasonally prolonged
+      and stable nutrient inputs to a river.
+    year: 2024
+    journal: ''
+    authors:
+    - Kurasawa A
+    - Onishi Y
+    - Koba K
+    - Fukushima K
+    - Uno H.
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1017/s0031182025000307
+    title: Zoogonids (trematoda) infecting Indo-West Pacific damselfishes (Pomacentridae),
+      including the proposal of a new genus and two new species.
+    year: 2025
+    journal: ''
+    authors:
+    - Duong B
+    - Martin SB
+    - Cutmore SC
+    - Cribb TH.
+    category: 🧬 遗传与分子
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1007/s10641-021-01166-9
+    title: Changes in foraging and predator avoidance behavior of Japanese dace (Pseudaspius
+      hakonensis) to predation risk by invasive smallmouth bass (Micropterus dolomieu)
+      in a Japanese lake
+    year: 2021
+    journal: Environmental Biology of Fishes
+    authors:
+    - Miles I. Peterson
+    - Satoshi Kitano
+    category: 🌊 生态与资源
+    source: openalex
+    added_at: '2026-06-10'
+  - doi: 10.12782/specdiv.27.279
+    title: '&lt;i&gt;Limnotrachelobdella okae&lt;/i&gt; (Hirudinida: Piscicolidae)
+      Parasitic on Big-scaled Redfin, &lt;i&gt;Pseudaspius hakonensis&lt;/i&gt; (Cypriniformes:
+      Leuciscidae), in Two Brackish Water Lakes, Hokkaido, Japan'
+    year: 2022
+    journal: Species Diversity
+    authors:
+    - Kazuya Nagasawa
+    - Mizuki Sasaki
+    - Hajime Matsubara
+    category: 🌊 生态与资源
+    source: openalex
+    added_at: '2026-06-10'
+  - doi: 10.2108/zsj.19.1291
+    title: Speciation and Dispersal of Tribolodon Species (Pisces, Cyprinidae) around
+      the Sea of Japan
+    year: 2002
+    journal: ZOOLOGICAL SCIENCE
+    authors:
+    - Harumi Sakai
+    - Akira Gotō
+    - Sang-Rin Jeon
+    category: 🌊 生态与资源
+    source: openalex
+    added_at: '2026-06-10'
+  - doi: 10.18353/crustacea.53.0_1
+    title: 'New records of a freshwater fish parasite &lt;i&gt;Argulus japonicus&lt;/i&gt;
+      (Branchiura: Argulidae) from northern Honshu, Japan, with a note on its occurrence
+      in a brackish water lake'
+    year: 2024
+    journal: Crustacean Research
+    authors:
+    - Kazuya Nagasawa
+    - Masato Nitta
+    - Nobuyuki Azuma
+    category: 🌊 生态与资源
+    source: openalex
+    added_at: '2026-06-10'
+  - doi: ''
+    title: Volume 6 Indexes
+    year: 2010
+    journal: ''
+    authors:
+    - Zhou J
+    - Xie G
+    - Yan X.
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.64216/3080-1486.25.08.028
+    title: 区域经济视角下区块链供应链金融发展模式探究——基于长三角、珠三角与京津冀的比较分析
+    year: 2025
+    journal: 社会经济导刊
+    authors: []
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.1360/zb1984-14-8-729
+    title: 硬骨鱼类的细胞核移植&amp;mdash;&amp;mdash;鲫鱼细胞核和鲤鱼细胞质配合的杂种鱼
+    year: 1984
+    journal: Science in China Series B-Chemistry, Biological, Agricultural, Medical
+      &amp; Earth Sciences (in Chinese)
+    authors:
+    - 敏容 陈
+    - 爱珠 刘
+    - 礼堂 林
+    - 兴棋 杨
+    - 淼 杜
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.12677/jwrr.2018.72024
+    title: Exploration of Mulberry Fish Pond in the Pearl River Delta Region from
+      the Angle of Water Resources
+    year: 2018
+    journal: Journal of Water Resources Research
+    authors:
+    - 思颖 侯
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.54254/3029-0740/2025.29750
+    title: 三星堆文明及其族群之来龙去脉新探——刍论“三星堆西亚贵族南入说”“三星堆文明因无文字和避战溃散说”“凉山彝族为三星堆孑遗说”等新假说
+    year: 2025
+    journal: 学知 Xue Zhi
+    authors:
+    - 光宇 任
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.12677/ccrl.2024.131001
+    title: Analysis of Typhoon Impact on Ozone Profile Changes in the Yangtze River
+      Delta and Pearl River Delta Based on 5-Year OMI Satellite Data
+    year: 2024
+    journal: Climate Change Research Letters
+    authors:
+    - 玉婷 韦
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.12677/aep.2023.134128
+    title: Analysis of Typhoon Impact on Ozone Profile Changes in the Pearl River
+      Delta Based on 5-Year OMI Satellite Data
+    year: 2023
+    journal: Advances in Environmental Protection
+    authors:
+    - 玉婷 韦
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.12677/aas.2013.12005
+    title: 'Vela Jr.: Ejecta-Clump Interaction in the Vela Supernova Remnant'
+    year: 2013
+    journal: Astronomy  and  Astrophysics
+    authors:
+    - 致悦 王
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.3724/j.issn.1000-0518.1985.1.9091
+    title: 三硼八氢N-二茂铁甲基三甲基铵的晶体结构
+    year: 1985
+    journal: Chinese Journal of Applied Chemistry
+    authors:
+    - 珠玑 傅
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.65113/keji1022
+    title: 三辊行星轧机轧制温变区冷却设计及应用
+    year: 2025
+    journal: ''
+    authors: []
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.5955/jalha.1995.335
+    title: （書評）西川珠代著「「「ベリアル裁判」に見る中世後期の訴訟像(一)(二・完)」(「法学論叢」一三三巻六号、一三五巻三号)」
+    year: 1996
+    journal: Legal History Review
+    authors: []
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.3724/j.issn.1000-0518.1985.1.90
+    title: 三硼八氢N-二茂铁甲基三甲基铵的晶体结构
+    year: 1985
+    journal: Chinese Journal of Applied Chemistry
+    authors:
+    - 珠玑 傅
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.1007/978-981-99-5009-6_11390
+    title: The Sanxingdui Site (三星堆遗址)
+    year: 2025
+    journal: Contextual Dictionary of Chinese Cultural Knowledge
+    authors: []
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.3724/issn1000-3207-1955-1-7-n
+    title: 一九五三年鱼病防治工作报告
+    year: 1955
+    journal: Acta Hydrobiologica Sinica
+    authors:
+    - 达书 倪
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.1360/csb1993-38-2-177
+    title: 返地卫星搭载对鱼腥藻和小球藻的影响
+    year: 1993
+    journal: Chinese Science Bulletin
+    authors:
+    - 永定 刘
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.1360/n972015-01395
+    title: 美国转基因三文鱼商业化的启示
+    year: 2016
+    journal: Chinese Science Bulletin
+    authors:
+    - DaYuan WANG
+    category: 🌊 生态与资源
+    source: crossref
+    added_at: '2026-06-10'
+  - doi: 10.1016/j.saa.2022.121209
+    title: Japanese dace (Tribolodon hakonensis) fish freshness estimation using front-face
+      fluorescence spectroscopy coupled with chemometric analysis.
+    year: 2022
+    journal: ''
+    authors:
+    - Abamba Omwange K
+    - Saito Y
+    - Firmanda Al Riza D
+    - Zichen H
+    - Kuramoto M
+    category: 🍽️ 食性与生理
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: ''
+    title: Evaluating Japanese dace (Tribolodon hakonensis) fish freshness during
+      storage using multispectral images from visible and UV excited fluorescence
+    year: 2021
+    journal: ''
+    authors:
+    - Omwange KA
+    - Saitō Y
+    - Zichen H
+    - Khaliduzzaman A
+    - Kuramoto M
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1007/s12562-020-01452-y
+    title: Estimating biological half-lives of 137Cs in a cyprinid fish Tribolodon
+      hakonensis by a one-compartment model considering growth dilution effect
+    year: 2021
+    journal: ''
+    authors:
+    - Niizeki K
+    - Wada T
+    - Nanba K
+    - Sasaki K
+    - Teramoto W
+    category: 🍽️ 食性与生理
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1016/j.jfoodeng.2020.110111
+    title: Fish freshness monitoring using UV-fluorescence imaging on Japanese dace
+      (Tribolodon hakonensis) fisheye
+    year: 2020
+    journal: ''
+    authors:
+    - Omwange KA
+    - Al Riza DF
+    - Sen N
+    - Shiigi T
+    - Kuramoto M
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.3390/ani13142345
+    title: Growth Priorities of the Four Riverine Cyprinids during Early Ontogeny.
+    year: 2023
+    journal: ''
+    authors:
+    - Kupren K
+    - Nowosad J
+    - Kucharczyk D.
+    category: 🐟 养殖与繁育
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.3897/bdj.8.e56876
+    title: Environmental DNA revealed the fish community of Hokkaido Island, Japan,
+      after invasion by rainbow trout.
+    year: 2020
+    journal: ''
+    authors:
+    - Imamura A
+    - Hayami K
+    - Sakata MK
+    - Minamoto T.
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1134/s1022795412020147
+    title: '[Differentiation of large-scaled redfin Tribolodon hakonensis (Pisces,
+      Cyprinidae) in the Russian part of the range as inferred from the data of karyological
+      analysis and PCR-RFLP analysis of mitochondrial DNA].'
+    year: 2012
+    journal: ''
+    authors:
+    - riazanova IN
+    - Pliakova NE.
+    category: 🧬 遗传与分子
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1038/s41437-019-0292-1
+    title: 'European minnows through time: museum collections aid genetic assessment
+      of species introductions in freshwater fishes (Cyprinidae: Phoxinus species
+      complex).'
+    year: 2020
+    journal: ''
+    authors:
+    - Palandačić A
+    - Kruckenhauser L
+    - Ahnelt H
+    - Mikschi E.
+    category: 🧬 遗传与分子
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1134/s1022795411090031
+    title: '[Phylogeographic analysis reveals two periods of divergence in large-scaled
+      redfin Tribolodon hakonensis (Pisces, Cyprinidae)].'
+    year: 2011
+    journal: ''
+    authors:
+    - Brykov VA
+    - Poliakova NE
+    - Semina AV.
+    category: 🧬 遗传与分子
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1134/s1022795411100036
+    title: '[Phylogenetic analysis of Altai osmans of the genus Oreoleuciscus (Pisces,
+      Cyprinidae, Leuciscinae), based on the analysis of the cytochrome oxidase 1
+      gene (Co-1) sequence].'
+    year: 2011
+    journal: ''
+    authors:
+    - Batishcheva NM
+    - Kartavtsev IuF
+    - Bogutskaia NG.
+    category: 🧬 遗传与分子
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1645/23-14
+    title: REVISION OF SANGUINICOLA PLEHN, 1905 WITH REDESCRIPTION OF SANGUINICOLA
+      VOLGENSIS (RAŠÍN, 1929) MCINTOSH, 1934, DESCRIPTION OF A NEW SPECIES, PROPOSAL
+      OF A NEW GENUS, AND PHYLOGENETIC ANALYSIS.
+    year: 2023
+    journal: ''
+    authors:
+    - Warren MB
+    - Poddubnaya LG
+    - Zhokhov AE
+    - Reyda FB
+    - Choudhury A
+    category: 🧬 遗传与分子
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1002/ece3.5369
+    title: 'The complete mitochondrial genome of <i>Rhynchocypris oxycephalus</i>
+      (Teleostei: Cyprinidae) and its phylogenetic implications.'
+    year: 2019
+    journal: ''
+    authors:
+    - Zhang Z
+    - Cheng Q
+    - Ge Y.
+    category: 🧬 遗传与分子
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.3897/bdj.9.e67168
+    title: Database of summer fish fauna sampled in river estuaries in the southern
+      part of the Boso Peninsula, Japan.
+    year: 2021
+    journal: ''
+    authors:
+    - Itsukushima R
+    - Kano Y.
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: 10.1134/s0006297907120085
+    title: 'Analysis of mitochondrial DNA: taxonomic and phylogenetic relationships
+      in two fish taxa (Pisces: Mugilidae and Cyprinidae).'
+    year: 2007
+    journal: ''
+    authors:
+    - Semina AV
+    - Polyakova NE
+    - Brykov VA.
+    category: 🧬 遗传与分子
+    source: europe_pmc
+    added_at: '2026-06-10'
+  - doi: ''
+    title: Volume 6 Indexes
+    year: 2010
+    journal: ''
+    authors:
+    - Zhou J
+    - Xie G
+    - Yan X.
+    category: 🌊 生态与资源
+    source: europe_pmc
+    added_at: '2026-06-10'
+  change_log:
+  - date: 2026-06-10 17:07
+    action: P3_cross_project_search
+    query: 珠星三块鱼
+    new_papers: 20
+    total_papers: 20
+    taxonomy_updated: true
+  - date: 2026-06-10 17:12
+    action: P3_cross_project_search
+    query: 珠星三块鱼
+    new_papers: 21
+    total_papers: 41
+    taxonomy_updated: false
+  - date: 2026-06-10 17:14
+    action: P3_cross_project_search
+    query: 珠星三块鱼
+    new_papers: 10
+    total_papers: 51
+    taxonomy_updated: false
+- id: Pseudaspius_hakonensis
+  scientific: Pseudaspius hakonensis
+  chinese_name: ''
+  family: Leuciscidae
+  taxonomy_log:
+  - detected_at: '2026-06-10'
+    field: family
+    c_project_value: Leuciscidae
+    f_project_value: 鲤科
+    note: '分类不一致: c项目记录''Leuciscidae'', f项目记录''鲤科'''
+    evidence: []
+    source: P7_taxonomy_feedback (auto-detected by cognitive-search-engine)
+- id: coilia_nasus
+  name: 刀鲚
+  scientific: Coilia nasus
+  chinese_name: 刀鲚
+  common_names:
+  - 长江刀鱼
+  - 刀鱼
+  - 长颌鲚
+  - tapertail anchovy
+  family: 鳀科 (Engraulidae)
+  conservation: 濒危(EN)
+  category: dominant
+  distribution:
+    continents:
+    - 亚洲
+    countries:
+    - 中国
+    basins:
+    - 长江流域
+  migration_type: 溯河洄游 (anadromous)
+  historical_peak: 1973年长江刀鱼产量 3750t
+  current_status: 资源量仅为历史峰值的1-3%
+  research_group: 淡水渔业研究中心 刘凯研究员课题组
+  papers_count: 129
+  key_research_themes:
+  - 耳石微化学与洄游履历
+  - 群体遗传学与种群结构
+  - 资源评估与管理
+  - 早期资源与补充群体
+  - 食性与营养生态
+  taxonomy_log:
+  - detected_at: '2026-06-11'
+    field: species_graph_id
+    new_value: Coilia_nasus
+    note: 通过 P₂ 刀鲚专研补充 — cognitive-species-search v3.2
+  species_graph_id: Coilia_nasus
 exotic_species_note: '2017-2021年长江调查新采集到15种外来鱼类。主要来源为养殖逃逸、 观赏鱼放生等。外来种对长江本土鱼类群落的影响需持续监测。
 
   '
