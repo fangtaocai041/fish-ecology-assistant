@@ -23,6 +23,17 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+# 涌现检测集成
+try:
+    import sys as _sys
+    _infra = str(Path(__file__).resolve().parent.parent.parent / "infrastructure")
+    if _infra not in _sys.path:
+        _sys.path.insert(0, _infra)
+    from unified_emergence import EmergenceMonitor, DimensionalLevel
+    _EMERGENCE_AVAILABLE = True
+except ImportError:
+    _EMERGENCE_AVAILABLE = False
+
 from .shared import JOURNAL_WHITELIST, build_search_queries, generate_ocr_variants
 
 logger = logging.getLogger(__name__)
@@ -160,7 +171,7 @@ class FishEcologyOrchestrator:
         """三角核心详细状态。"""
         return self.hub.triangle_status()
 
-    # 鈹€鈹€ Public API 鈹€鈹€
+    # ──── Public API ────
 
     def delegate_search(
         self, scientific_name: str, chinese_name: str = "", **kwargs
@@ -214,7 +225,7 @@ class FishEcologyOrchestrator:
           2. query == 涓枃鍚?鈫?绮剧‘
           3. chinese 鍙傛暟 == 涓枃鍚?鈫?璺ㄩ」鐩皟鐢?          4.瀛﹀悕瀛愪覆鍖归厤 鈫?鏀寔閮ㄥ垎鎷変竵鍚嶆煡璇㈠ "Ochetobius"
 
-        鉂?鏃犱腑鏂囧悕瀛椾覆鍖归厤 鈥?妯＄硦鎼滅储鏄?c椤圭洰鐨勮亴璐?        """
+        ⚠️ 鏃犱腑鏂囧悕瀛椾覆鍖归厤 —妯＄硦鎼滅储鏄?c椤圭洰鐨勮亴璐?        """
         q = query.strip().lower()
         s = s_name.lower() if s_name else ""
         c = c_name.lower() if c_name else ""
@@ -236,7 +247,7 @@ class FishEcologyOrchestrator:
 
         Matches against: scientific name, Chinese name, aliases, AND synonyms.
         """
-        # 鈹€鈹€ NEW: flat species list 鈹€鈹€
+        # ──── NEW: flat species list ────
         species_list = self._species_db.get("species", [])
         if species_list:
             for item in species_list:
@@ -291,7 +302,7 @@ class FishEcologyOrchestrator:
                         }
             return {}
 
-        # 鈹€鈹€ FALLBACK: old section-based format 鈹€鈹€
+        # ──── FALLBACK: old section-based format ────
         for section_key in ["dominant_species", "protected_species", "key_endangered_species_in_graph"]:
             section = self._species_db.get(section_key, []) or []
             if not isinstance(section, list):
@@ -532,6 +543,16 @@ class FishEcologyOrchestrator:
             lines.append("知识库中无任何匹配。建议启动 c项目全量搜索。")
 
         summary = "\n".join(lines)
+
+        # Feed to emergence engine
+        if _EMERGENCE_AVAILABLE:
+            try:
+                mon = EmergenceMonitor()
+                mon.record("f_kb_query", 1, DimensionalLevel.D1)
+                mon.record("f_kb_found", 0, DimensionalLevel.D1)
+                mon.record("f_candidates", len(candidates), DimensionalLevel.D1)
+            except Exception:
+                pass
 
         return KbFirstResult(
             found=False,
