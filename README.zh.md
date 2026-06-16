@@ -1,4 +1,4 @@
-# Fish Ecology Assistant 🐟
+# Fish Ecology Assistant 🌊
 
 > 🌊 万物皆变 · Panta Rhei
 >
