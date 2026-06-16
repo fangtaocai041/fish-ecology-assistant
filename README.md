@@ -7,7 +7,12 @@
 >
 > **16 MCP Tools · 12 AI Sub-agents · 5 Search Engines · 13 Knowledge Bases**
 
-[中文版](README.zh.md) · [Changelog](CHANGELOG.md) · [Engineering Record](RE.md)
+[![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.10+-blue)](https://python.org)
+[![Reasonix](https://img.shields.io/badge/Reasonix-Code-brightgreen)](https://reasonix.ai)
+[![species](https://img.shields.io/badge/species-30-green)]()
+
+[English](README.md) · [中文](README.zh.md) · [Changelog](CHANGELOG.md) · [Architecture](docs/ARCHITECTURE.md)
 
 ---
 
@@ -29,11 +34,11 @@ This is not a slogan. It is the operating system running through every line of c
 
 | Scenario | Traditional Approach | Dynamic Worldview Approach |
 |:---------|:--------------------|:--------------------------|
-| Package versions | "It runs" | Auto-check, tag "Last verified on glmmTMB v1.1.10" |
-| Citations | "Studies prove X" | "Smith (2022) found X, but Jones (2024) added Y" |
+| Package versions | Run 2020 code, ignore version drift | Auto-check, tag "Last verified on glmmTMB v1.1.10" |
+| Citations | "Studies prove it" | "Smith (2022) found X, but Jones (2024) added Y" |
 | Outliers | Ignore as noise | ≥3 sources → emergence signal, actively track |
-| Knowledge decay | "It's written down" | Verification record includes "Next review: 2026-12" |
-| Method choice | Fixed pipeline | Dynamic method selection, dynamic confidence |
+| Knowledge decay | Handbook frozen, never updated | Review records include "Next review date," computed by package activity |
+| Method selection | Fixed pipeline forever | Dynamic method selection, dynamic confidence |
 
 ---
 
@@ -45,9 +50,9 @@ It integrates **16 MCP tools**, **12 domain-specific AI sub-agents**, **5-engine
 
 ### Capability Matrix
 
-| Capability | This Config | Vanilla Reasonix |
-|:-----------|:------------|:-----------------|
-| Search | 5 engines (tavily, exa, google-scholar, article, scholarly) | 1 (web_search) |
+| Capability | With This Config | Vanilla Reasonix |
+|:-----------|:----------------|:-----------------|
+| Search | 5 (tavily, exa, google-scholar, article, scholarly) | 1 (web_search) |
 | AI Sub-agents | 12 (domain-specific, incl. emergence detection) | 4 (general) |
 | R Statistics | R 4.6.0 + 20+ ecology packages | — |
 | OCR | PaddleOCR + Tesseract.js | — |
@@ -70,7 +75,7 @@ Restart Reasonix. You speak, it does.
 
 | You Say | It Does |
 |:--------|:--------|
-| "Research the impact of Yangtze fishing ban on fish communities, run pipeline" | 5-stage: Plan → Search → Analyze → Write → Review (bilingual search, auto emergence detection) |
+| "Research the impact of the Yangtze fishing ban on fish communities, run pipeline" | 5-stage: Plan → Search → Analyze → Write → Review (bilingual search, auto emergence detection) |
 | "Verify handbook chapter 2.2" | Auto-check CRAN package versions, diff against handbook, compute review date |
 | "Search for Ochetobius elongatus literature" | Route to correct knowledge bases, parallel search, synthesize results |
 | "Run a stable isotope analysis" | R code + method selection + diagnostics, tagged with YYYY-MM best practice |
@@ -84,7 +89,7 @@ Restart Reasonix. You speak, it does.
 | Agent | Role | Function | Philosophical Anchor |
 |:------|:-----|:---------|:---------------------|
 | **research-orchestrator** | 🎯 Director | Orchestrates all 5 stages | — |
-| **research-planner** | 📋 Planner | Generates keywords, decomposes problems | Full coverage CN + EN |
+| **research-planner** | 📋 Planner | Bilingual keywords, CN + EN coverage | Full coverage |
 | **research-executor** | 🔍 Searcher | 5-engine parallel, annotates publication year | Timeline-aware |
 | **research-analyst** | 🧠 Analyst | Consensus timeline + emergence detection | Dynamic consensus · emergence |
 | **research-writer** | ✍️ Writer | Calibrated language, temporal anchoring, uncertainty marking | Calibrated language · provisional knowledge |
@@ -99,8 +104,8 @@ Restart Reasonix. You speak, it does.
 | **stats-method-finder** | Search CRAN/journals for methods | "Last verified" timestamps |
 | **ima-smart-search** | Cross-knowledge-base search | Dynamic discovery, no hardcoded expiration |
 | **verify-stats-handbook** | Auto-check CRAN versions | Review cycles based on activity |
-| **frontier-tracker** | Chronological latest discoveries | Never out of date |
-| **phd-proposal-writer** | PhD proposal generation | Timeliness annotations |
+| **frontier-tracker** | Track frontiers, chronological | Latest lab discoveries |
+| **phd-proposal-writer** | PhD proposal generation | Dynamic CV with timeliness annotations |
 | **zotero-assistant** | Zotero library queries | — |
 | **obsidian-assistant** | Obsidian note export | — |
 
@@ -115,16 +120,42 @@ Restart Reasonix. You speak, it does.
 | **google-scholar** | Academic papers |
 | **article** | Literature metadata |
 | **scholarly** | Multi-source aggregation |
-| **ima** | 13 knowledge bases + OpenAPI tools |
+| **ima** | 13 knowledge bases + IMA notes + OpenAPI (14 tools) |
 | **rplay** | R 4.6.0 (morphometrics, isotopes, community ecology) |
 | **coderunner** | Multi-language sandbox execution |
 | **echarts** | ECharts visualization |
-| **PaddleOCR** | Chinese OCR |
-| **Tesseract.js** | OCR fallback |
-| **playwright** | Chromium screenshot/scrape |
-| **git** | Git CLI |
-| **github** | GitHub API |
+| **PaddleOCR** | Chinese/English OCR |
+| **Tesseract.js fallback** | Offline OCR |
+| **playwright** | Chromium web scraping |
+| **git** | Git CLI (version control) |
+| **github** | GitHub API (repository management) |
 | **Zotero** | SQLite reference library |
+
+---
+
+## Project Structure
+
+```
+fish-ecology-assistant/
+├── README.md                       English
+├── README.zh.md                    Chinese
+├── .reasonix/
+│   ├── mcp-servers/              ← 16 MCP services
+│   │   ├── ima-server.mjs          IMA knowledge base
+│   │   └── ...                     14 more
+│   ├── skills/                   ← 12 AI sub-agents
+│   │   ├── ima-smart-search.md
+│   │   ├── verify-stats-handbook.md
+│   │   ├── paper-analyzer.md
+│   │   ├── research-analyst.md
+│   │   ├── research-writer.md
+│   │   └── ...                     7 more
+│   └── handbooks/
+│       ├── stats-methods.md         Statistics handbook
+│       └── learning-guide.md        Learning guide
+├── research_output/                 Generated reports
+└── setup.ps1                        One-click setup
+```
 
 ---
 
@@ -137,3 +168,5 @@ Restart Reasonix. You speak, it does.
 > This project is not a fixed toolset—it is a living system. Every component has built-in expiration mechanisms, version tracking, and emergence awareness. As your research deepens, R packages update, and new methods emerge, it evolves with you.
 >
 > **Last updated: 2026-06-04 · Environment: Reasonix Code · Powered by DeepSeek**
+
+[⬆ Back to top](#)

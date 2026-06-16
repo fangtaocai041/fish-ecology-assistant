@@ -6,7 +6,12 @@
 >
 > **16 MCP 工具 · 12 AI 子智能体 · 5 引擎搜索 · 13 个知识库**
 
-[English](README.md) · [更新日志](CHANGELOG.md)
+[![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.10+-blue)](https://python.org)
+[![Reasonix](https://img.shields.io/badge/Reasonix-Code-brightgreen)](https://reasonix.ai)
+[![species](https://img.shields.io/badge/species-30-green)]()
+
+[English](README.md) · [中文](README.zh.md) · [更新日志](CHANGELOG.md) · [架构](docs/ARCHITECTURE.md)
 
 ---
 
@@ -28,11 +33,11 @@
 
 | 场景 | 传统做法 | 动态世界观的做法 |
 |:-----|:---------|:----------------|
-| 包版本 | 跑通就行，不管版本 | 自动检查，标注"最后验证于 glmmTMB v1.1.10" |
+| 包版本 | 跑 2020 年的代码，不管版本差 | 包版本自动检查，标注"最后验证于 glmmTMB v1.1.10" |
 | 引用 | "研究表明确实如此" | "Smith(2022) 发现 X，但 Jones(2024) 补充了 Y" |
 | 异常值 | 忽略，当噪声 | ≥3 个独立来源 → 涌现信号，主动追踪 |
-| 知识过期 | 记下来就是对的 | 验证记录含"下次复查于 2026-12" |
-| 分析方向 | 固定方法 | 方法动态选择，置信度动态计算 |
+| 知识过期 | 手册写死，不再更新 | 验证记录含"下次复查日期"，按包活跃度动态计算 |
+| 方法选择 | 固定方法用到死 | 方法动态选择，置信度动态计算 |
 
 ---
 
@@ -44,8 +49,8 @@
 
 ### 能力清单
 
-| 能力 | 本配置 | 原生 Reasonix |
-|:-----|:-------|:-------------|
+| 能力 | 加上本配置 | 原生 Reasonix |
+|:-----|:----------|:--------------|
 | 搜索 | 5 个 (tavily, exa, google-scholar, article, scholarly) | 1 个 (web_search) |
 | AI 子智能体 | 12 个（领域专用，含涌现检测）| 4 个（通用）|
 | R 统计 | R 4.6.0 + 20+ 生态学包 | — |
@@ -83,7 +88,7 @@ powershell -ExecutionPolicy Bypass -File setup.ps1
 | 智能体 | 角色 | 功能 | 哲学体现 |
 |:-------|:-----|:-----|:---------|
 | **research-orchestrator** | 🎯 调度 | 调度全部 5 阶段 | — |
-| **research-planner** | 📋 规划 | 生成关键词，拆解问题 | 国内外文献全覆盖 |
+| **research-planner** | 📋 规划 | 中英双语关键词，覆盖国内外文献 | 全面覆盖 |
 | **research-executor** | 🔍 搜索 | 5 引擎并行，标注文献发表年份 | 时间轴感知 |
 | **research-analyst** | 🧠 分析 | 共识演变时间轴 + 涌现信号检测 | 动态共识 · 涌现 |
 | **research-writer** | ✍️ 写作 | calibrated language，时间锚定，不确定性标记 | 校准语言 · 知识暂时性 |
@@ -98,8 +103,8 @@ powershell -ExecutionPolicy Bypass -File setup.ps1
 | **stats-method-finder** | 搜索 CRAN/期刊标记方法 | 方法的"最后验证时间" |
 | **ima-smart-search** | 跨知识库智能搜索 | 动态发现 KB，不过期不硬编码 |
 | **verify-stats-handbook** | 自动查 CRAN 包版本 | 按活跃度算复查周期 |
-| **frontier-tracker** | 按时间排序最新发现 | 版本不落后 |
-| **phd-proposal-writer** | 博士论文计划书 | 标注时效性 |
+| **frontier-tracker** | 跟踪前沿，时间排序 | 实验室最新发现 |
+| **phd-proposal-writer** | 博士论文计划书 | 动态履历，标注时效性 |
 | **zotero-assistant** | 查 Zotero 文献库 | — |
 | **obsidian-assistant** | 导出到 Obsidian 笔记 | — |
 
@@ -114,41 +119,41 @@ powershell -ExecutionPolicy Bypass -File setup.ps1
 | **google-scholar** | 学术论文 |
 | **article** | 文献元数据 |
 | **scholarly** | 多源聚合 |
-| **ima** | 13 个知识库 + OpenAPI 工具 |
+| **ima** | 13 个知识库 + IMA 笔记 + OpenAPI（14 个工具）|
 | **rplay** | R 4.6.0（形态测量、同位素、群落生态）|
 | **coderunner** | 多语言沙箱代码执行 |
 | **echarts** | ECharts 可视化 |
-| **PaddleOCR** | 中文 OCR |
-| **Tesseract.js** | OCR 备用 |
-| **playwright** | Chromium 截图/爬取 |
-| **git** | Git CLI |
-| **github** | GitHub API |
-| **Zotero** | SQLite 文献库 |
+| **PaddleOCR** | 中英文 OCR |
+| **Tesseract.js fallback** | 离线 OCR 备用 |
+| **playwright** | Chromium 网页抓取 |
+| **git** | Git CLI（版本控制）|
+| **github** | GitHub API（仓库管理）|
+| **Zotero** | SQLite 文献库查询 |
 
 ---
 
-## 全项目结构
+## 项目结构
 
 ```
 fish-ecology-assistant/
-├── README.md                   主文档（英文）
-├── README.zh.md                主文档（中文）
+├── README.md                       主文档（英文）
+├── README.zh.md                    主文档（中文）
 ├── .reasonix/
-│   ├── mcp-servers/            ← 16 个 MCP 服务
-│   │   ├── ima-server.mjs       IMA 知识库
-│   │   └── ...                  其余 14 个
-│   ├── skills/                 ← 12 个 AI 子智能体
+│   ├── mcp-servers/               ← 16 个 MCP 服务
+│   │   ├── ima-server.mjs           IMA 知识库
+│   │   └── ...                      其余 14 个
+│   ├── skills/                    ← 12 个 AI 子智能体
 │   │   ├── ima-smart-search.md
 │   │   ├── verify-stats-handbook.md
 │   │   ├── paper-analyzer.md
 │   │   ├── research-analyst.md
 │   │   ├── research-writer.md
-│   │   └── ...                 其余 7 个技能
+│   │   └── ...                     其余 7 个技能
 │   └── handbooks/
-│       ├── stats-methods.md    统计方法全手册
-│       └── learning-guide.md   学习指南
-├── research_output/            生成的分析报告
-└── setup.ps1                   一键安装脚本
+│       ├── stats-methods.md         统计方法全手册
+│       └── learning-guide.md        学习指南
+├── research_output/                 生成的分析报告
+└── setup.ps1                        一键安装脚本
 ```
 
 ---
@@ -162,3 +167,5 @@ fish-ecology-assistant/
 > 这个项目不是一套固定的工具集——它是一个活的系统。每个组件都内置了过期机制、版本追踪和涌现感知。随着你的研究深入、R 包更新、新方法涌现，它会和你一起进化。
 >
 > **最后更新: 2026-06-04 · 适用环境: Reasonix Code · DeepSeek 驱动**
+
+[⬆ 回到顶部](#)
