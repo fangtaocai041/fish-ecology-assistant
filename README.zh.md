@@ -1,4 +1,4 @@
-# Fish Ecology Assistant 🌊
+﻿# Fish Ecology Assistant 🌊
 
 > 🌊 万物皆变 · Panta Rhei
 >
@@ -156,7 +156,25 @@ fish-ecology-assistant/
 └── ⚡ setup.ps1                        一键安装脚本
 ```
 
----
+
+## 🔗 生态体系
+
+> 🔥 和则无穷力量，分则顶尖专家引擎。
+
+本项目是「三生万物」生态的 知识供给核心 (V0)。
+
+```
+三角核心 (sealed 3):
+  📦 fish-ecology-assistant    → 知识供给 (V0)
+  🔍 cognitive-search-engine   → 搜索验证 (V1)
+  ⚙️ eon-core                  → 协调内核 (Coord)
+
+万物衍生 (open N):
+  🐬 porpoise-agent    → 江豚专研 (P₁)
+  🐟 coilia-agent      → 刀鲚专研 (P₂)
+  🐟 culter-agent      → 鲌类专研 (P₃)
+  🔥 conflict-arbiter  → 冲突仲裁 (C)
+```---
 
 > 🌊 万物皆变 · Panta Rhei
 >
@@ -166,6 +184,6 @@ fish-ecology-assistant/
 >
 > 🔄 这个项目不是一套固定的工具集——它是一个活的系统。每个组件都内置了过期机制、版本追踪和涌现感知。随着你的研究深入、R 包更新、新方法涌现，它会和你一起进化。
 >
-> **📅 最后更新: 2026-06-04 · 🖥️ 适用环境: Reasonix Code · ⚡ DeepSeek 驱动**
+> **📅 最后更新: 2026-06-17 · 🖥️ 适用环境: Reasonix Code · ⚡ DeepSeek 驱动**
 
 [⬆ 回到顶部](#)

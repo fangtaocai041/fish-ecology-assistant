@@ -80,8 +80,8 @@ species:
 - id: cyprinus_carpio
   name: 鲤
   scientific: Cyprinus carpio
-  family: 鲤科
-  conservation: 无
+  family: Cyprinidae
+  conservation: LC
   category: dominant
   distribution:
     continents:
@@ -94,8 +94,8 @@ species:
 - id: carassius_auratus
   name: 鲫
   scientific: Carassius auratus
-  family: 鲤科
-  conservation: 无
+  family: Cyprinidae
+  conservation: LC
   category: dominant
   distribution:
     continents:
@@ -107,8 +107,8 @@ species:
 - id: hypophthalmichthys_molitrix
   name: 鲢
   scientific: Hypophthalmichthys molitrix
-  family: 鲤科
-  conservation: 无
+  family: Xenocyprididae
+  conservation: LC
   category: dominant
   distribution:
     continents:
@@ -120,8 +120,8 @@ species:
 - id: pelteobagrus_fulvidraco
   name: 黄颡鱼
   scientific: Pelteobagrus fulvidraco
-  family: 鲿科
-  conservation: 无
+  family: Bagridae
+  conservation: LC
   category: dominant
   distribution:
     continents:
@@ -133,7 +133,7 @@ species:
 - id: coilia_brachygnathus
   name: 短颌鲚
   scientific: Coilia brachygnathus
-  family: 鳀科
+  family: Engraulidae
   conservation: 无
   category: dominant
   distribution:
@@ -167,8 +167,8 @@ species:
 - id: silurus_asotus
   name: 鲇
   scientific: Silurus asotus
-  family: 鲇科
-  conservation: 无
+  family: Siluridae
+  conservation: LC
   category: dominant
   distribution:
     continents:
@@ -180,8 +180,8 @@ species:
 - id: saurogobio_dabryi
   name: 蛇鮈
   scientific: Saurogobio dabryi
-  family: 鲤科
-  conservation: 无
+  family: Cyprinidae
+  conservation: LC
   category: dominant
   distribution:
     continents:
@@ -193,7 +193,7 @@ species:
 - id: ctenopharyngodon_idellus
   name: 草鱼
   scientific: Ctenopharyngodon idellus
-  family: 鲤科
+  family: Xenocyprididae
   conservation: 无
   category: dominant
   distribution:
@@ -206,7 +206,7 @@ species:
 - id: pelteobagrus_nitidus
   name: 光泽黄颡鱼
   scientific: Pelteobagrus nitidus
-  family: 鲿科
+  family: Bagridae
   conservation: 无
   category: dominant
   distribution:
@@ -219,7 +219,7 @@ species:
 - id: hemiculter_leucisculus
   name: 䱗
   scientific: Hemiculter leucisculus
-  family: 鲤科
+  family: Cyprinidae
   conservation: 无
   category: dominant
   distribution:
@@ -245,8 +245,8 @@ species:
 - id: siniperca_chuatsi
   name: 鳜
   scientific: Siniperca chuatsi
-  family: 鳜科
-  conservation: 无
+  family: Percichthyidae
+  conservation: LC
   category: dominant
   distribution:
     continents:
@@ -258,8 +258,8 @@ species:
 - id: coreius_heterodon
   name: 铜鱼
   scientific: Coreius heterodon
-  family: 鲤科
-  conservation: 无
+  family: Cyprinidae
+  conservation: DD
   category: dominant
   distribution:
     continents:
@@ -271,8 +271,8 @@ species:
 - id: culter_alburnus
   name: 翘嘴鲌
   scientific: Culter alburnus
-  family: 鲤科
-  conservation: 无
+  family: Xenocyprididae
+  conservation: LC
   category: dominant
   distribution:
     continents:
@@ -284,7 +284,7 @@ species:
 - id: parabramis_pekinensis
   name: 鳊
   scientific: Parabramis pekinensis
-  family: 鲤科
+  family: Cyprinidae
   conservation: 无
   category: dominant
   distribution:
@@ -311,8 +311,8 @@ species:
 - id: aristichthys_nobilis
   name: 鳙
   scientific: Aristichthys nobilis
-  family: 鲤科
-  conservation: 无
+  family: Xenocyprididae
+  conservation: LC
   category: dominant
   distribution:
     continents:
@@ -324,7 +324,7 @@ species:
 - id: acipenser_sinensis
   name: 中华鲟
   scientific: Acipenser sinensis
-  family: 鲟科
+  family: Acipenseridae
   protection_level: 国家一级
   status: 多年未见自然繁殖
   iucn: 极危(CR)
@@ -336,10 +336,11 @@ species:
     - 中国
     basins:
     - 长江流域
+  conservation: CR
 - id: acipenser_dabryanus
   name: 长江鲟
   scientific: Acipenser dabryanus
-  family: 鲟科
+  family: Acipenseridae
   protection_level: 国家一级
   status: IUCN认定野外灭绝(EW)
   iucn: 野外灭绝(EW)
@@ -351,10 +352,11 @@ species:
     - 中国
     basins:
     - 长江流域
+  conservation: CR
 - id: myxocyprinus_asiaticus
   name: 胭脂鱼
   scientific: Myxocyprinus asiaticus
-  family: 胭脂鱼科
+  family: Catostomidae
   protection_level: 国家二级
   status: 多年未见自然繁殖
   category: protected_recorded
@@ -365,10 +367,11 @@ species:
     - 中国
     basins:
     - 长江流域
+  conservation: CR
 - id: trachidermus_fasciatus
   name: 松江鲈
   scientific: Trachidermus fasciatus
-  family: 杜父鱼科
+  family: Cottidae
   protection_level: 国家二级
   status: 多年未见自然繁殖
   category: protected_recorded
@@ -379,10 +382,11 @@ species:
     - 中国
     basins:
     - 长江流域
+  conservation: EN
 - id: psephurus_gladius
   name: 白鲟
   scientific: Psephurus gladius
-  family: 匙吻鲟科
+  family: Polyodontidae
   protection_level: 国家一级
   status: IUCN认定灭绝(EX)
   iucn: 灭绝(EX)
@@ -394,10 +398,11 @@ species:
     - 中国
     basins:
     - 长江流域
+  conservation: CR
 - id: luciobrama_macrocephalus
   name: 鯮
   scientific: Luciobrama macrocephalus
-  family: 鲤科
+  family: Xenocyprididae
   protection_level: 国家二级
   status: 多年未见野生个体
   category: protected_missing
@@ -408,10 +413,11 @@ species:
     - 中国
     basins:
     - 长江流域
+  conservation: CR
 - id: tenualosa_reevesii
   name: 鲥
   scientific: Tenualosa reevesii
-  family: 鲱科
+  family: Clupeidae
   protection_level: 国家一级
   status: 多年未见野生个体
   category: protected_missing
@@ -422,10 +428,11 @@ species:
     - 中国
     basins:
     - 长江流域
+  conservation: CR
 - id: ochetobius_elongatus
   name: 鳤
   scientific: Ochetobius elongatus
-  family: 鲤科
+  family: Cyprinidae
   conservation: 无
   status: 极罕见
   category: endangered_in_graph
@@ -527,8 +534,8 @@ species:
 - id: elopichthys_bambusa
   name: 鳡
   scientific: Elopichthys bambusa
-  family: 鲤科
-  conservation: 无
+  family: Xenocyprididae
+  conservation: NT
   status: 濒危
   category: endangered_in_graph
   distribution:
@@ -645,7 +652,7 @@ species:
   synonyms:
   - Leuciscus brandti
   - Pseudaspius brandti
-  family: 鲤科
+  family: Leuciscidae
   subfamily: 雅罗鱼亚科
   order: 鲤形目
   conservation: 无
@@ -681,7 +688,7 @@ species:
   - 刀鱼
   - 长颌鲚
   - tapertail anchovy
-  family: 鳀科 (Engraulidae)
+  family: Engraulidae
   conservation: 濒危(EN)
   category: dominant
   distribution:
@@ -797,9 +804,9 @@ species:
 - id: culter_mongolicus
   name: 蒙古鲌
   scientific: Culter mongolicus
-  family: 鲤科
+  family: Xenocyprididae
   order: 鲤形目
-  conservation: 无
+  conservation: LC
   aliases: []
   ecology: 中上层鱼类，栖息于江河湖泊敞水区，以小鱼、虾为食
   economic_value: 经济鱼类
@@ -817,9 +824,9 @@ species:
 - id: culter_oxycephalus
   name: 尖头鲌
   scientific: Culter oxycephalus
-  family: 鲤科
+  family: Xenocyprididae
   order: 鲤形目
-  conservation: 无
+  conservation: LC
   aliases: []
   ecology: 中上层凶猛鱼类，栖息于湖泊、水库等静水水体
   economic_value: 经济鱼类
@@ -836,9 +843,9 @@ species:
 - id: coilia_mystus
   name: 凤鲚
   scientific: Coilia mystus
-  family: 鳀科
+  family: Engraulidae
   order: 鲱形目
-  conservation: 无
+  conservation: LC
   aliases:
   - 凤尾鱼
   - 烤子鱼
@@ -989,7 +996,7 @@ species:
 - id: atrilinea_macrolepis
   name: 大鳞黑线䱗
   scientific: Atrilinea macrolepis
-  family: 未知
+  family: Xenocyprididae
   conservation: CR
   category: yangtze
   distribution:
@@ -1002,7 +1009,7 @@ species:
 - id: atrilinea_roulei
   name: 黑线䱗
   scientific: Atrilinea roulei
-  family: 未知
+  family: Xenocyprididae
   conservation: VU
   category: yangtze
   distribution:
@@ -1015,7 +1022,7 @@ species:
 - id: rhynchocypris_oxycephalus
   name: 尖头大吻鱥
   scientific: Rhynchocypris oxycephalus
-  family: 未知
+  family: Xenocyprididae
   conservation: NE
   category: yangtze
   distribution:
@@ -1028,7 +1035,7 @@ species:
 - id: rhynchocypris_lagowskii
   name: 拉氏大吻鱥
   scientific: Rhynchocypris lagowskii
-  family: 未知
+  family: Xenocyprididae
   conservation: NE
   category: yangtze
   distribution:
@@ -1041,7 +1048,7 @@ species:
 - id: tinca_tinca
   name: 丁鱥
   scientific: Tinca tinca
-  family: 未知
+  family: Xenocyprididae
   conservation: NE
   category: yangtze
   distribution:
@@ -1067,7 +1074,7 @@ species:
 - id: pseudolaubuca_sinensis
   name: 飘鱼
   scientific: Pseudolaubuca sinensis
-  family: 未知
+  family: Xenocyprididae
   conservation: LC
   category: yangtze
   distribution:
@@ -1080,7 +1087,7 @@ species:
 - id: pseudolaubuca_engraulis
   name: 寡鳞飘鱼
   scientific: Pseudolaubuca engraulis
-  family: 未知
+  family: Xenocyprididae
   conservation: LC
   category: yangtze
   distribution:
@@ -1093,7 +1100,7 @@ species:
 - id: sinibrama_macrops
   name: 大眼华鳊
   scientific: Sinibrama macrops
-  family: 未知
+  family: Xenocyprididae
   conservation: LC
   category: yangtze
   distribution:
@@ -1106,7 +1113,7 @@ species:
 - id: sinibrama_taeniatus
   name: 四川华鳊
   scientific: Sinibrama taeniatus
-  family: 未知
+  family: Xenocyprididae
   conservation: NT
   category: yangtze
   distribution:
@@ -1119,7 +1126,7 @@ species:
 - id: sinibrama_wui
   name: 伍氏华鳊
   scientific: Sinibrama wui
-  family: 未知
+  family: Xenocyprididae
   conservation: NE
   category: yangtze
   distribution:
@@ -1132,7 +1139,7 @@ species:
 - id: sinibrama_longianalis
   name: 长臀华鳊
   scientific: Sinibrama longianalis
-  family: 未知
+  family: Xenocyprididae
   conservation: DD
   category: yangtze
   distribution:
@@ -1145,7 +1152,7 @@ species:
 - id: ancherythroculter_kurematsui
   name: 高体近红鲌
   scientific: Ancherythroculter kurematsui
-  family: 未知
+  family: Xenocyprididae
   conservation: NE
   category: yangtze
   distribution:
@@ -1158,7 +1165,7 @@ species:
 - id: ancherythroculter_wangi
   name: 汪氏近红鲌
   scientific: Ancherythroculter wangi
-  family: 未知
+  family: Xenocyprididae
   conservation: NE
   category: yangtze
   distribution:
@@ -1171,7 +1178,7 @@ species:
 - id: ancherythroculter_nigrocauda
   name: 黑尾近红鲌
   scientific: Ancherythroculter nigrocauda
-  family: 未知
+  family: Xenocyprididae
   conservation: NE
   category: yangtze
   distribution:
@@ -1184,7 +1191,7 @@ species:
 - id: anabarilius_liui
   name: 雅砻白鱼
   scientific: Anabarilius liui
-  family: 未知
+  family: Xenocyprididae
   conservation: NE
   category: yangtze
   distribution:
@@ -1197,7 +1204,7 @@ species:
 - id: anabarilius_qionghaiensis
   name: 邛海白鱼
   scientific: Anabarilius qionghaiensis
-  family: 未知
+  family: Xenocyprididae
   conservation: CR
   category: yangtze
   distribution:
@@ -1210,7 +1217,7 @@ species:
 - id: anabarilius_songmingensis
   name: 嵩明白鱼
   scientific: Anabarilius songmingensis
-  family: 未知
+  family: Xenocyprididae
   conservation: NT
   category: yangtze
   distribution:
@@ -1223,7 +1230,7 @@ species:
 - id: anabarilius_xundianensis
   name: 寻甸白鱼
   scientific: Anabarilius xundianensis
-  family: 未知
+  family: Xenocyprididae
   conservation: NT
   category: yangtze
   distribution:
@@ -1236,7 +1243,7 @@ species:
 - id: anabarilius_polylepis
   name: 多鳞白鱼
   scientific: Anabarilius polylepis
-  family: 未知
+  family: Xenocyprididae
   conservation: EN
   category: yangtze
   distribution:
@@ -1249,7 +1256,7 @@ species:
 - id: anabarilius_alburnops
   name: 银白鱼
   scientific: Anabarilius alburnops
-  family: 未知
+  family: Xenocyprididae
   conservation: EN
   category: yangtze
   distribution:
@@ -1262,7 +1269,7 @@ species:
 - id: anabarilius_brevianalis
   name: 短臀白鱼
   scientific: Anabarilius brevianalis
-  family: 未知
+  family: Xenocyprididae
   conservation: VU
   category: yangtze
   distribution:
@@ -1275,7 +1282,7 @@ species:
 - id: hemiculterella_sauvagei
   name: 半䱗
   scientific: Hemiculterella sauvagei
-  family: 未知
+  family: Xenocyprididae
   conservation: NE
   category: yangtze
   distribution:
@@ -1288,7 +1295,7 @@ species:
 - id: toxabramis_swinhonis
   name: 似鱎
   scientific: Toxabramis swinhonis
-  family: 未知
+  family: Xenocyprididae
   conservation: LC
   category: yangtze
   distribution:
@@ -1327,7 +1334,7 @@ species:
 - id: pseudohemiculter_dispar
   name: 南方拟䱗
   scientific: Pseudohemiculter dispar
-  family: 未知
+  family: Xenocyprididae
   conservation: LC
   category: yangtze
   distribution:
@@ -1340,7 +1347,7 @@ species:
 - id: pseudohemiculter_hainanensis
   name: 海南拟䱗
   scientific: Pseudohemiculter hainanensis
-  family: 未知
+  family: Xenocyprididae
   conservation: LC
   category: yangtze
   distribution:
@@ -1353,7 +1360,7 @@ species:
 - id: pseudohemiculter_kweichowensis
   name: 贵州拟䱗
   scientific: Pseudohemiculter kweichowensis
-  family: 未知
+  family: Xenocyprididae
   conservation: DD
   category: yangtze
   distribution:
@@ -1366,7 +1373,7 @@ species:
 - id: cultrichthys_erythropterus
   name: 红鳍原鲌
   scientific: Cultrichthys erythropterus
-  family: 未知
+  family: Xenocyprididae
   conservation: LC
   category: yangtze
   distribution:
@@ -1405,7 +1412,7 @@ species:
 - id: megalobrama_pellegrini
   name: 厚颌鲂
   scientific: Megalobrama pellegrini
-  family: 未知
+  family: Xenocyprididae
   conservation: VU
   category: yangtze
   distribution:
@@ -1418,7 +1425,7 @@ species:
 - id: megalobrama_elongata
   name: 长体鲂
   scientific: Megalobrama elongata
-  family: 未知
+  family: Xenocyprididae
   conservation: DD
   category: yangtze
   distribution:
@@ -1431,7 +1438,7 @@ species:
 - id: megalobrama_mantschuricus
   name: 鲂
   scientific: Megalobrama mantschuricus
-  family: 未知
+  family: Xenocyprididae
   conservation: LC
   category: yangtze
   distribution:
@@ -1444,7 +1451,7 @@ species:
 - id: megalobrama_amblycephala
   name: 团头鲂
   scientific: Megalobrama amblycephala
-  family: 未知
+  family: Xenocyprididae
   conservation: LC
   category: yangtze
   distribution:
@@ -1457,7 +1464,7 @@ species:
 - id: megalobrama_terminalis
   name: 三角鲂
   scientific: Megalobrama terminalis
-  family: 未知
+  family: Xenocyprididae
   conservation: LC
   category: yangtze
   distribution:
@@ -1548,7 +1555,7 @@ species:
 - id: distoechodon_tumirostris
   name: 圆吻鲴
   scientific: Distoechodon tumirostris
-  family: 未知
+  family: Xenocyprididae
   conservation: LC
   category: yangtze
   distribution:
@@ -1561,7 +1568,7 @@ species:
 - id: distoechodon_macrophthalmus
   name: 大眼圆吻鲴
   scientific: Distoechodon macrophthalmus
-  family: 未知
+  family: Xenocyprididae
   conservation: NE
   category: yangtze
   distribution:
@@ -1574,7 +1581,7 @@ species:
 - id: pseudobrama_simoni
   name: 似鳊
   scientific: Pseudobrama simoni
-  family: 未知
+  family: Xenocyprididae
   conservation: LC
   category: yangtze
   distribution:
@@ -1587,7 +1594,7 @@ species:
 - id: hemibarbus_labeo
   name: 唇䱻
   scientific: Hemibarbus labeo
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1600,7 +1607,7 @@ species:
 - id: hemibarbus_maculatus
   name: 花䱻
   scientific: Hemibarbus maculatus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1613,7 +1620,7 @@ species:
 - id: hemibarbus_medius
   name: 间䱻
   scientific: Hemibarbus medius
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1626,7 +1633,7 @@ species:
 - id: belligobio_nummifer
   name: 似䱻
   scientific: Belligobio nummifer
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1639,7 +1646,7 @@ species:
 - id: belligobio_pengxianensis
   name: 彭县似䱻
   scientific: Belligobio pengxianensis
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -1652,7 +1659,7 @@ species:
 - id: pseudorasbora_parva
   name: 麦穗鱼
   scientific: Pseudorasbora parva
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1665,7 +1672,7 @@ species:
 - id: pseudorasbora_elongata
   name: 长麦穗鱼
   scientific: Pseudorasbora elongata
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -1678,7 +1685,7 @@ species:
 - id: sarcocheilichthys_sinensis
   name: 华鳈
   scientific: Sarcocheilichthys sinensis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1691,7 +1698,7 @@ species:
 - id: sarcocheilichthys_nigripinnis
   name: 黑鳍鳈
   scientific: Sarcocheilichthys nigripinnis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1704,7 +1711,7 @@ species:
 - id: sarcocheilichthys_davidi
   name: 川西鳈
   scientific: Sarcocheilichthys davidi
-  family: 未知
+  family: Cyprinidae
   conservation: NT
   category: yangtze
   distribution:
@@ -1717,7 +1724,7 @@ species:
 - id: sarcocheilichthys_parvus
   name: 小鳈
   scientific: Sarcocheilichthys parvus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1730,7 +1737,7 @@ species:
 - id: sarcocheilichthys_kiangsiensis
   name: 江西鳈
   scientific: Sarcocheilichthys kiangsiensis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1743,7 +1750,7 @@ species:
 - id: gnathopogon_herzensteini
   name: 嘉陵颌须
   scientific: Gnathopogon herzensteini
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -1756,7 +1763,7 @@ species:
 - id: gnathopogon_imberbis
   name: 短须颌须
   scientific: Gnathopogon imberbis
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -1769,7 +1776,7 @@ species:
 - id: gnathopogon_nicholsi
   name: 隐须颌须
   scientific: Gnathopogon nicholsi
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -1782,7 +1789,7 @@ species:
 - id: squalidus_argentatus
   name: 银
   scientific: Squalidus argentatus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1795,7 +1802,7 @@ species:
 - id: squalidus_nitens
   name: 亮银
   scientific: Squalidus nitens
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1808,7 +1815,7 @@ species:
 - id: squalidus_wolterstorffi
   name: 点纹银
   scientific: Squalidus wolterstorffi
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1821,7 +1828,7 @@ species:
 - id: coreius_guichenoti
   name: 圆口铜鱼
   scientific: Coreius guichenoti
-  family: 未知
+  family: Cyprinidae
   conservation: CR
   category: yangtze
   distribution:
@@ -1834,7 +1841,7 @@ species:
 - id: rhinogobio_typus
   name: 吻
   scientific: Rhinogobio typus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1847,7 +1854,7 @@ species:
 - id: rhinogobio_cylindricus
   name: 圆筒吻
   scientific: Rhinogobio cylindricus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1860,7 +1867,7 @@ species:
 - id: rhinogobio_ventralis
   name: 长鳍吻
   scientific: Rhinogobio ventralis
-  family: 未知
+  family: Cyprinidae
   conservation: EN
   category: yangtze
   distribution:
@@ -1873,7 +1880,7 @@ species:
 - id: rhinogobio_hunanensis
   name: 湖南吻
   scientific: Rhinogobio hunanensis
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -1886,7 +1893,7 @@ species:
 - id: platysmacheilus_nudiventris
   name: 裸腹片唇
   scientific: Platysmacheilus nudiventris
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1899,7 +1906,7 @@ species:
 - id: platysmacheilus_longibarbatus
   name: 长须片唇
   scientific: Platysmacheilus longibarbatus
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -1912,7 +1919,7 @@ species:
 - id: platysmacheilus_exiguus
   name: 片唇
   scientific: Platysmacheilus exiguus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1925,7 +1932,7 @@ species:
 - id: platysmacheilus_zhenjiangensis
   name: 镇江片唇
   scientific: Platysmacheilus zhenjiangensis
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -1938,7 +1945,7 @@ species:
 - id: abbottina_rivularis
   name: 棒花鱼
   scientific: Abbottina rivularis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1951,7 +1958,7 @@ species:
 - id: abbottina_obtusirostris
   name: 钝吻棒花鱼
   scientific: Abbottina obtusirostris
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -1964,7 +1971,7 @@ species:
 - id: microphysogobio_kiatingensis
   name: 乐山小鳔
   scientific: Microphysogobio kiatingensis
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -1977,7 +1984,7 @@ species:
 - id: microphysogobio_fukiensis
   name: 福建小鳔
   scientific: Microphysogobio fukiensis
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -1990,7 +1997,7 @@ species:
 - id: microphysogobio_microstomus
   name: 小口小鳔
   scientific: Microphysogobio microstomus
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -2003,7 +2010,7 @@ species:
 - id: microphysogobio_tungtingensis
   name: 洞庭小鳔
   scientific: Microphysogobio tungtingensis
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -2016,7 +2023,7 @@ species:
 - id: microphysogobio_nudiventris
   name: 裸腹小鳔
   scientific: Microphysogobio nudiventris
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -2029,7 +2036,7 @@ species:
 - id: pseudogobio_vaillanti
   name: 似
   scientific: Pseudogobio vaillanti
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2042,7 +2049,7 @@ species:
 - id: paracanthobrama_guichenoti
   name: 似刺鳊
   scientific: Paracanthobrama guichenoti
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2055,7 +2062,7 @@ species:
 - id: saurogobio_dumerili
   name: 长蛇
   scientific: Saurogobio dumerili
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2068,7 +2075,7 @@ species:
 - id: saurogobio_gymnocheilus
   name: 光唇蛇
   scientific: Saurogobio gymnocheilus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2081,7 +2088,7 @@ species:
 - id: saurogobio_punctatus
   name: 斑点蛇
   scientific: Saurogobio punctatus
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2094,7 +2101,7 @@ species:
 - id: saurogobio_gracilicaudatus
   name: 细尾蛇
   scientific: Saurogobio gracilicaudatus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2107,7 +2114,7 @@ species:
 - id: saurogobio_xiangjiangensis
   name: 湘江蛇
   scientific: Saurogobio xiangjiangensis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2120,7 +2127,7 @@ species:
 - id: gobiobotia_abbreviata
   name: 短身鳅鮀
   scientific: Gobiobotia abbreviata
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2133,7 +2140,7 @@ species:
 - id: gobiobotia_filifer
   name: 宜昌鳅鮀
   scientific: Gobiobotia filifer
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2146,7 +2153,7 @@ species:
 - id: gobiobotia_meridionalis
   name: 南方鳅鮀
   scientific: Gobiobotia meridionalis
-  family: 未知
+  family: Cyprinidae
   conservation: NT
   category: yangtze
   distribution:
@@ -2159,7 +2166,7 @@ species:
 - id: gobiobotia_brevirostris
   name: 短吻鳅鮀
   scientific: Gobiobotia brevirostris
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2172,7 +2179,7 @@ species:
 - id: gobiobotia_tungi
   name: 董氏鳅鮀
   scientific: Gobiobotia tungi
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -2185,7 +2192,7 @@ species:
 - id: xenophysogobio_boulengeri
   name: 异鳔鳅鮀
   scientific: Xenophysogobio boulengeri
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -2198,7 +2205,7 @@ species:
 - id: xenophysogobio_nudicorpa
   name: 裸体异鳔鳅鮀
   scientific: Xenophysogobio nudicorpa
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2211,7 +2218,7 @@ species:
 - id: rhodeus_sinensis
   name: 中华鳑鲏
   scientific: Rhodeus sinensis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2224,7 +2231,7 @@ species:
 - id: rhodeus_ocellatus
   name: 高体鳑鲏
   scientific: Rhodeus ocellatus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2237,7 +2244,7 @@ species:
 - id: rhodeus_lighti
   name: 彩石鳑鲏
   scientific: Rhodeus lighti
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2250,7 +2257,7 @@ species:
 - id: rhodeus_fangi
   name: 方氏鳑鲏
   scientific: Rhodeus fangi
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2263,7 +2270,7 @@ species:
 - id: rhodeus_albomarginatus
   name: 白边鳑鲏
   scientific: Rhodeus albomarginatus
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -2276,7 +2283,7 @@ species:
 - id: acheilognathus_macropterus
   name: 大鳍鱊
   scientific: Acheilognathus macropterus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2289,7 +2296,7 @@ species:
 - id: acheilognathus_elongatus
   name: 长身鱊
   scientific: Acheilognathus elongatus
-  family: 未知
+  family: Cyprinidae
   conservation: CR
   category: yangtze
   distribution:
@@ -2302,7 +2309,7 @@ species:
 - id: acheilognathus_omeiensis
   name: 峨嵋鱊
   scientific: Acheilognathus omeiensis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2315,7 +2322,7 @@ species:
 - id: acheilognathus_tonkinensis
   name: 越南鱊
   scientific: Acheilognathus tonkinensis
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -2328,7 +2335,7 @@ species:
 - id: acheilognathus_barbtus
   name: 须鱊
   scientific: Acheilognathus barbtus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2341,7 +2348,7 @@ species:
 - id: acheilognathus_babatulus
   name: 短须鱊
   scientific: Acheilognathus babatulus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2354,7 +2361,7 @@ species:
 - id: acheilognathus_hypselonotus
   name: 寡鳞鱊
   scientific: Acheilognathus hypselonotus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2367,7 +2374,7 @@ species:
 - id: acheilognathus_gracilis
   name: 无须鱊
   scientific: Acheilognathus gracilis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2380,7 +2387,7 @@ species:
 - id: acheilognathus_chankaensis
   name: 兴凯鱊
   scientific: Acheilognathus chankaensis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2393,7 +2400,7 @@ species:
 - id: acheilognathus_taenianalis
   name: 斑条鱊
   scientific: Acheilognathus taenianalis
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2406,7 +2413,7 @@ species:
 - id: acheilognathus_tabira
   name: 巨口鱊
   scientific: Acheilognathus tabira
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2419,7 +2426,7 @@ species:
 - id: acheilognathus_polylepis
   name: 多鳞鱊
   scientific: Acheilognathus polylepis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2432,7 +2439,7 @@ species:
 - id: acheilognathus_striatus
   name: 条纹鱊
   scientific: Acheilognathus striatus
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -2445,7 +2452,7 @@ species:
 - id: paracheilognathus_imberbis
   name: 彩副鱊
   scientific: Paracheilognathus imberbis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2458,7 +2465,7 @@ species:
 - id: paracheilognathus_himantegus
   name: 革条副鱊
   scientific: Paracheilognathus himantegus
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2471,7 +2478,7 @@ species:
 - id: barbodes_polylepis
   name: 多鳞四须鲃
   scientific: Barbodes polylepis
-  family: 未知
+  family: Cyprinidae
   conservation: DD
   category: yangtze
   distribution:
@@ -2484,7 +2491,7 @@ species:
 - id: linichthys_laticeps
   name: 宽头林鲃
   scientific: Linichthys laticeps
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -2497,7 +2504,7 @@ species:
 - id: luciobarbus_capito
   name: 大鳞鲃
   scientific: Luciobarbus capito
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2510,7 +2517,7 @@ species:
 - id: spinibarbus_hollandi
   name: 光倒刺鲃
   scientific: Spinibarbus hollandi
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2523,7 +2530,7 @@ species:
 - id: spinibarbus_sinensis
   name: 中华倒刺鲃
   scientific: Spinibarbus sinensis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2536,7 +2543,7 @@ species:
 - id: percocypris_pingi
   name: 鲈鲤
   scientific: Percocypris pingi
-  family: 未知
+  family: Cyprinidae
   conservation: EN
   category: yangtze
   distribution:
@@ -2549,7 +2556,7 @@ species:
 - id: percocypris_regani
   name: 花鲈鲤
   scientific: Percocypris regani
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -2562,7 +2569,7 @@ species:
 - id: sinocyclocheilus_multipunctatus
   name: 多斑金线鲃
   scientific: Sinocyclocheilus multipunctatus
-  family: 未知
+  family: Cyprinidae
   conservation: NT
   category: yangtze
   distribution:
@@ -2575,7 +2582,7 @@ species:
 - id: sinocyclocheilus_grahami
   name: 滇池金线鲃
   scientific: Sinocyclocheilus grahami
-  family: 未知
+  family: Cyprinidae
   conservation: CR
   category: yangtze
   distribution:
@@ -2588,7 +2595,7 @@ species:
 - id: sinocyclocheilus_wumengshanensis
   name: 乌蒙山金线鲃
   scientific: Sinocyclocheilus wumengshanensis
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -2601,7 +2608,7 @@ species:
 - id: sinocyclocheilus_huizeensis
   name: 会泽金线鲃
   scientific: Sinocyclocheilus huizeensis
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2614,7 +2621,7 @@ species:
 - id: acrossocheilus_monticolus
   name: 宽口光唇鱼
   scientific: Acrossocheilus monticolus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2627,7 +2634,7 @@ species:
 - id: acrossocheilus_yunnanensis
   name: 云南光唇鱼
   scientific: Acrossocheilus yunnanensis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2640,7 +2647,7 @@ species:
 - id: acrossocheilus_paradoxus
   name: 台湾光唇鱼
   scientific: Acrossocheilus paradoxus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2653,7 +2660,7 @@ species:
 - id: acrossocheilus_fasciatus
   name: 光唇鱼
   scientific: Acrossocheilus fasciatus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2666,7 +2673,7 @@ species:
 - id: acrossocheilus_jishouensis
   name: 吉首光唇鱼
   scientific: Acrossocheilus jishouensis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2679,7 +2686,7 @@ species:
 - id: acrossocheilus_kreyenbergii
   name: 薄颌光唇鱼
   scientific: Acrossocheilus kreyenbergii
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2692,7 +2699,7 @@ species:
 - id: onychostoma_macrolepis
   name: 多鳞白甲鱼
   scientific: Onychostoma macrolepis
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -2705,7 +2712,7 @@ species:
 - id: onychostoma_sima
   name: 白甲鱼
   scientific: Onychostoma sima
-  family: 未知
+  family: Cyprinidae
   conservation: NT
   category: yangtze
   distribution:
@@ -2718,7 +2725,7 @@ species:
 - id: onychostoma_angustistomata
   name: 四川白甲鱼
   scientific: Onychostoma angustistomata
-  family: 未知
+  family: Cyprinidae
   conservation: EN
   category: yangtze
   distribution:
@@ -2731,7 +2738,7 @@ species:
 - id: onychostoma_daduensis
   name: 大渡白甲鱼
   scientific: Onychostoma daduensis
-  family: 未知
+  family: Cyprinidae
   conservation: CR
   category: yangtze
   distribution:
@@ -2744,7 +2751,7 @@ species:
 - id: onychostoma_brevis
   name: 短身白甲鱼
   scientific: Onychostoma brevis
-  family: 未知
+  family: Cyprinidae
   conservation: EN
   category: yangtze
   distribution:
@@ -2757,7 +2764,7 @@ species:
 - id: onychostoma_barbata
   name: 粗须白甲鱼
   scientific: Onychostoma barbata
-  family: 未知
+  family: Cyprinidae
   conservation: NT
   category: yangtze
   distribution:
@@ -2770,7 +2777,7 @@ species:
 - id: onychostoma_rara
   name: 稀有白甲鱼
   scientific: Onychostoma rara
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -2783,7 +2790,7 @@ species:
 - id: onychostoma_ovalis
   name: 珠江卵形白甲鱼
   scientific: Onychostoma ovalis
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2796,7 +2803,7 @@ species:
 - id: onychostoma_lini
   name: 小口白甲鱼
   scientific: Onychostoma lini
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -2809,7 +2816,7 @@ species:
 - id: onychostoma_barbatula
   name: 台湾白甲鱼
   scientific: Onychostoma barbatula
-  family: 未知
+  family: Cyprinidae
   conservation: NT
   category: yangtze
   distribution:
@@ -2822,7 +2829,7 @@ species:
 - id: onychostoma_virgulatum
   name: 侧纹白甲鱼
   scientific: Onychostoma virgulatum
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2835,7 +2842,7 @@ species:
 - id: folifer_brevifilis
   name: 瓣结鱼
   scientific: Folifer brevifilis
-  family: 未知
+  family: Cyprinidae
   conservation: NT
   category: yangtze
   distribution:
@@ -2848,7 +2855,7 @@ species:
 - id: sinilabeo_hummeli
   name: 赫氏华鲮
   scientific: Sinilabeo hummeli
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2861,7 +2868,7 @@ species:
 - id: bangana_rendahli
   name: 伦氏孟加拉鲮
   scientific: Bangana rendahli
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2874,7 +2881,7 @@ species:
 - id: bangana_tungting
   name: 洞庭孟加拉鲮
   scientific: Bangana tungting
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2887,7 +2894,7 @@ species:
 - id: rectoris_luxiensis
   name: 泸溪直口鲮
   scientific: Rectoris luxiensis
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2900,7 +2907,7 @@ species:
 - id: rectoris_mutabilis
   name: 变形直口鲮
   scientific: Rectoris mutabilis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2913,7 +2920,7 @@ species:
 - id: protolabeo_protolabeo
   name: 原鲮
   scientific: Protolabeo protolabeo
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2926,7 +2933,7 @@ species:
 - id: cirrhinus_molitorella
   name: 鲮
   scientific: Cirrhinus molitorella
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -2939,7 +2946,7 @@ species:
 - id: cirrhhina_mrigala
   name: 麦瑞加拉鲮
   scientific: Cirrhhina mrigala
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2952,7 +2959,7 @@ species:
 - id: labeo_rohita
   name: 露斯塔野鲮
   scientific: Labeo rohita
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2965,7 +2972,7 @@ species:
 - id: paraqianlabeo_lineatus
   name: 条纹异黔鲮
   scientific: Paraqianlabeo lineatus
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2978,7 +2985,7 @@ species:
 - id: pseudogyrinocheilus_procheilus
   name: 泉水鱼
   scientific: Pseudogyrinocheilus procheilus
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -2991,7 +2998,7 @@ species:
 - id: sinocrossocheilus_guizhouensis
   name: 华缨鱼
   scientific: Sinocrossocheilus guizhouensis
-  family: 未知
+  family: Cyprinidae
   conservation: EN
   category: yangtze
   distribution:
@@ -3004,7 +3011,7 @@ species:
 - id: sinocrossocheilus_labiata
   name: 宽唇华缨鱼
   scientific: Sinocrossocheilus labiata
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -3017,7 +3024,7 @@ species:
 - id: garra_imberba
   name: 墨头鱼
   scientific: Garra imberba
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -3030,7 +3037,7 @@ species:
 - id: discogobio_yunnanensis
   name: 云南盘
   scientific: Discogobio yunnanensis
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -3043,7 +3050,7 @@ species:
 - id: discogobio_brachyphysallidos
   name: 短鳔盘
   scientific: Discogobio brachyphysallidos
-  family: 未知
+  family: Cyprinidae
   conservation: NT
   category: yangtze
   distribution:
@@ -3095,7 +3102,7 @@ species:
 - id: ptychobarbus_kaznakovi
   name: 裸腹叶须鱼
   scientific: Ptychobarbus kaznakovi
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -3108,7 +3115,7 @@ species:
 - id: ptychobarbus_chungtienensis
   name: 中甸叶须鱼
   scientific: Ptychobarbus chungtienensis
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -3121,7 +3128,7 @@ species:
 - id: gymnodiptychus_pachycheilus
   name: 厚唇裸重唇鱼
   scientific: Gymnodiptychus pachycheilus
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -3134,7 +3141,7 @@ species:
 - id: gymnocypris_potanini
   name: 松潘裸鲤
   scientific: Gymnocypris potanini
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -3147,7 +3154,7 @@ species:
 - id: schizopygopsis_malacanthus
   name: 软刺裸裂尻鱼
   scientific: Schizopygopsis malacanthus
-  family: 未知
+  family: Cyprinidae
   conservation: NE
   category: yangtze
   distribution:
@@ -3160,7 +3167,7 @@ species:
 - id: schizopygopsis_kialingensis
   name: 嘉陵裸裂尻鱼
   scientific: Schizopygopsis kialingensis
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -3173,7 +3180,7 @@ species:
 - id: herzensteinia_microcephalus
   name: 小头高原鱼
   scientific: Herzensteinia microcephalus
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -3186,7 +3193,7 @@ species:
 - id: procypris_rabaudi
   name: 岩原鲤
   scientific: Procypris rabaudi
-  family: 未知
+  family: Cyprinidae
   conservation: VU
   category: yangtze
   distribution:
@@ -3238,7 +3245,7 @@ species:
 - id: carassioides_acuminatus
   name: 须鲫
   scientific: Carassioides acuminatus
-  family: 未知
+  family: Cyprinidae
   conservation: LC
   category: yangtze
   distribution:
@@ -3251,7 +3258,7 @@ species:
 - id: yunnanilus_pleurotaenia
   name: 侧纹云南鳅
   scientific: Yunnanilus pleurotaenia
-  family: 未知
+  family: Balitoridae
   conservation: VU
   category: yangtze
   distribution:
@@ -3264,7 +3271,7 @@ species:
 - id: yunnanilus_nigromaculatus
   name: 黑斑云南鳅
   scientific: Yunnanilus nigromaculatus
-  family: 未知
+  family: Balitoridae
   conservation: EN
   category: yangtze
   distribution:
@@ -3277,7 +3284,7 @@ species:
 - id: yunnanilus_longibulla
   name: 长鳔云南鳅
   scientific: Yunnanilus longibulla
-  family: 未知
+  family: Balitoridae
   conservation: NT
   category: yangtze
   distribution:
@@ -3290,7 +3297,7 @@ species:
 - id: yunnanilus_caohaiensis
   name: 草海云南鳅
   scientific: Yunnanilus caohaiensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3303,7 +3310,7 @@ species:
 - id: yunnanilus_ganheensis
   name: 干河云南鳅
   scientific: Yunnanilus ganheensis
-  family: 未知
+  family: Balitoridae
   conservation: VU
   category: yangtze
   distribution:
@@ -3316,7 +3323,7 @@ species:
 - id: yunnanilus_niulanensis
   name: 牛栏云南鳅
   scientific: Yunnanilus niulanensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3329,7 +3336,7 @@ species:
 - id: yunnanilus_spanisbripes
   name: 横斑云南鳅
   scientific: Yunnanilus spanisbripes
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3342,7 +3349,7 @@ species:
 - id: yunnanilus_sichuanensis
   name: 四川云南鳅
   scientific: Yunnanilus sichuanensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3355,7 +3362,7 @@ species:
 - id: paracobitis_variegatus
   name: 红尾副鳅
   scientific: Paracobitis variegatus
-  family: 未知
+  family: Balitoridae
   conservation: NE
   category: yangtze
   distribution:
@@ -3368,7 +3375,7 @@ species:
 - id: paracobitis_potanini
   name: 短体副鳅
   scientific: Paracobitis potanini
-  family: 未知
+  family: Balitoridae
   conservation: NE
   category: yangtze
   distribution:
@@ -3381,7 +3388,7 @@ species:
 - id: paracobitis_wujiangensis
   name: 乌江副鳅
   scientific: Paracobitis wujiangensis
-  family: 未知
+  family: Balitoridae
   conservation: NE
   category: yangtze
   distribution:
@@ -3394,7 +3401,7 @@ species:
 - id: schistura_fasciolata
   name: 横纹南鳅
   scientific: Schistura fasciolata
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3407,7 +3414,7 @@ species:
 - id: schistura_pseudofasciolata
   name: 似横纹南鳅
   scientific: Schistura pseudofasciolata
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3420,7 +3427,7 @@ species:
 - id: schistura_niulanjiangensis
   name: 牛栏江南鳅
   scientific: Schistura niulanjiangensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3433,7 +3440,7 @@ species:
 - id: schistura_dabryi
   name: 小眼戴氏南鳅
   scientific: Schistura dabryi
-  family: 未知
+  family: Balitoridae
   conservation: NE
   category: yangtze
   distribution:
@@ -3446,7 +3453,7 @@ species:
 - id: nemacheilus_huapingensis
   name: 华坪条鳅
   scientific: Nemacheilus huapingensis
-  family: 未知
+  family: Balitoridae
   conservation: NE
   category: yangtze
   distribution:
@@ -3459,7 +3466,7 @@ species:
 - id: barbatula_nuda
   name: 北方须鳅
   scientific: Barbatula nuda
-  family: 未知
+  family: Balitoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -3472,7 +3479,7 @@ species:
 - id: triplophysa_robusta
   name: 粗壮高原鳅
   scientific: Triplophysa robusta
-  family: 未知
+  family: Balitoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -3485,7 +3492,7 @@ species:
 - id: triplophysa_orientalis
   name: 东方高原鳅
   scientific: Triplophysa orientalis
-  family: 未知
+  family: Balitoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -3498,7 +3505,7 @@ species:
 - id: triplophysa_tanggulaensis
   name: 唐古拉高原鳅
   scientific: Triplophysa tanggulaensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3511,7 +3518,7 @@ species:
 - id: triplophysa_stewarti
   name: 异尾高原鳅
   scientific: Triplophysa stewarti
-  family: 未知
+  family: Balitoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -3524,7 +3531,7 @@ species:
 - id: triplophysa_microps
   name: 小眼高原鳅
   scientific: Triplophysa microps
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3537,7 +3544,7 @@ species:
 - id: triplophysa_obscura
   name: 黑体高原鳅
   scientific: Triplophysa obscura
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3550,7 +3557,7 @@ species:
 - id: triplophysa_grahami
   name: 昆明高原鳅
   scientific: Triplophysa grahami
-  family: 未知
+  family: Balitoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -3563,7 +3570,7 @@ species:
 - id: triplophysa_xichangensis
   name: 西昌高原鳅
   scientific: Triplophysa xichangensis
-  family: 未知
+  family: Balitoridae
   conservation: NT
   category: yangtze
   distribution:
@@ -3576,7 +3583,7 @@ species:
 - id: triplophysa_venusta
   name: 秀丽高原鳅
   scientific: Triplophysa venusta
-  family: 未知
+  family: Balitoridae
   conservation: NT
   category: yangtze
   distribution:
@@ -3589,7 +3596,7 @@ species:
 - id: triplophysa_daqiaoensis
   name: 大桥高原鳅
   scientific: Triplophysa daqiaoensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3602,7 +3609,7 @@ species:
 - id: triplophysa_brevibarba
   name: 短须高原鳅
   scientific: Triplophysa brevibarba
-  family: 未知
+  family: Balitoridae
   conservation: NT
   category: yangtze
   distribution:
@@ -3615,7 +3622,7 @@ species:
 - id: triplophysa_pseudoscleroptera
   name: 拟硬刺高原鳅
   scientific: Triplophysa pseudoscleroptera
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3628,7 +3635,7 @@ species:
 - id: triplophysa_angeli
   name: 安氏高原鳅
   scientific: Triplophysa angeli
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3641,7 +3648,7 @@ species:
 - id: triplophysa_anterodorsalis
   name: 前鳍高原鳅
   scientific: Triplophysa anterodorsalis
-  family: 未知
+  family: Balitoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -3654,7 +3661,7 @@ species:
 - id: triplophysa_brevicauda
   name: 短尾高原鳅
   scientific: Triplophysa brevicauda
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3667,7 +3674,7 @@ species:
 - id: triplophysa_bleekeri
   name: 贝氏高原鳅
   scientific: Triplophysa bleekeri
-  family: 未知
+  family: Balitoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -3680,7 +3687,7 @@ species:
 - id: triplophysa_leptosoma
   name: 修长高原鳅
   scientific: Triplophysa leptosoma
-  family: 未知
+  family: Balitoridae
   conservation: NE
   category: yangtze
   distribution:
@@ -3693,7 +3700,7 @@ species:
 - id: triplophysa_toliczkae
   name: 斯氏高原鳅
   scientific: Triplophysa toliczkae
-  family: 未知
+  family: Balitoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -3706,7 +3713,7 @@ species:
 - id: triplophysa_crassilabris
   name: 粗唇高原鳅
   scientific: Triplophysa crassilabris
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3719,7 +3726,7 @@ species:
 - id: triplophysa_tenura
   name: 细尾高原鳅
   scientific: Triplophysa tenura
-  family: 未知
+  family: Balitoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -3732,7 +3739,7 @@ species:
 - id: triplophysa_yaopeizhii
   name: 姚氏高原鳅
   scientific: Triplophysa yaopeizhii
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3745,7 +3752,7 @@ species:
 - id: triplophysa_ninglangensis
   name: 宁蒗高原鳅
   scientific: Triplophysa ninglangensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3758,7 +3765,7 @@ species:
 - id: triplophysa_rotundiventris
   name: 圆腹高原鳅
   scientific: Triplophysa rotundiventris
-  family: 未知
+  family: Balitoridae
   conservation: NE
   category: yangtze
   distribution:
@@ -3771,7 +3778,7 @@ species:
 - id: triplophysa_polyfasciata
   name: 多带高原鳅
   scientific: Triplophysa polyfasciata
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3784,7 +3791,7 @@ species:
 - id: triplophysa_pseudostenura
   name: 拟细尾高原鳅
   scientific: Triplophysa pseudostenura
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3797,7 +3804,7 @@ species:
 - id: triplophysa_lixianensis
   name: 理县高原鳅
   scientific: Triplophysa lixianensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3810,7 +3817,7 @@ species:
 - id: triplophysa_xiqiensis
   name: 西溪高原鳅
   scientific: Triplophysa xiqiensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3823,7 +3830,7 @@ species:
 - id: triplophysa_daochengensis
   name: 稻城高原鳅
   scientific: Triplophysa daochengensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3836,7 +3843,7 @@ species:
 - id: triplophysa_rosa
   name: 玫瑰高原鳅
   scientific: Triplophysa rosa
-  family: 未知
+  family: Balitoridae
   conservation: VU
   category: yangtze
   distribution:
@@ -3849,7 +3856,7 @@ species:
 - id: triplophysa_xiangxiensis
   name: 湘西盲高原鳅
   scientific: Triplophysa xiangxiensis
-  family: 未知
+  family: Balitoridae
   conservation: VU
   category: yangtze
   distribution:
@@ -3862,7 +3869,7 @@ species:
 - id: triplophysa_bashanensis
   name: 巴山高原鳅
   scientific: Triplophysa bashanensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -3875,7 +3882,7 @@ species:
 - id: sphaerophysa_dianchiensis
   name: 滇池球鳔鳅
   scientific: Sphaerophysa dianchiensis
-  family: 未知
+  family: Balitoridae
   conservation: CR
   category: yangtze
   distribution:
@@ -3888,7 +3895,7 @@ species:
 - id: botia_superciliaris
   name: 中华沙鳅
   scientific: Botia superciliaris
-  family: 未知
+  family: Cobitidae
   conservation: VU
   category: yangtze
   distribution:
@@ -3901,7 +3908,7 @@ species:
 - id: botia_reevesae
   name: 宽体沙鳅
   scientific: Botia reevesae
-  family: 未知
+  family: Cobitidae
   conservation: NE
   category: yangtze
   distribution:
@@ -3914,7 +3921,7 @@ species:
 - id: parabotia_fasciata
   name: 花斑副沙鳅
   scientific: Parabotia fasciata
-  family: 未知
+  family: Cobitidae
   conservation: LC
   category: yangtze
   distribution:
@@ -3927,7 +3934,7 @@ species:
 - id: parabotia_bimaculata
   name: 双斑副沙鳅
   scientific: Parabotia bimaculata
-  family: 未知
+  family: Cobitidae
   conservation: LC
   category: yangtze
   distribution:
@@ -3940,7 +3947,7 @@ species:
 - id: parabotia_maculosa
   name: 点面副沙鳅
   scientific: Parabotia maculosa
-  family: 未知
+  family: Cobitidae
   conservation: LC
   category: yangtze
   distribution:
@@ -3953,7 +3960,7 @@ species:
 - id: parabotia_banarescu
   name: 武昌副沙鳅
   scientific: Parabotia banarescu
-  family: 未知
+  family: Cobitidae
   conservation: LC
   category: yangtze
   distribution:
@@ -3966,7 +3973,7 @@ species:
 - id: leptobotia_elongata
   name: 长薄鳅
   scientific: Leptobotia elongata
-  family: 未知
+  family: Cobitidae
   conservation: EN
   category: yangtze
   distribution:
@@ -3979,7 +3986,7 @@ species:
 - id: leptobotia_taeniops
   name: 紫薄鳅
   scientific: Leptobotia taeniops
-  family: 未知
+  family: Cobitidae
   conservation: VU
   category: yangtze
   distribution:
@@ -3992,7 +3999,7 @@ species:
 - id: leptobotia_pellegrini
   name: 薄鳅
   scientific: Leptobotia pellegrini
-  family: 未知
+  family: Cobitidae
   conservation: NE
   category: yangtze
   distribution:
@@ -4005,7 +4012,7 @@ species:
 - id: leptobotia_microphthalma
   name: 小眼薄鳅
   scientific: Leptobotia microphthalma
-  family: 未知
+  family: Cobitidae
   conservation: VU
   category: yangtze
   distribution:
@@ -4018,7 +4025,7 @@ species:
 - id: leptobotia_rubrilabris
   name: 红唇薄鳅
   scientific: Leptobotia rubrilabris
-  family: 未知
+  family: Cobitidae
   conservation: VU
   category: yangtze
   distribution:
@@ -4031,7 +4038,7 @@ species:
 - id: leptobotia_orientalis
   name: 东方薄鳅
   scientific: Leptobotia orientalis
-  family: 未知
+  family: Cobitidae
   conservation: NT
   category: yangtze
   distribution:
@@ -4044,7 +4051,7 @@ species:
 - id: leptobotia_tietaiensis
   name: 汉水扁尾薄鳅
   scientific: Leptobotia tietaiensis
-  family: 未知
+  family: Cobitidae
   conservation: NE
   category: yangtze
   distribution:
@@ -4057,7 +4064,7 @@ species:
 - id: leptobotia_hengyangensis
   name: 衡阳薄鳅
   scientific: Leptobotia hengyangensis
-  family: 未知
+  family: Cobitidae
   conservation: VU
   category: yangtze
   distribution:
@@ -4070,7 +4077,7 @@ species:
 - id: cobitis_sinensis
   name: 中华花鳅
   scientific: Cobitis sinensis
-  family: 未知
+  family: Cobitidae
   conservation: LC
   category: yangtze
   distribution:
@@ -4083,7 +4090,7 @@ species:
 - id: cobitis_sibirica
   name: 北方花鳅
   scientific: Cobitis sibirica
-  family: 未知
+  family: Cobitidae
   conservation: LC
   category: yangtze
   distribution:
@@ -4096,7 +4103,7 @@ species:
 - id: cobitis_macrostigma
   name: 大斑花鳅
   scientific: Cobitis macrostigma
-  family: 未知
+  family: Cobitidae
   conservation: LC
   category: yangtze
   distribution:
@@ -4109,7 +4116,7 @@ species:
 - id: cobitis_rarus
   name: 稀有花鳅
   scientific: Cobitis rarus
-  family: 未知
+  family: Cobitidae
   conservation: LC
   category: yangtze
   distribution:
@@ -4122,7 +4129,7 @@ species:
 - id: misgurnus_anguillicaudatus
   name: 泥鳅
   scientific: Misgurnus anguillicaudatus
-  family: 未知
+  family: Cobitidae
   conservation: LC
   category: yangtze
   distribution:
@@ -4135,7 +4142,7 @@ species:
 - id: misgurnus_mohoity
   name: 北方泥鳅
   scientific: Misgurnus mohoity
-  family: 未知
+  family: Cobitidae
   conservation: LC
   category: yangtze
   distribution:
@@ -4148,7 +4155,7 @@ species:
 - id: paramisgurnus_dabryanus
   name: 大鳞副泥鳅
   scientific: Paramisgurnus dabryanus
-  family: 未知
+  family: Cobitidae
   conservation: NE
   category: yangtze
   distribution:
@@ -4161,7 +4168,7 @@ species:
 - id: vanmanenia_pseudoatriata
   name: 拟横斑原缨口鳅
   scientific: Vanmanenia pseudoatriata
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -4174,7 +4181,7 @@ species:
 - id: vanmanenia_maculata
   name: 大斑原缨口鳅
   scientific: Vanmanenia maculata
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -4187,7 +4194,7 @@ species:
 - id: vanmanenia_pingchowensis
   name: 平舟原缨口鳅
   scientific: Vanmanenia pingchowensis
-  family: 未知
+  family: Balitoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -4200,7 +4207,7 @@ species:
 - id: vanmanenia_stenosoma
   name: 原缨口鳅
   scientific: Vanmanenia stenosoma
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -4213,7 +4220,7 @@ species:
 - id: paraprotomyzon_mutlifasciatus
   name: 似原吸鳅
   scientific: Paraprotomyzon mutlifasciatus
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -4226,7 +4233,7 @@ species:
 - id: paraprotomyzon_lungkowensis
   name: 龙口似原吸鳅
   scientific: Paraprotomyzon lungkowensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -4239,7 +4246,7 @@ species:
 - id: pseudogastromyzon_fangi
   name: 珠江拟腹吸鳅
   scientific: Pseudogastromyzon fangi
-  family: 未知
+  family: Balitoridae
   conservation: NE
   category: yangtze
   distribution:
@@ -4252,7 +4259,7 @@ species:
 - id: beaufortia_liui
   name: 侧沟爬岩鳅
   scientific: Beaufortia liui
-  family: 未知
+  family: Balitoridae
   conservation: NT
   category: yangtze
   distribution:
@@ -4265,7 +4272,7 @@ species:
 - id: beaufortia_szechuanensis
   name: 四川爬岩鳅
   scientific: Beaufortia szechuanensis
-  family: 未知
+  family: Balitoridae
   conservation: NT
   category: yangtze
   distribution:
@@ -4278,7 +4285,7 @@ species:
 - id: beaufortia_niulanensis
   name: 牛栏爬岩鳅
   scientific: Beaufortia niulanensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -4291,7 +4298,7 @@ species:
 - id: lepturichthys_fimbriata
   name: 犁头鳅
   scientific: Lepturichthys fimbriata
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -4304,7 +4311,7 @@ species:
 - id: hemimyzon_yaotanensis
   name: 窑滩间吸鳅
   scientific: Hemimyzon yaotanensis
-  family: 未知
+  family: Balitoridae
   conservation: VU
   category: yangtze
   distribution:
@@ -4317,7 +4324,7 @@ species:
 - id: jinshaia_abbreviata
   name: 短身金沙鳅
   scientific: Jinshaia abbreviata
-  family: 未知
+  family: Balitoridae
   conservation: NT
   category: yangtze
   distribution:
@@ -4330,7 +4337,7 @@ species:
 - id: jinshaia_sinensis
   name: 中华金沙鳅
   scientific: Jinshaia sinensis
-  family: 未知
+  family: Balitoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -4343,7 +4350,7 @@ species:
 - id: sinogastromyzon_sichangensis
   name: 西昌华吸鳅
   scientific: Sinogastromyzon sichangensis
-  family: 未知
+  family: Balitoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -4356,7 +4363,7 @@ species:
 - id: sinogastromyzon_szechuanensis
   name: 四川华吸鳅
   scientific: Sinogastromyzon szechuanensis
-  family: 未知
+  family: Balitoridae
   conservation: NE
   category: yangtze
   distribution:
@@ -4369,7 +4376,7 @@ species:
 - id: sinogastromyzon_hsiashiensis
   name: 下司华吸鳅
   scientific: Sinogastromyzon hsiashiensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -4382,7 +4389,7 @@ species:
 - id: sinogastromyzon_dezeensis
   name: 德泽华吸鳅
   scientific: Sinogastromyzon dezeensis
-  family: 未知
+  family: Balitoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -4395,7 +4402,7 @@ species:
 - id: metahomaloptera_omeiensis
   name: 汉水后平鳅
   scientific: Metahomaloptera omeiensis
-  family: 未知
+  family: Balitoridae
   conservation: NE
   category: yangtze
   distribution:
@@ -4408,7 +4415,7 @@ species:
 - id: piaractus_brachypomus
   name: 短盖巨脂鲤
   scientific: Piaractus brachypomus
-  family: 未知
+  family: Serrasalmidae
   conservation: NE
   category: yangtze
   distribution:
@@ -4421,7 +4428,7 @@ species:
 - id: hypostomus_plecostomus
   name: 下口鲇
   scientific: Hypostomus plecostomus
-  family: 未知
+  family: Loricariidae
   conservation: NE
   category: yangtze
   distribution:
@@ -4486,7 +4493,7 @@ species:
 - id: leiocassis_longirostris
   name: 长吻鮠
   scientific: Leiocassis longirostris
-  family: 未知
+  family: Bagridae
   conservation: NE
   category: yangtze
   distribution:
@@ -4499,7 +4506,7 @@ species:
 - id: leiocassis_crassilabris
   name: 粗唇鮠
   scientific: Leiocassis crassilabris
-  family: 未知
+  family: Bagridae
   conservation: NE
   category: yangtze
   distribution:
@@ -4512,7 +4519,7 @@ species:
 - id: leiocassis_longibarbus
   name: 长须鮠
   scientific: Leiocassis longibarbus
-  family: 未知
+  family: Bagridae
   conservation: NE
   category: yangtze
   distribution:
@@ -4525,7 +4532,7 @@ species:
 - id: leiocassis_tenuifurcatus
   name: 叉尾鮠
   scientific: Leiocassis tenuifurcatus
-  family: 未知
+  family: Bagridae
   conservation: NE
   category: yangtze
   distribution:
@@ -4538,7 +4545,7 @@ species:
 - id: leiocassis_argentivittatus
   name: 纵带鮠
   scientific: Leiocassis argentivittatus
-  family: 未知
+  family: Bagridae
   conservation: NE
   category: yangtze
   distribution:
@@ -4707,7 +4714,7 @@ species:
 - id: mystus_macropterus
   name: 大鳍鳠
   scientific: Mystus macropterus
-  family: 未知
+  family: Bagridae
   conservation: NE
   category: yangtze
   distribution:
@@ -4720,7 +4727,7 @@ species:
 - id: liobagrus_marginatus
   name: 白缘䱀
   scientific: Liobagrus marginatus
-  family: 未知
+  family: Amblycipitidae
   conservation: VU
   category: yangtze
   distribution:
@@ -4733,7 +4740,7 @@ species:
 - id: liobagrus_kingi
   name: 金氏䱀
   scientific: Liobagrus kingi
-  family: 未知
+  family: Amblycipitidae
   conservation: EN
   category: yangtze
   distribution:
@@ -4746,7 +4753,7 @@ species:
 - id: liobagrus_nigricauda
   name: 黑尾䱀
   scientific: Liobagrus nigricauda
-  family: 未知
+  family: Amblycipitidae
   conservation: CR
   category: yangtze
   distribution:
@@ -4759,7 +4766,7 @@ species:
 - id: liobagrus_marginatoides
   name: 拟缘䱀
   scientific: Liobagrus marginatoides
-  family: 未知
+  family: Amblycipitidae
   conservation: DD
   category: yangtze
   distribution:
@@ -4772,7 +4779,7 @@ species:
 - id: liobagrus_styani
   name: 司氏䱀
   scientific: Liobagrus styani
-  family: 未知
+  family: Amblycipitidae
   conservation: CR
   category: yangtze
   distribution:
@@ -4785,7 +4792,7 @@ species:
 - id: liobagrus_anguillicauda
   name: 鳗尾䱀
   scientific: Liobagrus anguillicauda
-  family: 未知
+  family: Amblycipitidae
   conservation: LC
   category: yangtze
   distribution:
@@ -4798,7 +4805,7 @@ species:
 - id: glyptothorax_fokiensis
   name: 福建纹胸
   scientific: Glyptothorax fokiensis
-  family: 未知
+  family: Sisoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -4811,7 +4818,7 @@ species:
 - id: glyptothorax_sinensis
   name: 中华纹胸
   scientific: Glyptothorax sinensis
-  family: 未知
+  family: Sisoridae
   conservation: LC
   category: yangtze
   distribution:
@@ -4824,7 +4831,7 @@ species:
 - id: euchiloglanis_kishinouyei
   name: 黄石爬
   scientific: Euchiloglanis kishinouyei
-  family: 未知
+  family: Sisoridae
   conservation: EN
   category: yangtze
   distribution:
@@ -4837,7 +4844,7 @@ species:
 - id: euchiloglanis_davidi
   name: 青石爬
   scientific: Euchiloglanis davidi
-  family: 未知
+  family: Sisoridae
   conservation: EN
   category: yangtze
   distribution:
@@ -4850,7 +4857,7 @@ species:
 - id: euchiloglanis_longibarbatus
   name: 长须石爬
   scientific: Euchiloglanis longibarbatus
-  family: 未知
+  family: Sisoridae
   conservation: VU
   category: yangtze
   distribution:
@@ -4863,7 +4870,7 @@ species:
 - id: pareuchiloglanis_sinensis
   name: 中华
   scientific: Pareuchiloglanis sinensis
-  family: 未知
+  family: Sisoridae
   conservation: EN
   category: yangtze
   distribution:
@@ -4876,7 +4883,7 @@ species:
 - id: pareuchiloglanis_anteanalis
   name: 前臀
   scientific: Pareuchiloglanis anteanalis
-  family: 未知
+  family: Sisoridae
   conservation: NT
   category: yangtze
   distribution:
@@ -4889,7 +4896,7 @@ species:
 - id: pareuchiloglanis_sichuanensis
   name: 四川
   scientific: Pareuchiloglanis sichuanensis
-  family: 未知
+  family: Sisoridae
   conservation: NT
   category: yangtze
   distribution:
@@ -4902,7 +4909,7 @@ species:
 - id: pareuchiloglanis_tianquanensis
   name: 天全
   scientific: Pareuchiloglanis tianquanensis
-  family: 未知
+  family: Sisoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -4915,7 +4922,7 @@ species:
 - id: pareuchiloglanis_robustus
   name: 壮体
   scientific: Pareuchiloglanis robustus
-  family: 未知
+  family: Sisoridae
   conservation: NT
   category: yangtze
   distribution:
@@ -4928,7 +4935,7 @@ species:
 - id: pareuchiloglanis_feae
   name: 短鳍
   scientific: Pareuchiloglanis feae
-  family: 未知
+  family: Sisoridae
   conservation: DD
   category: yangtze
   distribution:
@@ -4941,7 +4948,7 @@ species:
 - id: paraeuchiloglanis_changyangensis
   name: 长阳
   scientific: Paraeuchiloglanis changyangensis
-  family: 未知
+  family: Sisoridae
   conservation: NE
   category: yangtze
   distribution:
@@ -4954,7 +4961,7 @@ species:
 - id: clarias_fusus
   name: 胡子鲇
   scientific: Clarias fusus
-  family: 未知
+  family: Clariidae
   conservation: LC
   category: yangtze
   distribution:
@@ -4967,7 +4974,7 @@ species:
 - id: clarias_batrachus
   name: 蟾胡子鲇
   scientific: Clarias batrachus
-  family: 未知
+  family: Clariidae
   conservation: NE
   category: yangtze
   distribution:
@@ -4980,7 +4987,7 @@ species:
 - id: clarias_gariepinus
   name: 革胡子鲇
   scientific: Clarias gariepinus
-  family: 未知
+  family: Clariidae
   conservation: NE
   category: yangtze
   distribution:
@@ -4993,7 +5000,7 @@ species:
 - id: ictalurus_punctatus
   name: 斑点叉尾鮰
   scientific: Ictalurus punctatus
-  family: 未知
+  family: Ictaluridae
   conservation: NE
   category: yangtze
   distribution:
@@ -5006,7 +5013,7 @@ species:
 - id: ameiurus_nebulosus
   name: 云斑鮰
   scientific: Ameiurus nebulosus
-  family: 未知
+  family: Ictaluridae
   conservation: NE
   category: yangtze
   distribution:
@@ -5019,7 +5026,7 @@ species:
 - id: phractocephalus_hemioliopterus
   name: 红尾护头鲿
   scientific: Phractocephalus hemioliopterus
-  family: 未知
+  family: Pimelodidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5032,7 +5039,7 @@ species:
 - id: hucho_bleekeri
   name: 川陕哲罗鲑
   scientific: Hucho bleekeri
-  family: 未知
+  family: Salmonidae
   conservation: CR
   category: yangtze
   distribution:
@@ -5045,7 +5052,7 @@ species:
 - id: brachymystax_lenok
   name: 秦岭细鳞鲑
   scientific: Brachymystax lenok
-  family: 未知
+  family: Salmonidae
   conservation: VU
   category: yangtze
   distribution:
@@ -5058,7 +5065,7 @@ species:
 - id: plecoglossus_altivelis
   name: 香鱼
   scientific: Plecoglossus altivelis
-  family: 未知
+  family: Plecoglossidae
   conservation: EN
   category: yangtze
   distribution:
@@ -5071,7 +5078,7 @@ species:
 - id: protosalanx_hyalocranius
   name: 大银鱼
   scientific: Protosalanx hyalocranius
-  family: 未知
+  family: Salangidae
   conservation: DD
   category: yangtze
   distribution:
@@ -5084,7 +5091,7 @@ species:
 - id: hemisalanx_brachyrostralis
   name: 短吻间银鱼
   scientific: Hemisalanx brachyrostralis
-  family: 未知
+  family: Salangidae
   conservation: VU
   category: yangtze
   distribution:
@@ -5097,7 +5104,7 @@ species:
 - id: neosalanx_tangkahkeii
   name: 陈氏新银鱼
   scientific: Neosalanx tangkahkeii
-  family: 未知
+  family: Salangidae
   conservation: DD
   category: yangtze
   distribution:
@@ -5110,7 +5117,7 @@ species:
 - id: neosalanx_oligodontis
   name: 寡齿新银鱼
   scientific: Neosalanx oligodontis
-  family: 未知
+  family: Salangidae
   conservation: DD
   category: yangtze
   distribution:
@@ -5123,7 +5130,7 @@ species:
 - id: neosalanx_taihuensis
   name: 太湖新银鱼
   scientific: Neosalanx taihuensis
-  family: 未知
+  family: Salangidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5136,7 +5143,7 @@ species:
 - id: neosalanx_anderssoni
   name: 安氏新银鱼
   scientific: Neosalanx anderssoni
-  family: 未知
+  family: Salangidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5149,7 +5156,7 @@ species:
 - id: salanx_prognathus
   name: 前颌间银鱼
   scientific: Salanx prognathus
-  family: 未知
+  family: Salangidae
   conservation: CR
   category: yangtze
   distribution:
@@ -5162,7 +5169,7 @@ species:
 - id: salanx_ariakensis
   name: 有明银鱼
   scientific: Salanx ariakensis
-  family: 未知
+  family: Salangidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5175,7 +5182,7 @@ species:
 - id: odontobutis_potamophila
   name: 河川沙塘鳢
   scientific: Odontobutis potamophila
-  family: 未知
+  family: Eleotridae
   conservation: LC
   category: yangtze
   distribution:
@@ -5188,7 +5195,7 @@ species:
 - id: bostrychus_sinensis
   name: 中华乌塘鳢
   scientific: Bostrychus sinensis
-  family: 未知
+  family: Eleotridae
   conservation: LC
   category: yangtze
   distribution:
@@ -5201,7 +5208,7 @@ species:
 - id: eleotris_oxycephala
   name: 尖头塘鳢
   scientific: Eleotris oxycephala
-  family: 未知
+  family: Eleotridae
   conservation: LC
   category: yangtze
   distribution:
@@ -5214,7 +5221,7 @@ species:
 - id: micropercops_swinhonis
   name: 小黄䱂鱼
   scientific: Micropercops swinhonis
-  family: 未知
+  family: Eleotridae
   conservation: LC
   category: yangtze
   distribution:
@@ -5318,7 +5325,7 @@ species:
 - id: mugilogobius_myxodermus
   name: 粘皮鲻虾虎鱼
   scientific: Mugilogobius myxodermus
-  family: 未知
+  family: Oxudercidae
   conservation: DD
   category: yangtze
   distribution:
@@ -5331,7 +5338,7 @@ species:
 - id: mugilogobius_abei
   name: 阿部鲻虾虎鱼
   scientific: Mugilogobius abei
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5344,7 +5351,7 @@ species:
 - id: acanthogobius_elongata
   name: 长体刺虾虎鱼
   scientific: Acanthogobius elongata
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5357,7 +5364,7 @@ species:
 - id: acanthogobius_ommaturus
   name: 斑尾刺虾虎鱼
   scientific: Acanthogobius ommaturus
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5370,7 +5377,7 @@ species:
 - id: chaeturichthys_stigmatias
   name: 矛尾虾虎鱼
   scientific: Chaeturichthys stigmatias
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5383,7 +5390,7 @@ species:
 - id: glossogobius_giuris
   name: 舌虾虎鱼
   scientific: Glossogobius giuris
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5396,7 +5403,7 @@ species:
 - id: tridentiger_trigonocephalus
   name: 纹缟虾虎鱼
   scientific: Tridentiger trigonocephalus
-  family: 未知
+  family: Oxudercidae
   conservation: DD
   category: yangtze
   distribution:
@@ -5409,7 +5416,7 @@ species:
 - id: tridentiger_barbatus
   name: 髭缟虾虎鱼
   scientific: Tridentiger barbatus
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5422,7 +5429,7 @@ species:
 - id: taenioides_cirratus
   name: 须鳗虾虎鱼
   scientific: Taenioides cirratus
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5435,7 +5442,7 @@ species:
 - id: trypauchen_vagina
   name: 孔虾虎鱼
   scientific: Trypauchen vagina
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5448,7 +5455,7 @@ species:
 - id: boleophthalmus_pectinirostris
   name: 大弹涂鱼
   scientific: Boleophthalmus pectinirostris
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5461,7 +5468,7 @@ species:
 - id: periophthalmus_magnuspinnatus
   name: 大鳍弹涂鱼
   scientific: Periophthalmus magnuspinnatus
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5474,7 +5481,7 @@ species:
 - id: periophthalmus_modestus
   name: 弹涂鱼
   scientific: Periophthalmus modestus
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5487,7 +5494,7 @@ species:
 - id: scartelaos_histophorus
   name: 青弹涂鱼
   scientific: Scartelaos histophorus
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5500,7 +5507,7 @@ species:
 - id: luciogobius_guttatus
   name: 竿虾虎鱼
   scientific: Luciogobius guttatus
-  family: 未知
+  family: Oxudercidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5552,7 +5559,7 @@ species:
 - id: oreochromis_niloticus
   name: 尼罗罗非鱼
   scientific: Oreochromis niloticus
-  family: 未知
+  family: Cichlidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5565,7 +5572,7 @@ species:
 - id: oryzias_latipes
   name: 青鳉
   scientific: Oryzias latipes
-  family: 未知
+  family: Adrianichthyidae
   conservation: LC
   category: yangtze
   distribution:
@@ -5578,7 +5585,7 @@ species:
 - id: hyporamphus_intermedius
   name: 间下鱵
   scientific: Hyporamphus intermedius
-  family: 未知
+  family: Hemiramphidae
   conservation: LC
   category: yangtze
   distribution:
@@ -5591,7 +5598,7 @@ species:
 - id: gambusia_affimis
   name: 食蚊鱼
   scientific: Gambusia affimis
-  family: 未知
+  family: Poeciliidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5617,7 +5624,7 @@ species:
 - id: mastacembelus_sinensis
   name: 中华刺鳅
   scientific: Mastacembelus sinensis
-  family: 未知
+  family: Mastacembelidae
   conservation: LC
   category: yangtze
   distribution:
@@ -5630,7 +5637,7 @@ species:
 - id: mastacembelus_armatus
   name: 大刺鳅
   scientific: Mastacembelus armatus
-  family: 未知
+  family: Mastacembelidae
   conservation: LC
   category: yangtze
   distribution:
@@ -5643,7 +5650,7 @@ species:
 - id: macropodus_chinensis
   name: 圆尾斗鱼
   scientific: Macropodus chinensis
-  family: 未知
+  family: Osphronemidae
   conservation: NT
   category: yangtze
   distribution:
@@ -5656,7 +5663,7 @@ species:
 - id: macropodus_opercularis
   name: 叉尾斗鱼
   scientific: Macropodus opercularis
-  family: 未知
+  family: Osphronemidae
   conservation: NT
   category: yangtze
   distribution:
@@ -5669,7 +5676,7 @@ species:
 - id: channa_argus
   name: 乌鳢
   scientific: Channa argus
-  family: 未知
+  family: Channidae
   conservation: LC
   category: yangtze
   distribution:
@@ -5682,7 +5689,7 @@ species:
 - id: channa_asiatica
   name: 月鳢
   scientific: Channa asiatica
-  family: 未知
+  family: Channidae
   conservation: LC
   category: yangtze
   distribution:
@@ -5695,7 +5702,7 @@ species:
 - id: channa_maculata
   name: 斑鳢
   scientific: Channa maculata
-  family: 未知
+  family: Channidae
   conservation: LC
   category: yangtze
   distribution:
@@ -5786,7 +5793,7 @@ species:
 - id: repomucenus_olidus
   name: 香斜棘䲗
   scientific: Repomucenus olidus
-  family: 未知
+  family: Callionymidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5812,7 +5819,7 @@ species:
 - id: micropterus_salmoides
   name: 大口黑鲈
   scientific: Micropterus salmoides
-  family: 未知
+  family: Centrarchidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5890,7 +5897,7 @@ species:
 - id: coreoperca_loona
   name: 漓江少鳞鳜
   scientific: Coreoperca loona
-  family: 未知
+  family: Percichthyidae
   conservation: NT
   category: yangtze
   distribution:
@@ -5903,7 +5910,7 @@ species:
 - id: sander_lucioperca
   name: 梭鲈
   scientific: Sander lucioperca
-  family: 未知
+  family: Percidae
   conservation: NE
   category: yangtze
   distribution:
@@ -5916,7 +5923,7 @@ species:
 - id: eleutheronema_tetradactylum
   name: 四指马鲅
   scientific: Eleutheronema tetradactylum
-  family: 未知
+  family: Polynemidae
   conservation: NE
   category: yangtze
   distribution:
@@ -6009,6 +6016,45 @@ species:
   scientific: Takifugu coronoidus
   family: Tetraodontidae
   conservation: NE
+  category: yangtze
+  distribution:
+    continents:
+    - 亚洲
+    countries:
+    - 中国
+    basins:
+    - 长江流域
+- id: chanodichthys_abramoides
+  name: 壮体鲌
+  scientific: Chanodichthys abramoides
+  family: Xenocyprididae
+  conservation: DD
+  category: yangtze
+  distribution:
+    continents:
+    - 亚洲
+    countries:
+    - 中国
+    basins:
+    - 长江流域
+- id: pseudaspius_hakonensis
+  name: 珠星三块鱼
+  scientific: Pseudaspius hakonensis
+  family: Leuciscidae
+  conservation: LC
+  category: yangtze
+  distribution:
+    continents:
+    - 亚洲
+    countries:
+    - 中国
+    basins:
+    - 长江流域
+- id: culter_compressocorpus
+  name: 扁体鲌
+  scientific: Culter compressocorpus
+  family: Xenocyprididae
+  conservation: DD
   category: yangtze
   distribution:
     continents:
