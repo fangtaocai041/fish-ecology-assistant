@@ -1,3 +1,5 @@
+<div align="center">
+
 # Fish Ecology Assistant 🐟
 
 > 🌊 Everything Flows · Panta Rhei
@@ -13,6 +15,8 @@
 [![species](https://img.shields.io/badge/species-30-green)]()
 
 [English](README.md) · [中文](README.zh.md) · [Changelog](CHANGELOG.md) · [Architecture](docs/ARCHITECTURE.md)
+
+</div>
 
 ---
 
