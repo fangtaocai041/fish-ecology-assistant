@@ -1,4 +1,4 @@
-﻿# Fish Ecology Assistant 🌊
+# Fish Ecology Assistant 🌊
 
 > 🌊 Everything Flows · Panta Rhei
 >
