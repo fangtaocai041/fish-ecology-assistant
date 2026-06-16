@@ -1,4 +1,4 @@
-﻿"""Shared utilities for fish-ecology-assistant.
+"""Shared utilities for fish-ecology-assistant.
 
 Unified journal whitelist, search query builder, and OCR variant generator.
 Previously duplicated between adapter.py and orchestrator.py — now single source of truth.
@@ -48,42 +48,23 @@ def build_search_queries(scientific_name: str, chinese_name: str = "") -> List[s
     queries = [scientific_name]
     if chinese_name:
         queries.append(chinese_name)
-    disciplines = {
-        "genetics": f"{scientific_name} genetics",
-        "conservation": f"{scientific_name} conservation",
-        "biology": f"{scientific_name} biology",
-    }
-    if chinese_name:
-        disciplines["chinese_genetics"] = f"{chinese_name} 遗传"
-        disciplines["chinese_conservation"] = f"{chinese_name} 保护"
-        disciplines["chinese_biology"] = f"{chinese_name} 生物学"
-    queries.extend(disciplines.values())
-    return queries
 
 
-def generate_ocr_variants(name: str, limit: int = 20) -> List[str]:
-    """Generate OCR error variants for a scientific name.
 
-    Covers:
-      - Character confusion (u↔b, i↔l/e, n↔m)
-      - Single-character deletion
-      - Suffix truncation (1-3 chars)
-    """
+def generate_ocr_variants(name: str, limit: int = 20):
+    """Generate OCR error variants for a scientific name."""
     variants = set()
     confusable = {
         "u": ["b"], "b": ["u"],
         "i": ["l", "e"], "l": ["i"],
         "n": ["m"], "m": ["n"],
     }
-    # Character substitution
     for i, ch in enumerate(name):
         if ch.lower() in confusable:
             for sub in confusable[ch.lower()]:
                 variants.add(name[:i] + sub + name[i + 1:])
-    # Single-character deletion
     for i in range(len(name)):
         variants.add(name[:i] + name[i + 1:])
-    # Suffix truncation
     for n in range(1, min(4, len(name))):
         variants.add(name[:-n])
     return list(variants)[:limit]

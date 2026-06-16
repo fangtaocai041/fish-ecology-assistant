@@ -1,4 +1,4 @@
-﻿"""Tests for ProjectHub — 多项目协调中枢测试。"""
+"""Tests for ProjectHub — 多项目协调中枢测试。"""
 
 import sys
 from pathlib import Path
