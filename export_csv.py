@@ -1,8 +1,9 @@
-"""Export all data to CSV files — open with Excel."""
+"""Export all data to CSV files in data/reports/ — open with Excel."""
 import sqlite3, csv, os
 
 DB = r'D:\Reasonix\fish-ecology-assistant\data\species.db'
-OUT = r'D:\Reasonix\fish-ecology-assistant'
+OUT = r'D:\Reasonix\fish-ecology-assistant\data\reports'
+os.makedirs(OUT, exist_ok=True)
 
 db = sqlite3.connect(DB)
 
@@ -15,7 +16,6 @@ for table in tables:
     if not rows:
         continue
     cols = [d[1] for d in db.execute(f"PRAGMA table_info([{table}])")]
-    
     path = os.path.join(OUT, f"{table}.csv")
     with open(path, 'w', newline='', encoding='utf-8-sig') as f:
         w = csv.writer(f)
@@ -25,5 +25,4 @@ for table in tables:
     print(f"  {table}.csv ({len(rows)} rows)")
 
 db.close()
-print(f"\nDone! Open folder: {OUT}")
-print("Double-click any .csv file to open in Excel.")
+print(f"\nDone! Files in: {OUT}")

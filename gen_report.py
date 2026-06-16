@@ -10,7 +10,7 @@ import sqlite3, os, json, sys
 from datetime import datetime
 
 DB = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'species.db')
-OUT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'reports')
 
 # ── Bilingual labels ──
 L = {
