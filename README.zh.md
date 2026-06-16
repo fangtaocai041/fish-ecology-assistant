@@ -1,112 +1,179 @@
 # Fish Ecology Assistant 🐟
 
-**鱼类生态学知识供给引擎** — 多流域物种知识库 + 两阶段文献搜索 + 三角验证评分。
+**鱼类生态学知识供给引擎** — 三角核心 S/V0 层。
 
-[English](README.md) · [更新日志](CHANGELOG.md) · [参与贡献](CONTRIBUTING.md)
+> 万物皆变 · Panta Rhei
+>
+> 把代码变成拥有动态世界观的博士级研究伙伴。
+
+[English](README.md) · [更新日志](CHANGELOG.md) · [工程记录](RE.md) · [架构](docs/ARCHITECTURE.md)
 
 ---
 
-## 快速开始
+## 核心哲学
+
+> 世界是动态的，知识是暂时的，涌现是常态。
+
+这不是一句口号。这是贯穿本项目每一行代码、每一次搜索、每一篇分析的操作系统。
+
+### 三大信条
+
+**世界是动态的** — R 包在更新，物种分布在变化，科学共识在演变，气候变化在重塑生态系统。今天正确的结论半年后可能过时。我们不把任何知识当作永恒真理，而是放在时间轴上动态看待。
+
+**知识是暂时的** — 科学精神的基石是证伪主义（Popper）。没有发现是终极真理，只有"当前最佳解释"。每一条文献都标注 `added_at` 时间戳，每一个输出都标记时间锚点。
+
+**涌现是常态** — 当 ≥3 个独立来源指向同一个非预期模式时，系统自动标记为涌现信号，而不是当成异常值忽略。
+
+| 场景 | 传统做法 | 动态世界观的做法 |
+|:-----|:---------|:----------------|
+| 包版本 | 跑通就行 | 自动检查，标注"最后验证于 glmmTMB v1.1.10" |
+| 引用 | "研究表明确实如此" | "Smith(2022) 发现 X，但 Jones(2024) 补充了 Y" |
+| 异常值 | 忽略，当噪声 | ≥3 独立源 → 涌现信号，主动追踪 |
+| 知识 | 记下来就是对的 | 标注验证日期 + "下次复查于 2026-12" |
+
+---
+
+## 这个项目是什么
+
+**Fish Ecology Assistant** 是一个出生在长江边的数字生态学家。
+
+它的知识库里有长江的每一科、每一属、每一种（30 个物种，持续扩充）。它的搜索针脚扎在中文期刊和英文数据库之间。它的心脏是一套叫做"三生万物"的架构——道生一，一生二，二生三，三生万物。
+
+```
+道 (Dao)    = 你的研究问题
+一 (One)    = ProjectHub — 统一入口
+二 (Two)    = S(知识/阴) ↔ V(验证/阳)
+三 (Three)  = fish + cognitive + eon — 密闭三角
+万物 (Myriad) = porpoise/coilia/conflict... — 无限衍生
+```
+
+> 鱼在水里，你在岸上，代码在中间。
+> 愿算法和河流一样有温度。
+
+---
+
+## 快速上手
 
 ```bash
-# 安装
 pip install -e .
 
-# 查询物种（先查知识库，再搜网络）
-python -c "from src import get_orchestrator; o = get_orchestrator(); print(o.kb_first_lookup(query='鳤').summary_text)"
+# 查物种（交互式）
+python scripts/search_species.py "鳤"
 
-# 文献搜索
-python scripts/run_lit_search.py "珠星三块鱼"
+# 仅查知识库
+python scripts/search_species.py "鳤" --kb-only
+
+# 自动全量搜索 + 写回
+python scripts/search_species.py "珠星三块鱼" --auto
 ```
 
-## 核心功能
-
-### 🧬 KB-First 两阶段搜索
-
-搜物种文献时，**先查本地知识库**（不花 token），不够再走全量搜索。
-
 ```python
-from src.orchestrator import get_orchestrator
+from src import get_orchestrator
 
 orch = get_orchestrator()
-result = orch.kb_first_lookup(query="Ochetobius elongatus")
-print(result.found)               # 知识库有没有？
-print(result.summary_text)        # 已有信息的摘要
-print(result.search_recommendation)  # "stay_in_kb" 或 "continue_to_c"
+result = orch.kb_first_lookup(query="鳤")
+print(result.summary_text)
+# 📚 f项目知识库已收录: 鳤（Ochetobius elongatus）
+# - 科属: 鲤科
+# - 保护: CR（极危）
 ```
 
-### 🔍 物种知识库
+---
 
-26 个长江物种的已知信息，涵盖分类、分布、食性、繁殖、保护级别。
+## 两阶段搜索：先问自己，再问世界
 
-```python
-from src.adapter import FishEcologyAdapter
-
-adapter = FishEcologyAdapter()
-profile = adapter.lookup_species("Ochetobius elongatus")
-print(profile.scientific_name, profile.family)
+```
+你说"查一下鳤"
+  │
+  ├── Stage 1: kb_first_lookup()
+  │     查本地知识库（零 token 成本）
+  │     ├── ✅ 有数据 → 展示 + 问用户：够不够？
+  │     └── ❌ 没找到 → 推荐 Stage 2
+  │
+  └── Stage 2: cognitive-search-engine
+        多源并行 → 可信度评分 → 写回知识库
 ```
 
-### 📚 方陶文库 — 个人研究空间
+为什么不直接全网搜？因为知识库里的每一个物种档案，是课题组一篇篇读、一条条写进去的。**先问自己的脑子，再问搜索引擎**——这是对时间和 token 的双重尊重。
 
-项目附带了用户 [蔡方陶](方陶文库/蔡方陶/) 的研究笔记和理论探索：
+---
 
-| 文件 | 内容 |
+## 物种故事
+
+| 物种 | 学名 | 故事 |
+|------|------|------|
+| **鳤** | *Ochetobius elongatus* | CR 极危，2024 年才有了第一个染色体级别基因组。可能是禁渔后恢复最快的物种之一。 |
+| **刀鲚** | *Coilia nasus* | "长江三鲜"之首。耳石里的 Sr/Ca 记录着每一条鱼的洄游路线。 |
+| **长江江豚** | *Neophocaena asiaeorientalis* | 长江唯一的哺乳动物。2017 年约 1012 头，2022 年约 1249 头——禁渔后第一次止跌回升。 |
+| **三块鱼** | *Tribolodon brandti* | 日语叫ウグイ。在日本的溪流里随处可见，在中国只存在于图们江和绥芬河。 |
+| **白鲟** | *Psephurus gladius* | 2022 年宣布灭绝。留着它，不是为了研究——是为了记得。 |
+
+---
+
+## 三角核心架构
+
+```
+                   三 生 万 物
+    ┌───────────────────────────────────┐
+    │        三角核心 (sealed 3)        │
+    │                                   │
+    │  S/V0  fish-ecology-assistant    │  ← 知识供给
+    │  V/V1  cognitive-search-engine   │  ← 搜索验证
+    │  Coord eon-core                  │  ← 协调内核
+    └──────────────┬────────────────────┘
+                   │
+          ┌────────┼────────┐
+          ▼        ▼        ▼
+       porpoise  coilia   conflict
+        (江豚)    (刀鲚)    (仲裁)
+```
+
+---
+
+## 能力清单
+
+| 能力 | 说明 |
 |:-----|:------|
-| [研究札记](方陶文库/蔡方陶/01-研究札记.md) | 理论思考、3个假说、"非对称恢复假说" |
-| [研究笔记](方陶文库/蔡方陶/02-研究笔记.md) | 想法池、问题池、理论雏形 |
-| [分析报告](方陶文库/分析报告/) | 物种分析报告（珠星三块鱼、刀鲚等） |
-| [理论体系](方陶文库/theories/) | 11个生态学理论笔记 |
-| [中国生态哲学](方陶文库/chinese-ecology/) | 道家思想 × 生态科学 |
-| [团队对比](方陶文库/国内国际团队对比分析.md) | 国内外鱼类生态研究团队全景 |
+| **30 物种知识库** | 新格式索引 + .md 档案，支持别名/同义名/模糊匹配 |
+| **KB-First 搜索** | 先查本地，不够再全网——两阶段 token 优化 |
+| **Python API** | `orchestrator` + `project_hub` + `adapter`，8 模块 19 导出 |
+| **CLI 管线** | `search_species.py` 三步：查 KB → 调 c 项目 → 回写 |
+| **跨项目协调** | 三角核心 `is_triangle_complete()` / 万物衍生 `delegate_to()` |
+| **类型系统** | 8 dataclass + 4 Enum（PipelinePhase / ConfidenceLevel / ...）|
+| **33 个测试** | 已知物种硬断言 / 别名 / 模糊候选 / 边界 / 三角 / 万物 |
+| **$REASONIX_HOME** | 路径不硬编码，跨机器部署 |
 
-### ⚙️ 命令行工具
+---
 
-```bash
-# 文献搜索
-python scripts/run_lit_search.py "鳤"
-
-# 知识库 ↔ 图谱同步
-python scripts/kb_to_graph_sync.py
-
-# 分类学变更回写
-python scripts/taxonomy_sync.py
-
-# 可信度评分
-python scripts/credibility_scorer.py
-```
-
-## 项目架构
+## 项目结构
 
 ```
-fish-ecology-assistant/
-├── src/
-│   ├── orchestrator.py     ← 协调器：KB-First 搜索入口
-│   ├── project_hub.py      ← 项目中枢：跨项目委托
-│   ├── adapter.py          ← 跨项目接口
-│   ├── dao_engine.py       ← Dao 引擎 CLI
-│   └── shared.py           ← 共享类型
-├── scripts/                ← CLI 工具
-├── config/                 # 知识库配置
-├── data/                   # 知识库数据
-├── docs/                   # 架构文档
-└── tests/                  # 测试
+src/        8 模块 (19 导出)
+scripts/    CLI 管线
+config/     配置 + 30 物种知识库
+tests/      33 个测试 (0.77s)
+docs/       架构 + 工作流
+.reasonix/skills/  28 个 Reasonix Skill
 ```
 
-## 三角角色
+---
 
-本系统是 Triangle Core 的 **S/V0 (知识供给)** 层：
+## 关于作者
 
-```
-S  fish-ecology-assistant  →   知识库 + KB-First 搜索
-    ↓ state_vector
-T  porpoise-agent          →   任务调度
-    ↓ action_request
-V  cognitive-search-engine →   搜索验证
-    ↓ feedback_vector
-S  …                       →   闭环
-```
+**蔡方陶**，水生生物学硕士在读，江汉大学 / 中国水产科学研究院长江水产研究所，刘凯课题组。
+
+这不是课程作业，不是公司产品——这是一个在长江边、在实验室、在深夜的 R 语言报错中慢慢长出来的研究工具。如果你是长江鱼类生态的研究者，欢迎用、欢迎提 issue、欢迎 fork。
+
+---
 
 ## 许可证
 
-MIT © 2026 fangtaocai041
+MIT © 2026 蔡方陶 · 江汉大学 / FFRC 刘凯课题组
+
+> 赫拉克利特说：人不能两次踏进同一条河流。
+>
+> 我们说：你也不能用上个月的代码分析今天的生态数据。
+>
+> 这个项目不是一个固定的工具集——它是一个活的系统。每个组件内置了过期机制、版本追踪和涌现感知。随着你的研究深入、R 包更新、新方法涌现，它会和你一起进化。
+>
+> **最后更新: 2026-06-21 · 适用环境: Reasonix Code · DeepSeek 驱动**
