@@ -139,30 +139,30 @@
 > — 《道德经》第四十二章
 
 ```
-        ?(Dao)
-    外部世界 · 用户的研究问题    长江生态系统的真实需求              ?              ?        一 (One)  ?太极
+        道(Dao)
+    外部世界 · 用户的研究问题    长江生态系统的真实需求              │              │        一 (One) → 太极
     命令进入系统 · 统一入口
     fish-ecology-assistant
-              ?    ┌─────────┴─────────?    ?                  ?  ?(Yin)           ?(Yang)
-  S/V0 · ?          V/V1 · ?  知识供给            搜索验证
+              │    ┌─────────┴─────────┐    │                  │  阴(Yin)           阳(Yang)
+  S/V0 · 知识供给     V/V1 · 搜索验证
   fish                cognitive
-    ?                  ?    └────────┬──────────?             ?矛盾统一
-             ?        ?(Three)  ?三体
-    三角最小封闭结?    S + V + Coord
-             ?    ┌────────┼────────┬────────?    ?       ?       ?       ?  P₁      P₁      P₁      C
+    │                  │    └────────┬──────────┘             │ 矛盾统一
+             │        三(Three) → 三体
+    三角最小封闭结构    S + V + Coord
+             │    ┌────────┼────────┬────────┐    │       │       │       │  P₁      P₂      P₃      C
 porpoise  coilia  culter  conflict
-    ?       ?       ?       ?    └────────┼────────┼────────?             ?    万物 (Myriad Things)
+    │       │       │       │    └────────┼────────┼────────┘             │    万物 (Myriad Things)
     一切事物· 无限演化
     Skills · Papers · Analyses
 ```
 
-**不是"一万种物种"。是"一??*
+**不是"一万种物种"。是"一"。**
 
 | ① | 中文 | English | 在系统中的含義 |
 |----|------|---------|---------------|
 | ** * | 外界, 自然 | Dao — the external world | 用户的研究问题 长江生态的现实需求|
-| **一** | 太极, 命令 | One ?the undivided | 命令进入 fish-ecology-assistant, 统一入口 |
-| ** * | 阴阳, 两仪 | Two — Yin and Yang | S(知识/阴)  ?V(验证/阳),, 太极生两仪|
+| **一** | 太极, 命令 | One — the undivided | 命令进入 fish-ecology-assistant, 统一入口 |
+| ** * | 阴阳, 两仪 | Two — Yin and Yang | S(知识/阴)  V(验证/阳),, 太极生两仪|
 | ** * | 三体, 三角 | Three — the Triangle | fish + cognitive + eon-core, 矛盾统一的封闭结构|
 | **万物** | 一切事物| Myriad — all things | 衍生项目 + Skills + 论文 + 输出, 无限演化 |
 
@@ -184,7 +184,7 @@ docker compose up
 
 ## 📋 快速导航
 - 🎯 技能系统： 6 流水线 + 20 领域 + 2 守护 = 28 Skills
-- 🔌 MCP 服务: 21 个（?cognitive_search DirectLoader）- 📁 项目结构: [见上方完整树](#)
+- 🔌 MCP 服务: 21 个（含 cognitive_search DirectLoader）- 📁 项目结构: [见上方完整树](#)
 - 📜 完整文档: [docs/](docs/) + [.reasonix/handbooks/](.reasonix/handbooks/)
 - 🧠 工程语法: [engineering-grammar.md](.reasonix/handbooks/engineering-grammar.md)
 
@@ -202,7 +202,7 @@ docker compose up
 | **v4** | 2026-06-06 | 系统论 | + 双核哲学（Panta Rhei + 系统论），7  大系统原则 + 4 效率原则，工程语法(18 WHEN→THEN)，全量代码映射|
 | **v3** | 2026-06-05 | 工程化| 全面重写：Panta Rhei 哲学，能力对比，工程效率原则，稀疏激活|
 | **v2** | 2026-06-05 | Panta Rhei | 动态世界观整合，涌现检测，校准语言 |
-| **v1** | 2026-06-05 | 原始版本 | 初始发布 — 鱼类生态学助手? 引擎 + 12 子智能体 |
+| **v1** | 2026-06-05 | 原始版本 | 初始发布 — 鱼类生态学助手、5 引擎 + 12 子智能体 |
 
 ---
 
