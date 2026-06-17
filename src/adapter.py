@@ -17,9 +17,17 @@ Capabilities:
 from __future__ import annotations
 
 import logging
+import sys
+from pathlib import Path
 from typing import Any, Dict, List
 
 logger = logging.getLogger(__name__)
+
+# Import shared adapter protocol (workspace root on sys.path)
+try:
+    from scripts.adapter_protocol import IProjectAdapter
+except ImportError:
+    IProjectAdapter = object  # fallback for standalone usage
 
 # 延迟导入 — orchestrator 负责物种知识库所有权
 _orchestrator = None
@@ -33,7 +41,7 @@ def _get_orchestrator():
     return _orchestrator
 
 
-class FishEcologyAdapter:
+class FishEcologyAdapter(IProjectAdapter):
     """Adapter for fish-ecology-assistant (V0 — 知识供给层).
 
     Implements IProjectAdapter protocol.
