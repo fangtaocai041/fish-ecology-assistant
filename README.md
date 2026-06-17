@@ -171,7 +171,7 @@ User Query
 
 | Category | Tool | Description |
 |----------|------|-------------|
-| **Search** | `cognitive_search` | **Primary engine** ?DirectLoader, importlib zero-process |
+| **Search** | `cognitive_search` | **Primary engine** ✅ DirectLoader, importlib zero-process |
 | | `scholar` | Google Scholar literature search |
 | | `article` | PMC full-text + journal quality (EasyScholar/OpenAlex) |
 | | `scholarly` | Multi-source academic cross-database search |
@@ -202,7 +202,7 @@ User Query
 
 ```
         道(Dao)
-    外部世界 · 用户的研究问?    长江生态系统的真实需?              ?              ?        一 (One)  ?太极
+    外部世界 · 用户的研究问题    长江生态系统的真实需求              ?              ?        一 (One)  ?太极
     命令进入系统 · 统一入口
     fish-ecology-assistant
               ?    ┌─────────┴─────────?    ?                  ?  陰(Yin)           陽(Yang)
@@ -210,7 +210,7 @@ User Query
   fish                cognitive
     ?                  ?    └────────┬──────────?             ?矛盾统一
              ?        三(Three)  ?三体
-    三角最小封闭结?    S + V + Coord
+    三角最小封闭结构    S + V + Coord
              ?    ┌────────┼────────┬────────?    ?       ?       ?       ?  P?      P?      P?      C
 porpoise  coilia  culter  conflict
     ?       ?       ?       ?    └────────┼────────┼────────?             ?    万物 (Myriad Things)
@@ -218,17 +218,17 @@ porpoise  coilia  culter  conflict
     Skills · Papers · Analyses
 ```
 
-**不是"一万种物种"。是"一??*
+**不是"一万种物种"。是"一"。**
 
-| 道 | 中文 | English | 在系统中的含?|
+| 道 | 中文 | English | 在系统中的含义 |
 |----|------|---------|---------------|
-| **道** | 外界, 自然 | Dao — the external world | 用户的研究问? 长江生态的现实需?|
+| **道** | 外界, 自然 | Dao — the external world | 用户的研究问题 长江生态的现实需求 |
 | **一** | 太极, 命令 | One — the undivided | 命令进入 fish-ecology-assistant, 统一入口 |
-| **二** | 阴阳, 两仪 | Two — Yin and Yang | S(知识/? ?V(验证/?, 太极生两?|
-| **三** | 三体, 三角 | Three — the Triangle | fish + cognitive + eon-core, 矛盾统一的封闭结?|
+| **二** | 阴阳, 两仪 | Two — Yin and Yang | S(知识/阴) ?V(验证/阳), 太极生两仪|
+| **三** | 三体, 三角 | Three — the Triangle | fish + cognitive + eon-core, 矛盾统一的封闭结构|
 | **万物** | 一切事物| Myriad — all things | 衍生项目 + Skills + 论文 + 输出, 无限演化 |
 
-> **铁律**: 三角密闭 (缺一不可) · 万物开?(无限衍生) · 三角不依赖万?· 二生三即矛盾统一
+> **铁律**: 三角密闭 (缺一不可) · 万物开放(无限衍生) · 三角不依赖万物· 二生三即矛盾统一
 
 ---
 
@@ -273,72 +273,72 @@ Restart Reasonix, everything is ready.
 
 ```
 fish-ecology-assistant/
-├── README.md                 ?English
-├── README.zh.md              ?中文
+├── README.md                 📄 English
+├── README.zh.md              📄 中文
 │   ├── .reasonix/
-?  ├── mcp-servers/             ?21 MCP services (incl. deepwiki)
-?  ?  └── ima-server.mjs      ?14 tools
-?  ??  ├── skills/                  ?28 AI Skill playbooks
-?  ?  ├── (6 pipeline)  research-orchestrator/planner/executor/analyst/writer/reviewer
-?  ?  ├── (4 search)    academic/cognitive/fuzzy/unified-species-search
-?  ?  ├── (3 research)  frontier-tracker / paper-analyzer / phd-proposal-writer
-?  ?  ├── (3 tools)     ima-smart-search / zotero-assistant / obsidian-assistant
-?  ?  ├── (3 stats)     stats-assistant / stats-method-finder / verify-stats-handbook
-?  ?  ├── (2 guard)     karpathy-guard / rule-auditor
-?  ?  ├── (2 system)    component-health-check / living-system-dashboard
-?  ?  ├── (1 search)    google-scholar-search
-?  ?  ├── (1 debate)    debate-validator
-?  ?  ├── (1 cross)     cross-delegate
-?  ?  └── (1 evolve)    self-evolve
-?  ??  ├── handbooks/
-?  ?  ├── systems-thinking.md        📋 7 system principles
-?  ?  ├── engineering-grammar.md     → 18 WHEN→THEN rules
-?  ?  ├── activation-matrix.md       📋 component coordination
-?  ?  ├── ADVANTAGES.md              📋 frontier comparison
-?  ?  ├── WEAKNESSES.md              📋 gap analysis
-?  ?  ├── IMPROVEMENT_PLAN.md        📋 improvement roadmap
-?  ?  ├── CROSS_PROJECT_PROTOCOL.md  📋 cross-agent delegation
-?  ?  ├── DEEPWIKI_INTEGRATION.md    📋 DeepWiki integration
-?  ?  ├── LIVING_SYSTEM.md           📋 living system implementation
-?  ?  ├── README_UPDATE_RULE.md      📋 README sync protocol
-?  ?  └── stats-methods.md           📋 statistics methods handbook
-?  ??  └── readme-versions/              📋 README version archive
-│   ├── src/                       ?Core Python engine
-?  ├── adapter.py            ?IProjectAdapter + score()
-?  ├── orchestrator.py       ?KB-first species search coordinator
-?  ├── project_hub.py        ?Cross-project coordination (eon-core bridge)
-?  ├── dao_engine.py         ?Philosophical chain executor
-?  └── shared.py             ?Shared types + utilities
-│   ├── fishkb/                    ?Independent reusable core (pip install fishkb)
-?  ├── fishkb/db.py           ?KnowledgeDB → SQLite FTS5
-?  ├── fishkb/search.py       ?FishSpeciesMatcher → KB-First matching
-?  ├── fishkb/credibility.py  ?Paper credibility scoring
-?  └── fishkb/types.py        ?Core data types
+│   ├── mcp-servers/             📡 21 MCP services (incl. deepwiki)
+│   │   └── ima-server.mjs      🔧 14 tools
+│   │   ├── skills/                  📚 28 AI Skill playbooks
+│   │   ├── (6 pipeline)  research-orchestrator/planner/executor/analyst/writer/reviewer
+│   │   ├── (4 search)    academic/cognitive/fuzzy/unified-species-search
+│   │   ├── (3 research)  frontier-tracker / paper-analyzer / phd-proposal-writer
+│   │   ├── (3 tools)     ima-smart-search / zotero-assistant / obsidian-assistant
+│   │   ├── (3 stats)     stats-assistant / stats-method-finder / verify-stats-handbook
+│   │   ├── (2 guard)     karpathy-guard / rule-auditor
+│   │   ├── (2 system)    component-health-check / living-system-dashboard
+│   │   ├── (1 search)    google-scholar-search
+│   │   ├── (1 debate)    debate-validator
+│   │   ├── (1 cross)     cross-delegate
+│   │   └── (1 evolve)    self-evolve
+│   │   ├── handbooks/
+│   │   ├── systems-thinking.md        📋 7 system principles
+│   │   ├── engineering-grammar.md     → 18 WHEN→THEN rules
+│   │   ├── activation-matrix.md       📋 component coordination
+│   │   ├── ADVANTAGES.md              📋 frontier comparison
+│   │   ├── WEAKNESSES.md              📋 gap analysis
+│   │   ├── IMPROVEMENT_PLAN.md        📋 improvement roadmap
+│   │   ├── CROSS_PROJECT_PROTOCOL.md  📋 cross-agent delegation
+│   │   ├── DEEPWIKI_INTEGRATION.md    📋 DeepWiki integration
+│   │   ├── LIVING_SYSTEM.md           📋 living system implementation
+│   │   ├── README_UPDATE_RULE.md      📋 README sync protocol
+│   │   └── stats-methods.md           📋 statistics methods handbook
+│   │   └── readme-versions/              📋 README version archive
+│   ├── src/                       🐍 Core Python engine
+│   ├── adapter.py            🔌 IProjectAdapter + score()
+│   ├── orchestrator.py       🔍 KB-first species search coordinator
+│   ├── project_hub.py        🔗 Cross-project coordination (eon-core bridge)
+│   ├── dao_engine.py         ☯ Philosophical chain executor
+│   └── shared.py             📦 Shared types + utilities
+│   ├── fishkb/                    📦 Independent reusable core (pip install fishkb)
+│   ├── fishkb/db.py           🗄️ KnowledgeDB → SQLite FTS5
+│   ├── fishkb/search.py       🔍 FishSpeciesMatcher → KB-First matching
+│   ├── fishkb/credibility.py  📊 Paper credibility scoring
+│   └── fishkb/types.py        📋 Core data types
 │   ├── config/
-?  ├── agent.yaml             ?Agent orchestration config
-?  ├── mcp_servers.yaml       ?21 MCP server definitions
-?  ├── coordination.yaml      ?Cross-project coordination
-?  ├── evolution.yaml         ?Self-evolution parameters
-?  ├── component_registry.yaml ?Living system registry
-?  ├── fish_species_kb.yaml   ?430 species index
-?  └── models.yaml            ?Multi-LLM provider config
+│   ├── agent.yaml             🎯 Agent orchestration config
+│   ├── mcp_servers.yaml       📡 21 MCP server definitions
+│   ├── coordination.yaml      🔗 Cross-project coordination
+│   ├── evolution.yaml         🔄 Self-evolution parameters
+│   ├── component_registry.yaml 🧪 Living system registry
+│   ├── fish_species_kb.yaml   📋 430 species index
+│   └── models.yaml            🤖 Multi-LLM provider config
 │   ├── data/
-?  ├── species.db             ?SQLite (species + traits + literature)
-?  ├── FISHMORPH.csv           ?2.3MB global morphology database
-?  └── reports/               ?HTML/CSV exports
+│   ├── species.db             🗄️ SQLite (species + traits + literature)
+│   ├── FISHMORPH.csv           📦 2.3MB global morphology database
+│   └── reports/               📊 HTML/CSV exports
 │   ├── scripts/
-?  ├── credibility_scorer.py  ?Triangulation scoring (0-100)
-?  ├── self_evolve.py         ?6-dimension evolution
-?  ├── kb_to_graph_sync.py    🔗 KB → Graph sync
-?  └── taxonomy_sync.py       ?NCBI taxonomy sync
+│   ├── credibility_scorer.py  📊 Triangulation scoring (0-100)
+│   ├── self_evolve.py         🔄 6-dimension evolution
+│   ├── kb_to_graph_sync.py    🔗 KB → Graph sync
+│   └── taxonomy_sync.py       🧬 NCBI taxonomy sync
 │   ├── Dockerfile
 ├── docker-compose.yml
 ├── docs/
-?  ├── ARCHITECTURE.md        ?Full 5-layer architecture
-?  ├── SKILL_PIPELINE.md      ?Skill pipeline documentation
-?  └── WORKFLOWS.md           ?Research workflows
+│   ├── ARCHITECTURE.md        🏗️ Full 5-layer architecture
+│   ├── SKILL_PIPELINE.md      📚 Skill pipeline documentation
+│   └── WORKFLOWS.md           🔬 Research workflows
 │   └── .github/workflows/
-    └── validate.yml           ?CI/CD auto-validate
+    └── validate.yml           ✅ CI/CD auto-validate
 ```
 
 ---
@@ -346,11 +346,11 @@ fish-ecology-assistant/
 ## 🗺️ Future Roadmap
 
 ### Strengths
-- **Species coverage**: 430 Yangtze fish species ?most comprehensive open-source dataset
+- **Species coverage**: 430 Yangtze fish species  — most comprehensive open-source dataset
 - **KB-First architecture**: SQLite FTS5 enables zero-network species lookup
 - **Living system**: Every component has birth date, last verification, and expiry policy
 - **Cross-project coordination**: eon-core EventBus + DAG routing for 6-project ecosystem
-- **Emergence-aware**: Kalman Filter + ? sources flag emergence
+- **Emergence-aware**: Kalman Filter + ≥3 sources flag emergence
 
 ### Known Limitations
 - FishBase sync blocked by SSL in current environment (script ready)
@@ -358,7 +358,7 @@ fish-ecology-assistant/
 - R package version drift monitoring depends on CRAN availability
 
 ### Milestones
-- [ ] FishBase auto-sync when SSL resolved ?500+ species with Mekong basin
+- [ ] FishBase auto-sync when SSL resolved → 500+ species with Mekong basin
 - [ ] Real-time population monitoring dashboard
 - [ ] Deep learning morphological trait extraction from images
 - [ ] Peer-reviewed publication on KB-First search methodology
@@ -371,13 +371,13 @@ fish-ecology-assistant/
 |:--------|:-----|:------|:-------------|
 | **v8.1** | 2026-06-20 | README Restoration | Restored from historical sessions: Systems Thinking 7 principles, DeepSeek efficiency principles, 道生万物 architecture, README Changelog, DeepWiki/Dual Core/Docker badges, unified ecosystem with 6 projects |
 | **v7.1** | 2026-06-20 | Data sync | + MCP 21 fix, Skills 28 fix, bilingual README sync, cognitive_search in ZH MCP table |
-| **v7.0** | 2026-06-10 | lit-search v3.1 | + lit-search v3.1 (synonym expansion→interactive?2-layer→triangulation), + credibility_scorer.py, + self_evolve.py, + kb_to_graph_sync.py |
+| **v7.0** | 2026-06-10 | lit-search v3.1 | + lit-search v3.1 (synonym expansion→interactive → 2-layer→triangulation), + credibility_scorer.py, + self_evolve.py, + kb_to_graph_sync.py |
 | **v6.5** | 2026-06-07 | Cognitive Engine | + DirectLoader protocol, dual-mode search, knowledge graph evolution |
 | **v6** | 2026-06-06 | Search v3.0 | 12 search engines (GS-first + CNKI/Wanfang/Baidu/CAS), google-scholar-search skill |
 | **v5** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Systems Thinking), 7 principles + 4 DS principles, engineering grammar (18 WHEN→THEN) |
 | **v4** | 2026-06-05 | Engineering | Full rewrite: Panta Rhei philosophy, capability comparison, sparse activation |
 | **v3** | 2026-06-05 | Panta Rhei | Dynamic worldview integration, emergence detection, calibrated language |
-| **v2** | 2026-06-05 | Original | Initial release ?Fish ecology assistant, 5 engines + 12 sub-agents |
+| **v2** | 2026-06-05 | Original | Initial release  — Fish ecology assistant, 5 engines + 12 sub-agents |
 
 ---
 
