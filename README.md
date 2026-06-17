@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
 
 🇨🇳 [中文](README.zh.md)
 
@@ -369,8 +369,8 @@ fish-ecology-assistant/
 
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
-| **v8.1** | 2026-06-20 | README Restoration | Restored from historical sessions: Systems Thinking 7 principles, DeepSeek efficiency principles, 道生万物 architecture, README Changelog, DeepWiki/Dual Core/Docker badges, unified ecosystem with 6 projects |
-| **v7.1** | 2026-06-20 | Data sync | + MCP 21 fix, Skills 28 fix, bilingual README sync, cognitive_search in ZH MCP table |
+| **v8.1** | 2026-06-18 | README Restoration | Restored from historical sessions: Systems Thinking 7 principles, DeepSeek efficiency principles, 道生万物 architecture, README Changelog, DeepWiki/Dual Core/Docker badges, unified ecosystem with 6 projects |
+| **v7.1** | 2026-06-18 | Data sync | + MCP 21 fix, Skills 28 fix, bilingual README sync, cognitive_search in ZH MCP table |
 | **v7.0** | 2026-06-10 | lit-search v3.1 | + lit-search v3.1 (synonym expansion→interactive → 2-layer→triangulation), + credibility_scorer.py, + self_evolve.py, + kb_to_graph_sync.py |
 | **v6.5** | 2026-06-07 | Cognitive Engine | + DirectLoader protocol, dual-mode search, knowledge graph evolution |
 | **v6** | 2026-06-06 | Search v3.0 | 12 search engines (GS-first + CNKI/Wanfang/Baidu/CAS), google-scholar-search skill |
@@ -400,4 +400,4 @@ MIT © 2026 fangtaocai041
 
 This project is not a fixed toolkit — it is a **living system**. Every component has built-in expiry mechanisms, version tracking, and emergence awareness. As your research deepens, R packages update, and new methods emerge, it evolves with you.
 
-*Last updated: 2026-06-17 | Environment: Reasonix Code · DeepSeek-powered*
+*Last updated: 2026-06-18 | Environment: Reasonix Code · DeepSeek-powered*

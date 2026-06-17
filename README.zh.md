@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   🇬🇧 <a href="README.md">English</a>
 </p>
 
@@ -91,7 +91,7 @@
 
 | 版本 | 日期 | 变更 |
 |------|------|------|
-| **v6.5.0** | 2026-06-20 | 🧬 KB-First 两阶段搜索+ 🏠 宿主容器架构 → `ProjectHub` 统一加载6个子系统 · `search_species()` 统一入口 · `delegate_to()` 跨项目委托· fishkb 子库独立 pip 安装 |
+| **v6.5.0** | 2026-06-18 | 🧬 KB-First 两阶段搜索+ 🏠 宿主容器架构 → `ProjectHub` 统一加载6个子系统 · `search_species()` 统一入口 · `delegate_to()` 跨项目委托· fishkb 子库独立 pip 安装 |
 | **v6.4.0** | 2026-06-12 | 🔧 工程架构 · exact match(_match_species) · taxonomy_log · detect_taxonomy_discrepancy |
 | **v6.3.0** | 2026-06-08 | ☯ 十层同心架构 + conflict-arbiter (V4) 集成 |
 | **v6.2** | 2026-06-08 | 三角核心 + 衍生生態· 长江 430 种鱼类知识库 · eon-core 智能调度 |
@@ -99,7 +99,7 @@
 | **v6.0** | 2026-06-07 | 认知搜索引擎 DirectLoader · 双模式搜索|
 | **v5.0** | 2026-06-06 | 12 搜索引擎 · GS优先 + 中文庫 |
 
-> **最新**: v6.5.0 · 2026-06-20
+> **最新**: v6.5.0 · 2026-06-18
 
 ## 🔗 生态体系：三角核心 + 万物衍生
 
@@ -194,8 +194,8 @@ docker compose up
 
 | 版本 | 日期 | 主题 | 变更内容 |
 |:------|:-----|:------|:-------------|
-| **v8.1** | 2026-06-20 | README 复原 | 从历史会话记录恢复 系统论七大原则、DeepSeek 效率原则、道生万物架构图、README 变更记录、DeepWiki/双核/Docker 徽标、统一六项目生态 |
-| **v7.1** | 2026-06-20 | 数据同步 | + MCP 21 修正, Skills 28 修正, 中英 README 同步, cognitive_search 补入中文 MCP 表|
+| **v8.1** | 2026-06-18 | README 复原 | 从历史会话记录恢复 系统论七大原则、DeepSeek 效率原则、道生万物架构图、README 变更记录、DeepWiki/双核/Docker 徽标、统一六项目生态 |
+| **v7.1** | 2026-06-18 | 数据同步 | + MCP 21 修正, Skills 28 修正, 中英 README 同步, cognitive_search 补入中文 MCP 表|
 | **v7.0** | 2026-06-10 | lit-search v3.1 | + lit-search v3.1 (同物异名展开→交互确认→12层管线→三角验证), + credibility_scorer.py, + self_evolve.py, + kb_to_graph_sync.py |
 | **v6** | 2026-06-07 | 认知引擎 | + DirectLoader 协议, 双模式搜索 知识图谱进化 |
 | **v5** | 2026-06-06 | 搜索 v3.0 | 12 引擎 (GS优先 + 知网/万方/百度学术/中科院）, google-scholar-search 技术 |
@@ -224,4 +224,4 @@ MIT License © 2026 fangtaocai041
 
 这个项目不是一套固定的工具集——它是一个**活的系统**。每个组件都内置了过期机制、版本追踪和涌现感知。随着你的研究深入、R包更新、新方法涌现，它会和你一起进化。
 
-*最后更新: 2026-06-17 | 适用环境: Reasonix Code · DeepSeek 驱动*
+*最后更新: 2026-06-18 | 适用环境: Reasonix Code · DeepSeek 驱动*
