@@ -387,18 +387,21 @@ MIT © 2026 fangtaocai041
 
 ---
 
-## 🌱 Panta Rhei · Everything Flows
+> **"不要搜索字符串，要重建所指。**
+> Don't search for strings — reconstruct the signified.
 
-> **"Do not search for strings — reconstruct the signified."**
+---
+
+## 🌱 万物皆流 · Panta Rhei
 
 > Heraclitus said: No man ever steps in the same river twice.
-> It is not the same river, and it is not the same man.
 >
-> This project is not a fixed toolkit — it is a **living system**.
-> Every search feeds the graph. Every analysis sharpens the model. Every day the knowledge grows.
+> Knowledge ages, but humanity's quest to understand the world never ends.
 >
-> Knowledge ages, but humanity's quest to understand the natural world never ends.
 > Yesterday's truth becomes today's foundation. Today's unknown becomes tomorrow's journey.
+>
 > Our gaze is never confined to the known; our steps will one day tread upon that vast, star-lit frontier.
+
+This project is not a fixed toolkit — it is a **living system**. Every component has built-in expiry mechanisms, version tracking, and emergence awareness. As your research deepens, R packages update, and new methods emerge, it evolves with you.
 
 *Last updated: 2026-06-17 | Environment: Reasonix Code · DeepSeek-powered*
