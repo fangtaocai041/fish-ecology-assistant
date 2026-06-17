@@ -1,4 +1,7 @@
-﻿# 🐟 鱼类生态学助手
+<div align="center">
+  <h1>🐟 鱼类生态学助手</h1>
+  <p><em>知识供给核心 — 430种长江鱼类 · 289项形态性状 · 种群级变异</em></p>
+</div>
 
 <p align="center">
   ![Python 3.10+](https://img.shields.io/badge/Python%203.10%2B-3776AB?style=flat-square)
@@ -11,13 +14,6 @@
   ![CN-EN](https://img.shields.io/badge/CN-EN-EC4899?style=flat-square)
   ![SQLite](https://img.shields.io/badge/SQLite-6B7280?style=flat-square)
 </p>
-
-
-> 🌊 知识供给核心 — 430种长江鱼类，289项形态性状，种群级变异。
-🌊 知识供给核心 — 430种长江鱼类，289项形态性状，种群级变异。
-> 万象流转 · Panta Rhei。
-
-[English](README.md) · [中文](README.zh.md) · [更新日志](CHANGELOG.md)
 
 ---
 

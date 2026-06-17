@@ -1,4 +1,7 @@
-﻿# 🐟 Fish Ecology Assistant
+<div align="center">
+  <h1>🐟 Fish Ecology Assistant</h1>
+  <p><em>Knowledge Supply Core — 430 Yangtze fish species · 289 morphological traits · population-level variation</em></p>
+</div>
 
 <p align="center">
   ![Python 3.10+](https://img.shields.io/badge/Python%203.10%2B-3776AB?style=flat-square)
@@ -11,12 +14,6 @@
   ![CN-EN](https://img.shields.io/badge/CN-EN-EC4899?style=flat-square)
   ![SQLite](https://img.shields.io/badge/SQLite-6B7280?style=flat-square)
 </p>
-
-
-> 🌊 Knowledge Supply Core — 430 Yangtze fish species, 289 morphological traits, population-level variation.
-> Panta Rhei — Everything flows.
-
-[English](README.md) · [中文](README.zh.md) · [CHANGELOG](CHANGELOG.md)
 
 ---
 
