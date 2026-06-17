@@ -1,10 +1,10 @@
-<p align="center">
-  🇨🇳 <a href="README.zh.md">中文</a>
-</p>
+<div align="center">
 
-# 🌊 Panta Rhei · Everything Flows
+🇨🇳 [中文](README.zh.md)
 
-> **Turn your coding agent into a PhD-level research team �?Standard 5-Layer Agent Architecture: Panta Rhei + Systems Thinking.**
+# 🌊 万物皆流 · Panta Rhei
+
+**将您的编码代理变成博士级别的研究团队 — 标准5层代理架构：Panta Rhei + 系统思维。**
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/fangtaocai041/fish-ecology-assistant)
@@ -17,6 +17,8 @@
 [![R](https://img.shields.io/badge/R-4.6.0-276DC3)]()
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED)](Dockerfile)
 [![CI](https://img.shields.io/badge/CI-passing-34D058)](.github/workflows/validate.yml)
+</div>
+
 
 <p>21 MCP services · 28 AI Skills · 12 search engines · 13 knowledge bases · 18 engineering rules · BDI + ReAct/ToT + MAS · Docker</p>
 
