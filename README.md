@@ -104,12 +104,17 @@ python src/main.py search --species "Coilia nasus"
 ```
 fish-ecology-assistant/
   src/           Core Python engine
-  ├── adapter.py     IProjectAdapter (V0 canonical)
+  ├── adapter.py     IProjectAdapter (V0 canonical) + score() method
   ├── orchestrator.py    KB-first species search
   ├── project_hub.py     Cross-project coordination
   ├── dao_engine.py      Philosophical chain executor
   ├── types.py           8 dataclasses + 4 enums
   └── kalman_emergence.py  Kalman Filter emergence detection
+  fishkb/         独立可复用的鱼类知识库核心库 (pip install fishkb)
+  ├── fishkb/db.py        KnowledgeDB — SQLite FTS5 知识库
+  ├── fishkb/search.py    FishSpeciesMatcher — KB-First 物种匹配
+  ├── fishkb/credibility.py   论文可信度评分
+  └── fishkb/types.py    核心数据类型
   config/
   ├── knowledge_base/   30 species .md profiles
   └── fish_species_kb.yaml  430 species index
@@ -138,6 +143,8 @@ fish-ecology-assistant/
 | 🔗 KB-First | ✅ | SQLite FTS5, zero-network for 30 core spp |
 | 🕸️ Trait Network | ✅ | Jaccard co-occurrence, keystone traits |
 | 📡 Kalman Filter | ✅ | Emergence detection from noisy data |
+| 📦 fishkb Sub-library | ✅ | Independent pip-installable core (KnowledgeDB + Matcher) |
+| 🎯 score() Adapter | ✅ | IProjectAdapter.score() for cross-project quality scoring |
 | 🔄 FishBase Sync | 🟡 | Script ready, SSL blocked in env |
 
 ---

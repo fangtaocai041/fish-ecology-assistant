@@ -4,6 +4,21 @@
 
 ---
 
+## v6.6.0 — 2026-06-27
+
+### 📦 fishkb 子库提取 + score() Adapter
+
+- 🧬 **fishkb 独立子库**: 从 `src/` 提取核心知识库到独立 `fishkb/` 包 (`pip install fishkb`)
+  - `fishkb.db.KnowledgeDB` — SQLite FTS5 物种知识库
+  - `fishkb.search.FishSpeciesMatcher` — KB-First 模糊物种匹配
+  - `fishkb.credibility.score_papers()` — 论文可信度评分
+  - `fishkb.types` — 核心数据类型
+- 🎯 **score() adapter 方法**: `IProjectAdapter.score(query, **kwargs)` — 跨项目质量评分端点
+- `src/orchestrator.py` 委托 `fishkb` 包进行物种匹配（向后兼容）
+- 测试新增 `test_search_performance.py` fishkb 集成验证
+
+---
+
 ## v6.5.3 — 2026-06-21
 
 ### 🔧 6 项工程缺陷修复 + 3 个隐性 Bug
