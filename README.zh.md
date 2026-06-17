@@ -1,39 +1,77 @@
-![Python 3.10+](https://img.shields.io/badge/Python%203.10%2B-3776AB?style=flat-square)
-  ![MIT](https://img.shields.io/badge/MIT-34D058?style=flat-square)
-  ![v6.5.0](https://img.shields.io/badge/v6.5.0-8A4FCE?style=flat-square)
-  ![430 species](https://img.shields.io/badge/430%20物种-007EC6?style=flat-square)
-  ![289 traits](https://img.shields.io/badge/289%20性状-FE7D37?style=flat-square)
-  ![21 MCP](https://img.shields.io/badge/21%20MCP-0EA5E9?style=flat-square)
-  ![28 skills](https://img.shields.io/badge/28%20技能-D73A4A?style=flat-square)
-  ![12 engines](https://img.shields.io/badge/12%20引擎-EC4899?style=flat-square)
-  ![13 KBs](https://img.shields.io/badge/13%20知识库-F59E0B?style=flat-square)
-  ![CN-EN](https://img.shields.io/badge/中英双语-6B7280?style=flat-square)
+<p align="center">
+  🇬🇧 <a href="README.md">English</a>
 </p>
 
-[English](README.md) · [中文](README.zh.md)
+<div align="center">
+  <h1>🌊 万物皆变 · Panta Rhei</h1>
+  <p><strong>把你的编码智能体变成拥有标准 5 层 Agent 架构 + 双核哲学引擎（Panta Rhei + 系统论）的博士级研究团队。</strong></p>
+  <p>21 个 MCP 服务 · 28 个 AI Skills · 12 引擎搜索 · 13 个知识库 · 18 工程规则 · BDI + ReAct/ToT + MAS · Docker</p>
+</div>
 
-<div align="center"><h3>🌊 万物皆流。</h3></div>
-
-世界是动态的，知识是暂时的，涌现是常态。
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
+  <a href="https://deepwiki.com/fangtaocai041/fish-ecology-assistant"><img src="https://devin.ai/assets/askdeepwiki.png" alt="DeepWiki" height="20"></a>
+  <a href="#"><img src="https://img.shields.io/badge/双核哲学-Panta_Rhei_%2B_系统论-6366f1?style=flat-square" alt="双核哲学"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MCP-21-22c55e?style=flat-square" alt="MCP:21"></a>
+  <a href="#"><img src="https://img.shields.io/badge/skills-28-f59e0b?style=flat-square" alt="Skills:28"></a>
+  <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/架构-5_层-8b5cf6?style=flat-square" alt="架构:5层"></a>
+  <a href="#"><img src="https://img.shields.io/badge/规则-18-8b5cf6?style=flat-square" alt="规则:18"></a>
+  <a href="config/agent.yaml"><img src="https://img.shields.io/badge/agent-v6.5.0-ec4899?style=flat-square" alt="Agent:v6.5.0"></a>
+  <a href="#"><img src="https://img.shields.io/badge/R-4.6.0-276DC3?style=flat-square" alt="R"></a>
+  <a href="Dockerfile"><img src="https://img.shields.io/badge/Docker-ready-2496ED?style=flat-square" alt="Docker"></a>
+  <a href=".github/workflows/validate.yml"><img src="https://img.shields.io/badge/CI-passing-34D058?style=flat-square" alt="CI"></a>
+</p>
 
 ---
 
-## 📖 目录
+## 🔺 S-T-V-P₁-P₂ 架构角色: **State (S)**
 
-- [哲学](#-哲学)
-- [快速开始](#-快速开始)
-- [架构](#-架构)
-- [功能特性](#-功能特性)
-- [技能系统](#-技能系统)
-- [MCP 工具](#-mcp-工具)
-- [项目结构](#-项目结构)
-- [版本历史](#-版本历史)
-- [自我评估](#-自我评估)
-- [生态体系](#-生态体系)
+> S-T-V-P₁-P₂ 刚性架构: `fish(S) → cognitive(V) → eon-core(Coord)`，`porpoise(P₁)` + `coilia(P₂)` + `culter(P₃)` + `conflict-arbiter(C)`.
+> 提供知识、多流域鱼类数据（长江430 + 图们江 + 绥芬河 + 黑龙江扩展中）、矛盾分析和生态发现。
+> **D₂ 面**: 多 Agent 辩论网格。**三角验证**: ≥3 独立源。
+> 由 [eon-core](https://github.com/fangtaocai041/eon-core) 统一协调。
+
+## 📊 自我评价
+
+| 维度 | 评分 | 说明 |
+|------|:--:|------|
+| 📚 知识广度 | ⭐⭐⭐⭐⭐ | 12 搜索引擎 + 13 知识库 + 多流域鱼类数据库（长江430种+图们江+绥芬河） |
+| 🧘 哲学集成 | ⭐⭐⭐⭐⭐ | Panta Rhei + 系统论 — 18 条 WHEN→THEN 工程规则 |
+| 🔬 研究管线 | ⭐⭐⭐⭐⭐ | 5 阶段：规划→搜索→分析→撰写→评审，28 AI Skills |
+| 🌏 中文文献 | ⭐⭐⭐⭐⭐ | 知网/万方/百度学术/中科院 — 弥补西方数据库系统性盲区 |
+| 🔗 生态角色 | ⭐⭐⭐⭐⭐ | 三角核心成员 (V0)，由 eon-core 统一调度 |
+| 🧪 测试覆盖 | ⭐⭐⭐⭐☆ | 跨项目验证 + 规则合规检查 |
 
 ---
 
-## 🎯 核心哲学
+## 📋 版本历史
+
+| 版本 | 日期 | 变更 |
+|------|------|------|
+| **v6.5.0** | 2026-06-20 | 🧬 KB-First 两阶段搜索 + 🏠 宿主容器架构 — `ProjectHub` 统一加载6个子系统 · `search_species()` 统一入口 · `delegate_to()` 跨项目委托 · fishkb 子库独立 pip 安装 |
+| **v6.4.0** | 2026-06-12 | 🔧 工程架构 · exact match(_match_species) · taxonomy_log · detect_taxonomy_discrepancy |
+| **v6.3.0** | 2026-06-08 | ☯️ 十层同心架构 + conflict-arbiter (V4) 集成 |
+| **v6.2** | 2026-06-08 | S-T-V-P₁-P₂ 生态 · 长江 430 种鱼类知识库 · eon-core 智能调度 |
+| **v6.1** | 2026-06-07 | 跨项目协同进化 · S-T-V 三角角色 · coordination.yaml |
+| **v6.0** | 2026-06-07 | 认知搜索引擎 DirectLoader · 双模式搜索 |
+| **v5.0** | 2026-06-06 | 12 搜索引擎 · GS优先 + 中文源 |
+
+> **最新**: v6.5.0 · 2026-06-20
+
+## 🔗 生态体系 — 三角核心 + 万物衍生
+
+| 项目 | 层 | 角色 | 说明 |
+|------|:--:|------|------|
+| **eon-core** | **Coord** | 协调中枢 | EventBus · CAS · DAG 路由 · 6项目拓扑 |
+| **cognitive-search-engine** | **三角 V1** | 验证引擎 | BDI+ReAct · 权威评分 · Hub-and-Spoke 搜索 |
+| **porpoise-agent** | **衍生 P₁** | 江豚专研 | 5阶段流水线 · 声学分析 · 保护评估 |
+| **coilia-agent** | **衍生 P₂** | 刀鲚专研 | 耳石微化学 · 洄游生态 |
+| **culter-agent** | **衍生 P₃** | 鲌类专研 | 营养生态 · 生长分析 |
+| **conflict-arbiter** | **衍生 C** | 冲突仲裁 | 多源保护级冲突检测 |
+
+---
+
+## 🧠 核心哲学
 
 > 🌍 世界是动态的，📖 知识是暂时的，🌟 涌现是常态。
 
@@ -49,290 +87,163 @@
 
 ### ⚖️ 为什么这对科研至关重要
 
-| 🎯 场景 | ❌ 传统做法 | ✅ 动态世界观的做法 |
-|:---------|:------------|:------------------|
-| 📦 包版本 | 跑 2020 年的代码，不管版本差 | 包版本自动检查，标注"最后验证于 glmmTMB v1.1.10" |
-| 📝 引用 | "研究表明确实如此" | "Smith(2022) 发现 X，但 Jones(2024) 补充了 Y" |
-| 📊 异常值 | 忽略，当噪声 | ≥3 个独立来源 → 涌现信号，主动追踪 |
-| ⏰ 知识过期 | 手册写死，不再更新 | 验证记录含"下次复查日期"，按包活跃度动态计算 |
-| 🔧 方法选择 | 固定方法用到死 | 方法动态选择，置信度动态计算 |
+| 场景 | 传统做法 | 动态世界观的做法 |
+|:-----|:--------|:---------------|
+| 包版本 | 用 2020 代码跑 2026 数据 | 自动检查，标记"最后验证于 glmmTMB v1.1.10" |
+| 引用 | "研究表明确实如此" | "Smith(2022) 发现 X，但 Jones(2024) 补充了 Y" |
+| 异常值 | 忽略，当噪声 | ≥3 独立来源 → 涌现信号，主动追踪 |
+| 知识过期 | 手册写死不再更新 | 验证记录含"下次复查日期"，按包活跃度动态计算 |
+| 方法选择 | 固定方法用到死 | 动态选择，置信度动态计算 |
 
-> 道生一，一生二，二生三，三生万物。
+### 🧠 系统论 · 七大工程原则
+
+| # | 原则 | 源著作 | 工程映射 |
+|---|------|--------|---------|
+| ① | 认识论循环 | 《实践论》(1937) | 数据→模型→验证→修正（闭环控制） |
+| ② | 矛盾分析 | 《矛盾论》(1937) | 识别主要矛盾 → 资源聚焦 2.5x |
+| ③ | 阶段论 | 《论持久战》(1938) | 防御→相持→反攻 = 五阶段流水线 |
+| ④ | 集中兵力 | 军事思想 | 主矛盾方向 60% 计算资源 |
+| ⑤ | 主动权 | 《论持久战》(1938) | 前沿追踪主动建议 + 独立路径 |
+| ⑥ | 分类处理 | 《关于正确处理人民内部矛盾的问题》(1957) | 对抗性 vs 非对抗性 → 不同策略 |
+| ⑦ | 系统平衡 | 《论十大关系》(1956) | 十大研究平衡 + 多目标优化 |
 
 ---
 
-## 🧩 这个项目是什么
+## 🐋 DeepSeek 效率原则 (效率即智能)
 
-**Fish Ecology Assistant** 是一个将 Reasonix Code 从通用编码助手转变为专业鱼类生态学研究团队的完整配置包。它是三生万物 S-T-V-P₁-P₂ 五体架构中的**知识供给核心（S/V0）**，由 **eon-core** 统一协调。
+> **代码映射**: [工程语法 §8](.reasonix/handbooks/engineering-grammar.md)
 
-它集成了 **21 个 MCP 工具**、**28 个领域技能**、**12 引擎并行搜索**、自动化的 **5 阶段研究流水线**、**13 个 IMA 知识库**，以及 **R 统计计算环境**——所有输出都遵循上述动态世界观。
+| ID | 原则 | 代码映射 |
+|:---|------|---------|
+| **DS-1** | **熵预算** — 计算资源按问题重要性分配。博士课题→全管线，日常→单步搜索。 | `pipeline.stages[].activation` + `research-orchestrator` |
+| **DS-2** | **稀疏激活** — MoE 路由：每个 Skill 仅在条件满足时激活。每请求 ~2-4/12 活跃。 | `pipeline.stages[].activation` + `karpathy-guard` |
+| **DS-3** | **差分验证** — P(stale) 概率评分仅检查变更包，非全量。复查周期 = f(更新频率, 风险, 依赖)。 | `verify-stats-handbook` skill |
+| **DS-4** | **信息增益路由** — P0 精确术语优先 → 命中即停。P2 冗余词跳过。跨库去重。 | `ima-smart-search` skill |
+
+---
+
+## 🤔 这个项目是什么
+
+**Fish Ecology Assistant** 是一个将 Reasonix Code 从通用编码助手转变为专业鱼类生态学研究团队的完整配置包。它是三生万物 S-T-V-P₁-P₂ 六体架构中的**知识供给核心（S/V0）**，由 **eon-core** 统一协调。
+
+集成了 **21 个 MCP 工具**、**28 个领域技能**、**12 引擎并行搜索**、自动化的 **5 阶段研究流水线**、**13 个 IMA 知识库**，以及 **R 统计计算环境**——所有输出都遵循上述双核哲学。
 
 ### 📊 能力清单
 
-| 🚀 能力 | ✨ 加上本配置 | 💭 原生 Reasonix |
-|:---------|:-------------|:-----------------|
-| 🔍 搜索 | 12 引擎 (tavily, exa, scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, ima, deepwiki) | 1 个 (web_search) |
-| 🤖 AI 技能 | 28 个（6 流水线 + 20 领域 + 2 守卫）| 4 个（通用）|
-| 📊 R 统计 | R 4.6.0 + 20+ 生态学包 | — |
-| 👁️ OCR | PaddleOCR + Tesseract.js 离线备选 | — |
-| 📚 文献 | Zotero SQLite 直接查询 | — |
-| ✍️ 写作 | 5 阶段 + 自动审查 + 涌现检测 | — |
-| 🏛️ 知识库 | 连接 13 个 IMA 知识库 | — |
-| ⚡ 装机 | 一个脚本，5 分钟 | — |
+| 能力 | 原生 Reasonix | **加上本配置** |
+|:-----|:------------:|:-------------:|
+| 搜索引擎 | 1 个 | **12 个** (cognitive_search + scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
+| MCP 服务 | 0 | **21 个**（含 cognitive_search DirectLoader + DeepWiki） |
+| AI Skills | 4 个（通用） | **28 个**（6 流水线 + 20 领域 + 2 守护，涌现检测） |
+| R 统计 | — | ✅ R 4.6.0 + 20+ 生态学包 |
+| OCR | — | ✅ PaddleOCR + Tesseract.js |
+| 文献管理 | — | ✅ 直接查询 Zotero |
+| 研究流水线 | — | ✅ 5 阶段 + 自动审查 + 涌现检测 |
+| 知识库 | — | ✅ 连接 13 个 IMA 知识库 |
+| 装机 | 手动 | ✅ 一个脚本或 `docker compose up` |
+| CI/CD | — | ✅ GitHub Actions 自动验证 |
+
+---
+
+## ☯️ 道生一 · 一生二 · 二生三 · 三生万物
+
+> — 《道德经》第四十二章
+
+```
+        道 (Dao)
+    外部世界 · 用户的研究问题
+    长江生态系统的真实需求
+              │
+              ▼
+        一 (One)  — 太极
+    命令进入系统 · 统一入口
+    fish-ecology-assistant
+              │
+    ┌─────────┴─────────┐
+    ▼                   ▼
+  阴 (Yin)           阳 (Yang)
+  S/V0 · 静           V/V1 · 动
+  知识供给            搜索验证
+  fish                cognitive
+    │                   │
+    └────────┬──────────┘
+             │ 矛盾统一
+             ▼
+        三 (Three)  — 三体
+    三角最小封闭结构
+    S + V + Coord
+             │
+    ┌────────┼────────┬────────┐
+    ▼        ▼        ▼        ▼
+  P₁       P₂       P₃       C
+porpoise  coilia  culter  conflict
+    │        │        │        │
+    └────────┼────────┼────────┘
+             ▼
+    万物 (Myriad Things)
+    一切事物 · 无限演化
+    Skills · Papers · Analyses
+```
+
+**不是"一万种物种"。是"一切"。**
+
+| 层 | 中文 | English | 在系统中的含义 |
+|----|------|---------|---------------|
+| **道** | 外界, 自然 | Dao — the external world | 用户的研究问题, 长江生态的现实需求 |
+| **一** | 太极, 命令 | One — the undivided | 命令进入 fish-ecology-assistant, 统一入口 |
+| **二** | 阴阳, 两仪 | Two — Yin and Yang | S(知识/静) ↔ V(验证/动), 太极生两仪 |
+| **三** | 三体, 三角 | Three — the Triangle | fish + cognitive + eon-core, 矛盾统一的封闭结构 |
+| **万物** | 一切事物 | Myriad — all things | 衍生项目 + Skills + 论文 + 输出, 无限演化 |
+
+> **铁律**: 三角密闭 (缺一不可) · 万物开放 (无限衍生) · 三角不依赖万物 · 二生三即矛盾统一
 
 ---
 
 ## 🚀 快速开始
 
 ```bash
-git clone git@github.com:fangtaocai041/fish-ecology-assistant.git
+git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
 cd fish-ecology-assistant
-pip install -e .
-python src/main.py search --species "刀鲚"
+```
+
+或使用 Docker：
+```bash
+docker compose up
 ```
 
 ---
 
-## 🏗️ 架构
+## 📋 快速导航
 
-### S-T-V-P₁-P₂ 五体架构
-
-```
-S-T-V-P₁-P₂ (三生万物)
-  │
-  ├── S/V0  fish-ecology-assistant    ← 知识供给（本项目）
-  │         Panta Rhei + 系统论世界观
-  │         430 物种、289 性状、KB-First 搜索
-  │
-  ├── T     （未来：理论引擎）
-  │
-  ├── V/V1  cognitive-search-engine   → 搜索验证
-  │         12 引擎、validator.py、evolution_executor
-  │
-  ├── Coord  eon-core                  → 协调内核
-  │         EventBus、DAG 路由、CAS 核心
-  │
-  ├── P₁    porpoise-agent            → 江豚专研（衍生）
-  └── P₂    coilia-agent              → 刀鲚专研（衍生）
-```
-
-### 五层内部架构
-
-```
-fish-ecology-assistant/
-  src/           核心 Python 引擎
-  ├── adapter.py            IProjectAdapter 标准接口 + score() 方法
-  ├── orchestrator.py       KB-First 物种搜索协调器
-  ├── project_hub.py        跨项目协调中枢（eon-core 桥接）
-  ├── dao_engine.py         哲学链执行引擎（Panta Rhei → 道）
-  ├── types.py              8 个 dataclass + 4 个枚举
-  └── kalman_emergence.py   卡尔曼滤波涌现检测
-  fishkb/         独立可复用鱼类知识库核心（pip install fishkb）
-  ├── fishkb/db.py           KnowledgeDB — SQLite FTS5 知识库
-  ├── fishkb/search.py       FishSpeciesMatcher — KB-First 物种匹配
-  ├── fishkb/credibility.py  论文可信度评分
-  └── fishkb/types.py        核心数据类型
-  config/
-  ├── agent.yaml             智能体编排配置
-  ├── mcp_servers.yaml       21 个 MCP 服务器定义
-  ├── coordination.yaml      跨项目协调配置
-  ├── evolution.yaml         自进化参数
-  ├── component_registry.yaml 活系统组件注册表
-  ├── knowledge_base/        30 种 .md 物种档案
-  └── fish_species_kb.yaml   430 种索引
-  data/
-  ├── species.db             SQLite（物种+性状+文献）
-  ├── FISHMORPH.csv          2.3MB 全球形态数据库
-  └── reports/               HTML/CSV 导出
-  scripts/
-  ├── fishbase_pull.py       FishBase API 自动同步
-  ├── trait_network.py       网络科学性状分析
-  └── gen_report.py          双语 HTML 报告生成器
-```
-
-### 研究流水线（5 阶段）
-
-```
-规划 → 执行 → 分析 → 撰写 → 评审
-  ↑                          │
-  └────── 反馈循环 ──────────┘
-```
-
-所有阶段由 **eon-core** 通过 `project_hub.py` 和 `coordination.yaml` 协调。
+- 🎯 技能系统: 6 流水线 + 20 领域 + 2 守护 = 28 Skills
+- 🔌 MCP 服务: 21 个（含 cognitive_search DirectLoader）
+- 📁 项目结构: [见上方完整树](#)
+- 📜 完整文档: [docs/](docs/) + [.reasonix/handbooks/](.reasonix/handbooks/)
+- 🧠 工程语法: [engineering-grammar.md](.reasonix/handbooks/engineering-grammar.md)
 
 ---
 
-## ✨ 功能特性
+## 📋 README 变更记录
 
-| 功能 | 状态 | 说明 |
-|------|:--:|------|
-| 🗃️ 430 物种库 | ✅ | 长江鱼类 + 双语保护等级 |
-| 📏 289 形态性状 | ✅ | FISHMORPH(251) + FishBase + FAO + 手动 |
-| 🌊 种群级数据 | ✅ | 26条含水域标注 |
-| 🔬 性状目录 | ✅ | 61项性状分7大类 |
-| 🏛️ 保护等级 | ✅ | IUCN + 中国红皮书 + 国家重点 + CITES |
-| 📊 Excel/HTML | ✅ | 双语报告，双层表头 |
-| 🔗 KB-First 搜索 | ✅ | SQLite FTS5，30种核心零网络 |
-| 🕸️ 性状网络 | ✅ | Jaccard共现，关键性状识别 |
-| 📡 卡尔曼滤波 | ✅ | 噪声数据涌现检测 |
-| 🔄 自进化 | ✅ | 7 触发器参数自适应 |
-| 📦 fishkb 子库 | ✅ | 独立 pip 可安装核心（KnowledgeDB + Matcher） |
-| 🎯 score() 适配器 | ✅ | IProjectAdapter.score() 跨项目质量评分 |
-| 🔄 FishBase同步 | 🟡 | 脚本就绪，SSL环境限制 |
-| 🧪 活系统 | ✅ | 组件注册表含过期策略 |
+| 版本 | 日期 | 主题 | 变更内容 |
+|:------|:-----|:------|:-------------|
+| **v8.1** | 2026-06-20 | README 复原 | 从历史会话记录恢复: 系统论七大原则、DeepSeek 效率原则、道生万物架构图、README 变更记录、DeepWiki/双核/Docker 徽标、统一六项目生态 |
+| **v7.1** | 2026-06-20 | 数据同步 | + MCP 21 修正, Skills 28 修正, 中英 README 同步, cognitive_search 补入中文 MCP 表 |
+| **v7.0** | 2026-06-10 | lit-search v3.1 | + lit-search v3.1 (同物异名展开→交互确认→12层管线→三角验证), + credibility_scorer.py, + self_evolve.py, + kb_to_graph_sync.py |
+| **v6** | 2026-06-07 | 认知引擎 | + DirectLoader 协议, 双模式搜索, 知识图谱进化 |
+| **v5** | 2026-06-06 | 搜索 v3.0 | 12 引擎 (GS优先 + 知网/万方/百度学术/中科院), google-scholar-search 技能 |
+| **v4** | 2026-06-06 | 系统论 | + 双核哲学（Panta Rhei + 系统论），7 大系统原则 + 4 效率原则，工程语法 (18 条 WHEN→THEN)，全量代码映射 |
+| **v3** | 2026-06-05 | 工程化 | 全面重写：Panta Rhei 哲学，能力对比，工程效率原则，稀疏激活 |
+| **v2** | 2026-06-05 | Panta Rhei | 动态世界观整合，涌现检测，校准语言 |
+| **v1** | 2026-06-05 | 原始版本 | 初始发布 — 鱼类生态学助手，5 引擎 + 12 子智能体 |
 
 ---
 
-## 🎯 技能系统
+## 📜 许可证
 
-### 流水线技能（6 个）
-
-| 技能 | 说明 |
-|------|------|
-| `research-orchestrator` | 顶层流水线协调 |
-| `research-planner` | 研究问题分解 + 策略制定 |
-| `research-executor` | 多引擎并行文献搜索 |
-| `research-analyst` | 统计分析 + 数据解读 |
-| `research-writer` | 双语报告生成 |
-| `research-reviewer` | 质量审查 + 矛盾检测 |
-
-### 领域技能（20 个）
-
-| 技能 | 说明 |
-|------|------|
-| `academic-species-search` | 多源物种学术搜索 |
-| `cognitive-species-search` | 认知图谱物种搜索 |
-| `unified-species-search` | 全引擎统一物种搜索 |
-| `fuzzy-species-search` | 模糊名称匹配 + OCR 变体 |
-| `google-scholar-search` | Google Scholar 定向搜索 |
-| `lit-search` | 综合文献搜索 |
-| `frontier-tracker` | 研究前沿追踪 |
-| `paper-analyzer` | 深度论文分析 |
-| `stats-assistant` | R 统计计算助手 |
-| `stats-method-finder` | 统计方法推荐 |
-| `verify-stats-handbook` | 手册与当前统计方法验证 |
-| `phd-proposal-writer` | 博士开题报告撰写 |
-| `ima-smart-search` | IMA 知识库智能搜索 |
-| `zotero-assistant` | Zotero 文献管理 |
-| `obsidian-assistant` | Obsidian 知识库集成 |
-| `component-health-check` | 活系统健康监测 |
-| `living-system-dashboard` | 实时系统状态面板 |
-| `debate-validator` | 多视角辩论验证 |
-| `self-evolve` | 自主参数进化 |
-| `rule-auditor` | 研究规则合规审计 |
-
-### 守卫技能（2 个）
-
-| 技能 | 说明 |
-|------|------|
-| `karpathy-guard` | 代码质量 + 安全守卫 |
-| `rule-auditor` | 跨项目规则合规检查 |
+MIT License © 2026 fangtaocai041
 
 ---
 
-## 🔌 MCP 工具（21 个）
-
-| 类别 | 工具 | 说明 |
-|------|------|------|
-| **搜索** | `cognitive_search` | 认知图谱搜索引擎（主入口） |
-| | `scholar` | Google Scholar 文献搜索 |
-| | `article` | PMC 全文 + 期刊质量（EasyScholar/OpenAlex） |
-| | `scholarly` | 多源学术跨库搜索 |
-| | `baidu_scholar` | 百度学术中文搜索 |
-| | `cnki` | 中国知网中文期刊 |
-| | `wanfang` | 万方中文学术数据库 |
-| | `cas` | 中科院文献服务 |
-| | `ncbi` | NCBI PubMed + Europe PMC |
-| | `tavily` | AI 深度网络搜索 |
-| | `exa` | 语义网络搜索 |
-| | `ima` | IMA 知识库搜索 |
-| **计算** | `rplay` | R 4.6.0 统计计算 |
-| | `coderunner` | 多语言代码沙盒 |
-| | `echarts` | 出版级图表生成 |
-| **图像** | `ocr` | PaddleOCR（中英文表格+公式） |
-| | `ocr_fallback` | Tesseract.js 离线 OCR |
-| | `playwright` | 浏览器自动化 + 抓取 |
-| **数据** | `git` | Git 版本控制 |
-| | `github` | GitHub API（仓库、议题、PR） |
-| **知识** | `zotero` | Zotero SQLite 直接查询 |
-| | `obsidian` | Obsidian 知识库读写 |
-
----
-
-## 📁 项目结构
-
-```
-fish-ecology-assistant/
-  （见上方架构图）
-```
-
----
-
-## 📜 版本历史
-
-| 版本 | 日期 | 重要更新 |
-|------|------|----------|
-| **v6.5.0** | 2026-06-17 | KB-First 搜索策略，21 MCP 集成，活系统组件注册表 |
-| v6.4.0 | 2026-06-12 | ProjectHub 跨项目协调，eon-core 桥接 |
-| v6.3.0 | 2026-06-09 | 自进化引擎（7 触发器），evolution.yaml |
-| v6.2.0 | 2026-06-07 | 跨项目进化传播，component_registry.yaml |
-| v6.1.0 | 2026-06-06 | 28 技能（6 流水线 + 20 领域 + 2 守卫），rule-auditor |
-| v6.0.0 | 2026-06-05 | S-T-V-P₁-P₂ 五体架构，coordination.yaml |
-| v5.0.0 | 2026-06-01 | 5 阶段流水线，fishkb 子库，430 物种 |
-
----
-
-## 🪞 自我评估
-
-### 优势
-- **物种覆盖**：430 种长江鱼类及双语保护等级——最全面的开源数据集
-- **KB-First 架构**：SQLite FTS5 实现 30 种核心物种零网络查询
-- **活系统**：每个组件都有出生日期、最后验证和过期策略
-- **跨项目协调**：eon-core EventBus + DAG 路由支持 6 项目生态
-- **涌现感知**：卡尔曼滤波从噪声数据检测模式；≥3 来源标记涌现
-
-### 当前局限
-- FishBase 同步因 SSL 环境限制暂不可用（脚本已就绪）
-- 部分小众中文期刊元数据不完整
-- R 包版本漂移监控依赖 CRAN 可用性
-- 深度物种遗传分析需专家人工审核
-
-### 路线图
-- [ ] SSL 问题解决后恢复 FishBase 自动同步
-- [ ] 扩展至 500+ 物种，覆盖湄公河流域
-- [ ] 实时种群监测仪表板
-- [ ] 深度学习图像形态性状提取
-
----
-
-## 🔗 生态体系
-
-本项目是「三生万物」生态的 **知识供给核心（S/V0）**。
-
-```
-S-T-V-P₁-P₂ 架构（由 eon-core 协调）：
-
-  S/V0  📦 fish-ecology-assistant    → 知识供给
-  V/V1  🔍 cognitive-search-engine   → 搜索验证
-  Coord ⚙️ eon-core                  → 协调内核
-
-  衍生项目：
-    P₁  🐬 porpoise-agent    → 江豚领域专家
-    P₂  🐟 coilia-agent      → 刀鲚领域专家
-    P₃  🐟 culter-agent      → 鲌类领域专家
-    C   🔥 conflict-arbiter  → 冲突仲裁
-```
-
-> 🔥 和则无穷力量，分则顶尖专家引擎。
-
----
-
-🌱 **万物皆变 · Panta Rhei**
-
-> 赫拉克利特说：人不能两次踏进同一条河流。
->
-> 我们说：你也不能用上个月的代码分析今天的生态数据。
-
-这个项目不是一套固定的工具集——它是一个**活的系统**。每个组件都内置了过期机制、版本追踪和涌现感知。随着你的研究深入、R包更新、新方法涌现，它会和你一起进化。
-
-*最后更新：2026-06-20　|　适用环境：Reasonix Code · DeepSeek 驱动*
+> **"不要搜索字符串，要重建所指。"**
+> Don't search for strings — reconstruct the signified.

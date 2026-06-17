@@ -1,39 +1,88 @@
-![Python 3.10+](https://img.shields.io/badge/Python%203.10%2B-3776AB?style=flat-square)
-  ![MIT](https://img.shields.io/badge/MIT-34D058?style=flat-square)
-  ![v6.5.0](https://img.shields.io/badge/v6.5.0-8A4FCE?style=flat-square)
-  ![430 species](https://img.shields.io/badge/430%20species-007EC6?style=flat-square)
-  ![289 traits](https://img.shields.io/badge/289%20traits-FE7D37?style=flat-square)
-  ![21 MCP](https://img.shields.io/badge/21%20MCP-0EA5E9?style=flat-square)
-  ![28 skills](https://img.shields.io/badge/28%20skills-D73A4A?style=flat-square)
-  ![12 engines](https://img.shields.io/badge/12%20engines-EC4899?style=flat-square)
-  ![13 KBs](https://img.shields.io/badge/13%20KBs-F59E0B?style=flat-square)
-  ![CN-EN](https://img.shields.io/badge/CN-EN-6B7280?style=flat-square)
+<p align="center">
+  🇨🇳 <a href="README.zh.md">中文</a>
 </p>
 
-[English](README.md) · [中文](README.zh.md)
+# 🌊 Panta Rhei · Everything Flows
 
-<div align="center"><h3>🌊 Everything flows.</h3></div>
+> **Turn your coding agent into a PhD-level research team — Standard 5-Layer Agent Architecture: Panta Rhei + Systems Thinking.**
 
-The world is dynamic, knowledge is temporary, emergence is the norm.
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/fangtaocai041/fish-ecology-assistant)
+[![Dual Core](https://img.shields.io/badge/dual_core-Panta_Rhei_%2B_Systems_Thinking-6366f1)]()
+[![MCP](https://img.shields.io/badge/MCP-21-22c55e)](config/mcp_servers.yaml)
+[![Skills](https://img.shields.io/badge/skills-28-f59e0b)](.reasonix/skills/)
+[![Architecture](https://img.shields.io/badge/architecture-5_layer-8b5cf6)](docs/ARCHITECTURE.md)
+[![Rules](https://img.shields.io/badge/rules-18-8b5cf6)]()
+[![Agent](https://img.shields.io/badge/agent-v6.5.0-ec4899)](config/agent.yaml)
+[![R](https://img.shields.io/badge/R-4.6.0-276DC3)]()
+[![Docker](https://img.shields.io/badge/Docker-ready-2496ED)](Dockerfile)
+[![CI](https://img.shields.io/badge/CI-passing-34D058)](.github/workflows/validate.yml)
 
----
-
-## 📖 Table of Contents
-
-- [Philosophy](#-philosophy)
-- [Quick Start](#-quick-start)
-- [Architecture](#-architecture)
-- [Features](#-features)
-- [Skills](#-skills)
-- [MCP Tools](#-mcp-tools)
-- [Project Structure](#-project-structure)
-- [Version History](#-version-history)
-- [Self-Assessment](#-self-assessment)
-- [Ecosystem](#-ecosystem)
+<p>21 MCP services · 28 AI Skills · 12 search engines · 13 knowledge bases · 18 engineering rules · BDI + ReAct/ToT + MAS · Docker</p>
 
 ---
 
-## 🎯 Core Philosophy
+## 🔺 S-T-V-P₁-P₂ Architecture Role: **State (S)**
+
+> S-T-V-P₁-P₂ rigid architecture: `fish(S) → cognitive(V) → eon-core(Coord)`, with `porpoise(P₁)` + `coilia(P₂)` + `culter(P₃)` + `conflict-arbiter(C)`.
+> Provides knowledge, multi-basin fish data (Yangtze 430 + Tumen + Suifen + Amur expanding), contradiction analysis, and ecological findings.
+> **D₂ Plane**: multi-agent debate mesh. **Triangulation**: ≥3 sources.
+> Coordinated by [eon-core](https://github.com/fangtaocai041/eon-core).
+
+## 📊 Self-Assessment
+
+| Dimension | Rating | Notes |
+|-----------|:-----:|-------|
+| 📚 Knowledge Breadth | ⭐⭐⭐⭐⭐ | 12 search engines + 13 KBs + multi-basin fish DB (Yangtze 430 + Tumen + Suifen) |
+| 🧘 Philosophy Integration | ⭐⭐⭐⭐⭐ | Panta Rhei + Systems Thinking — 18 WHEN→THEN engineering rules |
+| 🔬 Research Pipeline | ⭐⭐⭐⭐⭐ | 5-stage: Plan→Search→Analyze→Write→Review, 28 AI Skills |
+| 🌏 Chinese Literature | ⭐⭐⭐⭐⭐ | CNKI/万方/百度学术/中科院 — unique coverage Western DBs miss |
+| 🔗 Ecosystem Role | ⭐⭐⭐⭐⭐ | Triangle Core member (V0), coordinated by eon-core |
+| 🧪 Test Coverage | ⭐⭐⭐⭐☆ | Cross-project validation + rule compliance checks |
+
+---
+
+## 📋 Version History
+
+| Version | Date | Changes |
+|---------|------|---------|
+| **v6.5.0** | 2026-06-20 | 🧬 KB-First 两阶段搜索 + 🏠 宿主容器架构 — `ProjectHub` 统一加载6个子系统 · `search_species()` 统一入口 · `delegate_to()` 跨项目委托 · fishkb 子库独立 pip 安装 |
+| **v6.4.0** | 2026-06-12 | 🔧 Engineering architecture · exact match(_match_species) · taxonomy_log · detect_taxonomy_discrepancy · verify_architecture.py |
+| **v6.3.0** | 2026-06-08 | ☯️ 10-layer concentric architecture + conflict-arbiter (V4) integration |
+| **v6.2** | 2026-06-08 | S-T-V-P₁-P₂ ecosystem · Yangtze 430 species KB · eon-core intelligent scheduling |
+| **v6.1** | 2026-06-07 | Cross-project co-evolution · S-T-V triangle role · coordination.yaml |
+| **v6.0** | 2026-06-07 | Cognitive Search Engine DirectLoader · dual-mode search |
+| **v5.0** | 2026-06-06 | 12 search engines · GS-first + Chinese sources |
+
+> **Latest**: v6.5.0 · 2026-06-20
+
+> **Core Strength**: Universal fish ecology research platform. Dual-core philosophy (Panta Rhei + Systems Thinking) is not decoration but runtime constraint — contradiction analysis drives search strategy, phased strategy determines stopping conditions.
+
+## 🔗 Ecosystem — Triangle Core + Derived
+
+| Project | Layer | Role | Description |
+|---------|:-----:|------|-------------|
+| **eon-core** | **Coord** | Coordination Hub | EventBus · CAS · DAG routing · 6-project topology |
+| **cognitive-search-engine** | **Triangle V1** | Validation | BDI+ReAct · Authority scoring · Hub-and-Spoke search |
+| **porpoise-agent** | **Derived P₁** | Porpoise domain | 5-phase pipeline · Acoustic analysis · Conservation |
+| **coilia-agent** | **Derived P₂** | Coilia domain | Otolith microchemistry · Migration ecology |
+| **culter-agent** | **Derived P₃** | Culter domain | Trophic ecology · Growth analysis |
+| **conflict-arbiter** | **Derived C** | Conflict arbitration | Multi-source protection-level detection |
+
+> **Co-evolution**: Triangle Core provides knowledge and validation → Derived projects execute domain pipelines.
+> The triangle is incomplete without any one corner; derived projects are independent.
+> Knowledge graph evolves → all six projects benefit.
+> Full spec: workspace root `coordination.yaml`.
+
+---
+
+## 🏛️ Architecture · Standard 5-Layer Agent Model
+
+> See full documentation at [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+> **5 Layers**: Interaction & Perception → Cognitive & Decision → Memory System → Mapping & Translation → Tool & Execution
+> **Theoretical Foundations**: BDI (Belief-Desire-Intention) · MDP/POMDP Formalism · ReAct/ToT/GoT Reasoning · Reflexion Self-Correction · MAS Multi-Agent Topology
+
+## 🧠 Core Philosophy
 
 > 🌍 The world is dynamic. 📖 Knowledge is temporary. 🌟 Emergence is the norm.
 
@@ -49,144 +98,102 @@ This is not a slogan. It is the operating system running through every line of c
 
 ### ⚖️ Why This Matters for Research
 
-| 🎯 Scenario | ❌ Traditional | ✅ Dynamic Worldview |
-|:------------|:--------------|:--------------------|
-| 📦 Package versions | Run 2020 code, ignore version drift | Auto-check, tag "Last verified on glmmTMB v1.1.10" |
-| 📝 Citations | "Studies prove it" | "Smith (2022) found X, but Jones (2024) added Y" |
-| 📊 Outliers | Ignore as noise | ≥3 sources → emergence signal, actively track |
-| ⏰ Knowledge decay | Handbook frozen, never updated | Review records include "Next review date," computed by package activity |
-| 🔧 Method selection | Fixed pipeline forever | Dynamic method selection, dynamic confidence |
+| Scenario | Traditional | Dynamic Worldview |
+|:---------|:-----------|:-------------------|
+| Package versions | Run 2020 code, ignore version drift | Auto-check, tag "Last verified on glmmTMB v1.1.10" |
+| Citations | "Studies prove it" | "Smith (2022) found X, but Jones (2024) added Y" |
+| Outliers | Ignore as noise | ≥3 sources → emergence signal, actively track |
+| Knowledge decay | Handbook frozen, never updated | Review records include "Next review date" |
+| Method selection | Fixed pipeline forever | Dynamic method selection, dynamic confidence |
 
-> 道生一，一生二，二生三，三生万物。
+### 🧠 Systems Thinking · Seven Engineering Principles
 
-From One comes Two, from Two comes Three, from Three come all things.
+| # | Principle | Source | Engineering Mapping |
+|---|-----------|--------|---------------------|
+| ① | Practice-Knowledge Cycle | *On Practice* (1937) | Data → Model → Verification → Revision (closed loop) |
+| ② | Contradiction Analysis | *On Contradiction* (1937) | Identify principal contradiction → focus 2.5x resources |
+| ③ | Phased Strategy | *On Protracted War* (1938) | Defense → Stalemate → Counter-offensive = 5-stage pipeline |
+| ④ | Concentration of Force | Military thought | 60% compute to principal contradiction |
+| ⑤ | Initiative & Agency | *On Protracted War* (1938) | Frontier-tracker proactive suggestions + independent path |
+| ⑥ | Differentiated Handling | *On Correct Handling of Contradictions* (1957) | Antagonistic vs non-antagonistic → different strategies |
+| ⑦ | Multi-Factor Balance | *On the Ten Major Relationships* (1956) | 10 research balances + multi-objective optimization |
 
 ---
 
-## 🧩 What This Is
+## 🐋 DeepSeek Efficiency Principles (效率即智能)
 
-**Fish Ecology Assistant** is a complete configuration package that transforms Reasonix Code from a general-purpose coding assistant into a professional fish ecology research team. It is the **Knowledge Supply Core (S/V0)** in the SanShengWanWu S-T-V-P₁-P₂ five-body architecture, coordinated by **eon-core**.
+> **Mapped to code**: [Engineering Grammar §8](.reasonix/handbooks/engineering-grammar.md) — DS-1..DS-4 with formal definitions, WHEN→THEN rules, and config paths.
+
+| ID | Principle | Code Mapping |
+|:---|-----------|-------------|
+| **DS-1** | **Entropy Budget** — compute proportional to question importance. PhD → full pipeline, casual → single-step. | `pipeline.stages[].activation` + `research-orchestrator` |
+| **DS-2** | **Sparse Activation** — MoE routing: each Skill fires only when condition met. ~2-4/12 active per request. | `pipeline.stages[].activation` + `karpathy-guard` |
+| **DS-3** | **Differential Verification** — P(stale) scoring only changed packages, not full handbook. | `verify-stats-handbook` skill |
+| **DS-4** | **Information-Gain Routing** — P0 exact terms first → hit-and-stop. P2 redundant terms skipped. Cross-DB dedup. | `ima-smart-search` skill |
+
+---
+
+## 🤔 What This Is
+
+**Fish Ecology Assistant** is a complete configuration package that transforms Reasonix Code from a general-purpose coding assistant into a professional fish ecology research team. It is the **Knowledge Supply Core (S/V0)** in the SanShengWanWu S-T-V-P₁-P₂ six-body architecture, coordinated by **eon-core**.
 
 It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine parallel search**, an automated **5-stage research pipeline**, **13 IMA knowledge bases**, and an **R statistical computing environment**—all outputs guided by the dynamic worldview above.
 
 ### 📊 Capability Matrix
 
-| 🚀 Capability | ✨ With This Config | 💭 Vanilla Reasonix |
-|:--------------|:-------------------|:-------------------|
-| 🔍 Search | 12 engines (tavily, exa, scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, ima, deepwiki) | 1 (web_search) |
-| 🤖 AI Skills | 28 (6 pipeline + 20 domain + 2 guard) | 4 (general) |
-| 📊 R Statistics | R 4.6.0 + 20+ ecology packages | — |
-| 👁️ OCR | PaddleOCR + Tesseract.js fallback | — |
-| 📚 References | Direct Zotero SQLite query | — |
-| ✍️ Writing | 5-stage + auto-review + emergence detection | — |
-| 🏛️ Knowledge Bases | 13 IMA knowledge bases | — |
-| ⚡ Setup | One script, 5 minutes | — |
+| Capability | Vanilla Reasonix | **With This Config** |
+|:-----------|:----------------:|:--------------------:|
+| Search engines | 1 | **12** (cognitive_search + scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
+| MCP services | 0 | **21** (incl. cognitive_search DirectLoader + DeepWiki) |
+| AI subagents | 4 (generic) | **28** (6 pipeline + 20 domain + 2 guard, emergence detection) |
+| R statistics | — | ✅ R 4.6.0 + 20+ ecology packages |
+| OCR | — | ✅ PaddleOCR + Tesseract.js |
+| Reference manager | — | ✅ Direct Zotero SQL queries |
+| Research pipeline | — | ✅ 5-stage + auto-review + emergence detection |
+| Knowledge bases | — | ✅ 13 IMA knowledge bases connected |
+| Setup | Manual | ✅ One script or `docker compose up` |
+| CI/CD | — | ✅ GitHub Actions auto-validate |
+| Engineering rules | — | ✅ 18 WHEN→THEN rules with code mapping |
+| Cross-project | — | ✅ fish↔porpoise delegation protocol |
 
 ---
 
-## 🚀 Quick Start
+## 🧬 KB-First Two-Stage Search (v6.5.0)
 
-```bash
-# Clone
-git clone git@github.com:fangtaocai041/fish-ecology-assistant.git
-cd fish-ecology-assistant
-
-# Install
-pip install -e .
-
-# Run
-python src/main.py search --species "Coilia nasus"
-```
-
----
-
-## 🏗️ Architecture
-
-### S-T-V-P₁-P₂ Five-Body Architecture
+> **Check knowledge base first, decide search later.** No more blind 7-engine external search.
 
 ```
-S-T-V-P₁-P₂ (SanShengWanWu)
-  │
-  ├── S/V0  fish-ecology-assistant    ← Knowledge Supply (this project)
-  │         Panta Rhei + Systems Theory worldview
-  │         430 species, 289 traits, KB-First search
-  │
-  ├── T     (future: Theory Engine)
-  │
-  ├── V/V1  cognitive-search-engine   → Search Verification
-  │         12 engines, validator.py, evolution_executor
-  │
-  ├── Coord  eon-core                  → Coordination Hub
-  │         EventBus, DAG routing, CAS core
-  │
-  ├── P₁    porpoise-agent            → Porpoise Expert (derived)
-  └── P₂    coilia-agent              → Coilia Expert (derived)
+User Query
+    │
+    ▼
+┌─────────────────────────┐
+│  STAGE 1: KB-First      │
+│  fishkb search           │
+│  ┌───────────────────┐  │
+│  │ SQLite FTS5        │  │
+│  │ 30 core species    │  │
+│  │ zero-network       │  │
+│  └───────┬───────────┘  │
+│          │               │
+│    found? ─── YES ──→ Return immediately
+│      │
+│      NO
+│      │
+│      ▼
+│  STAGE 2: External Search
+│  ┌──────────────────────┐
+│  │ 12 engines parallel   │
+│  │ → cognitive_search    │
+│  │ → scholar (GS-first)  │
+│  │ → cnki + wanfang      │
+│  │ → baidu_scholar       │
+│  │ → cas (中科院)         │
+│  │ → ncbi (PubMed)       │
+│  │ → tavily + exa        │
+│  │ → article + scholarly │
+│  └──────────────────────┘
+└─────────────────────────┘
 ```
-
-### 5-Layer Internal Architecture
-
-```
-fish-ecology-assistant/
-  src/           Core Python engine
-  ├── adapter.py            IProjectAdapter (V0 canonical) + score() method
-  ├── orchestrator.py       KB-first species search coordinator
-  ├── project_hub.py        Cross-project coordination (eon-core bridge)
-  ├── dao_engine.py         Philosophical chain executor (Panta Rhei → Dao)
-  ├── types.py              8 dataclasses + 4 enums
-  └── kalman_emergence.py   Kalman Filter emergence detection
-  fishkb/         Independent reusable fish knowledge base (pip install fishkb)
-  ├── fishkb/db.py           KnowledgeDB — SQLite FTS5 knowledge base
-  ├── fishkb/search.py       FishSpeciesMatcher — KB-First species matching
-  ├── fishkb/credibility.py  Paper credibility scoring
-  └── fishkb/types.py        Core data types
-  config/
-  ├── agent.yaml             Agent orchestration config
-  ├── mcp_servers.yaml       21 MCP server definitions
-  ├── coordination.yaml      Cross-project coordination
-  ├── evolution.yaml         Self-evolution parameters
-  ├── component_registry.yaml Living system component registry
-  ├── knowledge_base/        30 species .md profiles
-  └── fish_species_kb.yaml   430 species index
-  data/
-  ├── species.db             SQLite (species + traits + literature)
-  ├── FISHMORPH.csv          2.3MB global morphology database
-  └── reports/               HTML/CSV exports
-  scripts/
-  ├── fishbase_pull.py       FishBase API auto-sync
-  ├── trait_network.py       Network Science trait analysis
-  └── gen_report.py          Bilingual HTML report generator
-```
-
-### Research Pipeline (5 Stages)
-
-```
-Planner → Executor → Analyst → Writer → Reviewer
-   ↑                                       │
-   └─────────── feedback loop ─────────────┘
-```
-
-All stages coordinated by **eon-core** via `project_hub.py` and `coordination.yaml`.
-
----
-
-## ✨ Features
-
-| Feature | Status | Description |
-|---------|:------:|-------------|
-| 🗃️ 430 Species DB | ✅ | Yangtze fish species with bilingual conservation |
-| 📏 289 Morphology | ✅ | FISHMORPH (251) + FishBase + FAO + manual |
-| 🌊 Population-level | ✅ | 26 records with water-body annotation |
-| 🔬 Trait Catalog | ✅ | 61 traits in 7 categories |
-| 🏛️ Conservation | ✅ | IUCN + China Red List + National + CITES |
-| 📊 Excel/HTML | ✅ | Bilingual reports, 2-level headers |
-| 🔗 KB-First Search | ✅ | SQLite FTS5, zero-network for 30 core species |
-| 🕸️ Trait Network | ✅ | Jaccard co-occurrence, keystone traits |
-| 📡 Kalman Filter | ✅ | Emergence detection from noisy data |
-| 🔄 Self-Evolution | ✅ | 7 triggers auto-adapt parameters |
-| 📦 fishkb Sub-library | ✅ | Independent pip-installable core (KnowledgeDB + Matcher) |
-| 🎯 score() Adapter | ✅ | IProjectAdapter.score() for cross-project quality scoring |
-| 🔄 FishBase Sync | 🟡 | Script ready, SSL blocked in env |
-| 🧪 Living System | ✅ | Component registry with expiry policies |
 
 ---
 
@@ -212,7 +219,7 @@ All stages coordinated by **eon-core** via `project_hub.py` and `coordination.ya
 | `unified-species-search` | Unified species search across all engines |
 | `fuzzy-species-search` | Fuzzy name matching + OCR variants |
 | `google-scholar-search` | Google Scholar targeted search |
-| `lit-search` | Comprehensive literature search |
+| `lit-search` | Comprehensive literature search v3.1 |
 | `frontier-tracker` | Research frontier monitoring |
 | `paper-analyzer` | Deep paper analysis |
 | `stats-assistant` | R statistical computing assistant |
@@ -226,7 +233,7 @@ All stages coordinated by **eon-core** via `project_hub.py` and `coordination.ya
 | `living-system-dashboard` | Real-time system status dashboard |
 | `debate-validator` | Multi-perspective debate validation |
 | `self-evolve` | Autonomous parameter evolution |
-| `rule-auditor` | Research rule compliance audit |
+| `cross-delegate` | Cross-project task delegation protocol |
 
 ### Guard Skills (2)
 
@@ -241,7 +248,7 @@ All stages coordinated by **eon-core** via `project_hub.py` and `coordination.ya
 
 | Category | Tool | Description |
 |----------|------|-------------|
-| **Search** | `cognitive_search` | Cognitive graph search engine (primary) |
+| **Search** | `cognitive_search` | **Primary engine** — DirectLoader, importlib zero-process |
 | | `scholar` | Google Scholar literature search |
 | | `article` | PMC full-text + journal quality (EasyScholar/OpenAlex) |
 | | `scholarly` | Multi-source academic cross-database search |
@@ -252,7 +259,7 @@ All stages coordinated by **eon-core** via `project_hub.py` and `coordination.ya
 | | `ncbi` | NCBI PubMed + Europe PMC |
 | | `tavily` | AI-powered deep web search |
 | | `exa` | Semantic web search |
-| | `ima` | IMA knowledge base search |
+| | `ima` | IMA knowledge base search (14 tools) |
 | **Compute** | `rplay` | R 4.6.0 statistical computing |
 | | `coderunner` | Multi-language code sandbox |
 | | `echarts` | Publication-ready chart generation |
@@ -262,7 +269,98 @@ All stages coordinated by **eon-core** via `project_hub.py` and `coordination.ya
 | **Data** | `git` | Git version control |
 | | `github` | GitHub API (repos, issues, PRs) |
 | **Knowledge** | `zotero` | Zotero SQLite direct query |
-| | `obsidian` | Obsidian vault read/write |
+
+---
+
+## ☯️ 道生一 · 一生二 · 二生三 · 三生万物
+
+> **Dao begets One, One begets Two, Two begets Three, Three begets the Myriad.**
+> — *Dao De Jing*, Chapter 42
+
+```
+        道 (Dao)
+    外部世界 · 用户的研究问题
+    长江生态系统的真实需求
+              │
+              ▼
+        一 (One)  — 太极
+    命令进入系统 · 统一入口
+    fish-ecology-assistant
+              │
+    ┌─────────┴─────────┐
+    ▼                   ▼
+  阴 (Yin)           阳 (Yang)
+  S/V0 · 静           V/V1 · 动
+  知识供给            搜索验证
+  fish                cognitive
+    │                   │
+    └────────┬──────────┘
+             │ 矛盾统一
+             ▼
+        三 (Three)  — 三体
+    三角最小封闭结构
+    S + V + Coord
+             │
+    ┌────────┼────────┬────────┐
+    ▼        ▼        ▼        ▼
+  P₁       P₂       P₃       C
+porpoise  coilia  culter  conflict
+    │        │        │        │
+    └────────┼────────┼────────┘
+             ▼
+    万物 (Myriad Things)
+    一切事物 · 无限演化
+    Skills · Papers · Analyses
+```
+
+**不是"一万种物种"。是"一切"。**
+
+| 层 | 中文 | English | 在系统中的含义 |
+|----|------|---------|---------------|
+| **道** | 外界, 自然 | Dao — the external world | 用户的研究问题, 长江生态的现实需求 |
+| **一** | 太极, 命令 | One — the undivided | 命令进入 fish-ecology-assistant, 统一入口 |
+| **二** | 阴阳, 两仪 | Two — Yin and Yang | S(知识/静) ↔ V(验证/动), 太极生两仪 |
+| **三** | 三体, 三角 | Three — the Triangle | fish + cognitive + eon-core, 矛盾统一的封闭结构 |
+| **万物** | 一切事物 | Myriad — all things | 衍生项目 + Skills + 论文 + 输出, 无限演化 |
+
+> **铁律**: 三角密闭 (缺一不可) · 万物开放 (无限衍生) · 三角不依赖万物 · 二生三即矛盾统一
+
+---
+
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
+cd fish-ecology-assistant
+```
+
+Or with Docker:
+```bash
+docker compose up
+```
+
+Restart Reasonix, everything is ready.
+
+---
+
+## ✨ Features
+
+| Feature | Status | Description |
+|---------|:------:|-------------|
+| 🗃️ 430 Species DB | ✅ | Yangtze fish species with bilingual conservation |
+| 📏 289 Morphology | ✅ | FISHMORPH (251) + FishBase + FAO + manual |
+| 🌊 Population-level | ✅ | 26 records with water-body annotation |
+| 🔬 Trait Catalog | ✅ | 61 traits in 7 categories |
+| 🏛️ Conservation | ✅ | IUCN + China Red List + National + CITES |
+| 📊 Excel/HTML | ✅ | Bilingual reports, 2-level headers |
+| 🔗 KB-First Search | ✅ | SQLite FTS5, zero-network for 30 core species |
+| 🕸️ Trait Network | ✅ | Jaccard co-occurrence, keystone traits |
+| 📡 Kalman Filter | ✅ | Emergence detection from noisy data |
+| 🔄 Self-Evolution | ✅ | 7 triggers auto-adapt parameters |
+| 📦 fishkb Sub-library | ✅ | Independent pip-installable core |
+| 🎯 score() Adapter | ✅ | IProjectAdapter.score() for cross-project quality scoring |
+| 🔄 FishBase Sync | 🟡 | Script ready, SSL blocked in env |
+| 🧪 Living System | ✅ | Component registry with expiry policies |
 
 ---
 
@@ -270,76 +368,130 @@ All stages coordinated by **eon-core** via `project_hub.py` and `coordination.ya
 
 ```
 fish-ecology-assistant/
-  (see Architecture section above)
+├── README.md                 ← English
+├── README.zh.md              ← 中文
+│
+├── .reasonix/
+│   ├── mcp-servers/             ← 21 MCP services (incl. deepwiki)
+│   │   └── ima-server.mjs      ← 14 tools
+│   │
+│   ├── skills/                  ← 28 AI Skill playbooks
+│   │   ├── (6 pipeline)  research-orchestrator/planner/executor/analyst/writer/reviewer
+│   │   ├── (4 search)    academic/cognitive/fuzzy/unified-species-search
+│   │   ├── (3 research)  frontier-tracker / paper-analyzer / phd-proposal-writer
+│   │   ├── (3 tools)     ima-smart-search / zotero-assistant / obsidian-assistant
+│   │   ├── (3 stats)     stats-assistant / stats-method-finder / verify-stats-handbook
+│   │   ├── (2 guard)     karpathy-guard / rule-auditor
+│   │   ├── (2 system)    component-health-check / living-system-dashboard
+│   │   ├── (1 search)    google-scholar-search
+│   │   ├── (1 debate)    debate-validator
+│   │   ├── (1 cross)     cross-delegate
+│   │   └── (1 evolve)    self-evolve
+│   │
+│   ├── handbooks/
+│   │   ├── systems-thinking.md        ← 7 system principles
+│   │   ├── engineering-grammar.md     ← 18 WHEN→THEN rules
+│   │   ├── activation-matrix.md       ← component coordination
+│   │   ├── ADVANTAGES.md              ← frontier comparison
+│   │   ├── WEAKNESSES.md              ← gap analysis
+│   │   ├── IMPROVEMENT_PLAN.md        ← improvement roadmap
+│   │   ├── CROSS_PROJECT_PROTOCOL.md  ← cross-agent delegation
+│   │   ├── DEEPWIKI_INTEGRATION.md    ← DeepWiki integration
+│   │   ├── LIVING_SYSTEM.md           ← living system implementation
+│   │   ├── README_UPDATE_RULE.md      ← README sync protocol
+│   │   └── stats-methods.md           ← statistics methods handbook
+│   │
+│   └── readme-versions/              ← README version archive
+│
+├── src/                       ← Core Python engine
+│   ├── adapter.py            ← IProjectAdapter + score()
+│   ├── orchestrator.py       ← KB-first species search coordinator
+│   ├── project_hub.py        ← Cross-project coordination (eon-core bridge)
+│   ├── dao_engine.py         ← Philosophical chain executor
+│   └── shared.py             ← Shared types + utilities
+│
+├── fishkb/                    ← Independent reusable core (pip install fishkb)
+│   ├── fishkb/db.py           ← KnowledgeDB — SQLite FTS5
+│   ├── fishkb/search.py       ← FishSpeciesMatcher — KB-First matching
+│   ├── fishkb/credibility.py  ← Paper credibility scoring
+│   └── fishkb/types.py        ← Core data types
+│
+├── config/
+│   ├── agent.yaml             ← Agent orchestration config
+│   ├── mcp_servers.yaml       ← 21 MCP server definitions
+│   ├── coordination.yaml      ← Cross-project coordination
+│   ├── evolution.yaml         ← Self-evolution parameters
+│   ├── component_registry.yaml ← Living system registry
+│   ├── fish_species_kb.yaml   ← 430 species index
+│   └── models.yaml            ← Multi-LLM provider config
+│
+├── data/
+│   ├── species.db             ← SQLite (species + traits + literature)
+│   ├── FISHMORPH.csv           ← 2.3MB global morphology database
+│   └── reports/               ← HTML/CSV exports
+│
+├── scripts/
+│   ├── credibility_scorer.py  ← Triangulation scoring (0-100)
+│   ├── self_evolve.py         ← 6-dimension evolution
+│   ├── kb_to_graph_sync.py    ← KB ↔ Graph sync
+│   └── taxonomy_sync.py       ← NCBI taxonomy sync
+│
+├── Dockerfile
+├── docker-compose.yml
+├── docs/
+│   ├── ARCHITECTURE.md        ← Full 5-layer architecture
+│   ├── SKILL_PIPELINE.md      ← Skill pipeline documentation
+│   └── WORKFLOWS.md           ← Research workflows
+│
+└── .github/workflows/
+    └── validate.yml           ← CI/CD auto-validate
 ```
 
 ---
 
-## 📜 Version History
-
-| Version | Date | Highlights |
-|---------|------|------------|
-| **v6.5.0** | 2026-06-17 | KB-First search strategy, 21 MCP integration, living system component registry |
-| v6.4.0 | 2026-06-12 | ProjectHub cross-project coordination, eon-core bridge |
-| v6.3.0 | 2026-06-09 | Self-evolution engine (7 triggers), evolution.yaml |
-| v6.2.0 | 2026-06-07 | Cross-project evolution propagation, component_registry.yaml |
-| v6.1.0 | 2026-06-06 | 28 skills (6 pipeline + 20 domain + 2 guard), rule-auditor |
-| v6.0.0 | 2026-06-05 | S-T-V-P₁-P₂ five-body architecture, coordination.yaml |
-| v5.0.0 | 2026-06-01 | 5-stage pipeline, fishkb sub-library, 430 species |
-
----
-
-## 🪞 Self-Assessment
+## 🗺️ Future Roadmap
 
 ### Strengths
-- **Species coverage**: 430 Yangtze fish species with bilingual conservation status — the most comprehensive open-source dataset
-- **KB-First architecture**: SQLite FTS5 enables zero-network species lookup for 30 core species
+- **Species coverage**: 430 Yangtze fish species — most comprehensive open-source dataset
+- **KB-First architecture**: SQLite FTS5 enables zero-network species lookup
 - **Living system**: Every component has birth date, last verification, and expiry policy
 - **Cross-project coordination**: eon-core EventBus + DAG routing for 6-project ecosystem
-- **Emergence-aware**: Kalman Filter detects patterns from noisy data; ≥3 sources flag emergence
+- **Emergence-aware**: Kalman Filter + ≥3 sources flag emergence
 
-### Current Limitations
+### Known Limitations
 - FishBase sync blocked by SSL in current environment (script ready)
 - Some niche Chinese journals have incomplete metadata
 - R package version drift monitoring depends on CRAN availability
-- Deep species genetic analysis requires manual expert review
 
-### Roadmap
-- [ ] FishBase auto-sync when SSL resolved
-- [ ] Expand to 500+ species with Mekong basin coverage
+### Milestones
+- [ ] FishBase auto-sync when SSL resolved → 500+ species with Mekong basin
 - [ ] Real-time population monitoring dashboard
 - [ ] Deep learning morphological trait extraction from images
+- [ ] Peer-reviewed publication on KB-First search methodology
 
 ---
 
-## 🔗 Ecosystem
+## 📋 README Changelog
 
-This project is the **Knowledge Supply Core (S/V0)** in the SanShengWanWu ecosystem.
-
-```
-S-T-V-P₁-P₂ Architecture (coordinated by eon-core):
-
-  S/V0  📦 fish-ecology-assistant    → Knowledge Supply
-  V/V1  🔍 cognitive-search-engine   → Search Verification
-  Coord ⚙️ eon-core                  → Coordination Hub
-
-  Derived:
-    P₁  🐬 porpoise-agent    → Porpoise Domain Expert
-    P₂  🐟 coilia-agent      → Coilia Domain Expert
-    P₃  🐟 culter-agent      → Culter Domain Expert
-    C   🔥 conflict-arbiter  → Conflict Arbitration
-```
-
-> 🔥 Together infinite power, apart top expert engines.
+| Version | Date | Theme | What Changed |
+|:--------|:-----|:------|:-------------|
+| **v8.1** | 2026-06-20 | README Restoration | Restored from historical sessions: Systems Thinking 7 principles, DeepSeek efficiency principles, 道生万物 architecture, README Changelog, DeepWiki/Dual Core/Docker badges, unified ecosystem with 6 projects |
+| **v7.1** | 2026-06-20 | Data sync | + MCP 21 fix, Skills 28 fix, bilingual README sync, cognitive_search in ZH MCP table |
+| **v7.0** | 2026-06-10 | lit-search v3.1 | + lit-search v3.1 (synonym expansion→interactive→12-layer→triangulation), + credibility_scorer.py, + self_evolve.py, + kb_to_graph_sync.py |
+| **v6.5** | 2026-06-07 | Cognitive Engine | + DirectLoader protocol, dual-mode search, knowledge graph evolution |
+| **v6** | 2026-06-06 | Search v3.0 | 12 search engines (GS-first + CNKI/Wanfang/Baidu/CAS), google-scholar-search skill |
+| **v5** | 2026-06-06 | Systems Thinking | + Dual-core philosophy (Panta Rhei + Systems Thinking), 7 principles + 4 DS principles, engineering grammar (18 WHEN→THEN) |
+| **v4** | 2026-06-05 | Engineering | Full rewrite: Panta Rhei philosophy, capability comparison, sparse activation |
+| **v3** | 2026-06-05 | Panta Rhei | Dynamic worldview integration, emergence detection, calibrated language |
+| **v2** | 2026-06-05 | Original | Initial release — Fish ecology assistant, 5 engines + 12 sub-agents |
 
 ---
 
-🌱 **Everything Flows · Panta Rhei**
+## 📜 License
 
-> Heraclitus said: No man ever steps in the same river twice.
->
-> We say: You cannot analyze today's ecological data with last month's code.
+MIT © 2026 fangtaocai041
 
-This project is not a fixed toolset — it is a **living system**. Every component has built-in expiration mechanisms, version tracking, and emergence awareness. As your research deepens, packages update, and new methods emerge, it evolves with you.
+---
 
-*Last updated: 2026-06-20　|　Environment: Reasonix Code · DeepSeek Powered*
+> **"不要搜索字符串，要重建所指。"**
+> Don't search for strings — reconstruct the signified.
