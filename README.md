@@ -1,6 +1,6 @@
 ﻿# 🐟 Fish Ecology Assistant
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge) ![License](https://img.shields.io/badge/License-MIT-brightgreen?style=for-the-badge) ![Version](https://img.shields.io/badge/Version-v8.1-blueviolet?style=for-the-badge) ![Species](https://img.shields.io/badge/Species-430-success?style=for-the-badge) ![Traits](https://img.shields.io/badge/Traits-289-important?style=for-the-badge) ![FISHMORPH](https://img.shields.io/badge/FISHMORPH-251%20spp-informational?style=for-the-badge) ![Population](https://img.shields.io/badge/Population-26%20records-critical?style=for-the-badge) ![Bilingual](https://img.shields.io/badge/Bilingual-CN%C2%B7EN-ff69b4?style=for-the-badge) ![DB](https://img.shields.io/badge/DB-SQLite-lightgrey?style=for-the-badge) ![Frontier](https://img.shields.io/badge/Frontier-Kalman-red?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge) ![License](https://img.shields.io/badge/License-MIT-brightgreen?style=for-the-badge) ![Version](https://img.shields.io/badge/Version-v8.1-blueviolet?style=for-the-badge) ![Species](https://img.shields.io/badge/Species-430-success?style=for-the-badge) ![Traits](https://img.shields.io/badge/Traits-289%20morph-important?style=for-the-badge) ![FISHMORPH](https://img.shields.io/badge/FISHMORPH-251%20spp-informational?style=for-the-badge) ![PopLevel](https://img.shields.io/badge/PopLevel-26%20records-critical?style=for-the-badge) ![SQLite](https://img.shields.io/badge/SQLite-308KB-lightgrey?style=for-the-badge) ![Reports](https://img.shields.io/badge/Reports-CN%C2%B7EN-ff69b4?style=for-the-badge) ![Source](https://img.shields.io/badge/Source-7%20databases-orange?style=for-the-badge)
 
 > 🌊 Knowledge Supply Core — 430 Yangtze fish species, 289 morphological traits, population-level variation.
 > Panta Rhei — Everything flows.
@@ -120,18 +120,18 @@ fish-ecology-assistant/
 
 ## ✨ Features
 
-| Feature | Description |
-|---------|-------------|
-| 🗃️ 430 Species | Complete Yangtze River fish species database |
-| 📏 289 Morphology Traits | Sourced from FISHMORPH (251), FishBase, FAO, literature |
-| 🌊 Population-level Data | 26 records with water-body-specific trait variation |
-| 🔬 Trait Catalog | 61 traits in 7 categories (morphology→life history→feeding→...) |
-| 🏛️ Bilingual Conservation | IUCN + China Red List + National Protection + CITES |
-| 📊 Excel/HTML Reports | Double-click reports with 2-level hierarchical headers |
-| 🔄 FishBase Auto-sync | Automated trait pulling with source traceability |
-| 🕸️ Network Science | Trait co-occurrence networks, keystone trait identification |
-| 📡 Kalman Filter | Emergence signal detection from noisy population data |
-| 🔗 KB-First Architecture | Zero-network lookup for 30 core species |
+| Feature | Status | Description |
+|---------|:------:|-------------|
+| 🗃️ 430 Species DB | ✅ | Yangtze fish species with bilingual conservation |
+| 📏 289 Morphology | ✅ | FISHMORPH (251) + FishBase + FAO + manual |
+| 🌊 Population-level | ✅ | 26 records with water-body annotation |
+| 🔬 Trait Catalog | ✅ | 61 traits in 7 categories |
+| 🏛️ Conservation | ✅ | IUCN + China Red List + National + CITES |
+| 📊 Excel/HTML | ✅ | Bilingual reports, 2-level headers |
+| 🔗 KB-First | ✅ | SQLite FTS5, zero-network for 30 core spp |
+| 🕸️ Trait Network | ✅ | Jaccard co-occurrence, keystone traits |
+| 📡 Kalman Filter | ✅ | Emergence detection from noisy data |
+| 🔄 FishBase Sync | 🟡 | Script ready, SSL blocked in env |
 
 ---
 

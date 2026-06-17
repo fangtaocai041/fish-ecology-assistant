@@ -1,6 +1,6 @@
 ﻿# 🐟 鱼类生态学助手
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge) ![协议](https://img.shields.io/badge/%E5%8D%8F%E8%AE%AE-MIT-brightgreen?style=for-the-badge) ![版本](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-v8.1-blueviolet?style=for-the-badge) ![物种](https://img.shields.io/badge/%E7%89%A9%E7%A7%8D-430-success?style=for-the-badge) ![性状](https://img.shields.io/badge/%E6%80%A7%E7%8A%B6-289-important?style=for-the-badge) ![FISHMORPH](https://img.shields.io/badge/FISHMORPH-251%E7%A7%8D-informational?style=for-the-badge) ![种群级](https://img.shields.io/badge/%E7%A7%8D%E7%BE%A4%E7%BA%A7-26%E6%9D%A1-critical?style=for-the-badge) ![双语](https://img.shields.io/badge/%E5%8F%8C%E8%AF%AD-%E4%B8%AD%C2%B7%E8%8B%B1-ff69b4?style=for-the-badge) ![数据库](https://img.shields.io/badge/%E6%95%B0%E6%8D%AE%E5%BA%93-SQLite-lightgrey?style=for-the-badge) ![前沿](https://img.shields.io/badge/%E5%89%8D%E6%B2%BF-%E5%8D%A1%E5%B0%94%E6%9B%BC-red?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge) ![协议](https://img.shields.io/badge/%E5%8D%8F%E8%AE%AE-MIT-brightgreen?style=for-the-badge) ![版本](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-v8.1-blueviolet?style=for-the-badge) ![物种](https://img.shields.io/badge/%E7%89%A9%E7%A7%8D-430-success?style=for-the-badge) ![性状](https://img.shields.io/badge/%E6%80%A7%E7%8A%B6-289%E9%A1%B9-important?style=for-the-badge) ![FISHMORPH](https://img.shields.io/badge/FISHMORPH-251%E7%A7%8D-informational?style=for-the-badge) ![种群级](https://img.shields.io/badge/%E7%A7%8D%E7%BE%A4%E7%BA%A7-26%E6%9D%A1-critical?style=for-the-badge) ![数据库](https://img.shields.io/badge/%E6%95%B0%E6%8D%AE%E5%BA%93-308KB-lightgrey?style=for-the-badge) ![报告](https://img.shields.io/badge/%E6%8A%A5%E5%91%8A-%E4%B8%AD%C2%B7%E8%8B%B1-ff69b4?style=for-the-badge) ![来源](https://img.shields.io/badge/%E6%9D%A5%E6%BA%90-7%E5%BA%93-orange?style=for-the-badge)
 
 > 🌊 知识供给核心 — 430种长江鱼类，289项形态性状，种群级变异。
 🌊 知识供给核心 — 430种长江鱼类，289项形态性状，种群级变异。
@@ -150,18 +150,18 @@ fish-ecology-assistant/
 
 ## ✨ 功能特性
 
-| 功能 | 说明 |
-|------|------|
-| 🗃️ 430 物种 | 完整长江鱼类物种数据库 |
-| 📏 289 形态性状 | FISHMORPH(251种) + FishBase + FAO + 文献 |
-| 🌊 种群级数据 | 26条含水域标注的种内性状变异记录 |
-| 🔬 性状目录 | 61项性状分7大类 (形态→生活史→食性→...) |
-| 🏛️ 双语保护等级 | IUCN + 中国红色名录 + 国家重点 + CITES |
-| 📊 Excel/HTML 报告 | 双击打开，双层表头，中英双语 |
-| 🔄 FishBase 自动同步 | 自动拉取性状，完整溯源 |
-| 🕸️ 网络科学 | 性状共现网络，关键性状识别 |
-| 📡 卡尔曼滤波 | 从噪声种群数据检测涌现信号 |
-| 🔗 KB-First 架构 | 30种核心物种零网络查询 |
+| 功能 | 状态 | 说明 |
+|------|:--:|------|
+| 🗃️ 430 物种库 | ✅ | 长江鱼类 + 双语保护等级 |
+| 📏 289 形态性状 | ✅ | FISHMORPH(251) + FishBase + FAO + 手动 |
+| 🌊 种群级数据 | ✅ | 26条含水域标注 |
+| 🔬 性状目录 | ✅ | 61项性状分7大类 |
+| 🏛️ 保护等级 | ✅ | IUCN + 中国红皮书 + 国家重点 + CITES |
+| 📊 Excel/HTML | ✅ | 双语报告，双层表头 |
+| 🔗 KB-First | ✅ | SQLite FTS5，30种核心零网络 |
+| 🕸️ 性状网络 | ✅ | Jaccard共现，关键性状识别 |
+| 📡 卡尔曼滤波 | ✅ | 噪声数据涌现检测 |
+| 🔄 FishBase同步 | 🟡 | 脚本就绪，SSL环境限制 |
 
 ---
 
