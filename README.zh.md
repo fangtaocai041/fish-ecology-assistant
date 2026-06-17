@@ -1,10 +1,6 @@
 # 🐟 鱼类生态学助手
 
-[![Python](https://img.shields.io/badge/python-3.10+-blue)](https://python.org)
-[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Version](https://img.shields.io/badge/version-8.1-8b5cf6)]()
-[![Species](https://img.shields.io/badge/species-430-22c55e)]()
-[![Traits](https://img.shields.io/badge/traits-289-orange)]()
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python) ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square) ![Version](https://img.shields.io/badge/Version-v8.1-blueviolet?style=flat-square) ![Species](https://img.shields.io/badge/Species-430-success?style=flat-square) ![Traits](https://img.shields.io/badge/Traits-289-orange?style=flat-square) ![FISHMORPH](https://img.shields.io/badge/FISHMORPH-integrated-9cf?style=flat-square) ![Population](https://img.shields.io/badge/Population-26%20records-yellow?style=flat-square) ![Bilingual](https://img.shields.io/badge/Bilingual-CN%2BEN-ff69b4?style=flat-square) ![DB](https://img.shields.io/badge/DB-SQLite-lightgrey?style=flat-square) ![Frontier](https://img.shields.io/badge/Frontier-Kalman%7CNetwork-red?style=flat-square)
 
 > 🌊 知识供给核心 — 430种长江鱼类，289项形态性状，种群级变异。
 > 万物皆变 · Panta Rhei。
