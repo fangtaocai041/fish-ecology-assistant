@@ -11,7 +11,7 @@ def fetch(sn):
     try:
         url = f"https://fishbase.se/summary/{sn.replace(' ','-')}"
         req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urlopen(req, timeout=20, context=ctx) as resp:
+        with urlopen(req, timeout=8, context=ctx) as resp:
             return resp.read().decode('utf-8', errors='replace')
     except:
         return None
@@ -34,7 +34,7 @@ db = sqlite3.connect(DB, timeout=5)
 species = db.execute("""
     SELECT id, scientific FROM species WHERE lower_yangtze=1
     AND id NOT IN (SELECT DISTINCT species_id FROM traits_morphology WHERE max_length_cm IS NOT NULL)
-    LIMIT 50
+    LIMIT 100
 """).fetchall()
 
 print(f"Scraping {len(species)} species...")
@@ -60,7 +60,7 @@ for sid, sn in species:
     except Exception as e:
         print(f"  {sn}: {e}")
     db.commit()
-    time.sleep(1)
+    time.sleep(0.3)
 
 db.close()
 print(f"\nDone: {ok} species")
