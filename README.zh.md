@@ -1,10 +1,4 @@
-<div align="center">
-  <h1>🐟 鱼类生态学助手</h1>
-  <p><em>知识供给核心 — 430种长江鱼类 · 289项形态性状 · 种群级变异</em></p>
-</div>
-
-<p align="center">
-  ![Python 3.10+](https://img.shields.io/badge/Python%203.10%2B-3776AB?style=flat-square)
+![Python 3.10+](https://img.shields.io/badge/Python%203.10%2B-3776AB?style=flat-square)
   ![MIT](https://img.shields.io/badge/MIT-34D058?style=flat-square)
   ![v8.1](https://img.shields.io/badge/v8.1-8A4FCE?style=flat-square)
   ![430 species](https://img.shields.io/badge/430%20species-007EC6?style=flat-square)
@@ -15,8 +9,11 @@
   ![SQLite](https://img.shields.io/badge/SQLite-6B7280?style=flat-square)
 </p>
 
----
+[English](README.md) · [中文](README.zh.md)
 
+长江鱼类生态学知识库与性状数据库。
+
+---
 ## 📖 目录
 
 - [哲学](#-哲学)
