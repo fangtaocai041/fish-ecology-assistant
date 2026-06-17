@@ -1,0 +1,9 @@
+# GitHub Linguist: exclude generated reports from language stats
+data/reports/*.html linguist-generated=true
+data/reports/*.csv  linguist-generated=true
+
+# Tesseract traineddata (binary)
+*.traineddata linguist-vendored=true
+
+# Database files
+*.db linguist-vendored=true
