@@ -1,6 +1,17 @@
 ﻿# 🐟 Fish Ecology Assistant
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge) ![License](https://img.shields.io/badge/License-MIT-brightgreen?style=for-the-badge) ![Version](https://img.shields.io/badge/Version-v8.1-blueviolet?style=for-the-badge) ![Species](https://img.shields.io/badge/Species-430-success?style=for-the-badge) ![Traits](https://img.shields.io/badge/Traits-289%20morph-important?style=for-the-badge) ![FISHMORPH](https://img.shields.io/badge/FISHMORPH-251%20spp-informational?style=for-the-badge) ![PopLevel](https://img.shields.io/badge/PopLevel-26%20records-critical?style=for-the-badge) ![SQLite](https://img.shields.io/badge/SQLite-308KB-lightgrey?style=for-the-badge) ![Reports](https://img.shields.io/badge/Reports-CN%C2%B7EN-ff69b4?style=for-the-badge) ![Source](https://img.shields.io/badge/Source-7%20databases-orange?style=for-the-badge)
+<p align="center">
+  ![Python 3.10+](https://img.shields.io/badge/Python%203.10%2B-3776AB?style=flat-square)
+  ![MIT](https://img.shields.io/badge/MIT-34D058?style=flat-square)
+  ![v8.1](https://img.shields.io/badge/v8.1-8A4FCE?style=flat-square)
+  ![430 species](https://img.shields.io/badge/430%20species-007EC6?style=flat-square)
+  ![289 traits](https://img.shields.io/badge/289%20traits-FE7D37?style=flat-square)
+  ![FISHMORPH](https://img.shields.io/badge/FISHMORPH-0EA5E9?style=flat-square)
+  ![population-level](https://img.shields.io/badge/population-level-D73A4A?style=flat-square)
+  ![CN-EN](https://img.shields.io/badge/CN-EN-EC4899?style=flat-square)
+  ![SQLite](https://img.shields.io/badge/SQLite-6B7280?style=flat-square)
+</p>
+
 
 > 🌊 Knowledge Supply Core — 430 Yangtze fish species, 289 morphological traits, population-level variation.
 > Panta Rhei — Everything flows.

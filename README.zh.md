@@ -1,6 +1,17 @@
 ﻿# 🐟 鱼类生态学助手
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge) ![协议](https://img.shields.io/badge/%E5%8D%8F%E8%AE%AE-MIT-brightgreen?style=for-the-badge) ![版本](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-v8.1-blueviolet?style=for-the-badge) ![物种](https://img.shields.io/badge/%E7%89%A9%E7%A7%8D-430-success?style=for-the-badge) ![性状](https://img.shields.io/badge/%E6%80%A7%E7%8A%B6-289%E9%A1%B9-important?style=for-the-badge) ![FISHMORPH](https://img.shields.io/badge/FISHMORPH-251%E7%A7%8D-informational?style=for-the-badge) ![种群级](https://img.shields.io/badge/%E7%A7%8D%E7%BE%A4%E7%BA%A7-26%E6%9D%A1-critical?style=for-the-badge) ![数据库](https://img.shields.io/badge/%E6%95%B0%E6%8D%AE%E5%BA%93-308KB-lightgrey?style=for-the-badge) ![报告](https://img.shields.io/badge/%E6%8A%A5%E5%91%8A-%E4%B8%AD%C2%B7%E8%8B%B1-ff69b4?style=for-the-badge) ![来源](https://img.shields.io/badge/%E6%9D%A5%E6%BA%90-7%E5%BA%93-orange?style=for-the-badge)
+<p align="center">
+  ![Python 3.10+](https://img.shields.io/badge/Python%203.10%2B-3776AB?style=flat-square)
+  ![MIT](https://img.shields.io/badge/MIT-34D058?style=flat-square)
+  ![v8.1](https://img.shields.io/badge/v8.1-8A4FCE?style=flat-square)
+  ![430 species](https://img.shields.io/badge/430%20species-007EC6?style=flat-square)
+  ![289 traits](https://img.shields.io/badge/289%20traits-FE7D37?style=flat-square)
+  ![FISHMORPH](https://img.shields.io/badge/FISHMORPH-0EA5E9?style=flat-square)
+  ![population-level](https://img.shields.io/badge/population-level-D73A4A?style=flat-square)
+  ![CN-EN](https://img.shields.io/badge/CN-EN-EC4899?style=flat-square)
+  ![SQLite](https://img.shields.io/badge/SQLite-6B7280?style=flat-square)
+</p>
+
 
 > 🌊 知识供给核心 — 430种长江鱼类，289项形态性状，种群级变异。
 🌊 知识供给核心 — 430种长江鱼类，289项形态性状，种群级变异。
