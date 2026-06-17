@@ -222,10 +222,10 @@ porpoise  coilia  culter  conflict
 
 | 道 | 中文 | English | 在系统中的含?|
 |----|------|---------|---------------|
-| **?* | 外界, 自然 | Dao — the external world | 用户的研究问? 长江生态的现实需?|
+| **道** | 外界, 自然 | Dao — the external world | 用户的研究问? 长江生态的现实需?|
 | **一** | 太极, 命令 | One — the undivided | 命令进入 fish-ecology-assistant, 统一入口 |
-| **?* | 阴阳, 两仪 | Two — Yin and Yang | S(知识/? ?V(验证/?, 太极生两?|
-| **?* | 三体, 三角 | Three — the Triangle | fish + cognitive + eon-core, 矛盾统一的封闭结?|
+| **二** | 阴阳, 两仪 | Two — Yin and Yang | S(知识/? ?V(验证/?, 太极生两?|
+| **三** | 三体, 三角 | Three — the Triangle | fish + cognitive + eon-core, 矛盾统一的封闭结?|
 | **万物** | 一切事物| Myriad — all things | 衍生项目 + Skills + 论文 + 输出, 无限演化 |
 
 > **铁律**: 三角密闭 (缺一不可) · 万物开?(无限衍生) · 三角不依赖万?· 二生三即矛盾统一
@@ -387,12 +387,12 @@ MIT © 2026 fangtaocai041
 
 ---
 
-> **"不要搜索字符串，要重建所指。**
-> Don't search for strings — reconstruct the signified.
-
 ---
 
 ## 🌱 万物皆流 · Panta Rhei
+
+> **"不要搜索字符串，要重建所指。"**
+> *Don't search for strings — reconstruct the signified.*
 
 > Heraclitus said: No man ever steps in the same river twice.
 >

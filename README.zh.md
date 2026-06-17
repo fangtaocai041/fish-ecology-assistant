@@ -156,17 +156,17 @@ porpoise  coilia  culter  conflict
     Skills · Papers · Analyses
 ```
 
-**不是"一万种物种"。是"一"。**
+**不是"一万种物种"。是"一切"。**
 
 | ① | 中文 | English | 在系统中的含義 |
 |----|------|---------|---------------|
-| ** * | 外界, 自然 | Dao — the external world | 用户的研究问题 长江生态的现实需求|
+| **道** | 外界, 自然 | Dao — the external world | 用户的研究问题 长江生态的现实需求|
 | **一** | 太极, 命令 | One — the undivided | 命令进入 fish-ecology-assistant, 统一入口 |
-| ** * | 阴阳, 两仪 | Two — Yin and Yang | S(知识/阴)  V(验证/阳),, 太极生两仪|
-| ** * | 三体, 三角 | Three — the Triangle | fish + cognitive + eon-core, 矛盾统一的封闭结构|
+| **二** | 阴阳, 两仪 | Two — Yin and Yang | S(知识/阴) ↔ V(验证/阳)，太极生两仪 |
+| **三** | 三体, 三角 | Three — the Triangle | fish + cognitive + eon-core, 矛盾统一的封闭结构|
 | **万物** | 一切事物| Myriad — all things | 衍生项目 + Skills + 论文 + 输出, 无限演化 |
 
-> **铁律**: 三角密闭 (缺一不可) · 万物开始(无限衍生) · 三角不依赖万物· 二生三即矛盾统一
+> **铁律**: 三角密闭 (缺一不可) · 万物开放(无限衍生) · 三角不依赖万物。二生三即矛盾统一
 
 ---
 
@@ -211,12 +211,12 @@ MIT License © 2026 fangtaocai041
 
 ---
 
-> **"不要搜索字符串，要重建所指。**
-> Don't search for strings → reconstruct the signified.
-
 ---
 
 ## 🌱 万物皆变 · Panta Rhei
+
+> **"不要搜索字符串，要重建所指。"**
+> *Don't search for strings — reconstruct the signified.*
 
 > 赫拉克利特说：人不能两次踏进同一条河流。
 >
