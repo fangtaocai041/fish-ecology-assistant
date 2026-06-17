@@ -20,13 +20,54 @@
 
 ---
 
-## 🏛️ Philosophy
+## 🎯 Core Philosophy
 
-> The river flows, knowledge drifts, emergence patterns.
+> 🌍 The world is dynamic. 📖 Knowledge is temporary. 🌟 Emergence is the norm.
 
-This is not a slogan. It is the operating system running through every line of code, every search, every analysis.
+This is not a slogan. It is the operating system running through every line of code, every search, and every analysis in this project.
 
 ### 📜 Three Tenets
+
+**🌍 The world is dynamic** — R packages update, species distributions shift, scientific consensus evolves, climate change reshapes ecosystems. A correct conclusion today may be outdated in six months. We treat no knowledge as eternal truth, but place it on a timeline and view it dynamically.
+
+**📖 Knowledge is temporary** — The foundation of science is falsification (Popper). No discovery is ultimate truth—only the "best current explanation." We use calibrated language: "evidence suggests" not "proves," "Smith (2022) found" not "studies show." Every output carries a temporal anchor.
+
+**🌟 Emergence is the norm** — Life, consciousness, ecosystems, AI reasoning—all are emergent phenomena. You cannot assemble the whole by analyzing only the parts. When ≥3 independent sources point to the same unexpected pattern, the system flags it as an emergence signal—not dismisses it as noise.
+
+### ⚖️ Why This Matters for Research
+
+| 🎯 Scenario | ❌ Traditional | ✅ Dynamic Worldview |
+|:------------|:--------------|:--------------------|
+| 📦 Package versions | Run 2020 code, ignore version drift | Auto-check, tag "Last verified on glmmTMB v1.1.10" |
+| 📝 Citations | "Studies prove it" | "Smith (2022) found X, but Jones (2024) added Y" |
+| 📊 Outliers | Ignore as noise | ≥3 sources → emergence signal, actively track |
+| ⏰ Knowledge decay | Handbook frozen, never updated | Review records include "Next review date," computed by package activity |
+| 🔧 Method selection | Fixed pipeline forever | Dynamic method selection, dynamic confidence |
+
+---
+
+## 🧩 What This Is
+
+**Fish Ecology Assistant** is a complete configuration package that transforms Reasonix Code from a general-purpose coding assistant into a professional fish ecology research team.
+
+It integrates **16 MCP tools**, **12 domain-specific AI sub-agents**, **5-engine parallel search**, an automated **5-stage research pipeline**, and an **R statistical computing environment**—all outputs guided by the dynamic worldview above.
+
+### 📊 Capability Matrix
+
+| 🚀 Capability | ✨ With This Config | 💭 Vanilla Reasonix |
+|:--------------|:-------------------|:-------------------|
+| 🔍 Search | 5 (tavily, exa, google-scholar, article, scholarly) | 1 (web_search) |
+| 🤖 AI Sub-agents | 12 (domain-specific, incl. emergence detection) | 4 (general) |
+| 📊 R Statistics | R 4.6.0 + 20+ ecology packages | — |
+| 👁️ OCR | PaddleOCR + Tesseract.js | — |
+| 📚 References | Direct Zotero query | — |
+| ✍️ Writing | 5-stage + auto-review + emergence detection | — |
+| 🏛️ Knowledge Bases | 13 IMA knowledge bases | — |
+| ⚡ Setup | One script, 5 minutes | — |
+
+---
+
+## 📜 Three Tenets
 
 **🌊 The River Flows** — Packages update, species migrate, consensus shifts, climate reshapes. Today's certainty is tomorrow's footnote. We place knowledge on a timeline and view it dynamically.
 
