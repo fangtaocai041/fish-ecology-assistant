@@ -1,5 +1,13 @@
 ﻿<div align="center">
 
+```
+╔══════════════════════════════════════════════════════════════╗
+║  🐟  FISH ECOLOGY ASSISTANT  ·  S/V0 Knowledge Supply Core  ║
+║  ──────────────────────────────────────────────────────────  ║
+║     Panta Rhei + Systems Thinking  ·  Triangle Core  ·  S   ║
+╚══════════════════════════════════════════════════════════════╝
+```
+
 🇨🇳 [中文](README.zh.md)
 
 # 🌊 万物皆流 · Panta Rhei
@@ -17,10 +25,35 @@
 [![R](https://img.shields.io/badge/R-4.6.0-276DC3)]()
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED)](Dockerfile)
 [![CI](https://img.shields.io/badge/CI-passing-34D058)](.github/workflows/validate.yml)
-</div>
-
 
 <p>21 MCP services · 28 AI Skills · 12 search engines · 13 knowledge bases · 18 engineering rules · BDI + ReAct/ToT + MAS · Docker</p>
+
+<p align="center">
+  <a href="https://github.com/fangtaocai041/fish-ecology-assistant/stargazers"><img src="https://img.shields.io/github/stars/fangtaocai041/fish-ecology-assistant?style=social" alt="Stars"></a>
+  <a href="https://github.com/fangtaocai041/fish-ecology-assistant/network/members"><img src="https://img.shields.io/github/forks/fangtaocai041/fish-ecology-assistant?style=social" alt="Forks"></a>
+</p>
+
+</div>
+
+---
+
+## 📑 Table of Contents
+
+- [🧠 Core Philosophy](#-core-philosophy)
+- [🐋 DeepSeek Efficiency Principles](#-deepseek-efficiency-principles-效率即智)
+- [🔺 Triangle Core Architecture](#-triangle-core--derived-role-sv0-knowledge-supply)
+- [🤔 What This Is](#-what-this-is)
+- [🧬 KB-First Two-Stage Search](#-kb-first-two-stage-search-v650)
+- [🎯 Skills](#-skills)
+- [🔌 MCP Tools](#-mcp-tools-21)
+- [☯ 道生一 · 一生二 · 二生三 · 三生万物](#-道生一--一生二--二生三--三生万物)
+- [🚀 Quick Start](#-quick-start)
+- [✨ Features](#-features)
+- [📁 Project Structure](#-project-structure)
+- [🗺️ Future Roadmap](#-future-roadmap)
+- [📋 README Changelog](#-readme-changelog)
+- [📜 License](#-license)
+- [🌱 Panta Rhei](#-万物皆流--panta-rhei)
 
 ---
 
@@ -60,6 +93,8 @@ This is not a slogan. It is the operating system running through every line of c
 | ⑥ | Differentiated Handling | *On Correct Handling of Contradictions* (1957) | Antagonistic vs non-antagonistic → different strategies |
 | ⑦ | Multi-Factor Balance | *On the Ten Major Relationships* (1956) | 10 research balances + multi-objective optimization |
 
+<p align="right"><a href="#-table-of-contents">↑ Back to top</a></p>
+
 ---
 
 ## 🐋 DeepSeek Efficiency Principles (效率即智
@@ -72,6 +107,8 @@ This is not a slogan. It is the operating system running through every line of c
 | **DS-2** | **Sparse Activation** → MoE routing: each Skill fires only when condition met. ~2-4/12 active per request. | `pipeline.stages[].activation` + `karpathy-guard` |
 | **DS-3** | **Differential Verification** → P(stale) scoring only changed packages, not full handbook. | `verify-stats-handbook` skill |
 | **DS-4** | **Information-Gain Routing** → P0 exact terms first → hit-and-stop. P2 redundant terms skipped. Cross-DB dedup. | `ima-smart-search` skill |
+
+<p align="right"><a href="#-table-of-contents">↑ Back to top</a></p>
 
 ---
 
@@ -105,6 +142,8 @@ It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine paral
 | Engineering rules | ✅ | ✅ 18 WHEN→THEN rules with code mapping |
 | Cross-project | ✅ | ✅ fish↔porpoise delegation protocol |
 
+<p align="right"><a href="#-table-of-contents">↑ Back to top</a></p>
+
 ---
 
 ## 🧬 KB-First Two-Stage Search (v6.5.0)
@@ -117,12 +156,14 @@ User Query
 ?     ??     NO
 ?     ??     ?? STAGE 2: External Search
 ? ┌──────────────────────?? ?12 engines parallel   ?? ??cognitive_search    ?? ??scholar (GS-first)  ?? ??cnki + wanfang      ?? ??baidu_scholar       ?? ??cas (中科?         ?? ??ncbi (PubMed)       ?? ??tavily + exa        ?? ??article + scholarly ?? └──────────────────────?└─────────────────────────?```
+```
 
 ---
 
 ## 🎯 Skills
 
-### Pipeline Skills (6)
+<details open>
+<summary><b>📋 Pipeline Skills (6)</b></summary>
 
 | Skill | Description |
 |-------|-------------|
@@ -133,7 +174,10 @@ User Query
 | `research-writer` | Bilingual report generation |
 | `research-reviewer` | Quality review + contradiction detection |
 
-### Domain Skills (20)
+</details>
+
+<details>
+<summary><b>🌐 Domain Skills (20)</b></summary>
 
 | Skill | Description |
 |-------|-------------|
@@ -158,31 +202,49 @@ User Query
 | `self-evolve` | Autonomous parameter evolution |
 | `cross-delegate` | Cross-project task delegation protocol |
 
-### Guard Skills (2)
+</details>
+
+<details>
+<summary><b>🛡️ Guard Skills (2)</b></summary>
 
 | Skill | Description |
 |-------|-------------|
 | `karpathy-guard` | Code quality + safety guard |
 | `rule-auditor` | Cross-project rule compliance check |
 
+</details>
+
+<p align="right"><a href="#-table-of-contents">↑ Back to top</a></p>
+
 ---
 
 ## 🔌 MCP Tools (21)
 
+<details>
+<summary><b>🔍 Search (12 tools)</b></summary>
+
+| Tool | Description |
+|------|-------------|
+| `cognitive_search` | **Primary engine** ✅ DirectLoader, importlib zero-process |
+| `scholar` | Google Scholar literature search |
+| `article` | PMC full-text + journal quality (EasyScholar/OpenAlex) |
+| `scholarly` | Multi-source academic cross-database search |
+| `baidu_scholar` | Baidu Scholar Chinese academic search |
+| `cnki` | CNKI Chinese journal database |
+| `wanfang` | Wanfang Chinese academic database |
+| `cas` | CAS (Chinese Academy of Sciences) literature |
+| `ncbi` | NCBI PubMed + Europe PMC |
+| `tavily` | AI-powered deep web search |
+| `exa` | Semantic web search |
+| `ima` | IMA knowledge base search (14 tools) |
+
+</details>
+
+<details>
+<summary><b>⚡ Compute & Image & Data (9 tools)</b></summary>
+
 | Category | Tool | Description |
 |----------|------|-------------|
-| **Search** | `cognitive_search` | **Primary engine** ✅ DirectLoader, importlib zero-process |
-| | `scholar` | Google Scholar literature search |
-| | `article` | PMC full-text + journal quality (EasyScholar/OpenAlex) |
-| | `scholarly` | Multi-source academic cross-database search |
-| | `baidu_scholar` | Baidu Scholar Chinese academic search |
-| | `cnki` | CNKI Chinese journal database |
-| | `wanfang` | Wanfang Chinese academic database |
-| | `cas` | CAS (Chinese Academy of Sciences) literature |
-| | `ncbi` | NCBI PubMed + Europe PMC |
-| | `tavily` | AI-powered deep web search |
-| | `exa` | Semantic web search |
-| | `ima` | IMA knowledge base search (14 tools) |
 | **Compute** | `rplay` | R 4.6.0 statistical computing |
 | | `coderunner` | Multi-language code sandbox |
 | | `echarts` | Publication-ready chart generation |
@@ -192,6 +254,10 @@ User Query
 | **Data** | `git` | Git version control |
 | | `github` | GitHub API (repos, issues, PRs) |
 | **Knowledge** | `zotero` | Zotero SQLite direct query |
+
+</details>
+
+<p align="right"><a href="#-table-of-contents">↑ Back to top</a></p>
 
 ---
 
@@ -230,6 +296,8 @@ porpoise  coilia  culter  conflict
 
 > **铁律**: 三角密闭 (缺一不可) · 万物开放(无限衍生) · 三角不依赖万物· 二生三即矛盾统一
 
+<p align="right"><a href="#-table-of-contents">↑ Back to top</a></p>
+
 ---
 
 ## 🚀 Quick Start
@@ -245,6 +313,8 @@ docker compose up
 ```
 
 Restart Reasonix, everything is ready.
+
+<p align="right"><a href="#-table-of-contents">↑ Back to top</a></p>
 
 ---
 
@@ -266,6 +336,8 @@ Restart Reasonix, everything is ready.
 | 🎯 score() Adapter | ✅ | IProjectAdapter.score() for cross-project quality scoring |
 | 🔄 FishBase Sync | 🟡 | Script ready, SSL blocked in env |
 | 🧪 Living System | ✅ | Component registry with expiry policies |
+
+<p align="right"><a href="#-table-of-contents">↑ Back to top</a></p>
 
 ---
 
@@ -341,27 +413,31 @@ fish-ecology-assistant/
     └── validate.yml           ✅ CI/CD auto-validate
 ```
 
+<p align="right"><a href="#-table-of-contents">↑ Back to top</a></p>
+
 ---
 
 ## 🗺️ Future Roadmap
 
-### Strengths
+### 💪 Strengths
 - **Species coverage**: 430 Yangtze fish species  — most comprehensive open-source dataset
 - **KB-First architecture**: SQLite FTS5 enables zero-network species lookup
 - **Living system**: Every component has birth date, last verification, and expiry policy
 - **Cross-project coordination**: eon-core EventBus + DAG routing for 6-project ecosystem
 - **Emergence-aware**: Kalman Filter + ≥3 sources flag emergence
 
-### Known Limitations
+### ⚠️ Known Limitations
 - FishBase sync blocked by SSL in current environment (script ready)
 - Some niche Chinese journals have incomplete metadata
 - R package version drift monitoring depends on CRAN availability
 
-### Milestones
+### 🎯 Milestones
 - [ ] FishBase auto-sync when SSL resolved → 500+ species with Mekong basin
 - [ ] Real-time population monitoring dashboard
 - [ ] Deep learning morphological trait extraction from images
 - [ ] Peer-reviewed publication on KB-First search methodology
+
+<p align="right"><a href="#-table-of-contents">↑ Back to top</a></p>
 
 ---
 
@@ -379,13 +455,13 @@ fish-ecology-assistant/
 | **v3** | 2026-06-05 | Panta Rhei | Dynamic worldview integration, emergence detection, calibrated language |
 | **v2** | 2026-06-05 | Original | Initial release  — Fish ecology assistant, 5 engines + 12 sub-agents |
 
+<p align="right"><a href="#-table-of-contents">↑ Back to top</a></p>
+
 ---
 
 ## 📜 License
 
 MIT © 2026 fangtaocai041
-
----
 
 ---
 
@@ -401,3 +477,17 @@ MIT © 2026 fangtaocai041
 This project is not a fixed toolkit — it is a **living system**. Every component has built-in expiry mechanisms, version tracking, and emergence awareness. As your research deepens, R packages update, and new methods emerge, it evolves with you.
 
 *Last updated: 2026-06-18 | Environment: Reasonix Code · DeepSeek-powered*
+
+---
+
+<div align="center">
+
+### 🏷️ Tech & Topics
+
+`research` `ecology` `fisheries` `ai-agent` `llm` `reasonix` `mcp` `r-stats` `docker` `panta-rhei` `systems-thinking`
+
+<br>
+
+<sub>🐟 Part of the **SanShengWanWu** ecosystem · Coordinated by [eon-core](https://github.com/fangtaocai041/eon-core)</sub>
+
+</div>
