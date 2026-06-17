@@ -476,6 +476,9 @@ MIT © 2026 fangtaocai041
 
 This project is not a fixed toolkit — it is a **living system**. Every component has built-in expiry mechanisms, version tracking, and emergence awareness. As your research deepens, R packages update, and new methods emerge, it evolves with you.
 
+
+> 🔧 Agent constraints: [AGENTS.md](../AGENTS.md) · [core-constitution.md](../.reasonix/core-constitution.md) · [research-first](../skills/research-first.md) · [retro-session](../skills/retro-session.md)
+
 *Last updated: 2026-06-18 | Environment: Reasonix Code · DeepSeek-powered*
 
 ---

@@ -1,98 +1,78 @@
-"""KalmanEmergence — Kalman Filter for emergence signal detection.
+"""KalmanEmergence — thin wrapper, delegates to eon-core unified_emergence.
 
-Replaces static threshold emergence detection with Bayesian state estimation.
-Tracks hidden state (species population health) from noisy observations.
-Detects emergence when observation diverges from predicted state.
+The original standalone implementation (kalman_emergence.py v1.0) has been 
+consolidated into eon-core's unified_emergence module.
 
-Mathematics:
-  Predict: x_k = F * x_{k-1} + B * u_k
-  Update: x_k = x_k + K * (z_k - H * x_k)
-  Kalman gain: K = P * H^T * (H * P * H^T + R)^{-1}
-
-Usage:
+Usage (backward compatible):
+    from fish_ecology.kalman_emergence import KalmanEmergence
     kf = KalmanEmergence()
-    kf.update(observation=0.7)  # observed population index
+    kf.update("species_id", 0.7)
     if kf.is_emerging():
-        print(f"Emergence detected! Divergence: {kf.divergence:.2f}")
+        print("Emergence detected!")
+
+For advanced usage, use eon-core directly:
+    from eon_core.unified_emergence import KalmanEmergence, EmergenceMonitor
 """
 
-import json, os, time, math
+import sys, os, json, time, math
 from dataclasses import dataclass
 from typing import List, Optional
 
-
-@dataclass
-class KalmanState:
-    x: float = 0.5      # estimated state (population health, 0=extinct, 1=thriving)
-    P: float = 1.0      # estimate uncertainty
-    Q: float = 0.01     # process noise
-    R: float = 0.1      # measurement noise
-    F: float = 1.0      # state transition
-    H: float = 1.0      # observation mapping
-    history: List[float] = None
-    
-    def __post_init__(self):
-        self.history = self.history or []
+# Try eon-core import first
+try:
+    from eon_core.unified_emergence import KalmanEmergence as _KalmanEmergence
+    _USE_EON_CORE = True
+except ImportError:
+    _USE_EON_CORE = False
 
 
-class KalmanEmergence:
-    """Kalman Filter for emergence signal detection in ecological monitoring."""
+if _USE_EON_CORE:
+    KalmanEmergence = _KalmanEmergence  # direct re-export
 
-    def __init__(self, state_file: str = None):
-        self._states: dict = {}
-        self._divergences: dict = {}
-        self._state_file = state_file
+else:
+    # Fallback: embedded Kalman filter (for standalone use)
+    @dataclass
+    class KalmanState:
+        x: float = 0.5
+        P: float = 1.0
+        Q: float = 0.01
+        R: float = 0.1
+        F: float = 1.0
+        H: float = 1.0
+        history: List[float] = None
+        def __post_init__(self):
+            self.history = self.history or []
 
-    def update(self, species_id: str, observation: float, 
-               process_noise: float = 0.01, measurement_noise: float = 0.1) -> float:
-        """Update Kalman filter with new observation. Returns estimated state."""
-        state = self._states.get(species_id, KalmanState())
-        state.Q = process_noise
-        state.R = measurement_noise
+    class KalmanEmergence:
+        """Kalman Filter for emergence signal detection (fallback mode)."""
+        def __init__(self, state_file: str = None):
+            self._states: dict = {}
+            self._divergences: dict = {}
+            self._state_file = state_file
 
-        # Predict
-        x_pred = state.F * state.x
-        P_pred = state.F * state.P * state.F + state.Q
+        def update(self, species_id: str, observation: float,
+                   process_noise: float = 0.01, measurement_noise: float = 0.1) -> float:
+            state = self._states.get(species_id, KalmanState())
+            state.Q = process_noise; state.R = measurement_noise
+            x_pred = state.F * state.x
+            P_pred = state.F * state.P * state.F + state.Q
+            y = observation - state.H * x_pred
+            S = state.H * P_pred * state.H + state.R
+            K = P_pred * state.H / S if S > 0 else 0
+            state.x = x_pred + K * y
+            state.P = (1 - K * state.H) * P_pred
+            state.history.append(observation)
+            self._states[species_id] = state
+            self._divergences[species_id] = abs(y) / math.sqrt(S) if S > 0 else 0
+            return state.x
 
-        # Update
-        y = observation - state.H * x_pred  # Innovation
-        S = state.H * P_pred * state.H + state.R
-        K = P_pred * state.H / S if S > 0 else 0  # Kalman gain
-        state.x = x_pred + K * y
-        state.P = (1 - K * state.H) * P_pred
+        def is_emerging(self, species_id: str = None, threshold: float = 3.0) -> bool:
+            if species_id:
+                return self._divergences.get(species_id, 0) > threshold
+            return any(d > threshold for d in self._divergences.values())
 
-        state.history.append(state.x)
-        if len(state.history) > 100:
-            state.history = state.history[-50:]
-
-        self._states[species_id] = state
-        self._divergences[species_id] = abs(y) / max(abs(state.x), 0.01)
-        return state.x
-
-    def is_emerging(self, species_id: str, threshold: float = 2.0) -> bool:
-        """Detect emergence: observation diverges > N standard deviations from prediction."""
-        divergence = self._divergences.get(species_id, 0)
-        return divergence > threshold
-
-    def get_trend(self, species_id: str) -> str:
-        """Get population trend from Kalman state history."""
-        state = self._states.get(species_id)
-        if not state or len(state.history) < 3:
-            return "unknown"
-        recent = state.history[-3:]
-        if recent[-1] > recent[0] * 1.1:
-            return "increasing"
-        elif recent[-1] < recent[0] * 0.9:
-            return "decreasing"
-        return "stable"
-
-    def get_state(self, species_id: str) -> Optional[KalmanState]:
-        return self._states.get(species_id)
-
-    @property
-    def emergence_summary(self) -> dict:
-        return {
-            sid: {"estimated_state": round(s.x, 3), "divergence": round(self._divergences.get(sid, 0), 3),
-                  "trend": self.get_trend(sid), "emerging": self.is_emerging(sid)}
-            for sid, s in self._states.items()
-        }
+        @property
+        def divergence(self, species_id: str = None) -> float:
+            if species_id:
+                return self._divergences.get(species_id, 0)
+            return max(self._divergences.values()) if self._divergences else 0
