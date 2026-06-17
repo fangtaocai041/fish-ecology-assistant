@@ -396,11 +396,7 @@ MIT © 2026 fangtaocai041
 
 > Heraclitus said: No man ever steps in the same river twice.
 >
-> Knowledge ages, but humanity's quest to understand the world never ends.
->
-> Yesterday's truth becomes today's foundation. Today's unknown becomes tomorrow's journey.
->
-> Our gaze is never confined to the known; our steps will one day tread upon that vast, star-lit frontier.
+> We say: Knowledge ages, but humanity's quest to understand the world never ends. Yesterday's truth becomes today's foundation. Today's unknown becomes tomorrow's journey. Our gaze is never confined to the known; our steps will one day tread upon that vast, star-lit frontier.
 
 This project is not a fixed toolkit — it is a **living system**. Every component has built-in expiry mechanisms, version tracking, and emergence awareness. As your research deepens, R packages update, and new methods emerge, it evolves with you.
 
