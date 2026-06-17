@@ -3,9 +3,18 @@
 </p>
 
 <div align="center">
-  <h1>🌊 万物皆变 · Panta Rhei</h1>
-  <p><strong>把你的编码智能体变成拥有标准 5 层 Agent 架构 + 双核哲学引擎（Panta Rhei + 系统论）的博士级研究团队</strong></p>
-  <p>21 個 MCP 服务 · 28 個 AI Skills · 12 引擎搜索 · 13 个知识库 · 18 工程规则 · BDI + ReAct/ToT + MAS · Docker</p>
+
+```
+╔══════════════════════════════════════════════════════════════╗
+║  🐟  鱼类生态学助手  ·  S/V0 知识供给核心                    ║
+║  ──────────────────────────────────────────────────────────  ║
+║     Panta Rhei + 系统论  ·  三角核心  ·  万物衍生            ║
+╚══════════════════════════════════════════════════════════════╝
+```
+
+<h1>🌊 万物皆变 · Panta Rhei</h1>
+<p><strong>把你的编码智能体变成拥有标准 5 层 Agent 架构 + 双核哲学引擎（Panta Rhei + 系统论）的博士级研究团队</strong></p>
+<p>21 個 MCP 服务 · 28 個 AI Skills · 12 引擎搜索 · 13 个知识库 · 18 工程规则 · BDI + ReAct/ToT + MAS · Docker</p>
 </div>
 
 <p align="center">
@@ -22,6 +31,28 @@
   <a href=".github/workflows/validate.yml"><img src="https://img.shields.io/badge/CI-passing-34D058?style=flat-square" alt="CI"></a>
 </p>
 
+<p align="center">
+  <a href="https://github.com/fangtaocai041/fish-ecology-assistant/stargazers"><img src="https://img.shields.io/github/stars/fangtaocai041/fish-ecology-assistant?style=social" alt="Stars"></a>
+  <a href="https://github.com/fangtaocai041/fish-ecology-assistant/network/members"><img src="https://img.shields.io/github/forks/fangtaocai041/fish-ecology-assistant?style=social" alt="Forks"></a>
+</p>
+
+---
+
+## 📑 目录
+
+- [🧠 核心哲学](#-核心哲学)
+- [🐋 DeepSeek 效率原则](#-deepseek-效率原则-效率即智慧)
+- [🔺 三角核心架构](#-三角核心--衍生角色-sv0-知识供给)
+- [📊 自我评价](#-自我评价)
+- [📋 版本历史](#-版本历史)
+- [🔗 生态体系](#-生态体系三角核心--万物衍生)
+- [🤔 这个项目是什么](#-这个项目是什么)
+- [☯ 道生一 · 一生二 · 二生三 · 三生万物](#-道生一--一生二--二生三--三生万物)
+- [🚀 快速开始](#-快速开始)
+- [📋 README 变更记录](#-readme-变更记录)
+- [📜 许可证](#-许可证)
+- [🌱 Panta Rhei](#-万物皆变--panta-rhei)
+
 ---
 
 
@@ -32,7 +63,7 @@
 ### 📜 三大信条
 
 **🌍 世界是动态的** R 包在更新，物种分布在变化，科学共识在演变，气候变化在重塑生态系统。今天正确的结论半年后可能过时。我们不把任何知识当作永恒真理，而是放在时间轴上动态看待。
-**📖 知识是暂时的** 科学精神的基石是证伪主义（Popper）。没有发现是终极真理，只是“当前最佳解释”。我们使用校准语言——说"证据表明"而不是“证明”，说"Smith(2022) 发现"而不是「研究表明」"。每一个输出都标注时间锚点。
+**📖 知识是暂时的** 科学精神的基石是证伪主义（Popper）。没有发现是终极真理，只是"当前最佳解释"。我们使用校准语言——说"证据表明"而不是"证明"，说"Smith(2022) 发现"而不是「研究表明」"。每一个输出都标注时间锚点。
 **🌟 涌现是常态** 生命、意识、生态系统、AI 推理能力——都是涌现的结果。单独分析局部拼凑不出整体。当≥3 个独立来源指向同一个非预期模式时，系统自动标记为涌现信号，而不是当成异常值忽略。
 ### ⚖ 为什么这对科研至关重要
 | 场景 | 传统做法 | 动态世界观的做法 |
@@ -55,6 +86,8 @@
 | ① | 分类处理 | 《关于正确处理人民内部矛盾的问题》1957) | 对抗性vs 非对抗性→ 不同策略 |
 | ① | 系统平衡 | 《论十大关系》1956) | 十大研究平衡 + 多目标优化|
 
+<p align="right"><a href="#-目录">↑ 返回目录</a></p>
+
 ---
 
 
@@ -69,11 +102,14 @@
 | **DS-3** | **差分验证** → P(stale) 概率评分仅检查变更包，非全量。复查周期= f(更新频率, 风险, 依赖) | `verify-stats-handbook` skill |
 | **DS-4** | **信息增益路由** → P0 精确术语优先 → 命中即停。P2 冗余词跳过。跨库去重。 | `ima-smart-search` skill |
 
+<p align="right"><a href="#-目录">↑ 返回目录</a></p>
+
 ---
 
 ## 🔺 三角核心 + 衍生角色: **S/V0 (知识供给)**
 
-> 三角核心 (密闭3) + 衍生 (开放N) 架构: `fish(S/V0)` → `cognitive(V/V1)` → `eon-core(Coord)`，`porpoise(P₁` + `coilia(P₂` + `culter(P₃` + `conflict-arbiter(C)` 为衍生领域专家?> 提供知识、多流域鱼类数据（长江430 + 图们江+ 绥芬河+ 黑龙江扩展中）、矛盾分析和生态发现?> **D??*: ?Agent 辩论网格?*三角验证**: ? 独立源?> ?[eon-core](https://github.com/fangtaocai041/eon-core) 统一协调?
+> 三角核心 (密闭3) + 衍生 (开放N) 架构: `fish(S/V0)` → `cognitive(V/V1)` → `eon-core(Coord)`，`porpoise(P₁` + `coilia(P₂` + `culter(P₃` + `conflict-arbiter(C)` 为衍生领域专家。提供知识、多流域鱼类数据（长江430 + 图们江+ 绥芬河+ 黑龙江扩展中）、矛盾分析和生态发现。**D² Plane**: 多Agent 辩论网格。**三角验证**: ≥3 独立源。由 [eon-core](https://github.com/fangtaocai041/eon-core) 统一协调。
+
 ## 📊 自我评价
 
 | 维度 | 评分 | 说明 |
@@ -84,6 +120,8 @@
 | 🌏 中文文献 | ⭐⭐⭐⭐⭐| 知网/万方/百度学术/中科院弥补西方数据库系统性盲区 |
 | 🔗 生态角度| ⭐⭐⭐⭐⭐| 三角核心成员 (V0)，由 eon-core 统一调度 |
 | 🧪 测试覆盖 | ⭐⭐⭐⭐⭐| 跨项目验证+ 规则合规检查|
+
+<p align="right"><a href="#-目录">↑ 返回目录</a></p>
 
 ---
 
@@ -112,11 +150,13 @@
 | **culter-agent** | **衍生 P₁** | 鲌类专研 | 营养生态· 生长分析 |
 | **conflict-arbiter** | **衍生 C** | 冲突仲裁 | 多源保护级冲突检测|
 
+<p align="right"><a href="#-目录">↑ 返回目录</a></p>
+
 ---
 
 ## 🤔 这个项目是什么
-**Fish Ecology Assistant** 是一个将 Reasonix Code 从通用编码助手转变为专业鱼类生态学研究团队的完整配置包。它是三生万物三角核心+ 衍生六体架构中的**知识供给核心（S/V0）**，由 **eon-core** 统一协调?
-集成了**21 個 MCP 工具** *28 个领域技能**、**12 引擎并行搜索**、自动化**5 阶段研究流水线**、**13 个 IMA 知识库**，以及**R 统计计算环境**——所有输出都遵循上述双核哲学习
+**Fish Ecology Assistant** 是一个将 Reasonix Code 从通用编码助手转变为专业鱼类生态学研究团队的完整配置包。它是三生万物三角核心+ 衍生六体架构中的**知识供给核心（S/V0）**，由 **eon-core** 统一协调。
+集成了**21 個 MCP 工具** *28 个领域技能**、**12 引擎并行搜索**、自动化**5 阶段研究流水线**、**13 个 IMA 知识库**，以及**R 统计计算环境**——所有输出都遵循上述双核哲学。
 ### 📊 能力清单
 
 | 能力 | 原生 Reasonix | **加上本配置** |
@@ -131,6 +171,8 @@
 | 知识库 | ① | ✅ 连接 13 个 IMA 知识库 |
 | 装机 | 手动 | ✅ 一个脚本或 `docker compose up` |
 | CI/CD | ✅ | ✅ GitHub Actions 自动验证 |
+
+<p align="right"><a href="#-目录">↑ 返回目录</a></p>
 
 ---
 
@@ -168,6 +210,8 @@ porpoise  coilia  culter  conflict
 
 > **铁律**: 三角密闭 (缺一不可) · 万物开放(无限衍生) · 三角不依赖万物。二生三即矛盾统一
 
+<p align="right"><a href="#-目录">↑ 返回目录</a></p>
+
 ---
 
 ## 🚀 快速开始
@@ -176,17 +220,12 @@ git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
 cd fish-ecology-assistant
 ```
 
-或使用 Docker：```bash
+或使用 Docker：
+```bash
 docker compose up
 ```
 
----
-
-## 📋 快速导航
-- 🎯 技能系统： 6 流水线 + 20 领域 + 2 守护 = 28 Skills
-- 🔌 MCP 服务: 21 个（含 cognitive_search DirectLoader）- 📁 项目结构: [见上方完整树](#)
-- 📜 完整文档: [docs/](docs/) + [.reasonix/handbooks/](.reasonix/handbooks/)
-- 🧠 工程语法: [engineering-grammar.md](.reasonix/handbooks/engineering-grammar.md)
+<p align="right"><a href="#-目录">↑ 返回目录</a></p>
 
 ---
 
@@ -204,12 +243,12 @@ docker compose up
 | **v2** | 2026-06-05 | Panta Rhei | 动态世界观整合，涌现检测，校准语言 |
 | **v1** | 2026-06-05 | 原始版本 | 初始发布 — 鱼类生态学助手、5 引擎 + 12 子智能体 |
 
+<p align="right"><a href="#-目录">↑ 返回目录</a></p>
+
 ---
 
 ## 📜 许可证
 MIT License © 2026 fangtaocai041
-
----
 
 ---
 
@@ -225,3 +264,17 @@ MIT License © 2026 fangtaocai041
 这个项目不是一套固定的工具集——它是一个**活的系统**。每个组件都内置了过期机制、版本追踪和涌现感知。随着你的研究深入、R包更新、新方法涌现，它会和你一起进化。
 
 *最后更新: 2026-06-18 | 适用环境: Reasonix Code · DeepSeek 驱动*
+
+---
+
+<div align="center">
+
+### 🏷️ 技术标签
+
+`研究` `生态学` `渔业` `AI智能体` `大模型` `reasonix` `MCP` `R统计` `Docker` `Panta-Rhei` `系统论`
+
+<br>
+
+<sub>🐟 三生万物生态体系成员 · [eon-core](https://github.com/fangtaocai041/eon-core) 统一协调</sub>
+
+</div>
