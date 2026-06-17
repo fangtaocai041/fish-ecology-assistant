@@ -169,7 +169,6 @@ MIT License © 2026 fangtaocai041
 > **"不要搜索字符串，要重建所指�?**
 > Don't search for strings �?reconstruct the signified.
 
-## 🐋 DeepSeek 效率原则 (效率即智�?
 
 > **代码映射**: [工程语法 §8](.reasonix/handbooks/engineering-grammar.md)
 
@@ -182,10 +181,8 @@ MIT License © 2026 fangtaocai041
 
 ---
 
-## 🤔 这个项目是什�?
 **Fish Ecology Assistant** 是一个将 Reasonix Code 从通用编码助手转变为专业鱼类生态学研究团队的完整配置包。它是三生万物三角核�?+ 衍生六体架构中的**知识供给核心（S/V0�?*，由 **eon-core** 统一协调�?
 集成�?**21 �?MCP 工具**�?*28 个领域技�?*�?*12 引擎并行搜索**、自动化�?**5 阶段研究流水�?*�?*13 �?IMA 知识�?*，以�?**R 统计计算环境**——所有输出都遵循上述双核哲学�?
-### 📊 能力清单
 
 | 能力 | 原生 Reasonix | **加上本配�?* |
 |:-----|:------------:|:-------------:|
@@ -202,7 +199,6 @@ MIT License © 2026 fangtaocai041
 
 ---
 
-## ☯️ 道生一 · 一生二 · 二生�?· 三生万物
 
 > �?《道德经》第四十二章
 
@@ -238,7 +234,6 @@ porpoise  coilia  culter  conflict
 
 ---
 
-## 🚀 快速开�?
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
 cd fish-ecology-assistant
@@ -250,7 +245,6 @@ docker compose up
 
 ---
 
-## 📋 快速导�?
 - 🎯 技能系�? 6 流水�?+ 20 领域 + 2 守护 = 28 Skills
 - 🔌 MCP 服务: 21 个（�?cognitive_search DirectLoader�?- 📁 项目结构: [见上方完整树](#)
 - 📜 完整文档: [docs/](docs/) + [.reasonix/handbooks/](.reasonix/handbooks/)
@@ -258,7 +252,6 @@ docker compose up
 
 ---
 
-## 📋 README 变更记录
 
 | 版本 | 日期 | 主题 | 变更内容 |
 |:------|:-----|:------|:-------------|
@@ -274,7 +267,6 @@ docker compose up
 
 ---
 
-## 📜 许可�?
 MIT License © 2026 fangtaocai041
 
 ---
@@ -325,16 +317,13 @@ MIT License © 2026 fangtaocai041
 
 ---
 
-## 🧠 核心哲学
 
 > 🌍 世界是动态的，�?知识是暂时的，�?涌现是常态�?
 这不是一句口号，而是贯穿整个项目每一行代码、每一次搜索、每一篇分析的操作系统�?
-### 📜 三大信条
 
 **🌍 世界是动态的** �?R 包在更新，物种分布在变化，科学共识在演变，气候变化在重塑生态系统。今天正确的结论半年后可能过时。我们不把任何知识当作永恒真理，而是放在时间轴上动态看待�?
 **📖 知识是暂时的** �?科学精神的基石是证伪主义（Popper）。没有发现是终极真理，只�?当前最佳解�?。我们使用校准语言——说"证据表明"而不�?证明�?，说"Smith(2022) 发现"而不�?研究表明"。每一个输出都标注时间锚点�?
 **🌟 涌现是常�?* �?生命、意识、生态系统、AI 推理能力——都是涌现的结果。单独分析局部拼凑不出整体。当 �? 个独立来源指向同一个非预期模式时，系统自动标记为涌现信号，而不是当成异常值忽略�?
-### ⚖️ 为什么这对科研至关重�?
 | 场景 | 传统做法 | 动态世界观的做�?|
 |:-----|:--------|:---------------|
 | 包版�?| �?2020 代码�?2026 数据 | 自动检查，标记"最后验证于 glmmTMB v1.1.10" |
@@ -343,7 +332,6 @@ MIT License © 2026 fangtaocai041
 | 知识过期 | 手册写死不再更新 | 验证记录�?下次复查日期"，按包活跃度动态计�?|
 | 方法选择 | 固定方法用到�?| 动态选择，置信度动态计�?|
 
-### 🧠 系统�?· 七大工程原则
 
 | # | 原则 | 源著�?| 工程映射 |
 |---|------|--------|---------|
@@ -357,7 +345,6 @@ MIT License © 2026 fangtaocai041
 
 ---
 
-## 🐋 DeepSeek 效率原则 (效率即智�?
 
 > **代码映射**: [工程语法 §8](.reasonix/handbooks/engineering-grammar.md)
 
@@ -370,10 +357,8 @@ MIT License © 2026 fangtaocai041
 
 ---
 
-## 🤔 这个项目是什�?
 **Fish Ecology Assistant** 是一个将 Reasonix Code 从通用编码助手转变为专业鱼类生态学研究团队的完整配置包。它是三生万物三角核�?+ 衍生六体架构中的**知识供给核心（S/V0�?*，由 **eon-core** 统一协调�?
 集成�?**21 �?MCP 工具**�?*28 个领域技�?*�?*12 引擎并行搜索**、自动化�?**5 阶段研究流水�?*�?*13 �?IMA 知识�?*，以�?**R 统计计算环境**——所有输出都遵循上述双核哲学�?
-### 📊 能力清单
 
 | 能力 | 原生 Reasonix | **加上本配�?* |
 |:-----|:------------:|:-------------:|
@@ -390,7 +375,6 @@ MIT License © 2026 fangtaocai041
 
 ---
 
-## ☯️ 道生一 · 一生二 · 二生�?· 三生万物
 
 > �?《道德经》第四十二章
 
@@ -426,7 +410,6 @@ porpoise  coilia  culter  conflict
 
 ---
 
-## 🚀 快速开�?
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
 cd fish-ecology-assistant
@@ -438,7 +421,6 @@ docker compose up
 
 ---
 
-## 📋 快速导�?
 - 🎯 技能系�? 6 流水�?+ 20 领域 + 2 守护 = 28 Skills
 - 🔌 MCP 服务: 21 个（�?cognitive_search DirectLoader�?- 📁 项目结构: [见上方完整树](#)
 - 📜 完整文档: [docs/](docs/) + [.reasonix/handbooks/](.reasonix/handbooks/)
@@ -446,7 +428,6 @@ docker compose up
 
 ---
 
-## 📋 README 变更记录
 
 | 版本 | 日期 | 主题 | 变更内容 |
 |:------|:-----|:------|:-------------|
@@ -462,7 +443,6 @@ docker compose up
 
 ---
 
-## 📜 许可�?
 MIT License © 2026 fangtaocai041
 
 ---
@@ -470,7 +450,6 @@ MIT License © 2026 fangtaocai041
 > **"不要搜索字符串，要重建所指�?**
 > Don't search for strings �?reconstruct the signified.
 
-## 🐋 DeepSeek 效率原则 (效率即智�?
 
 > **代码映射**: [工程语法 §8](.reasonix/handbooks/engineering-grammar.md)
 
@@ -483,10 +462,8 @@ MIT License © 2026 fangtaocai041
 
 ---
 
-## 🤔 这个项目是什�?
 **Fish Ecology Assistant** 是一个将 Reasonix Code 从通用编码助手转变为专业鱼类生态学研究团队的完整配置包。它是三生万物三角核�?+ 衍生六体架构中的**知识供给核心（S/V0�?*，由 **eon-core** 统一协调�?
 集成�?**21 �?MCP 工具**�?*28 个领域技�?*�?*12 引擎并行搜索**、自动化�?**5 阶段研究流水�?*�?*13 �?IMA 知识�?*，以�?**R 统计计算环境**——所有输出都遵循上述双核哲学�?
-### 📊 能力清单
 
 | 能力 | 原生 Reasonix | **加上本配�?* |
 |:-----|:------------:|:-------------:|
@@ -503,7 +480,6 @@ MIT License © 2026 fangtaocai041
 
 ---
 
-## ☯️ 道生一 · 一生二 · 二生�?· 三生万物
 
 > �?《道德经》第四十二章
 
@@ -539,7 +515,6 @@ porpoise  coilia  culter  conflict
 
 ---
 
-## 🚀 快速开�?
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
 cd fish-ecology-assistant
@@ -551,7 +526,6 @@ docker compose up
 
 ---
 
-## 📋 快速导�?
 - 🎯 技能系�? 6 流水�?+ 20 领域 + 2 守护 = 28 Skills
 - 🔌 MCP 服务: 21 个（�?cognitive_search DirectLoader�?- 📁 项目结构: [见上方完整树](#)
 - 📜 完整文档: [docs/](docs/) + [.reasonix/handbooks/](.reasonix/handbooks/)
@@ -559,7 +533,6 @@ docker compose up
 
 ---
 
-## 📋 README 变更记录
 
 | 版本 | 日期 | 主题 | 变更内容 |
 |:------|:-----|:------|:-------------|
@@ -575,7 +548,6 @@ docker compose up
 
 ---
 
-## 📜 许可�?
 MIT License © 2026 fangtaocai041
 
 ---

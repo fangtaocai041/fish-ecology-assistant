@@ -381,7 +381,6 @@ MIT © 2026 fangtaocai041
 > **"不要搜索字符串，要重建所指�?**
 > Don't search for strings �?reconstruct the signified.
 
-## 🐋 DeepSeek Efficiency Principles (效率即智�?
 
 > **Mapped to code**: [Engineering Grammar §8](.reasonix/handbooks/engineering-grammar.md) �?DS-1..DS-4 with formal definitions, WHEN→THEN rules, and config paths.
 
@@ -394,13 +393,11 @@ MIT © 2026 fangtaocai041
 
 ---
 
-## 🤔 What This Is
 
 **Fish Ecology Assistant** is a complete configuration package that transforms Reasonix Code from a general-purpose coding assistant into a professional fish ecology research team. It is the **Knowledge Supply Core (S/V0)** in the SanShengWanWu Triangle Core + Derived six-body architecture, coordinated by **eon-core**.
 
 It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine parallel search**, an automated **5-stage research pipeline**, **13 IMA knowledge bases**, and an **R statistical computing environment**—all outputs guided by the dynamic worldview above.
 
-### 📊 Capability Matrix
 
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
@@ -419,7 +416,6 @@ It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine paral
 
 ---
 
-## 🧬 KB-First Two-Stage Search (v6.5.0)
 
 > **Check knowledge base first, decide search later.** No more blind 7-engine external search.
 
@@ -432,9 +428,7 @@ User Query
 
 ---
 
-## 🎯 Skills
 
-### Pipeline Skills (6)
 
 | Skill | Description |
 |-------|-------------|
@@ -445,7 +439,6 @@ User Query
 | `research-writer` | Bilingual report generation |
 | `research-reviewer` | Quality review + contradiction detection |
 
-### Domain Skills (20)
 
 | Skill | Description |
 |-------|-------------|
@@ -470,7 +463,6 @@ User Query
 | `self-evolve` | Autonomous parameter evolution |
 | `cross-delegate` | Cross-project task delegation protocol |
 
-### Guard Skills (2)
 
 | Skill | Description |
 |-------|-------------|
@@ -479,7 +471,6 @@ User Query
 
 ---
 
-## 🔌 MCP Tools (21)
 
 | Category | Tool | Description |
 |----------|------|-------------|
@@ -507,7 +498,6 @@ User Query
 
 ---
 
-## ☯️ 道生一 · 一生二 · 二生�?· 三生万物
 
 > **Dao begets One, One begets Two, Two begets Three, Three begets the Myriad.**
 > �?*Dao De Jing*, Chapter 42
@@ -544,7 +534,6 @@ porpoise  coilia  culter  conflict
 
 ---
 
-## 🚀 Quick Start
 
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
@@ -560,7 +549,6 @@ Restart Reasonix, everything is ready.
 
 ---
 
-## �?Features
 
 | Feature | Status | Description |
 |---------|:------:|-------------|
@@ -581,7 +569,6 @@ Restart Reasonix, everything is ready.
 
 ---
 
-## 📁 Project Structure
 
 ```
 fish-ecology-assistant/
@@ -655,21 +642,17 @@ fish-ecology-assistant/
 
 ---
 
-## 🗺�?Future Roadmap
 
-### Strengths
 - **Species coverage**: 430 Yangtze fish species �?most comprehensive open-source dataset
 - **KB-First architecture**: SQLite FTS5 enables zero-network species lookup
 - **Living system**: Every component has birth date, last verification, and expiry policy
 - **Cross-project coordination**: eon-core EventBus + DAG routing for 6-project ecosystem
 - **Emergence-aware**: Kalman Filter + �? sources flag emergence
 
-### Known Limitations
 - FishBase sync blocked by SSL in current environment (script ready)
 - Some niche Chinese journals have incomplete metadata
 - R package version drift monitoring depends on CRAN availability
 
-### Milestones
 - [ ] FishBase auto-sync when SSL resolved �?500+ species with Mekong basin
 - [ ] Real-time population monitoring dashboard
 - [ ] Deep learning morphological trait extraction from images
@@ -677,7 +660,6 @@ fish-ecology-assistant/
 
 ---
 
-## 📋 README Changelog
 
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
@@ -693,7 +675,6 @@ fish-ecology-assistant/
 
 ---
 
-## 📜 License
 
 MIT © 2026 fangtaocai041
 
@@ -762,13 +743,11 @@ MIT © 2026 fangtaocai041
 > **5 Layers**: Interaction & Perception �?Cognitive & Decision �?Memory System �?Mapping & Translation �?Tool & Execution
 > **Theoretical Foundations**: BDI (Belief-Desire-Intention) · MDP/POMDP Formalism · ReAct/ToT/GoT Reasoning · Reflexion Self-Correction · MAS Multi-Agent Topology
 
-## 🧠 Core Philosophy
 
 > 🌍 The world is dynamic. 📖 Knowledge is temporary. 🌟 Emergence is the norm.
 
 This is not a slogan. It is the operating system running through every line of code, every search, and every analysis in this project.
 
-### 📜 Three Tenets
 
 **🌍 The world is dynamic** �?R packages update, species distributions shift, scientific consensus evolves, climate change reshapes ecosystems. A correct conclusion today may be outdated in six months. We treat no knowledge as eternal truth, but place it on a timeline and view it dynamically.
 
@@ -776,7 +755,6 @@ This is not a slogan. It is the operating system running through every line of c
 
 **🌟 Emergence is the norm** �?Life, consciousness, ecosystems, AI reasoning—all are emergent phenomena. You cannot assemble the whole by analyzing only the parts. When �? independent sources point to the same unexpected pattern, the system flags it as an emergence signal—not dismisses it as noise.
 
-### ⚖️ Why This Matters for Research
 
 | Scenario | Traditional | Dynamic Worldview |
 |:---------|:-----------|:-------------------|
@@ -786,7 +764,6 @@ This is not a slogan. It is the operating system running through every line of c
 | Knowledge decay | Handbook frozen, never updated | Review records include "Next review date" |
 | Method selection | Fixed pipeline forever | Dynamic method selection, dynamic confidence |
 
-### 🧠 Systems Thinking · Seven Engineering Principles
 
 | # | Principle | Source | Engineering Mapping |
 |---|-----------|--------|---------------------|
@@ -800,7 +777,6 @@ This is not a slogan. It is the operating system running through every line of c
 
 ---
 
-## 🐋 DeepSeek Efficiency Principles (效率即智�?
 
 > **Mapped to code**: [Engineering Grammar §8](.reasonix/handbooks/engineering-grammar.md) �?DS-1..DS-4 with formal definitions, WHEN→THEN rules, and config paths.
 
@@ -813,13 +789,11 @@ This is not a slogan. It is the operating system running through every line of c
 
 ---
 
-## 🤔 What This Is
 
 **Fish Ecology Assistant** is a complete configuration package that transforms Reasonix Code from a general-purpose coding assistant into a professional fish ecology research team. It is the **Knowledge Supply Core (S/V0)** in the SanShengWanWu Triangle Core + Derived six-body architecture, coordinated by **eon-core**.
 
 It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine parallel search**, an automated **5-stage research pipeline**, **13 IMA knowledge bases**, and an **R statistical computing environment**—all outputs guided by the dynamic worldview above.
 
-### 📊 Capability Matrix
 
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
@@ -838,7 +812,6 @@ It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine paral
 
 ---
 
-## 🧬 KB-First Two-Stage Search (v6.5.0)
 
 > **Check knowledge base first, decide search later.** No more blind 7-engine external search.
 
@@ -851,9 +824,7 @@ User Query
 
 ---
 
-## 🎯 Skills
 
-### Pipeline Skills (6)
 
 | Skill | Description |
 |-------|-------------|
@@ -864,7 +835,6 @@ User Query
 | `research-writer` | Bilingual report generation |
 | `research-reviewer` | Quality review + contradiction detection |
 
-### Domain Skills (20)
 
 | Skill | Description |
 |-------|-------------|
@@ -889,7 +859,6 @@ User Query
 | `self-evolve` | Autonomous parameter evolution |
 | `cross-delegate` | Cross-project task delegation protocol |
 
-### Guard Skills (2)
 
 | Skill | Description |
 |-------|-------------|
@@ -898,7 +867,6 @@ User Query
 
 ---
 
-## 🔌 MCP Tools (21)
 
 | Category | Tool | Description |
 |----------|------|-------------|
@@ -926,7 +894,6 @@ User Query
 
 ---
 
-## ☯️ 道生一 · 一生二 · 二生�?· 三生万物
 
 > **Dao begets One, One begets Two, Two begets Three, Three begets the Myriad.**
 > �?*Dao De Jing*, Chapter 42
@@ -963,7 +930,6 @@ porpoise  coilia  culter  conflict
 
 ---
 
-## 🚀 Quick Start
 
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
@@ -979,7 +945,6 @@ Restart Reasonix, everything is ready.
 
 ---
 
-## �?Features
 
 | Feature | Status | Description |
 |---------|:------:|-------------|
@@ -1000,7 +965,6 @@ Restart Reasonix, everything is ready.
 
 ---
 
-## 📁 Project Structure
 
 ```
 fish-ecology-assistant/
@@ -1074,21 +1038,17 @@ fish-ecology-assistant/
 
 ---
 
-## 🗺�?Future Roadmap
 
-### Strengths
 - **Species coverage**: 430 Yangtze fish species �?most comprehensive open-source dataset
 - **KB-First architecture**: SQLite FTS5 enables zero-network species lookup
 - **Living system**: Every component has birth date, last verification, and expiry policy
 - **Cross-project coordination**: eon-core EventBus + DAG routing for 6-project ecosystem
 - **Emergence-aware**: Kalman Filter + �? sources flag emergence
 
-### Known Limitations
 - FishBase sync blocked by SSL in current environment (script ready)
 - Some niche Chinese journals have incomplete metadata
 - R package version drift monitoring depends on CRAN availability
 
-### Milestones
 - [ ] FishBase auto-sync when SSL resolved �?500+ species with Mekong basin
 - [ ] Real-time population monitoring dashboard
 - [ ] Deep learning morphological trait extraction from images
@@ -1096,7 +1056,6 @@ fish-ecology-assistant/
 
 ---
 
-## 📋 README Changelog
 
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
@@ -1112,7 +1071,6 @@ fish-ecology-assistant/
 
 ---
 
-## 📜 License
 
 MIT © 2026 fangtaocai041
 
@@ -1121,7 +1079,6 @@ MIT © 2026 fangtaocai041
 > **"不要搜索字符串，要重建所指�?**
 > Don't search for strings �?reconstruct the signified.
 
-## 🐋 DeepSeek Efficiency Principles (效率即智�?
 
 > **Mapped to code**: [Engineering Grammar §8](.reasonix/handbooks/engineering-grammar.md) �?DS-1..DS-4 with formal definitions, WHEN→THEN rules, and config paths.
 
@@ -1134,13 +1091,11 @@ MIT © 2026 fangtaocai041
 
 ---
 
-## 🤔 What This Is
 
 **Fish Ecology Assistant** is a complete configuration package that transforms Reasonix Code from a general-purpose coding assistant into a professional fish ecology research team. It is the **Knowledge Supply Core (S/V0)** in the SanShengWanWu Triangle Core + Derived six-body architecture, coordinated by **eon-core**.
 
 It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine parallel search**, an automated **5-stage research pipeline**, **13 IMA knowledge bases**, and an **R statistical computing environment**—all outputs guided by the dynamic worldview above.
 
-### 📊 Capability Matrix
 
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
@@ -1159,7 +1114,6 @@ It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine paral
 
 ---
 
-## 🧬 KB-First Two-Stage Search (v6.5.0)
 
 > **Check knowledge base first, decide search later.** No more blind 7-engine external search.
 
@@ -1172,9 +1126,7 @@ User Query
 
 ---
 
-## 🎯 Skills
 
-### Pipeline Skills (6)
 
 | Skill | Description |
 |-------|-------------|
@@ -1185,7 +1137,6 @@ User Query
 | `research-writer` | Bilingual report generation |
 | `research-reviewer` | Quality review + contradiction detection |
 
-### Domain Skills (20)
 
 | Skill | Description |
 |-------|-------------|
@@ -1210,7 +1161,6 @@ User Query
 | `self-evolve` | Autonomous parameter evolution |
 | `cross-delegate` | Cross-project task delegation protocol |
 
-### Guard Skills (2)
 
 | Skill | Description |
 |-------|-------------|
@@ -1219,7 +1169,6 @@ User Query
 
 ---
 
-## 🔌 MCP Tools (21)
 
 | Category | Tool | Description |
 |----------|------|-------------|
@@ -1247,7 +1196,6 @@ User Query
 
 ---
 
-## ☯️ 道生一 · 一生二 · 二生�?· 三生万物
 
 > **Dao begets One, One begets Two, Two begets Three, Three begets the Myriad.**
 > �?*Dao De Jing*, Chapter 42
@@ -1284,7 +1232,6 @@ porpoise  coilia  culter  conflict
 
 ---
 
-## 🚀 Quick Start
 
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
@@ -1300,7 +1247,6 @@ Restart Reasonix, everything is ready.
 
 ---
 
-## �?Features
 
 | Feature | Status | Description |
 |---------|:------:|-------------|
@@ -1321,7 +1267,6 @@ Restart Reasonix, everything is ready.
 
 ---
 
-## 📁 Project Structure
 
 ```
 fish-ecology-assistant/
@@ -1395,21 +1340,17 @@ fish-ecology-assistant/
 
 ---
 
-## 🗺�?Future Roadmap
 
-### Strengths
 - **Species coverage**: 430 Yangtze fish species �?most comprehensive open-source dataset
 - **KB-First architecture**: SQLite FTS5 enables zero-network species lookup
 - **Living system**: Every component has birth date, last verification, and expiry policy
 - **Cross-project coordination**: eon-core EventBus + DAG routing for 6-project ecosystem
 - **Emergence-aware**: Kalman Filter + �? sources flag emergence
 
-### Known Limitations
 - FishBase sync blocked by SSL in current environment (script ready)
 - Some niche Chinese journals have incomplete metadata
 - R package version drift monitoring depends on CRAN availability
 
-### Milestones
 - [ ] FishBase auto-sync when SSL resolved �?500+ species with Mekong basin
 - [ ] Real-time population monitoring dashboard
 - [ ] Deep learning morphological trait extraction from images
@@ -1417,7 +1358,6 @@ fish-ecology-assistant/
 
 ---
 
-## 📋 README Changelog
 
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
@@ -1433,7 +1373,6 @@ fish-ecology-assistant/
 
 ---
 
-## 📜 License
 
 MIT © 2026 fangtaocai041
 
