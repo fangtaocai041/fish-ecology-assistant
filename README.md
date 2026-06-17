@@ -11,7 +11,7 @@
 
 [English](README.md) · [中文](README.zh.md)
 
-Yangtze River fish ecology knowledge base and trait database.
+🌊 Everything flows.
 
 ---
 ## 📖 Table of Contents
