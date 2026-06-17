@@ -73,6 +73,13 @@ This is not a slogan. It is the operating system running through every line of c
 
 ---
 
+## 🔺 Triangle Core + Derived Role: **S/V0 (Knowledge Supply)**
+
+> Triangle Core (sealed 3) + Derived (open N) architecture: `fish(S/V0)` �?`cognitive(V/V1)` �?`eon-core(Coord)`, with `porpoise(P�?` + `coilia(P�?` + `culter(P�?` + `conflict-arbiter(C)` as derived domain experts.
+> Provides knowledge, multi-basin fish data (Yangtze 430 + Tumen + Suifen + Amur expanding), contradiction analysis, and ecological findings.
+> **D�?Plane**: multi-agent debate mesh. **Triangulation**: �? sources.
+> Coordinated by [eon-core](https://github.com/fangtaocai041/eon-core).
+
 ## 🤔 What This Is
 
 **Fish Ecology Assistant** is a complete configuration package that transforms Reasonix Code from a general-purpose coding assistant into a professional fish ecology research team. It is the **Knowledge Supply Core (S/V0)** in the SanShengWanWu Triangle Core + Derived six-body architecture, coordinated by **eon-core**.
@@ -381,7 +388,6 @@ MIT © 2026 fangtaocai041
 > **"不要搜索字符串，要重建所指�?**
 > Don't search for strings �?reconstruct the signified.
 
-
 > **Mapped to code**: [Engineering Grammar §8](.reasonix/handbooks/engineering-grammar.md) �?DS-1..DS-4 with formal definitions, WHEN→THEN rules, and config paths.
 
 | ID | Principle | Code Mapping |
@@ -393,11 +399,9 @@ MIT © 2026 fangtaocai041
 
 ---
 
-
 **Fish Ecology Assistant** is a complete configuration package that transforms Reasonix Code from a general-purpose coding assistant into a professional fish ecology research team. It is the **Knowledge Supply Core (S/V0)** in the SanShengWanWu Triangle Core + Derived six-body architecture, coordinated by **eon-core**.
 
 It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine parallel search**, an automated **5-stage research pipeline**, **13 IMA knowledge bases**, and an **R statistical computing environment**—all outputs guided by the dynamic worldview above.
-
 
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
@@ -416,7 +420,6 @@ It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine paral
 
 ---
 
-
 > **Check knowledge base first, decide search later.** No more blind 7-engine external search.
 
 ```
@@ -428,8 +431,6 @@ User Query
 
 ---
 
-
-
 | Skill | Description |
 |-------|-------------|
 | `research-orchestrator` | Top-level pipeline coordinator |
@@ -438,7 +439,6 @@ User Query
 | `research-analyst` | Statistical analysis + data interpretation |
 | `research-writer` | Bilingual report generation |
 | `research-reviewer` | Quality review + contradiction detection |
-
 
 | Skill | Description |
 |-------|-------------|
@@ -463,14 +463,12 @@ User Query
 | `self-evolve` | Autonomous parameter evolution |
 | `cross-delegate` | Cross-project task delegation protocol |
 
-
 | Skill | Description |
 |-------|-------------|
 | `karpathy-guard` | Code quality + safety guard |
 | `rule-auditor` | Cross-project rule compliance check |
 
 ---
-
 
 | Category | Tool | Description |
 |----------|------|-------------|
@@ -497,7 +495,6 @@ User Query
 | **Knowledge** | `zotero` | Zotero SQLite direct query |
 
 ---
-
 
 > **Dao begets One, One begets Two, Two begets Three, Three begets the Myriad.**
 > �?*Dao De Jing*, Chapter 42
@@ -534,7 +531,6 @@ porpoise  coilia  culter  conflict
 
 ---
 
-
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
 cd fish-ecology-assistant
@@ -548,7 +544,6 @@ docker compose up
 Restart Reasonix, everything is ready.
 
 ---
-
 
 | Feature | Status | Description |
 |---------|:------:|-------------|
@@ -568,7 +563,6 @@ Restart Reasonix, everything is ready.
 | 🧪 Living System | �?| Component registry with expiry policies |
 
 ---
-
 
 ```
 fish-ecology-assistant/
@@ -642,7 +636,6 @@ fish-ecology-assistant/
 
 ---
 
-
 - **Species coverage**: 430 Yangtze fish species �?most comprehensive open-source dataset
 - **KB-First architecture**: SQLite FTS5 enables zero-network species lookup
 - **Living system**: Every component has birth date, last verification, and expiry policy
@@ -660,7 +653,6 @@ fish-ecology-assistant/
 
 ---
 
-
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
 | **v8.1** | 2026-06-20 | README Restoration | Restored from historical sessions: Systems Thinking 7 principles, DeepSeek efficiency principles, 道生万物 architecture, README Changelog, DeepWiki/Dual Core/Docker badges, unified ecosystem with 6 projects |
@@ -675,20 +667,12 @@ fish-ecology-assistant/
 
 ---
 
-
 MIT © 2026 fangtaocai041
 
 ---
 
 > **"不要搜索字符串，要重建所指�?**
 > Don't search for strings �?reconstruct the signified.
-
-## 🔺 Triangle Core + Derived Role: **S/V0 (Knowledge Supply)**
-
-> Triangle Core (sealed 3) + Derived (open N) architecture: `fish(S/V0)` �?`cognitive(V/V1)` �?`eon-core(Coord)`, with `porpoise(P�?` + `coilia(P�?` + `culter(P�?` + `conflict-arbiter(C)` as derived domain experts.
-> Provides knowledge, multi-basin fish data (Yangtze 430 + Tumen + Suifen + Amur expanding), contradiction analysis, and ecological findings.
-> **D�?Plane**: multi-agent debate mesh. **Triangulation**: �? sources.
-> Coordinated by [eon-core](https://github.com/fangtaocai041/eon-core).
 
 ## 📊 Self-Assessment
 
@@ -743,18 +727,15 @@ MIT © 2026 fangtaocai041
 > **5 Layers**: Interaction & Perception �?Cognitive & Decision �?Memory System �?Mapping & Translation �?Tool & Execution
 > **Theoretical Foundations**: BDI (Belief-Desire-Intention) · MDP/POMDP Formalism · ReAct/ToT/GoT Reasoning · Reflexion Self-Correction · MAS Multi-Agent Topology
 
-
 > 🌍 The world is dynamic. 📖 Knowledge is temporary. 🌟 Emergence is the norm.
 
 This is not a slogan. It is the operating system running through every line of code, every search, and every analysis in this project.
-
 
 **🌍 The world is dynamic** �?R packages update, species distributions shift, scientific consensus evolves, climate change reshapes ecosystems. A correct conclusion today may be outdated in six months. We treat no knowledge as eternal truth, but place it on a timeline and view it dynamically.
 
 **📖 Knowledge is temporary** �?The foundation of science is falsification (Popper). No discovery is ultimate truth—only the "best current explanation." We use calibrated language: "evidence suggests" not "proves," "Smith (2022) found" not "studies show." Every output carries a temporal anchor.
 
 **🌟 Emergence is the norm** �?Life, consciousness, ecosystems, AI reasoning—all are emergent phenomena. You cannot assemble the whole by analyzing only the parts. When �? independent sources point to the same unexpected pattern, the system flags it as an emergence signal—not dismisses it as noise.
-
 
 | Scenario | Traditional | Dynamic Worldview |
 |:---------|:-----------|:-------------------|
@@ -763,7 +744,6 @@ This is not a slogan. It is the operating system running through every line of c
 | Outliers | Ignore as noise | �? sources �?emergence signal, actively track |
 | Knowledge decay | Handbook frozen, never updated | Review records include "Next review date" |
 | Method selection | Fixed pipeline forever | Dynamic method selection, dynamic confidence |
-
 
 | # | Principle | Source | Engineering Mapping |
 |---|-----------|--------|---------------------|
@@ -777,7 +757,6 @@ This is not a slogan. It is the operating system running through every line of c
 
 ---
 
-
 > **Mapped to code**: [Engineering Grammar §8](.reasonix/handbooks/engineering-grammar.md) �?DS-1..DS-4 with formal definitions, WHEN→THEN rules, and config paths.
 
 | ID | Principle | Code Mapping |
@@ -789,11 +768,9 @@ This is not a slogan. It is the operating system running through every line of c
 
 ---
 
-
 **Fish Ecology Assistant** is a complete configuration package that transforms Reasonix Code from a general-purpose coding assistant into a professional fish ecology research team. It is the **Knowledge Supply Core (S/V0)** in the SanShengWanWu Triangle Core + Derived six-body architecture, coordinated by **eon-core**.
 
 It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine parallel search**, an automated **5-stage research pipeline**, **13 IMA knowledge bases**, and an **R statistical computing environment**—all outputs guided by the dynamic worldview above.
-
 
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
@@ -812,7 +789,6 @@ It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine paral
 
 ---
 
-
 > **Check knowledge base first, decide search later.** No more blind 7-engine external search.
 
 ```
@@ -824,8 +800,6 @@ User Query
 
 ---
 
-
-
 | Skill | Description |
 |-------|-------------|
 | `research-orchestrator` | Top-level pipeline coordinator |
@@ -834,7 +808,6 @@ User Query
 | `research-analyst` | Statistical analysis + data interpretation |
 | `research-writer` | Bilingual report generation |
 | `research-reviewer` | Quality review + contradiction detection |
-
 
 | Skill | Description |
 |-------|-------------|
@@ -859,14 +832,12 @@ User Query
 | `self-evolve` | Autonomous parameter evolution |
 | `cross-delegate` | Cross-project task delegation protocol |
 
-
 | Skill | Description |
 |-------|-------------|
 | `karpathy-guard` | Code quality + safety guard |
 | `rule-auditor` | Cross-project rule compliance check |
 
 ---
-
 
 | Category | Tool | Description |
 |----------|------|-------------|
@@ -893,7 +864,6 @@ User Query
 | **Knowledge** | `zotero` | Zotero SQLite direct query |
 
 ---
-
 
 > **Dao begets One, One begets Two, Two begets Three, Three begets the Myriad.**
 > �?*Dao De Jing*, Chapter 42
@@ -930,7 +900,6 @@ porpoise  coilia  culter  conflict
 
 ---
 
-
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
 cd fish-ecology-assistant
@@ -944,7 +913,6 @@ docker compose up
 Restart Reasonix, everything is ready.
 
 ---
-
 
 | Feature | Status | Description |
 |---------|:------:|-------------|
@@ -964,7 +932,6 @@ Restart Reasonix, everything is ready.
 | 🧪 Living System | �?| Component registry with expiry policies |
 
 ---
-
 
 ```
 fish-ecology-assistant/
@@ -1038,7 +1005,6 @@ fish-ecology-assistant/
 
 ---
 
-
 - **Species coverage**: 430 Yangtze fish species �?most comprehensive open-source dataset
 - **KB-First architecture**: SQLite FTS5 enables zero-network species lookup
 - **Living system**: Every component has birth date, last verification, and expiry policy
@@ -1056,7 +1022,6 @@ fish-ecology-assistant/
 
 ---
 
-
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
 | **v8.1** | 2026-06-20 | README Restoration | Restored from historical sessions: Systems Thinking 7 principles, DeepSeek efficiency principles, 道生万物 architecture, README Changelog, DeepWiki/Dual Core/Docker badges, unified ecosystem with 6 projects |
@@ -1070,7 +1035,6 @@ fish-ecology-assistant/
 | **v2** | 2026-06-05 | Original | Initial release �?Fish ecology assistant, 5 engines + 12 sub-agents |
 
 ---
-
 
 MIT © 2026 fangtaocai041
 
@@ -1079,7 +1043,6 @@ MIT © 2026 fangtaocai041
 > **"不要搜索字符串，要重建所指�?**
 > Don't search for strings �?reconstruct the signified.
 
-
 > **Mapped to code**: [Engineering Grammar §8](.reasonix/handbooks/engineering-grammar.md) �?DS-1..DS-4 with formal definitions, WHEN→THEN rules, and config paths.
 
 | ID | Principle | Code Mapping |
@@ -1091,11 +1054,9 @@ MIT © 2026 fangtaocai041
 
 ---
 
-
 **Fish Ecology Assistant** is a complete configuration package that transforms Reasonix Code from a general-purpose coding assistant into a professional fish ecology research team. It is the **Knowledge Supply Core (S/V0)** in the SanShengWanWu Triangle Core + Derived six-body architecture, coordinated by **eon-core**.
 
 It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine parallel search**, an automated **5-stage research pipeline**, **13 IMA knowledge bases**, and an **R statistical computing environment**—all outputs guided by the dynamic worldview above.
-
 
 | Capability | Vanilla Reasonix | **With This Config** |
 |:-----------|:----------------:|:--------------------:|
@@ -1114,7 +1075,6 @@ It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine paral
 
 ---
 
-
 > **Check knowledge base first, decide search later.** No more blind 7-engine external search.
 
 ```
@@ -1126,8 +1086,6 @@ User Query
 
 ---
 
-
-
 | Skill | Description |
 |-------|-------------|
 | `research-orchestrator` | Top-level pipeline coordinator |
@@ -1136,7 +1094,6 @@ User Query
 | `research-analyst` | Statistical analysis + data interpretation |
 | `research-writer` | Bilingual report generation |
 | `research-reviewer` | Quality review + contradiction detection |
-
 
 | Skill | Description |
 |-------|-------------|
@@ -1161,14 +1118,12 @@ User Query
 | `self-evolve` | Autonomous parameter evolution |
 | `cross-delegate` | Cross-project task delegation protocol |
 
-
 | Skill | Description |
 |-------|-------------|
 | `karpathy-guard` | Code quality + safety guard |
 | `rule-auditor` | Cross-project rule compliance check |
 
 ---
-
 
 | Category | Tool | Description |
 |----------|------|-------------|
@@ -1195,7 +1150,6 @@ User Query
 | **Knowledge** | `zotero` | Zotero SQLite direct query |
 
 ---
-
 
 > **Dao begets One, One begets Two, Two begets Three, Three begets the Myriad.**
 > �?*Dao De Jing*, Chapter 42
@@ -1232,7 +1186,6 @@ porpoise  coilia  culter  conflict
 
 ---
 
-
 ```bash
 git clone https://github.com/fangtaocai041/fish-ecology-assistant.git
 cd fish-ecology-assistant
@@ -1246,7 +1199,6 @@ docker compose up
 Restart Reasonix, everything is ready.
 
 ---
-
 
 | Feature | Status | Description |
 |---------|:------:|-------------|
@@ -1266,7 +1218,6 @@ Restart Reasonix, everything is ready.
 | 🧪 Living System | �?| Component registry with expiry policies |
 
 ---
-
 
 ```
 fish-ecology-assistant/
@@ -1340,7 +1291,6 @@ fish-ecology-assistant/
 
 ---
 
-
 - **Species coverage**: 430 Yangtze fish species �?most comprehensive open-source dataset
 - **KB-First architecture**: SQLite FTS5 enables zero-network species lookup
 - **Living system**: Every component has birth date, last verification, and expiry policy
@@ -1358,7 +1308,6 @@ fish-ecology-assistant/
 
 ---
 
-
 | Version | Date | Theme | What Changed |
 |:--------|:-----|:------|:-------------|
 | **v8.1** | 2026-06-20 | README Restoration | Restored from historical sessions: Systems Thinking 7 principles, DeepSeek efficiency principles, 道生万物 architecture, README Changelog, DeepWiki/Dual Core/Docker badges, unified ecosystem with 6 projects |
@@ -1372,7 +1321,6 @@ fish-ecology-assistant/
 | **v2** | 2026-06-05 | Original | Initial release �?Fish ecology assistant, 5 engines + 12 sub-agents |
 
 ---
-
 
 MIT © 2026 fangtaocai041
 
