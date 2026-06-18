@@ -21,7 +21,7 @@
 [![Skills](https://img.shields.io/badge/skills-28-f59e0b)](.reasonix/skills/)
 [![Architecture](https://img.shields.io/badge/architecture-5_layer-8b5cf6)](docs/ARCHITECTURE.md)
 [![Rules](https://img.shields.io/badge/rules-18-8b5cf6)]()
-[![Agent](https://img.shields.io/badge/agent-v6.5.0-ec4899)](config/agent.yaml)
+[![Agent](https://img.shields.io/badge/agent-v6.6.0-ec4899)](config/agent.yaml)
 [![R](https://img.shields.io/badge/R-4.6.0-276DC3)]()
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED)](Dockerfile)
 [![CI](https://img.shields.io/badge/CI-passing-34D058)](.github/workflows/validate.yml)
@@ -136,6 +136,8 @@ It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine paral
 | OCR | ✅ | ✅ PaddleOCR + Tesseract.js |
 | Reference manager | ✅ | ✅ Direct Zotero SQL queries |
 | Research pipeline | ✅ | ✅ 5-stage + auto-review + emergence detection |
+| MAGMA 4D memory | ✅ | ✅ 正交图谱 + NetworkX 图分析 |
+| China conservation | ✅ | ✅ IUCN + 中国红色名录双对照 |
 | Knowledge bases | ✅ | ✅ 13 IMA knowledge bases connected |
 | Setup | Manual | ✅ One script or `docker compose up` |
 | CI/CD | ✅ | ✅ GitHub Actions auto-validate |
