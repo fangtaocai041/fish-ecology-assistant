@@ -3,12 +3,16 @@ id: ochetobius_elongatus
 scientific: Ochetobius elongatus
 name: 鳤
 family: 鲤科
-last_updated: '2026-06-17'
-conservation: CR
-status: 极罕见
+last_updated: '2026-06-19'
+conservation:
+  iucn: CR
+  chinese_red_list: CR
+  national_protection: null
+status: 极罕见 (Critically Endangered)
 category: endangered_in_graph
 basins:
 - 长江流域
+- 珠江流域
 literature:
 - doi: 10.1007/s12686-018-1075-3
   title: Development and characterization of 26 SNP markers in Ochetobius elongatus based on RAD-seq
