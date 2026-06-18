@@ -1,10 +1,25 @@
-# 求同存异协调配置 — Coordination Config
-# Shared between fish-ecology-assistant and porpoise-agent
-# 求同 (Common Ground): shared protocols, rule IDs, verification standards
+# 求同存异协调配置 — Coordination Config v2.0
+# Shared between all Reasonix ecosystem projects
+# 求同 (Common Ground): shared protocols, MAGMA memory, verification standards
 # 存异 (Reserved Differences): project-specific implementations
 
 coordination:
-  version: "1.0.0"
+  version: "2.0.0"
+
+  # ===== MAGMA 四维正交图谱记忆标准 =====
+  memory:
+    default_backend: "magma"    # magma | dict
+    nx_available: true          # NetworkX graph analytics
+    encoder: "char_ngram"       # char_ngram | huggingface
+    dimensions:
+      - semantic                # 语义图: 内容相似性
+      - temporal                # 时序图: 时间关联
+      - causal                  # 因果图: 因果关系
+      - entity                  # 实体图: 物种/实体指代
+    consolidation:
+      stm_capacity: 100
+      ltm_capacity: 10000
+      threshold: 3              # 访问3次 → STM→LTM
 
   # ===== 求同: 共享协议 =====
   shared_protocols:
@@ -12,6 +27,8 @@ coordination:
     rule_ids: ["FB-1","FB-2","CP-1","CP-2","SM-1","SM-2","WF-1","WF-2","PT-1","PT-2","EH-1","EH-2","MO-1","MO-2","DS-1","DS-2","DS-3","DS-4"]
     verification: { min_sources_core_claim: 2, max_iterations: 3 }
     contradiction: { budget_multiplier: 2.5, transformation_threshold: 5 }
+    kb_first: true              # 知识库优先查询
+    triangle_verify: true       # 三角验证: ≥3独立源
 
   # ===== 存异: 项目特定 =====
   project_specific:
@@ -20,13 +37,15 @@ coordination:
       pipeline_type: "explicit_stages"
       skill_count: 15
       mcp_count: 18
-      memory: "reasonix"
+      memory: "magma"           # MAGMA 四维图谱记忆
+      species_db: "fishkb/config/fish_species_index.yaml"
+      species_count: 430
     porpoise:
       skill_dir: "src/skills"
       pipeline_type: "orchestrator"
       skill_count: 16
       mcp_count: 16
-      memory: "chromadb"
+      memory: "magma"
 
   # ===== 桥接: 跨项目委托 =====
   cross_delegation:
