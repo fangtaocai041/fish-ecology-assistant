@@ -1,4 +1,4 @@
-﻿"""
+"""
 ProjectHub — 多项目协调中枢
 
 架构: 三角核心 (sealed 3) + 衍生项目 (open N)

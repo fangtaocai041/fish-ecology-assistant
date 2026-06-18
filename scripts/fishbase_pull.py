@@ -1,4 +1,4 @@
-﻿"""FishBase API Integration — auto-pull fish trait data.
+"""FishBase API Integration — auto-pull fish trait data.
 
 FishBase REST API: https://fishbase.de/api/
 Usage:
