@@ -20,6 +20,12 @@ Usage:
     from src.types import PipelinePhase, ConfidenceLevel, ResearchContext
 """
 
+import sys as _sys
+from pathlib import Path as _Path
+_PROJECT_ROOT = str(_Path(__file__).resolve().parent.parent)
+if _PROJECT_ROOT not in _sys.path:
+    _sys.path.insert(0, _PROJECT_ROOT)
+
 __version__ = "6.5.3"
 
 # ── 延迟导入以避免缺失可选依赖 (fishkb) 时崩溃 ──

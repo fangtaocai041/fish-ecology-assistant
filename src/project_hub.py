@@ -317,6 +317,12 @@ class ProjectHub:
 
         if mode == "kb_first":
             kb = orch.kb_first_lookup(query=name)
+            # ── v2.1+: KB 命中/未命中 → 编目权重自进化 ──
+            self.catalog_kb_feedback(
+                species_name=kb.scientific_name or name,
+                kb_found=kb.found,
+                kb_detail_level="full" if kb.found and kb.scientific_name else "partial",
+            )
             if not kb.found:
                 return self._run_full_search(name, group, limit, kb)
             return {
@@ -339,6 +345,98 @@ class ProjectHub:
             }
 
         return self._run_full_search(name, group, limit)
+
+    # ── v2.1+: 编目路由跨项目接口 ──
+
+    def catalog_route(self, query: str, top_n: int = 8,
+                      health_aware: bool = True) -> List[Dict[str, Any]]:
+        """跨项目编目图谱路由 — 给定查询返回最优数据库排名。
+
+        委托给 cognitive-search-engine 的 catalog_loader.graph_route()，
+        使 f 项目在不直接依赖 c 项目内部实现的情况下，获得智能数据库选择能力。
+
+        Args:
+            query: 搜索查询文本 (中英文均可)
+            top_n: 返回前 N 个数据库
+            health_aware: 是否考虑 eon-core 触手健康状态
+
+        Returns:
+            [{id, _graph_score, _domain_label, _tendril, ...}, ...] 按分数降序
+        """
+        try:
+            import importlib.util
+            cog_src = self._workspace / "cognitive-search-engine" / "src" / "catalog_loader.py"
+            spec = importlib.util.spec_from_file_location("_cog_catalog_loader", str(cog_src))
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            catalog = mod.load_catalog()
+            return mod.graph_route(catalog, query, top_n=top_n, health_aware=health_aware)
+        except Exception as e:
+            logger.warning(f"编目路由失败: {e}")
+            return []
+
+    def catalog_kb_feedback(self, species_name: str, kb_found: bool,
+                            kb_detail_level: str = "full") -> None:
+        """KB 命中/未命中反馈 → 编目权重自进化。
+
+        当 fishkb 查到某个物种时 (found=True)，说明该物种在编目中对应的
+        数据库权重应该被强化。未命中时 (found=False)，衰减相关数据库。
+
+        Args:
+            species_name: 物种学名
+            kb_found: KB 是否查到该物种
+            kb_detail_level: KB 数据详细程度 ("full"|"partial"|"minimal")
+        """
+        try:
+            import importlib.util
+            cog_src = self._workspace / "cognitive-search-engine" / "src" / "catalog_loader.py"
+            spec = importlib.util.spec_from_file_location("_cog_catalog_loader", str(cog_src))
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            catalog = mod.load_catalog()
+            # 构建带领域上下文的查询词（纯物种名无法触发领域匹配）
+            context_query = f"{species_name} fish ecology conservation genetics"
+            routes = mod.graph_route(catalog, context_query, top_n=3)
+            level_mult = {"full": 1.0, "partial": 0.6, "minimal": 0.3}
+            multiplier = level_mult.get(kb_detail_level, 0.5)
+            for route in routes:
+                found_count = int(15 * multiplier) if kb_found else 0
+                mod.record_search_result(
+                    species_name, route["id"],
+                    found=found_count,
+                    useful=kb_found,
+                )
+            if routes:
+                mod.save_catalog(catalog)
+                logger.info(
+                    f"编目反馈: {species_name} KB={'HIT' if kb_found else 'MISS'} "
+                    f"-> {len(routes)} DBs 权重已更新"
+                )
+        except Exception as e:
+            logger.warning(f"编目反馈失败: {e}")
+
+    def catalog_info(self) -> Dict[str, Any]:
+        """编目状态查询 — 返回当前编目版本、领域数、数据库数。"""
+        try:
+            import importlib.util
+            cog_src = self._workspace / "cognitive-search-engine" / "src" / "catalog_loader.py"
+            spec = importlib.util.spec_from_file_location("_cog_catalog_loader", str(cog_src))
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            catalog = mod.load_catalog()
+            domains = list(catalog["domains"].keys())
+            db_count = sum(
+                len(d.get("databases", []))
+                for d in catalog["domains"].values()
+            )
+            return {
+                "catalog_version": catalog.get("catalog_version", "unknown"),
+                "domain_count": len(domains),
+                "database_count": db_count,
+                "domains": domains,
+            }
+        except Exception as e:
+            return {"error": str(e)}
 
     def _run_full_search(self, name: str, group: str, limit: int,
                          kb_result: Any = None) -> Dict[str, Any]:
