@@ -26,7 +26,19 @@ _PROJECT_ROOT = str(_Path(__file__).resolve().parent.parent)
 if _PROJECT_ROOT not in _sys.path:
     _sys.path.insert(0, _PROJECT_ROOT)
 
-__version__ = "6.5.3"
+def _load_version():
+    """Read version from VERSION.yaml — single source of truth."""
+    try:
+        import yaml
+        _vpath = _Path(__file__).resolve().parent.parent.parent / "VERSION.yaml"
+        with open(_vpath, encoding="utf-8") as _f:
+            _data = yaml.safe_load(_f)
+        _key = _Path(__file__).resolve().parent.parent.name
+        return _data.get("projects", {}).get(_key, {}).get("version", "0.0.0")
+    except Exception:
+        return "0.0.0"
+
+__version__ = _load_version()
 
 # ── 延迟导入以避免缺失可选依赖 (fishkb) 时崩溃 ──
 # 核心类通过 get_* 工厂函数按需加载，而非模块级直接导入。

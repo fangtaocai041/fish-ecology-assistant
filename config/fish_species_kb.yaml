@@ -1,3 +1,5 @@
+# ✅ CANONICAL — single source of truth for species data (coordination.yaml §triangle_core.fish_knowledge)
+# fish-ecology-assistant is the designated species data authority for the entire workspace.
 metadata:
   title: 鱼类物种知识库（多流域版）
   version: '2.0'
