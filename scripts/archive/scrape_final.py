@@ -13,7 +13,7 @@ def fetch(sn):
         req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
         with urlopen(req, timeout=8, context=ctx) as resp:
             return resp.read().decode('utf-8', errors='replace')
-    except:
+    except Exception:
         return None
 
 def extract(html):
@@ -59,7 +59,8 @@ for sid, sn in species:
             db.execute("INSERT OR REPLACE INTO traits_life_history(species_id,resilience,vulnerability,source,confidence) VALUES(?,?,?,?,?)",
                 (sid, t.get('resilience'), t.get('vuln'), 'FishBase', 3))
         ok += 1
-    except: pass
+    except Exception:
+        pass  # skip malformed entries, continue with next
     db.commit()
     time.sleep(0.5)
 

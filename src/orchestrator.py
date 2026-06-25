@@ -36,6 +36,38 @@ except ImportError:
 
 from .shared import JOURNAL_WHITELIST, build_search_queries, generate_ocr_variants
 
+# 理论图谱引擎集成 (延迟加载，try/except 保护)
+_THEORY_GRAPH = None
+
+
+def get_theory_graph():
+    """获取 TheoryGraph 单例 — 四维理论图谱引擎。"""
+    global _THEORY_GRAPH
+    if _THEORY_GRAPH is None:
+        try:
+            from .theory_graph_engine import TheoryGraph
+            _THEORY_GRAPH = TheoryGraph()
+        except Exception as exc:
+            logger.warning(f"理论图谱不可用: {exc}")
+            return None
+    return _THEORY_GRAPH
+
+
+# 审计日志集成 (惰性初始化)
+_AUDIT_LOGGER_INIT = False
+
+
+def _init_audit_log():
+    global _AUDIT_LOGGER_INIT
+    if not _AUDIT_LOGGER_INIT:
+        try:
+            from .audit_logger import setup_logging
+            setup_logging()
+            _AUDIT_LOGGER_INIT = True
+        except Exception:
+            pass
+
+
 # fishkb 核心库集成 — 物种匹配委托给独立库
 from fishkb.search import FishSpeciesMatcher as _FishSpeciesMatcher, KbFirstResult
 from fishkb.db import KnowledgeDB as _KnowledgeDB
@@ -133,7 +165,23 @@ class FishEcologyOrchestrator:
             group: 搜索引擎组
             limit: 每引擎最大结果数
         """
-        return self.hub.search_species(name, mode=mode, group=group, limit=limit)
+        _init_audit_log()
+        logger.info(f"search_species: name={name!r}, mode={mode!r}")
+        result = self.hub.search_species(name, mode=mode, group=group, limit=limit)
+        logger.info(f"search_species result: status={result.get('stage')}, "
+                    f"kb_found={result.get('kb_found')}")
+        # 记录审计日志
+        try:
+            from .audit_logger import audit as _audit
+            _audit.log("search_species", {
+                "name": name,
+                "mode": mode,
+                "kb_found": result.get("kb_found"),
+                "stage": result.get("stage"),
+            })
+        except Exception:
+            pass
+        return result
 
     def delegate_to(self, subsystem: str, task: str, **kwargs) -> Optional[Dict[str, Any]]:
         """委托任务到衍生项目 — 三角赋能万物。
@@ -307,12 +355,14 @@ class FishEcologyOrchestrator:
 
     def health(self) -> Dict[str, Any]:
         """Health check — 包含宿主 + 所有子系统状态。"""
+        _init_audit_log()
         base = {
             "project": "fish-ecology-assistant",
             "status": "HEALTHY" if self._agent_config else "DEGRADED",
             "config_loaded": bool(self._agent_config),
             "species_db_size": len(self._species_db.get("species", [])),
             "pipeline_stages": self.STAGES,
+            "theory_graph": get_theory_graph() is not None,
         }
         # 附加子系统健康状态
         try:
@@ -340,6 +390,8 @@ class FishEcologyOrchestrator:
                 "multi_engine_search",
                 "kb_first_two_stage_search",
                 "project_hub_unified_entry",
+                "theory_graph_engine",
+                "audit_logger",
             ],
         }
         # 附加子系统能力
@@ -349,6 +401,24 @@ class FishEcologyOrchestrator:
         except Exception:
             base["subsystems"] = {"error": "hub unavailable"}
         return base
+
+    # ──── 理论图谱集成 ────
+
+    def use_theory_graph(self, question: str = "") -> Dict[str, Any]:
+        """访问四维理论图谱引擎 (MAGMA)。
+
+        提供: 专家路由 · 概念转座检测 · 理论适应度评分 · 拓扑矩阵 · 反事实推演
+
+        Args:
+            question: 可选研究问题（如"禁渔后鱼类多样性如何变化"）
+
+        Returns:
+            图谱统计 + 路由结果（若有问题）+ 拓扑热力 + Top理论
+        """
+        tg = get_theory_graph()
+        if tg is None:
+            return {"status": "unavailable", "error": "理论图谱引擎未加载"}
+        return tg.full_report(question)
 
     # ──── KB-First Lookup (Stage 1: knowledge base only) ────
 

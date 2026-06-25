@@ -132,8 +132,8 @@ It integrates **21 MCP tools**, **28 domain-specific skills**, **12-engine paral
 | Search engines | 1 | **12** (cognitive_search + scholar, article, scholarly, baidu_scholar, cnki, wanfang, cas, ncbi, tavily, exa, web_search) |
 | MCP services | 0 | **21** (incl. cognitive_search DirectLoader + DeepWiki) |
 | AI subagents | 4 (generic) | **28** (6 pipeline + 20 domain + 2 guard, emergence detection) |
-| R statistics | ✅ | ✅ R 4.6.0 + 20+ ecology packages |
-| OCR | ✅ | ✅ PaddleOCR + Tesseract.js |
+| R statistics | ✅ | ✅ R 4.6.0 (via MCP rplay) |
+| OCR | ✅ | ✅ PaddleOCR (via MCP paddleocr) |
 | Reference manager | ✅ | ✅ Direct Zotero SQL queries |
 | Research pipeline | ✅ | ✅ 5-stage + auto-review + emergence detection |
 | MAGMA 4D memory | ✅ | ✅ 正交图谱 + NetworkX 图分析 |

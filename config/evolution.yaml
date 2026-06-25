@@ -1,27 +1,26 @@
 # ENGINEERING: params auto-adjusted per trigger conditions after each research pipeline run.
 # All values are machine-readable; ranges define safe boundaries; triggers use exact thresholds.
 # 借鉴: cognitive-search-engine/config/evolution.yaml (4 adaptive params + feedback loop)
-# 传播: porpoise-agent/config/evolution.yaml (同步创建)
+# DeepSeek-optimized v2.0: relaxed token budgets, higher thresholds for emergence noise
 
 evolution:
   enabled: true
-  last_updated: "2026-06-07"
+  last_updated: "2026-06-26"
+  deepseek_optimized: true
 
   # ===== 自适应参数 =====
   adaptive_params:
     min_sources_core_claim:
       current: 3
       range: [2, 5]
-      adjust_by: "false_positive_rate"   # 验证失败率高 → 增加最少来源数
-      description: "核心声明最少独立来源数 (三角验证 FB-1/FB-2)"
+      adjust_by: "false_positive_rate"
       last_adjusted: "2026-06-07"
 
     max_revision_rounds:
-      current: 3
-      range: [2, 5]
-      adjust_by: "quality_gap"           # 评审分数持续偏低 → 增加修订轮次
-      description: "研究报告最大修订迭代次数"
-      last_adjusted: "2026-06-07"
+      current: 5
+      range: [3, 8]
+      adjust_by: "quality_gap"
+      last_adjusted: "2026-06-26"
 
     contradiction_budget_multiplier:
       current: 2.5
@@ -93,8 +92,8 @@ evolution:
         condition: "token_efficiency > baseline × 1.2 for 5 consecutive sessions"
         action: "increase skill_activation_threshold by 0.05 (更少 skill 激活)"
 
-      efficiency_loss:               # token 效率持续下降
-        condition: "token_efficiency < baseline × 0.7 for 5 consecutive sessions"
+      efficiency_loss:               # token 效率持续下降 (DeepSeek放宽: 0.7→0.4)
+        condition: "token_efficiency < baseline × 0.4 for 5 consecutive sessions"
         action: "decrease search_engine_count by 2 (减少并行引擎节约 token)"
 
       pipeline_failure_spike:        # 管线失败率飙升

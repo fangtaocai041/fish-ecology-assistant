@@ -17,6 +17,7 @@ fish-ecology-assistant SQLite 知识库层
 
 from __future__ import annotations
 
+import json
 import sqlite3
 import yaml
 from datetime import datetime, timezone
@@ -48,7 +49,9 @@ class KnowledgeDB:
                 conservation TEXT DEFAULT '',
                 status TEXT DEFAULT '',
                 last_updated TEXT DEFAULT '',
-                basins TEXT DEFAULT ''
+                basins TEXT DEFAULT '',
+                taxonomy_change TEXT DEFAULT '',
+                variants TEXT DEFAULT ''
             );
 
             CREATE TABLE IF NOT EXISTS aliases (
@@ -111,12 +114,14 @@ class KnowledgeDB:
     def _insert_species(self, fm: dict):
         sid = fm.get("id", "")
         self.conn.execute(
-            """INSERT OR REPLACE INTO species(id, scientific, chinese, family, conservation, status, last_updated, basins)
-               VALUES(?,?,?,?,?,?,?,?)""",
+            """INSERT OR REPLACE INTO species(id, scientific, chinese, family, conservation, status, last_updated, basins, taxonomy_change, variants)
+               VALUES(?,?,?,?,?,?,?,?,?,?)""",
             (sid, fm.get("scientific", ""), fm.get("name", ""),
              fm.get("family", ""), fm.get("conservation", ""),
              fm.get("status", ""), fm.get("last_updated", ""),
-             ",".join(fm.get("basins", [])))
+             ",".join(fm.get("basins", [])),
+             json.dumps(fm.get("taxonomy_change"), ensure_ascii=False) if fm.get("taxonomy_change") else '',
+             json.dumps(fm.get("variants", []), ensure_ascii=False) if fm.get("variants") else '')
         )
         # Aliases
         for alias in fm.get("aliases", []):

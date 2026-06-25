@@ -13,7 +13,7 @@ def fetch(sn):
         req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
         with urlopen(req, timeout=8, context=ctx) as resp:
             return resp.read().decode('utf-8', errors='replace')
-    except:
+    except Exception:
         return None
 
 def extract(html):

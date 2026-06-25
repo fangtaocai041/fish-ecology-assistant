@@ -1,0 +1,9 @@
+# 物种知识库索引 (自动生成)
+# 更新日期: 2026-06-21
+# 物种总数: 3086
+
+version: "3.0"
+total_species: 3086
+total_yangtze: 3086
+total_lower_yangtze: 2276
+knowledge_base_path: "knowledge_base/species/"

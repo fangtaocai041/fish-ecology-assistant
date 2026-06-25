@@ -90,14 +90,21 @@
 
 ```
 src/
-├── __init__.py         ← 19 个公共导出符号
-├── orchestrator.py     ← 核心编排器 · KB-First 搜索
-├── project_hub.py      ← 跨项目协调中枢 · 三生万物
-├── adapter.py          ← 跨项目适配器 (IProjectAdapter)
-├── dao_engine.py       ← 道→一→二→三→万物 执行引擎
-├── shared.py           ← 共享工具 (期刊白名单/OCR 变体)
-├── types.py            ← 类型系统 (8 dataclass + 4 Enum)
-└── audit_logger.py     ← JSONL 审计日志
+├── __init__.py            ← 公共导出符号 (get_orchestrator/get_hub + types)
+├── orchestrator.py        ← 核心编排器 · KB-First 搜索 (内含 theory_graph + audit 集成)
+├── project_hub.py         ← 跨项目协调中枢 · 三生万物
+├── adapter.py             ← 跨项目适配器 (IProjectAdapter)
+├── dao_engine.py          ← 道→一→二→三→万物 执行引擎
+├── theory_graph_engine.py ← 四维理论图谱引擎 (63节点·102边)
+├── shared.py              ← 共享工具 (期刊白名单/OCR 变体)
+├── types.py               ← 类型系统 (8 dataclass + 4 Enum)
+├── audit_logger.py        ← JSONL 审计日志 (已集成到编排器)
+├── rcca_core.py           ← [共享接口] RCCA 核心 — 被 workspace/eon-core/cog-search 引用
+├── kalman_emergence.py    ← [deprecation shim] 委托 eon-core unified_emergence
+└── memory/
+    ├── __init__.py
+    ├── magma.py            ← MAGMA 语义记忆/图后端
+    └── consolidate.py      ← 记忆整合 (遗忘曲线)
 ```
 
 ### 2.1 orchestrator — 核心编排器
@@ -105,8 +112,10 @@ src/
 | 方法 | 返回 | 说明 |
 |------|------|------|
 | `kb_first_lookup(query)` | `KbFirstResult` | 两阶段搜索第一阶段：纯知识库查询 |
-| `search_species(name, mode)` | `dict` | 统一物种搜索入口，三角核心联动 |
+| `search_species(name, mode)` | `dict` | 统一物种搜索入口，三角核心联动 (含审计日志) |
 | `delegate_to(subsystem, task)` | `dict` | 委托任务到衍生项目 |
+| `use_theory_graph(question)` | `dict` | 访问四维理论图谱引擎 (路由/转座/反事实) |
+| `health()` | `dict` | 健康检查 (含 theory_graph 状态) |
 | `health()` | `dict` | 健康检查 |
 | `info()` | `dict` | 版本 + 能力清单 |
 
@@ -335,13 +344,20 @@ tests/
 
 ---
 
-## 10. 技术债务
+## 10. 技术债务 & 当前状态
 
 | 债务 | 影响 | 计划 |
 |:-----|:-----|:-----|
 | `scripts/search_species.py` 写回使用旧格式 | 读写路径不一致 | v6.6.0 KB 迁移 |
 | `config/yangtze_fish_species.yaml` 孤立数据 | 冗余，可能误导 | v6.6.0 确认后删除 |
-| `scripts/verify_architecture.py` 已 DEPRECATED | 维护者可能误用 | v7.0.0 移除 |
+| `kalman_emergence.py` 为 deprecation shim | 可安全移除 | 确认 eon-core 稳定后 v7.0.0 移除 |
+
+### 已处理的优化
+
+- `src/search_coordinator.py` / `src/arbiter.py` — ✅ 跨项目调用，文件在各自项目中，try/except 保护
+- `theory_graph_engine.py` — ✅ 已移入 `src/`，路径自动发现中英文目录
+- `audit_logger.py` — ✅ 已集成到 orchestrator.search_species() 和 health()
+- 根级孤立脚本 (14个) — ✅ 已归档到 `scripts/archive/`
 
 ---
 

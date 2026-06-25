@@ -55,6 +55,8 @@ class SpeciesInfo(BaseModel):
     status: str = ""
     basins: str = ""
     aliases: list = []
+    taxonomy_change: str = ""
+    variants: str = ""
     literature_count: int = 0
 
 class LiteratureItem(BaseModel):
@@ -143,12 +145,12 @@ def add_literature(species_id: str, paper: LiteratureAdd):
 
 
 @app.get("/species", response_model=SpeciesSearchResult)
-def list_all(limit: int = Query(30, ge=1, le=100)):
+def list_all(limit: int = Query(100, ge=1, le=999)):
     db = get_db()
     all_species = db.list_all()[:limit]
     return SpeciesSearchResult(
         query="*",
-        total=len(all_species),
+        total=db.count(),
         results=[SpeciesInfo(**s) for s in all_species],
     )
 
