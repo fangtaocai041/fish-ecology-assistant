@@ -26,8 +26,7 @@ from typing import Optional
 logger = logging.getLogger(__name__)
 
 FISHMORPH_URLS = [
-    "https://figshare.com/ndownloader/files/28082766",  # direct CSV
-    "https://raw.githubusercontent.com/ropensci/traitdata/master/inst/extdata/fishmorph.csv",
+    "https://ndownloader.figshare.com/files/28672242",  # FISHMORPH_Database.csv
 ]
 
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "data" / "fishmorph"
