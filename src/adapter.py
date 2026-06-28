@@ -30,12 +30,20 @@ except ImportError:
     IProjectAdapter = object  # fallback for standalone usage
 
 # 延迟导入 — orchestrator 负责物种知识库所有权
+# 确保本项目的 src/ 在 sys.path 中（即使调用者已恢复 path）
+_project_root = str(Path(__file__).resolve().parent.parent)
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
+
 _orchestrator = None
 
 def _get_orchestrator():
     """Lazy-load orchestrator singleton to avoid circular import at module level."""
     global _orchestrator
     if _orchestrator is None:
+        # 双重保险：确保本项目的 src/ 在 sys.path
+        if _project_root not in sys.path:
+            sys.path.insert(0, _project_root)
         from src.orchestrator import get_orchestrator
         _orchestrator = get_orchestrator()
     return _orchestrator
