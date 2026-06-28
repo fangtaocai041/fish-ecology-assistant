@@ -19,7 +19,6 @@ Repository = "https://github.com/fangtaocai041/fish-ecology-assistant"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["fish_ecology_assistant*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
