@@ -111,8 +111,6 @@ class FishEcologyAdapter(IProjectAdapter):
             "project": self.project_name,
             "version": self._config.get("agent", {}).get("version", "unknown"),
             "role": "V0_SupplyVertex",
-            "symbol": "☀️ 太阳·老阳",
-            "wuxing": "土 (EARTH)",
             "capabilities": [
                 "search_literature",
                 "search_species",
