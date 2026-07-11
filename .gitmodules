@@ -1,0 +1,21 @@
+[submodule "cognitive-search-engine"]
+	path = cognitive-search-engine
+	url = https://github.com/fangtaocai041/cognitive-search-engine.git
+[submodule "coilia-agent"]
+	path = coilia-agent
+	url = https://github.com/fangtaocai041/coilia-agent.git
+[submodule "conflict-arbiter"]
+	path = conflict-arbiter
+	url = https://github.com/fangtaocai041/conflict-arbiter.git
+[submodule "culter-agent"]
+	path = culter-agent
+	url = https://github.com/fangtaocai041/culter-agent.git
+[submodule "fish-ecology-assistant"]
+	path = fish-ecology-assistant
+	url = https://github.com/fangtaocai041/fish-ecology-assistant.git
+[submodule "infrastructure"]
+	path = infrastructure
+	url = https://github.com/fangtaocai041/infrastructure.git
+[submodule "porpoise-agent"]
+	path = porpoise-agent
+	url = https://github.com/fangtaocai041/porpoise-agent.git

@@ -1,0 +1,70 @@
+# 贝叶斯先验参数配置
+# 各领域可在此调整先验强度，无需修改代码
+
+version: "v1.0"
+
+# 引擎可靠性先验 (Beta distribution alpha, beta)
+# alpha = 成功次数，beta = 失败次数
+# alpha/(alpha+beta) = 可信度均值
+engine_priors:
+  pubmed:
+    alpha: 30
+    beta: 5
+    description: "PubMed 高可靠性"
+  crossref:
+    alpha: 25
+    beta: 8
+    description: "Crossref 较高可靠性"
+  google_scholar:
+    alpha: 20
+    beta: 10
+    description: "Google Scholar 中等"
+  cnki:
+    alpha: 15
+    beta: 12
+    description: "CNKI 中文学术"
+  semantic_scholar:
+    alpha: 18
+    beta: 7
+    description: "Semantic Scholar"
+  biorxiv:
+    alpha: 10
+    beta: 10
+    description: "bioRxiv 预印本"
+
+# 搜索结果质量先验
+search_quality:
+  quick:
+    alpha: 3
+    beta: 3
+    description: "快速搜索 - 少量信息"
+  standard:
+    alpha: 8
+    beta: 4
+    description: "标准搜索 - 中等先验"
+  full:
+    alpha: 15
+    beta: 5
+    description: "全面检索 - 强先验"
+
+# 知识声明验证
+knowledge_claims:
+  source_credibility:
+    peer_reviewed: 0.90
+    book: 0.80
+    report: 0.60
+    preprint: 0.50
+    conference: 0.55
+    grey_literature: 0.35
+
+# 涌现检测阈值
+emergence:
+  strong: 0.95
+  moderate: 0.80
+  weak: 0.60
+
+# 冲突等级阈值
+conflict:
+  low: 0.3
+  medium: 0.5
+  high: 0.7

@@ -1,0 +1,69 @@
+# fangtao_fishlab 统一配置
+# 借鉴 CrewAI: agents/tasks 在 YAML 中声明，Python 只负责连线
+
+version: "v8.0.0"
+
+# 各项目的适配器角色定义
+agents:
+  cognitive-search-engine:
+    role: "V1 搜索验证引擎"
+    goal: "从多源文献中搜索并验证物种信息"
+    backstory: "多引擎并行搜索 + Thompson采样 + 幻觉检测"
+    core_attr: "_engine"
+    bayesian_methods: ["bayesian_engine_reliability", "bayesian_search_quality"]
+
+  fish-ecology-assistant:
+    role: "S0 知识供给引擎"
+    goal: "提供鱼类物种的知识库查询和声明验证"
+    backstory: "SQLite知识库 + YAML profile + 理论图谱"
+    core_attr: "_config"
+    bayesian_methods: ["bayesian_validate_claim", "bayesian_species_confidence"]
+
+  eon-core:
+    role: "三角核心协调器"
+    goal: "编排多项目协作管线"
+    backstory: "OriginKernel + EventBus + DAG拓扑路由"
+    core_attr: "_kernel"
+    bayesian_methods: ["bayesian_coordination_confidence"]
+
+  conflict-arbiter:
+    role: "冲突仲裁层"
+    goal: "多源冲突检测和加权仲裁"
+    backstory: "BMA贝叶斯模型平均 + 熔断机制"
+    core_attr: "_arbiter"
+    bayesian_methods: ["bayesian_confidence"]
+
+  porpoise-agent:
+    role: "P1 江豚专研"
+    goal: "长江江豚声学监测和种群评估"
+    backstory: "被动声学 + BDI认知架构 + 保护评估"
+    core_attr: "_orchestrator"
+    bayesian_methods: ["species_trend_growing_prob", "species_threatened_prob"]
+
+  coilia-agent:
+    role: "P2 鲚属专研"
+    goal: "多物种鲚属的种群识别和分析"
+    backstory: "耳石微化学 + 洄游路线重建"
+    core_attr: "_orchestrator"
+    bayesian_methods: ["bayesian_confidence"]
+
+  culter-agent:
+    role: "P3 鲌类专研"
+    goal: "鲌类的年龄生长和资源评估"
+    backstory: "9阶段管线 + von Bertalanffy + MSY"
+    core_attr: "_orchestrator"
+    bayesian_methods: ["bayesian_confidence"]
+
+  infrastructure:
+    role: "涌现检测引擎"
+    goal: "监测生态指标的涌现行为"
+    backstory: "3层检测：异常→变点→理论匹配"
+    core_attr: "emergence_engine"
+    bayesian_methods: ["bayesian_emergence_score"]
+
+  san-sheng-wanwu-core:
+    role: "硅基生命体元框架"
+    goal: "自我认知和元学习"
+    backstory: "Sense→Cortex→Motor + RTE闭环"
+    core_attr: "meta_awareness"
+    bayesian_methods: ["bayesian_meta_confidence", "bayesian_calibrate"]
