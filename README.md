@@ -338,7 +338,8 @@ Restart Reasonix, everything is ready.
 | 📦 fishkb Sub-library | ✅ | Independent pip-installable core |
 | 🎯 score() Adapter | ✅ | IProjectAdapter.score() for cross-project quality scoring |
 | 🔄 FishBase Sync | 🟡 | Script ready, SSL blocked in env |
-| 🧪 Living System | ✅ | Component registry with expiry policies |
+| 🧠 Bayesian Analysis | ✅ | `bayesian_validate_claim()` · `bayesian_species_confidence()` — Beta-Binomial 共轭 |
+| 🩺 Health Hook | ✅ | `_extend_health()` — BaseAdapter 模式，自动注入 `bayesian_confidence` |
 
 <p align="right"><a href="#-table-of-contents">↑ Back to top</a></p>
 
